@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+build/
+
+.env
+.env*.local
+
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+
+# ข้อสอบจริง (ลิขสิทธิ์) — เก็บไว้ในเครื่องเท่านั้น ห้าม push
+# ใช้เป็นแพตเทิร์นอ้างอิงผ่าน content/exam-analysis.json + content/archetypes/ ที่แปลงแล้ว
+ข้อสอบเก่า เคมี ค่าย 1/
