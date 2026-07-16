@@ -134,6 +134,14 @@ export default async function TopicsPage() {
                     >
                       🎲 สุ่มข้อ
                     </Link>
+                    <a
+                      href={`/worksheets/ch${String(t.topic_id).padStart(2, "0")}.pdf`}
+                      download
+                      title="ดาวน์โหลดชีทเรียน+แบบฝึกหัด (เฉลยย่อหน้าสุดท้าย)"
+                      className="col-span-3 rounded-xl border border-rose-300 bg-rose-50 py-2 text-center text-sm font-semibold text-rose-700 transition hover:bg-rose-100"
+                    >
+                      📄 ดาวน์โหลดชีท PDF
+                    </a>
                   </>
                 ) : (
                   <span className="col-span-2 cursor-not-allowed rounded-xl bg-slate-100 py-2 text-center text-sm font-semibold text-slate-400">
