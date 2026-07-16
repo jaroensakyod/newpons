@@ -92,6 +92,38 @@ if (unknown.length) {
   process.exit(1);
 }
 
+// ---- จับคู่ (หมวด, ชื่อ subtopic) → subtopic_id (ถ้าข้อนั้นมี subtopic) ----
+const { data: subtopics, error: subtopicErr } = await supabase
+  .from("subtopics")
+  .select("id, topic_id, name");
+if (subtopicErr) {
+  console.error("อ่านตาราง subtopics ไม่ได้:", subtopicErr.message);
+  console.error("รัน supabase/schema.sql (migration ล่าสุด) ใน SQL Editor แล้วหรือยัง?");
+  process.exit(1);
+}
+const subtopicIdByTopicAndName = new Map(
+  subtopics.map((s) => [`${s.topic_id}|||${s.name}`, s.id])
+);
+
+const unknownSubtopics = [
+  ...new Set(
+    all
+      .filter((q) => typeof q.subtopic === "string")
+      .map((q) => `${q.topic}|||${q.subtopic}`)
+  ),
+].filter((key) => {
+  const [topicName, subtopicName] = key.split("|||");
+  const topicId = topicIdByName.get(topicName);
+  return !subtopicIdByTopicAndName.has(`${topicId}|||${subtopicName}`);
+});
+if (unknownSubtopics.length) {
+  console.error(
+    "พบ subtopic ที่ไม่มีในตาราง subtopics (เช็ค content/subtopics.json):",
+    unknownSubtopics.join(", ")
+  );
+  process.exit(1);
+}
+
 // ---- จัดกลุ่มต่อหมวด แล้วนำเข้า ----
 const byTopic = new Map();
 for (const q of all) {
@@ -133,6 +165,10 @@ for (const [topicId, qs] of byTopic) {
 
   const rows = qs.map((q) => ({
     topic_id: topicId,
+    subtopic_id:
+      typeof q.subtopic === "string"
+        ? subtopicIdByTopicAndName.get(`${topicId}|||${q.subtopic}`) ?? null
+        : null,
     stem: q.stem,
     choices: q.choices,
     correct_index: q.correct_index,

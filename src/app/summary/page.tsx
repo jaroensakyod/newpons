@@ -2,7 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { hasSupabaseEnv } from "@/lib/env";
-import type { TopicStat } from "@/lib/types";
+import type { TopicStat, SubtopicStat } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
 
@@ -16,15 +16,38 @@ export default async function SummaryPage() {
   if (!hasSupabaseEnv) redirect("/");
 
   const supabase = await createClient();
-  const { data, error } = await supabase.rpc("topic_stats");
+  const [{ data, error }, { data: subtopicData, error: subtopicError }] =
+    await Promise.all([
+      supabase.rpc("topic_stats"),
+      supabase.rpc("subtopic_stats"),
+    ]);
 
   if (error) {
     throw new Error(
       `โหลดสถิติไม่สำเร็จ (${error.message}) — รัน supabase/schema.sql แล้วหรือยัง?`
     );
   }
+  // subtopic_stats เป็นฟีเจอร์เสริม — ถ้ายังไม่ได้รัน migration ก็ไม่ต้องพังทั้งหน้า
+  const subtopicRows = subtopicError ? [] : ((subtopicData ?? []) as SubtopicStat[]);
 
   const stats = (data ?? []) as TopicStat[];
+
+  // รวมทุกระดับความยากเข้าเป็น % ต่อ subtopic แล้วจัดกลุ่มตาม topic_id
+  const subtopicsByTopic = new Map<
+    number,
+    { subtopic_id: number; subtopic_name: string; total: number; correct: number }[]
+  >();
+  for (const row of subtopicRows) {
+    if (!subtopicsByTopic.has(row.topic_id)) subtopicsByTopic.set(row.topic_id, []);
+    const list = subtopicsByTopic.get(row.topic_id)!;
+    let entry = list.find((s) => s.subtopic_id === row.subtopic_id);
+    if (!entry) {
+      entry = { subtopic_id: row.subtopic_id, subtopic_name: row.subtopic_name, total: 0, correct: 0 };
+      list.push(entry);
+    }
+    entry.total += row.total_attempts;
+    entry.correct += row.correct_attempts;
+  }
   const attempted = stats
     .filter((t) => t.total_attempts > 0)
     .map((t) => ({
@@ -91,29 +114,61 @@ export default async function SummaryPage() {
       )}
 
       <div className="mt-6 space-y-4">
-        {attempted.map((t) => (
-          <Link
-            key={t.topic_id}
-            href={`/quiz/${t.topic_id}`}
-            className="block rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:border-indigo-300"
-          >
-            <div className="flex items-baseline justify-between gap-3">
-              <p className="font-semibold">{t.topic_name}</p>
-              <p className="shrink-0 text-sm font-bold text-slate-700">
-                {t.pct}%
-              </p>
+        {attempted.map((t) => {
+          const subtopics = (subtopicsByTopic.get(t.topic_id) ?? [])
+            .filter((s) => s.total > 0)
+            .map((s) => ({ ...s, pct: Math.round((s.correct / s.total) * 100) }))
+            .sort((a, b) => a.pct - b.pct);
+
+          return (
+            <div
+              key={t.topic_id}
+              className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:border-indigo-300"
+            >
+              <Link href={`/quiz/${t.topic_id}`} className="block">
+                <div className="flex items-baseline justify-between gap-3">
+                  <p className="font-semibold">{t.topic_name}</p>
+                  <p className="shrink-0 text-sm font-bold text-slate-700">
+                    {t.pct}%
+                  </p>
+                </div>
+                <div className="mt-2 h-3 overflow-hidden rounded-full bg-slate-100">
+                  <div
+                    className={`h-full rounded-full ${barColor(t.pct)}`}
+                    style={{ width: `${Math.max(t.pct, 3)}%` }}
+                  />
+                </div>
+                <p className="mt-1.5 text-xs text-slate-400">
+                  ถูก {t.correct_attempts} จาก {t.total_attempts} ครั้งที่ตอบ
+                </p>
+              </Link>
+
+              {subtopics.length > 0 && (
+                <div className="mt-3 space-y-1.5 border-t border-slate-100 pt-3">
+                  {subtopics.map((s) => (
+                    <div
+                      key={s.subtopic_id}
+                      className="flex items-center justify-between gap-3 text-xs"
+                    >
+                      <span className="text-slate-500">{s.subtopic_name}</span>
+                      <span
+                        className={`shrink-0 rounded-full px-2 py-0.5 font-semibold ${
+                          s.pct < 50
+                            ? "bg-rose-50 text-rose-600"
+                            : s.pct < 75
+                              ? "bg-amber-50 text-amber-600"
+                              : "bg-emerald-50 text-emerald-600"
+                        }`}
+                      >
+                        {s.pct}%
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
-            <div className="mt-2 h-3 overflow-hidden rounded-full bg-slate-100">
-              <div
-                className={`h-full rounded-full ${barColor(t.pct)}`}
-                style={{ width: `${Math.max(t.pct, 3)}%` }}
-              />
-            </div>
-            <p className="mt-1.5 text-xs text-slate-400">
-              ถูก {t.correct_attempts} จาก {t.total_attempts} ครั้งที่ตอบ
-            </p>
-          </Link>
-        ))}
+          );
+        })}
       </div>
 
       {untouched.length > 0 && (

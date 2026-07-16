@@ -1,0 +1,61 @@
+{
+  "_comment": "หัวข้อย่อยต่อหมวดใหญ่ 8 หมวด — ใช้เป็น canonical list สำหรับ field 'subtopic' ใน content/questions/*.json | real_exam_difficulty_range = ช่วงความยากที่เจอจริงใน content/exam-analysis.json สำหรับ archetype กลุ่มนี้ (ใช้เป็นเพดานว่าบันไดต้อง 'ไต่ถึง' ระดับไหนถึงจะนับว่าครบ)",
+  "ทักษะพื้นฐานปฏิบัติการเคมี": [
+    { "subtopic": "ความปลอดภัยและสัญลักษณ์อันตราย", "real_exam_difficulty_range": [1, 2] },
+    { "subtopic": "เลขนัยสำคัญและการอ่านเครื่องมือวัด", "real_exam_difficulty_range": [2, 3] },
+    { "subtopic": "ความเที่ยงและความแม่นของข้อมูล", "real_exam_difficulty_range": [1, 2] },
+    { "subtopic": "การแปลงหน่วยและคำนวณความหนาแน่น", "real_exam_difficulty_range": [2, 2] },
+    { "subtopic": "วิธีการทางวิทยาศาสตร์และการเจือจางกรด", "real_exam_difficulty_range": [2, 3] }
+  ],
+  "โครงสร้างอะตอม": [
+    { "subtopic": "แบบจำลองอะตอมและอนุภาคมูลฐาน", "real_exam_difficulty_range": [1, 3] },
+    { "subtopic": "สัญลักษณ์นิวเคลียร์ ไอโซโทป และไอออน", "real_exam_difficulty_range": [1, 3] },
+    { "subtopic": "การจัดเรียงอิเล็กตรอนและออร์บิทัล", "real_exam_difficulty_range": [2, 4] },
+    { "subtopic": "สเปกตรัมและแบบจำลองโบร์", "real_exam_difficulty_range": [2, 5] },
+    { "subtopic": "กัมมันตภาพรังสีและครึ่งชีวิต", "real_exam_difficulty_range": [2, 4] },
+    { "subtopic": "มวลอะตอมเฉลี่ยและร้อยละความอุดมสมบูรณ์ไอโซโทป", "real_exam_difficulty_range": [2, 4] }
+  ],
+  "ตารางธาตุและสมบัติของธาตุ": [
+    { "subtopic": "แนวโน้มสมบัติธาตุ (ขนาด IE EN EA)", "real_exam_difficulty_range": [2, 4] },
+    { "subtopic": "การระบุ/ทำนายธาตุจากเบาะแสตำแหน่งและ config", "real_exam_difficulty_range": [2, 4] },
+    { "subtopic": "ออกไซด์กรด-เบสและปฏิกิริยากับน้ำ/คลอรีน", "real_exam_difficulty_range": [1, 3] },
+    { "subtopic": "ธาตุแทรนซิชัน เลขออกซิเดชัน และสารเชิงซ้อน", "real_exam_difficulty_range": [2, 4] },
+    { "subtopic": "สมบัติเฉพาะหมู่ธาตุ (แฮโลเจน แอลคาไล ไฮโดรเจน ออกซิเจน)", "real_exam_difficulty_range": [1, 3] },
+    { "subtopic": "กัมมันตภาพรังสีของธาตุหนักและตำแหน่งในตารางธาตุ", "real_exam_difficulty_range": [2, 3] }
+  ],
+  "พันธะเคมี": [
+    { "subtopic": "ชนิดพันธะและการเรียกชื่อสารประกอบ", "real_exam_difficulty_range": [2, 3] },
+    { "subtopic": "โครงสร้างลิวอิสและกฎออกเตต", "real_exam_difficulty_range": [2, 4] },
+    { "subtopic": "รูปร่างโมเลกุล VSEPR และมุมพันธะ", "real_exam_difficulty_range": [2, 4] },
+    { "subtopic": "สภาพขั้วและแรงระหว่างโมเลกุล", "real_exam_difficulty_range": [2, 3] },
+    { "subtopic": "พลังงานพันธะและวัฏจักรบอร์น-ฮาเบอร์", "real_exam_difficulty_range": [2, 4] },
+    { "subtopic": "ผลึกของแข็งและการตกตะกอน", "real_exam_difficulty_range": [2, 3] }
+  ],
+  "โมลและปริมาณสารสัมพันธ์": [
+    { "subtopic": "โมล อนุภาค และการแปลงหน่วยพื้นฐาน", "real_exam_difficulty_range": [1, 2] },
+    { "subtopic": "สูตรเอมพิริคัล สูตรโมเลกุล และไฮเดรต", "real_exam_difficulty_range": [2, 4] },
+    { "subtopic": "สารกำหนดปริมาณและผลได้ร้อยละ (ขั้นเดียว)", "real_exam_difficulty_range": [2, 4] },
+    { "subtopic": "ปริมาณสัมพันธ์หลายขั้นตอนและอุตสาหกรรม", "real_exam_difficulty_range": [3, 5] },
+    { "subtopic": "การไทเทรตและการตกตะกอนเชิงปริมาณ", "real_exam_difficulty_range": [3, 4] },
+    { "subtopic": "หามวลอะตอม/มวลโมเลกุลจากข้อมูลปฏิกิริยา", "real_exam_difficulty_range": [2, 4] }
+  ],
+  "แก๊สและสมบัติของแก๊ส": [
+    { "subtopic": "กฎแก๊สเดี่ยว (บอยล์ ชาร์ล เกย์-ลูสแซก)", "real_exam_difficulty_range": [1, 3] },
+    { "subtopic": "กฎแก๊สรวมและ PV=nRT", "real_exam_difficulty_range": [1, 3] },
+    { "subtopic": "ทฤษฎีจลน์ของแก๊สและการแพร่ (เกรแฮม)", "real_exam_difficulty_range": [1, 4] },
+    { "subtopic": "ความดันย่อยและแก๊สผสม", "real_exam_difficulty_range": [2, 4] },
+    { "subtopic": "ปริมาณสัมพันธ์ของแก๊สในปฏิกิริยา", "real_exam_difficulty_range": [2, 4] }
+  ],
+  "สารละลาย": [
+    { "subtopic": "หน่วยความเข้มข้นและการแปลงหน่วย", "real_exam_difficulty_range": [2, 3] },
+    { "subtopic": "การเตรียมและเจือจางสารละลาย", "real_exam_difficulty_range": [2, 4] },
+    { "subtopic": "ความเข้มข้นหลังผสมสารละลายและการตกตะกอน", "real_exam_difficulty_range": [2, 4] },
+    { "subtopic": "สมบัติคอลลิเกทีฟ (จุดเดือด-จุดเยือกแข็ง)", "real_exam_difficulty_range": [2, 4] },
+    { "subtopic": "สมการไอออนิกสุทธิและการไทเทรต", "real_exam_difficulty_range": [3, 3] }
+  ],
+  "ของแข็งและของเหลว": [
+    { "subtopic": "ความดันไอและจุดเดือด", "real_exam_difficulty_range": [1, 2] },
+    { "subtopic": "แรงยึดเหนี่ยวระหว่างโมเลกุลกับสมบัติของเหลว", "real_exam_difficulty_range": [2, 2] },
+    { "subtopic": "การเปลี่ยนสถานะและสถานะของสารที่อุณหภูมิห้อง", "real_exam_difficulty_range": [1, 2] }
+  ]
+}

@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "validate:questions": "node scripts/validate-questions.mjs",
+    "validate:ladder": "node scripts/validate-questions.mjs --ladder",
     "import:questions": "node --env-file=.env.local scripts/import-questions.mjs",
     "validate:lessons": "node scripts/validate-lessons.mjs",
     "import:lessons": "node --env-file=.env.local scripts/import-lessons.mjs"

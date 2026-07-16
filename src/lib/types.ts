@@ -25,3 +25,15 @@ export type TopicStat = {
   correct_attempts: number;
   question_count: number;
 };
+
+export type SubtopicStat = {
+  topic_id: number;
+  topic_name: string;
+  subtopic_id: number;
+  subtopic_name: string;
+  subtopic_order: number;
+  difficulty: number;
+  total_attempts: number;
+  correct_attempts: number;
+  question_count: number;
+};

@@ -60,7 +60,10 @@ create policy "attempts: read own"
 -- หมายเหตุ: view นี้รันด้วยสิทธิ์เจ้าของ (bypass RLS ของ questions)
 -- ตั้งใจให้เป็นแบบนั้นเพื่อเปิดเฉพาะคอลัมน์ที่ไม่ใช่เฉลย
 
-create or replace view public.quiz_questions as
+-- ใช้ drop+create (ไม่ใช่ or replace) กัน error 42P16 ตอนโครงคอลัมน์เปลี่ยน
+-- หมายเหตุ: นิยามสุดท้ายที่มีผลจริงคือเวอร์ชัน subtopic_id ใน migration ท้ายไฟล์
+drop view if exists public.quiz_questions;
+create view public.quiz_questions as
   select id, topic_id, stem, choices, difficulty
   from public.questions;
 
@@ -160,7 +163,7 @@ drop policy if exists "contents: read for signed-in" on public.contents;
 create policy "contents: read for signed-in"
   on public.contents for select to authenticated using (true);
 
--- ---------- ข้อมูลหมวด 6 หมวด (เคมีค่าย 1) ----------
+-- ---------- ข้อมูลหมวด 8 หมวด (เคมีค่าย 1) ----------
 
 insert into public.topics (id, name, "order") values
   (1, 'ทักษะพื้นฐานปฏิบัติการเคมี', 1),
@@ -168,8 +171,146 @@ insert into public.topics (id, name, "order") values
   (3, 'ตารางธาตุและสมบัติของธาตุ', 3),
   (4, 'พันธะเคมี', 4),
   (5, 'โมลและปริมาณสารสัมพันธ์', 5),
-  (6, 'แก๊สและสมบัติของแก๊ส', 6)
+  (6, 'แก๊สและสมบัติของแก๊ส', 6),
+  (7, 'สารละลาย', 7),
+  (8, 'ของแข็งและของเหลว', 8)
 on conflict (id) do update set name = excluded.name, "order" = excluded."order";
 
 select setval(pg_get_serial_sequence('public.topics', 'id'),
               (select max(id) from public.topics));
+
+-- ============================================================
+-- Migration: บันไดความยากต่อหัวข้อย่อย (subtopic) — 2026-07-16
+-- แหล่งข้อมูล canonical subtopic ต่อหมวด: content/subtopics.json
+-- รันซ้ำได้ (idempotent) เหมือนเดิม
+-- ============================================================
+
+create table if not exists public.subtopics (
+  id       serial primary key,
+  topic_id int  not null references public.topics (id) on delete cascade,
+  name     text not null,
+  "order"  int  not null,
+  unique (topic_id, name)
+);
+
+create index if not exists idx_subtopics_topic on public.subtopics (topic_id);
+
+alter table public.subtopics enable row level security;
+
+drop policy if exists "subtopics: read for signed-in" on public.subtopics;
+create policy "subtopics: read for signed-in"
+  on public.subtopics for select to authenticated using (true);
+
+-- nullable ชั่วคราว: ข้อเก่าที่ยังไม่ได้แท็ก subtopic จะยังใช้งานได้ปกติ
+alter table public.questions
+  add column if not exists subtopic_id int references public.subtopics (id) on delete set null;
+
+create index if not exists idx_questions_subtopic on public.questions (subtopic_id);
+
+-- quiz_questions view ต้องรวม subtopic_id ด้วย (ยังไม่มีเฉลย เหมือนเดิม)
+-- ต้อง drop ก่อนเพราะ create or replace แทรกคอลัมน์กลาง view เดิมไม่ได้ (42P16)
+drop view if exists public.quiz_questions;
+create view public.quiz_questions as
+  select id, topic_id, subtopic_id, stem, choices, difficulty
+  from public.questions;
+
+revoke all on public.quiz_questions from anon;
+grant select on public.quiz_questions to authenticated;
+
+-- ---------- Seed หัวข้อย่อยต่อหมวด (จาก content/subtopics.json) ----------
+
+insert into public.subtopics (topic_id, name, "order")
+select t.id, s.name, s.ord
+from public.topics t
+join (values
+  ('ทักษะพื้นฐานปฏิบัติการเคมี', 'ความปลอดภัยและสัญลักษณ์อันตราย', 1),
+  ('ทักษะพื้นฐานปฏิบัติการเคมี', 'เลขนัยสำคัญและการอ่านเครื่องมือวัด', 2),
+  ('ทักษะพื้นฐานปฏิบัติการเคมี', 'ความเที่ยงและความแม่นของข้อมูล', 3),
+  ('ทักษะพื้นฐานปฏิบัติการเคมี', 'การแปลงหน่วยและคำนวณความหนาแน่น', 4),
+  ('ทักษะพื้นฐานปฏิบัติการเคมี', 'วิธีการทางวิทยาศาสตร์และการเจือจางกรด', 5),
+
+  ('โครงสร้างอะตอม', 'แบบจำลองอะตอมและอนุภาคมูลฐาน', 1),
+  ('โครงสร้างอะตอม', 'สัญลักษณ์นิวเคลียร์ ไอโซโทป และไอออน', 2),
+  ('โครงสร้างอะตอม', 'การจัดเรียงอิเล็กตรอนและออร์บิทัล', 3),
+  ('โครงสร้างอะตอม', 'สเปกตรัมและแบบจำลองโบร์', 4),
+  ('โครงสร้างอะตอม', 'กัมมันตภาพรังสีและครึ่งชีวิต', 5),
+  ('โครงสร้างอะตอม', 'มวลอะตอมเฉลี่ยและร้อยละความอุดมสมบูรณ์ไอโซโทป', 6),
+
+  ('ตารางธาตุและสมบัติของธาตุ', 'แนวโน้มสมบัติธาตุ (ขนาด IE EN EA)', 1),
+  ('ตารางธาตุและสมบัติของธาตุ', 'การระบุ/ทำนายธาตุจากเบาะแสตำแหน่งและ config', 2),
+  ('ตารางธาตุและสมบัติของธาตุ', 'ออกไซด์กรด-เบสและปฏิกิริยากับน้ำ/คลอรีน', 3),
+  ('ตารางธาตุและสมบัติของธาตุ', 'ธาตุแทรนซิชัน เลขออกซิเดชัน และสารเชิงซ้อน', 4),
+  ('ตารางธาตุและสมบัติของธาตุ', 'สมบัติเฉพาะหมู่ธาตุ (แฮโลเจน แอลคาไล ไฮโดรเจน ออกซิเจน)', 5),
+  ('ตารางธาตุและสมบัติของธาตุ', 'กัมมันตภาพรังสีของธาตุหนักและตำแหน่งในตารางธาตุ', 6),
+
+  ('พันธะเคมี', 'ชนิดพันธะและการเรียกชื่อสารประกอบ', 1),
+  ('พันธะเคมี', 'โครงสร้างลิวอิสและกฎออกเตต', 2),
+  ('พันธะเคมี', 'รูปร่างโมเลกุล VSEPR และมุมพันธะ', 3),
+  ('พันธะเคมี', 'สภาพขั้วและแรงระหว่างโมเลกุล', 4),
+  ('พันธะเคมี', 'พลังงานพันธะและวัฏจักรบอร์น-ฮาเบอร์', 5),
+  ('พันธะเคมี', 'ผลึกของแข็งและการตกตะกอน', 6),
+
+  ('โมลและปริมาณสารสัมพันธ์', 'โมล อนุภาค และการแปลงหน่วยพื้นฐาน', 1),
+  ('โมลและปริมาณสารสัมพันธ์', 'สูตรเอมพิริคัล สูตรโมเลกุล และไฮเดรต', 2),
+  ('โมลและปริมาณสารสัมพันธ์', 'สารกำหนดปริมาณและผลได้ร้อยละ (ขั้นเดียว)', 3),
+  ('โมลและปริมาณสารสัมพันธ์', 'ปริมาณสัมพันธ์หลายขั้นตอนและอุตสาหกรรม', 4),
+  ('โมลและปริมาณสารสัมพันธ์', 'การไทเทรตและการตกตะกอนเชิงปริมาณ', 5),
+  ('โมลและปริมาณสารสัมพันธ์', 'หามวลอะตอม/มวลโมเลกุลจากข้อมูลปฏิกิริยา', 6),
+
+  ('แก๊สและสมบัติของแก๊ส', 'กฎแก๊สเดี่ยว (บอยล์ ชาร์ล เกย์-ลูสแซก)', 1),
+  ('แก๊สและสมบัติของแก๊ส', 'กฎแก๊สรวมและ PV=nRT', 2),
+  ('แก๊สและสมบัติของแก๊ส', 'ทฤษฎีจลน์ของแก๊สและการแพร่ (เกรแฮม)', 3),
+  ('แก๊สและสมบัติของแก๊ส', 'ความดันย่อยและแก๊สผสม', 4),
+  ('แก๊สและสมบัติของแก๊ส', 'ปริมาณสัมพันธ์ของแก๊สในปฏิกิริยา', 5),
+
+  ('สารละลาย', 'หน่วยความเข้มข้นและการแปลงหน่วย', 1),
+  ('สารละลาย', 'การเตรียมและเจือจางสารละลาย', 2),
+  ('สารละลาย', 'ความเข้มข้นหลังผสมสารละลายและการตกตะกอน', 3),
+  ('สารละลาย', 'สมบัติคอลลิเกทีฟ (จุดเดือด-จุดเยือกแข็ง)', 4),
+  ('สารละลาย', 'สมการไอออนิกสุทธิและการไทเทรต', 5),
+
+  ('ของแข็งและของเหลว', 'ความดันไอและจุดเดือด', 1),
+  ('ของแข็งและของเหลว', 'แรงยึดเหนี่ยวระหว่างโมเลกุลกับสมบัติของเหลว', 2),
+  ('ของแข็งและของเหลว', 'การเปลี่ยนสถานะและสถานะของสารที่อุณหภูมิห้อง', 3)
+) as s(topic_name, name, ord) on s.topic_name = t.name
+on conflict (topic_id, name) do update set "order" = excluded."order";
+
+-- ---------- สถิติ % ถูก แยกตาม subtopic + difficulty (สำหรับหน้าจุดอ่อน) ----------
+
+create or replace function public.subtopic_stats()
+returns table (
+  topic_id int,
+  topic_name text,
+  subtopic_id int,
+  subtopic_name text,
+  subtopic_order int,
+  difficulty int,
+  total_attempts bigint,
+  correct_attempts bigint,
+  question_count bigint
+)
+language sql
+security definer
+set search_path = public
+stable
+as $$
+  select
+    t.id,
+    t.name,
+    s.id,
+    s.name,
+    s."order",
+    q.difficulty,
+    count(a.id) filter (where a.user_id = auth.uid()),
+    count(a.id) filter (where a.user_id = auth.uid() and a.is_correct),
+    count(distinct q.id)
+  from public.subtopics s
+  join public.topics t on t.id = s.topic_id
+  join public.questions q on q.subtopic_id = s.id
+  left join public.attempts a on a.question_id = q.id
+  group by t.id, t.name, s.id, s.name, s."order", q.difficulty
+  order by t."order", s."order", q.difficulty;
+$$;
+
+revoke all on function public.subtopic_stats() from public, anon;
+grant execute on function public.subtopic_stats() to authenticated;

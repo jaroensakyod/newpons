@@ -21,6 +21,19 @@ const CANONICAL_TOPICS = [
   "ของแข็งและของเหลว",
 ];
 
+const SUBTOPICS_FILE = path.join(ROOT, "content", "subtopics.json");
+const subtopicsData = fs.existsSync(SUBTOPICS_FILE)
+  ? JSON.parse(fs.readFileSync(SUBTOPICS_FILE, "utf8"))
+  : {};
+// map: topic name -> Set ของชื่อ subtopic ที่รับได้
+const canonicalSubtopicsByTopic = new Map(
+  CANONICAL_TOPICS.map((t) => [
+    t,
+    new Set((subtopicsData[t] ?? []).map((s) => s.subtopic)),
+  ])
+);
+const LADDER_RUNGS = [1, 2, 3, 4, 5];
+
 const errors = [];
 const warnings = [];
 
@@ -60,6 +73,7 @@ if (files.length === 0) {
 
 const stemsSeen = new Map();
 const perTopic = new Map();
+const ladderSeen = new Map(); // "topic|||subtopic" -> Set<difficulty>
 let totalQuestions = 0;
 
 for (const file of files) {
@@ -88,6 +102,18 @@ for (const file of files) {
       errors.push(`${where}: topic "${q.topic}" ไม่ตรงกับ 6 หมวดมาตรฐาน`);
     } else {
       perTopic.set(q.topic, (perTopic.get(q.topic) ?? 0) + 1);
+
+      if (q.subtopic === undefined) {
+        warnings.push(`${where}: ยังไม่มี subtopic (ข้อสอบเก่ารอแท็ก)`);
+      } else if (typeof q.subtopic !== "string" || !canonicalSubtopicsByTopic.get(q.topic)?.has(q.subtopic)) {
+        errors.push(
+          `${where}: subtopic "${q.subtopic}" ไม่ตรงกับ canonical list ของหมวด "${q.topic}" (ดู content/subtopics.json)`
+        );
+      } else {
+        const key = `${q.topic}|||${q.subtopic}`;
+        if (!ladderSeen.has(key)) ladderSeen.set(key, new Set());
+        ladderSeen.get(key).add(q.difficulty);
+      }
     }
     if (typeof q.stem !== "string" || q.stem.trim().length < 10) {
       errors.push(`${where}: stem ว่างหรือสั้นผิดปกติ`);
@@ -130,6 +156,26 @@ for (const file of files) {
       });
     }
   });
+}
+
+// ---- ตรวจความครบของบันได (ทุก subtopic ต้องมีข้อครบ difficulty 1-5) ----
+const LADDER_MODE = process.argv.includes("--ladder");
+const ladderGaps = [];
+for (const [topic, subtopics] of Object.entries(subtopicsData)) {
+  if (topic.startsWith("_")) continue;
+  for (const { subtopic } of subtopics) {
+    const key = `${topic}|||${subtopic}`;
+    const have = ladderSeen.get(key) ?? new Set();
+    const missing = LADDER_RUNGS.filter((r) => !have.has(r));
+    if (missing.length) {
+      ladderGaps.push(`${topic} > ${subtopic}: ขาดระดับ ${missing.join(", ")}`);
+    }
+  }
+}
+if (ladderGaps.length) {
+  const bucket = LADDER_MODE ? errors : warnings;
+  bucket.push(`บันไดยังไม่ครบ ${ladderGaps.length} subtopic:`);
+  ladderGaps.forEach((g) => bucket.push("  " + g));
 }
 
 console.log("── สรุปจำนวนข้อต่อหมวด ──");
