@@ -97,7 +97,7 @@ export default async function TopicsPage() {
                   )
                 )}
               </div>
-              <div className="mt-auto grid grid-cols-2 gap-2 pt-4">
+              <div className="mt-auto grid grid-cols-3 gap-2 pt-4">
                 <Link
                   href={`/lesson/${t.topic_id}`}
                   className="rounded-xl border border-slate-300 bg-white py-2 text-center text-sm font-semibold text-slate-700 transition hover:border-indigo-400 hover:text-indigo-700"
@@ -105,14 +105,24 @@ export default async function TopicsPage() {
                   📖 บทเรียน
                 </Link>
                 {hasQuestions ? (
-                  <Link
-                    href={`/quiz/${t.topic_id}`}
-                    className="rounded-xl bg-indigo-600 py-2 text-center text-sm font-semibold text-white transition hover:bg-indigo-700"
-                  >
-                    ✏️ ทำข้อสอบ
-                  </Link>
+                  <>
+                    <Link
+                      href={`/quiz/${t.topic_id}?mode=ladder`}
+                      title="เรียงจากง่ายไปยาก"
+                      className="rounded-xl border border-indigo-300 bg-indigo-50 py-2 text-center text-sm font-semibold text-indigo-700 transition hover:bg-indigo-100"
+                    >
+                      🪜 ไต่บันได
+                    </Link>
+                    <Link
+                      href={`/quiz/${t.topic_id}`}
+                      title="สุ่มลำดับข้อ"
+                      className="rounded-xl bg-indigo-600 py-2 text-center text-sm font-semibold text-white transition hover:bg-indigo-700"
+                    >
+                      🎲 สุ่มข้อ
+                    </Link>
+                  </>
                 ) : (
-                  <span className="cursor-not-allowed rounded-xl bg-slate-100 py-2 text-center text-sm font-semibold text-slate-400">
+                  <span className="col-span-2 cursor-not-allowed rounded-xl bg-slate-100 py-2 text-center text-sm font-semibold text-slate-400">
                     ✏️ ทำข้อสอบ
                   </span>
                 )}

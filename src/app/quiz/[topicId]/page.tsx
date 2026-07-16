@@ -17,12 +17,16 @@ function shuffle<T>(arr: T[]): T[] {
 
 export default async function QuizPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ topicId: string }>;
+  searchParams: Promise<{ mode?: string }>;
 }) {
   if (!hasSupabaseEnv) redirect("/");
 
   const { topicId } = await params;
+  const { mode } = await searchParams;
+  const ladder = mode === "ladder";
   const id = Number(topicId);
   if (!Number.isInteger(id) || id <= 0) notFound();
 
@@ -46,7 +50,17 @@ export default async function QuizPage({
     );
   }
 
+  // สุ่มก่อนเสมอ — โหมดบันไดค่อยเรียงตามความยากทับ (stable sort → สุ่มภายในระดับเดียวกัน)
   const shuffled = shuffle((questions ?? []) as QuizQuestion[]);
+  const ordered = ladder
+    ? [...shuffled].sort((a, b) => a.difficulty - b.difficulty)
+    : shuffled;
 
-  return <QuizRunner topic={topic} questions={shuffled} />;
+  return (
+    <QuizRunner
+      topic={topic}
+      questions={ordered}
+      mode={ladder ? "ladder" : "random"}
+    />
+  );
 }

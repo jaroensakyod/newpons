@@ -20,9 +20,11 @@ function shuffledIndices(n: number): number[] {
 export default function QuizRunner({
   topic,
   questions,
+  mode = "random",
 }: {
   topic: Topic;
   questions: QuizQuestion[];
+  mode?: "random" | "ladder";
 }) {
   const supabase = useMemo(() => {
     try {
@@ -83,7 +85,12 @@ export default function QuizRunner({
   }
 
   function restart() {
-    setOrder(shuffledIndices(questions.length));
+    // โหมดบันได: คงลำดับง่าย→ยากเดิม (เซิร์ฟเวอร์เรียงมาแล้ว) · โหมดสุ่ม: สับใหม่
+    setOrder(
+      mode === "ladder"
+        ? questions.map((_, i) => i)
+        : shuffledIndices(questions.length)
+    );
     setIdx(0);
     setSelected(null);
     setResult(null);
@@ -164,6 +171,9 @@ export default function QuizRunner({
           ← ออก
         </Link>
         <p className="truncate text-sm font-semibold text-slate-700">
+          {mode === "ladder" && (
+            <span title="โหมดไต่บันได — เรียงจากง่ายไปยาก">🪜 </span>
+          )}
           {topic.name}
         </p>
         <p className="shrink-0 text-sm text-slate-500">
