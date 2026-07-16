@@ -12,6 +12,7 @@ type MapStep = {
   headings: string[];
   subtopics: string[];
   drill: number;
+  note?: string;
 };
 
 // แบ่ง markdown เป็นช่วงตามหัวข้อ ## (คืน map: หัวข้อ → เนื้อหารวมหัวข้อ)
@@ -95,6 +96,8 @@ export default async function LearnPage({
     subtopic_id: number | null;
   })[];
 
+  // กันโจทย์ซ้ำเมื่อหลายช่วงใช้ subtopic เดียวกัน — จำ id ที่หยิบไปแล้ว
+  const usedIds = new Set<string>();
   const steps: LearnStep[] = mapSteps.map((step) => {
     const body = step.headings
       .map(
@@ -109,12 +112,18 @@ export default async function LearnPage({
         .filter((v): v is number => typeof v === "number")
     );
     const pool = allQuestions.filter(
-      (q) => q.subtopic_id !== null && wantedIds.has(q.subtopic_id)
+      (q) =>
+        q.subtopic_id !== null &&
+        wantedIds.has(q.subtopic_id) &&
+        !usedIds.has(q.id)
     );
+    const picked = pickSpread(pool, step.drill);
+    picked.forEach((q) => usedIds.add(q.id));
     return {
       title: step.title,
       markdown: body,
-      questions: pickSpread(pool, step.drill),
+      note: step.note,
+      questions: picked,
     };
   });
 

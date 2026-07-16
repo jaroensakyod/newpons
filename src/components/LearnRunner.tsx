@@ -11,6 +11,7 @@ const CHOICE_LABELS = ["ก", "ข", "ค", "ง"];
 export type LearnStep = {
   title: string;
   markdown: string;
+  note?: string;
   questions: QuizQuestion[];
 };
 
@@ -176,9 +177,9 @@ export default function LearnRunner({
         </>
       ) : q ? (
         <>
-          {!step.markdown && qIdx === 0 && !result && (
+          {step.note && qIdx === 0 && !result && (
             <p className="mt-3 rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-800">
-              หัวข้อนี้ยังไม่มีเนื้อหาสอนในบทเรียน — ฝึกจากโจทย์และเฉลยละเอียดไปก่อน
+              {step.note}
             </p>
           )}
           <section className="mt-3 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
