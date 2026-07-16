@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 240" font-family="system-ui, sans-serif">
+  <!-- พัฒนาการแบบจำลองอะตอม 5 ยุค -->
+  <style>
+    .name { font-size: 13px; font-weight: 700; fill: #1e293b; text-anchor: middle; }
+    .cap  { font-size: 10.5px; fill: #64748b; text-anchor: middle; }
+    .arrow { stroke: #94a3b8; stroke-width: 2; marker-end: url(#ah); }
+  </style>
+  <defs>
+    <marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <!-- 1 ดอลตัน: ทรงกลมตัน -->
+  <circle cx="76" cy="90" r="34" fill="#6366f1"/>
+  <text x="76" y="150" class="name">ดอลตัน</text>
+  <text x="76" y="166" class="cap">ทรงกลมตัน</text>
+  <text x="76" y="180" class="cap">แบ่งแยกไม่ได้</text>
+
+  <line x1="122" y1="90" x2="152" y2="90" class="arrow"/>
+
+  <!-- 2 ทอมสัน: ขนมปังลูกเกด -->
+  <circle cx="228" cy="90" r="34" fill="#fca5a5"/>
+  <circle cx="214" cy="76" r="5" fill="#1d4ed8"/>
+  <circle cx="242" cy="82" r="5" fill="#1d4ed8"/>
+  <circle cx="222" cy="102" r="5" fill="#1d4ed8"/>
+  <circle cx="240" cy="104" r="5" fill="#1d4ed8"/>
+  <text x="228" y="70" font-size="11" fill="#7f1d1d" text-anchor="middle">+</text>
+  <text x="228" y="150" class="name">ทอมสัน</text>
+  <text x="228" y="166" class="cap">เนื้อบวกทั่วก้อน</text>
+  <text x="228" y="180" class="cap">อิเล็กตรอนฝังกระจาย</text>
+
+  <line x1="274" y1="90" x2="304" y2="90" class="arrow"/>
+
+  <!-- 3 รัทเทอร์ฟอร์ด: นิวเคลียสเล็ก ที่ว่างมาก -->
+  <circle cx="380" cy="90" r="34" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="380" cy="90" r="6" fill="#dc2626"/>
+  <circle cx="360" cy="70" r="4" fill="#1d4ed8"/>
+  <circle cx="402" cy="108" r="4" fill="#1d4ed8"/>
+  <text x="380" y="150" class="name">รัทเทอร์ฟอร์ด</text>
+  <text x="380" y="166" class="cap">นิวเคลียสเล็กตรงกลาง</text>
+  <text x="380" y="180" class="cap">ส่วนใหญ่เป็นที่ว่าง</text>
+
+  <line x1="426" y1="90" x2="456" y2="90" class="arrow"/>
+
+  <!-- 4 โบร์: วงโคจรพลังงานคงตัว -->
+  <circle cx="532" cy="90" r="6" fill="#dc2626"/>
+  <circle cx="532" cy="90" r="18" fill="none" stroke="#64748b" stroke-width="1.5"/>
+  <circle cx="532" cy="90" r="32" fill="none" stroke="#64748b" stroke-width="1.5"/>
+  <circle cx="550" cy="90" r="4" fill="#1d4ed8"/>
+  <circle cx="510" cy="66" r="4" fill="#1d4ed8"/>
+  <text x="532" y="150" class="name">โบร์</text>
+  <text x="532" y="166" class="cap">วงโคจรเป็นชั้น</text>
+  <text x="532" y="180" class="cap">พลังงานคงตัว n = 1, 2, ...</text>
+
+  <line x1="578" y1="90" x2="608" y2="90" class="arrow"/>
+
+  <!-- 5 กลุ่มหมอก -->
+  <circle cx="684" cy="90" r="6" fill="#dc2626"/>
+  <g fill="#818cf8">
+    <circle cx="668" cy="76" r="2.5" opacity=".85"/><circle cx="700" cy="78" r="2.5" opacity=".8"/>
+    <circle cx="672" cy="104" r="2.5" opacity=".8"/><circle cx="698" cy="102" r="2.5" opacity=".85"/>
+    <circle cx="684" cy="64" r="2.5" opacity=".7"/><circle cx="684" cy="116" r="2.5" opacity=".7"/>
+    <circle cx="658" cy="90" r="2.5" opacity=".7"/><circle cx="710" cy="90" r="2.5" opacity=".7"/>
+    <circle cx="662" cy="62" r="2" opacity=".4"/><circle cx="706" cy="64" r="2" opacity=".4"/>
+    <circle cx="660" cy="116" r="2" opacity=".4"/><circle cx="708" cy="114" r="2" opacity=".4"/>
+    <circle cx="684" cy="46" r="2" opacity=".3"/><circle cx="684" cy="134" r="2" opacity=".3"/>
+    <circle cx="642" cy="90" r="2" opacity=".3"/><circle cx="726" cy="90" r="2" opacity=".3"/>
+  </g>
+  <text x="684" y="150" class="name">กลุ่มหมอก</text>
+  <text x="684" y="166" class="cap">บอกได้แค่โอกาสพบ</text>
+  <text x="684" y="180" class="cap">อิเล็กตรอน (ออร์บิทัล)</text>
+
+  <text x="380" y="222" class="cap" font-size="11.5">การทดลองใหม่หักล้างแบบจำลองเก่า → ได้แบบจำลองใหม่เสมอ</text>
+</svg>
