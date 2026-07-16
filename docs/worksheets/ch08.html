@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ชีทบทที่ 8 ของแข็งและของเหลว — ติวเคมี สอวน. ค่าย 1</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"/>
+<style>
+  body { font-family: system-ui, "Segoe UI", sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; color: #111827; line-height: 1.75; font-size: 15px; }
+  h1 { font-size: 1.35rem; border-bottom: 3px solid #4f46e5; padding-bottom: 6px; }
+  h2 { font-size: 1.12rem; margin-top: 2rem; color: #312e81; }
+  h3 { font-size: 1.02rem; }
+  h3.sub { margin-top: 1.8rem; color: #4f46e5; border-left: 4px solid #4f46e5; padding-left: 8px; }
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+  th, td { border: 1px solid #cbd5e1; padding: 5px 8px; text-align: left; vertical-align: top; }
+  th { background: #eef2ff; }
+  img { max-width: 100%; }
+  .ex { margin: 14px 0; break-inside: avoid; }
+  .qh { margin: 0 0 2px; } .stars { color: #d97706; font-size: .82rem; }
+  ol.choices { list-style: none; padding-left: 1.2em; margin: 4px 0; }
+  ol.choices li { margin: 2px 0; } .cl { font-weight: 700; margin-right: 4px; }
+  .stem > p { margin: 2px 0; }
+  .keybox { margin-top: 3rem; border: 2px dashed #94a3b8; border-radius: 10px; padding: 12px 16px; }
+  .keybox .k { display: inline-block; width: 4.2em; }
+  .katex-display { overflow-x: auto; }
+  .toolbar { position: sticky; top: 0; background: #fff; padding: 8px 0; text-align: right; }
+  @media print {
+    .toolbar { display: none; }
+    .keybox { break-before: page; }
+    body { font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+<div class="toolbar"><button onclick="window.print()">🖨️ พิมพ์ / บันทึกเป็น PDF</button></div>
+<h1>บทที่ 8 ของแข็งและของเหลว</h1>
+<p style="color:#64748b;font-size:.85rem">ชีทเรียน+แบบฝึกหัด · ติวเคมี สอวน. ค่าย 1 · แบบฝึกหัดเรียงตามหัวข้อจากง่ายไปยาก · เฉลยย่ออยู่หน้าสุดท้าย (ฉบับร่าง — รอเจ้าของรีวิว)</p>
+<h1>ของแข็งและของเหลว</h1>
+<blockquote>
+<p>หมวดนี้ออกสอบน้อยที่สุด (~1.5%) แต่เป็น &quot;ข้อแจกคะแนน&quot; สำหรับคนที่แม่นแนวคิด เพราะแทบไม่ต้องคำนวณ — ข้อสอบจริงวนอยู่ไม่กี่แนว: (1) <strong>ผลของอุณหภูมิต่อสมบัติของเหลว</strong> (ลดอุณหภูมิแล้วความหนืด/ความตึงผิว/ความดันไอเปลี่ยนอย่างไร) (2) <strong>โยงความดันไอ–แรงยึดเหนี่ยว–จุดเดือด</strong> ทั้งแบบให้เรียงลำดับและแบบอ่านกราฟความดันไอ–อุณหภูมิ (3) <strong>จุดเดือดกับความดันบรรยากาศ</strong> (ต้มน้ำบนดอย หม้ออัดความดัน) (4) <strong>แรงเชื่อมแน่น–แรงยึดติด</strong> จากรูปหลอดคะปิลลารีและผิวโค้งของเหลว และ (5) <strong>เลือกชุดจุดหลอมเหลว/จุดเดือดให้สอดคล้องกับสถานะที่ 25°C</strong> — ทุกแนวใช้เครื่องมือเดียวกันคือ &quot;แรงยึดเหนี่ยวระหว่างอนุภาค&quot; ใครจับหลักนี้ได้ หมวดนี้เก็บเต็ม</p>
+</blockquote>
+<h2>1. แบบจำลองอนุภาคของสามสถานะ: ศึกชักเย่อระหว่างพลังงานจลน์กับแรงยึดเหนี่ยว</h2>
+<p>สสารทุกชนิดประกอบด้วยอนุภาคที่<strong>เคลื่อนที่ตลอดเวลา</strong>และ<strong>มีแรงยึดเหนี่ยวดึงดูดกัน</strong> สถานะของสารคือผลแพ้ชนะของสองฝ่ายนี้:</p>
+<ul>
+<li>พลังงานจลน์เฉลี่ยของอนุภาคขึ้นกับ<strong>อุณหภูมิเท่านั้น</strong>: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover accent="true"><mi>E</mi><mo>ˉ</mo></mover><mi>k</mi></msub><mo>∝</mo><mi>T</mi></mrow><annotation encoding="application/x-tex">\bar{E}_k \propto T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9701em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8201em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1667em;"><span class="mord">ˉ</span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0315em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∝</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span></span></span></span> (หน่วยเคลวิน)</li>
+<li>แรงยึดเหนี่ยวขึ้นกับ<strong>ชนิดของสาร</strong> (พันธะ/แรงระหว่างโมเลกุล)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>สมบัติ</th>
+<th>ของแข็ง</th>
+<th>ของเหลว</th>
+<th>แก๊ส</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>การจัดเรียงอนุภาค</td>
+<td>ชิดกัน เป็นระเบียบ</td>
+<td>ชิดกัน ไม่เป็นระเบียบ</td>
+<td>ห่างกันมาก</td>
+</tr>
+<tr>
+<td>การเคลื่อนที่</td>
+<td>สั่นอยู่กับที่</td>
+<td>เลื่อนไถลผ่านกันได้</td>
+<td>อิสระทุกทิศทาง</td>
+</tr>
+<tr>
+<td>แรงยึดเหนี่ยวเทียบพลังงานจลน์</td>
+<td>ชนะขาด</td>
+<td>ก้ำกึ่ง</td>
+<td>แพ้ขาด</td>
+</tr>
+<tr>
+<td>รูปร่าง/ปริมาตร</td>
+<td>คงที่ทั้งคู่</td>
+<td>ปริมาตรคงที่ รูปร่างตามภาชนะ</td>
+<td>ไม่คงที่ทั้งคู่ (ฟุ้งเต็มภาชนะ)</td>
+</tr>
+<tr>
+<td>การบีบอัด</td>
+<td>แทบไม่ได้</td>
+<td>แทบไม่ได้</td>
+<td>ได้มาก</td>
+</tr>
+</tbody></table>
+<p>จุดที่ข้อสอบชอบหยอด: ที่<strong>อุณหภูมิเดียวกัน</strong> สารทุกชนิดมีพลังงานจลน์เฉลี่ยของอนุภาค<strong>เท่ากัน</strong> — น้ำแข็งที่ 0°C กับน้ำที่ 0°C ต่างกันที่ &quot;พลังงานศักย์&quot; (ระยะและการจัดเรียงอนุภาค) ไม่ใช่พลังงานจลน์</p>
+<h2>2. อาวุธหลักของหมวดนี้: ลำดับแรงยึดเหนี่ยวระหว่างอนุภาค</h2>
+<p>ทบทวนเร็วจากบทพันธะเคมี เพราะหมวดนี้ใช้ตัดสินแทบทุกข้อ:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>London</mtext><mo>&lt;</mo><mtext>dipole-dipole</mtext><mo>&lt;</mo><mtext>H-bond</mtext><mo>≪</mo><mtext>metallic</mtext><mo>≈</mo><mtext>ionic</mtext><mo>&lt;</mo><mtext>covalent network</mtext></mrow><annotation encoding="application/x-tex">\text{London} &lt; \text{dipole-dipole} &lt; \text{H-bond} \ll \text{metallic} \approx \text{ionic} &lt; \text{covalent network}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord text"><span class="mord">London</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">dipole-dipole</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord text"><span class="mord">H-bond</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≪</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord text"><span class="mord">metallic</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.707em;vertical-align:-0.0391em;"></span><span class="mord text"><span class="mord">ionic</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord text"><span class="mord">covalent network</span></span></span></span></span></span></p>
+<p>(สามกลุ่มขวาสุดเป็นแรงระดับ &quot;พันธะเคมี&quot; ทั้งหมด — โดยทั่วไป<strong>โครงผลึกร่างตาข่ายสูงสุด</strong> สอดคล้องกับตารางผลึก 4 ชนิดในหัวข้อ 9 ส่วนโลหะช่วงกว้างมาก ตั้งแต่ Hg ที่เหลวที่อุณหภูมิห้อง จนถึง W ที่หลอมที่ 3422°C)</p>
+<ul>
+<li><strong>แรงลอนดอน (แผ่กระจาย)</strong> — มีในทุกโมเลกุล แรงขึ้นเมื่อมวลโมเลกุลมากขึ้นและพื้นที่ผิวสัมผัสมากขึ้น (โซ่ตรง &gt; โซ่กิ่ง)</li>
+<li><strong>แรงดึงดูดระหว่างขั้ว</strong> — เพิ่มเข้ามาในโมเลกุลมีขั้ว</li>
+<li><strong>พันธะไฮโดรเจน</strong> — H เกาะกับ F, O, N (เช่น H₂O, NH₃, HF, แอลกอฮอล์)</li>
+</ul>
+<p>จากนั้นจำ &quot;กฎเหล็ก&quot; ประโยคเดียว: <strong>แรงยึดเหนี่ยวยิ่งมาก → หนีกันยิ่งยาก</strong></p>
+<table>
+<thead>
+<tr>
+<th>แรงยึดเหนี่ยวมากขึ้น</th>
+<th>ผลที่ตามมา</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>จุดเดือด / จุดหลอมเหลว</td>
+<td>สูงขึ้น</td>
+</tr>
+<tr>
+<td>ความดันไอ (ที่อุณหภูมิเดียวกัน)</td>
+<td><strong>ต่ำลง</strong></td>
+</tr>
+<tr>
+<td>อัตราการระเหย</td>
+<td>ช้าลง</td>
+</tr>
+<tr>
+<td>ความตึงผิว</td>
+<td>สูงขึ้น</td>
+</tr>
+<tr>
+<td>ความหนืด</td>
+<td>สูงขึ้น</td>
+</tr>
+<tr>
+<td>ความร้อนแฝงของการกลายเป็นไอ</td>
+<td>มากขึ้น</td>
+</tr>
+</tbody></table>
+<p>สังเกตว่า<strong>ความดันไอกับอัตราการระเหยสวนทางกับตัวอื่น</strong> — นี่คือกับดักอันดับหนึ่งของหมวดนี้</p>
+<h2>3. สมบัติของเหลว (1): ความตึงผิว แรงเชื่อมแน่น–แรงยึดติด และคะปิลลารี</h2>
+<p><strong>ความตึงผิว (surface tension)</strong> เกิดเพราะโมเลกุลที่ผิวหน้าถูกเพื่อนดึงเข้าหาเนื้อของเหลวด้านเดียว (โมเลกุลข้างในถูกดึงรอบทิศจนหักล้างกัน) ผิวของเหลวจึงพยายามหดตัวให้มีพื้นที่น้อยที่สุด — หยดน้ำจึงกลม จิงโจ้น้ำจึงยืนบนผิวน้ำได้ สารที่มีพันธะไฮโดรเจนอย่างน้ำจึงมีความตึงผิวสูงผิดปกติ ส่วน<strong>สารลดแรงตึงผิว</strong> (สบู่ ผงซักฟอก) ไปแทรกที่ผิวหน้า ทำให้ความตึงผิวลดลง น้ำจึงแผ่ซึมผ้าได้ดีขึ้น</p>
+<p>แยกแรงสองชนิดให้ขาด (ข้อสอบถามตรงๆ บ่อย):</p>
+<ul>
+<li><strong>แรงเชื่อมแน่น (cohesive force)</strong> — แรงระหว่างโมเลกุล<strong>ชนิดเดียวกัน</strong> (น้ำ–น้ำ)</li>
+<li><strong>แรงยึดติด (adhesive force)</strong> — แรงระหว่างโมเลกุล<strong>ต่างชนิด</strong> (น้ำ–แก้ว)</li>
+</ul>
+<p>ผลที่มองเห็นในหลอดแก้วคะปิลลารี:</p>
+<table>
+<thead>
+<tr>
+<th>กรณี</th>
+<th>ผิวโค้ง (meniscus)</th>
+<th>ระดับในหลอดเล็ก</th>
+<th>ตัวอย่าง</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>แรงยึดติด &gt; แรงเชื่อมแน่น</td>
+<td><strong>เว้า</strong> (โค้งลง)</td>
+<td>สูงขึ้นกว่าภายนอก</td>
+<td>น้ำในหลอดแก้ว</td>
+</tr>
+<tr>
+<td>แรงเชื่อมแน่น &gt; แรงยึดติด</td>
+<td><strong>นูน</strong> (โค้งขึ้น)</td>
+<td>ต่ำลงกว่าภายนอก</td>
+<td>ปรอทในหลอดแก้ว</td>
+</tr>
+</tbody></table>
+<p>ยิ่งหลอดเล็ก ระดับยิ่งขึ้นสูง (หรือยิ่งกดต่ำ) — นี่คือเหตุที่น้ำซึมขึ้นตามลำต้นพืชและกระดาษซับหมึกได้</p>
+<p><strong>ตัวอย่างที่ 1</strong> จุ่มหลอดคะปิลลารีแก้วลงในของเหลว X พบว่าระดับของเหลวในหลอดสูงกว่าภายนอกและผิวหน้าเว้า ส่วนของเหลว Y ระดับในหลอดต่ำกว่าภายนอกและผิวหน้านูน ข้อสรุปใดถูก</p>
+<p><strong>วิธีคิด</strong></p>
+<ol>
+<li>X ขึ้นสูง + ผิวเว้า → แรงยึดติด (X–แก้ว) มากกว่าแรงเชื่อมแน่น (X–X) → X ทำตัวแบบน้ำ</li>
+<li>Y ถูกกดต่ำ + ผิวนูน → แรงเชื่อมแน่น (Y–Y) มากกว่าแรงยึดติด (Y–แก้ว) → Y ทำตัวแบบปรอท</li>
+<li>ระวัง: ข้อมูลนี้เทียบแรงสองชนิด<strong>ภายในของเหลวเดียวกัน</strong>เท่านั้น สรุปไม่ได้ว่า &quot;แรงเชื่อมแน่นของ Y มากกว่าของ X&quot; เพราะโจทย์ไม่ได้ให้เทียบข้ามสาร — ตัวเลือกลวงประจำของแนวนี้</li>
+</ol>
+<h2>4. สมบัติของเหลว (2): ความหนืด และผลของอุณหภูมิต่อทุกสมบัติ</h2>
+<p><strong>ความหนืด (viscosity)</strong> คือความต้านทานการไหล ขึ้นกับ 2 ปัจจัยหลัก:</p>
+<ol>
+<li><strong>แรงยึดเหนี่ยวระหว่างโมเลกุล</strong> — กลีเซอรอลมีหมู่ −OH สามหมู่ สร้างพันธะไฮโดรเจนได้เยอะ จึงหนืดกว่าน้ำและเอทานอลมาก</li>
+<li><strong>ขนาด/รูปร่างโมเลกุล</strong> — โมเลกุลโซ่ยาวเกี่ยวพันกัน (น้ำมันเครื่อง น้ำเชื่อมเข้มข้น) ไหลยาก</li>
+</ol>
+<p><strong>ผลของอุณหภูมิ</strong> — หัวใจของแนวข้อสอบ &quot;ลดอุณหภูมิแล้วสมบัติใดเปลี่ยนอย่างไร&quot;: อุณหภูมิต่ำลง → พลังงานจลน์ลด → โมเลกุลหนีแรงยึดเหนี่ยวได้ยากขึ้น ทุกอย่างจึง &quot;เหนียวขึ้น หนีบ้านยากขึ้น&quot;</p>
+<p><strong>ตัวอย่างที่ 2</strong> เมื่อทำให้น้ำเย็นลงจาก 80°C เป็น 20°C สมบัติต่อไปนี้เปลี่ยนอย่างไร: ความหนืด ความตึงผิว อัตราการระเหย ความดันไอ</p>
+<p><strong>วิธีคิด</strong></p>
+<ol>
+<li>อุณหภูมิลด → พลังงานจลน์เฉลี่ยของโมเลกุลลด แรงยึดเหนี่ยว &quot;เอาอยู่&quot; มากขึ้น</li>
+<li>ความหนืด <strong>เพิ่มขึ้น</strong> (ไหลยากขึ้น) และความตึงผิว <strong>เพิ่มขึ้น</strong> (ผิวหดตัวแน่นขึ้น)</li>
+<li>โมเลกุลที่มีพลังงานพอจะหลุดจากผิวมีน้อยลง → อัตราการระเหย <strong>ลดลง</strong> → ความดันไอ <strong>ลดลง</strong></li>
+<li>สรุปภาพจำ: เย็นลง = หนืดขึ้น ตึงขึ้น แต่ระเหยช้าลงและความดันไอต่ำลง (สองกลุ่มสวนทางกันเสมอ)</li>
+</ol>
+<h2>5. การระเหยและความดันไอ: สมดุลไดนามิกในภาชนะปิด</h2>
+<p><strong>การระเหย (evaporation)</strong> เกิดที่<strong>ผิวหน้า</strong>ของเหลว ที่<strong>ทุกอุณหภูมิ</strong> (ไม่ต้องรอถึงจุดเดือด): โมเลกุลที่ผิวซึ่งบังเอิญมีพลังงานจลน์สูงกว่าค่าเฉลี่ยมากพอจะสะบัดหลุดออกไปเป็นไอ โมเลกุลพลังงานสูงหนีไป ค่าเฉลี่ยของที่เหลือจึงลด → <strong>ของเหลวที่เหลือเย็นลง</strong> (เหตุที่เหงื่อระเหยแล้วตัวเย็น แอลกอฮอล์เช็ดแขนแล้วเย็นวาบ)</p>
+<p>อัตราการระเหยเร็วขึ้นเมื่อ: อุณหภูมิสูงขึ้น · พื้นที่ผิวมากขึ้น · อากาศถ่ายเทดี · ความชื้นในอากาศต่ำ · แรงยึดเหนี่ยวของสารอ่อน</p>
+<p><strong>ความดันไอ (vapor pressure)</strong> — ใส่ของเหลวในภาชนะปิด ตอนแรกโมเลกุลระเหยออกอย่างเดียว พอไอสะสมมากขึ้นก็เริ่มควบแน่นกลับ จนถึงจุดที่</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mtext>rate</mtext><mtext>evaporation</mtext></msub><mo>=</mo><msub><mtext>rate</mtext><mtext>condensation</mtext></msub></mrow><annotation encoding="application/x-tex">\text{rate}_{\text{evaporation}} = \text{rate}_{\text{condensation}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9012em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord text"><span class="mord">rate</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3175em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">evaporation</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7651em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord text"><span class="mord">rate</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">condensation</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p>เรียกว่า<strong>สมดุลไดนามิก</strong> ความดันของไอ ณ จุดนี้คือ <strong>ความดันไอสมดุล</strong> ซึ่งขึ้นกับ <strong>ชนิดของสาร + อุณหภูมิ เท่านั้น</strong> — ไม่ขึ้นกับปริมาณของเหลว พื้นที่ผิว หรือขนาดภาชนะ (ตราบใดที่ยังมีของเหลวเหลืออยู่) นี่คือประเด็นที่ข้อสอบชอบวัดที่สุดของหัวข้อนี้</p>
+<p><strong>ตัวอย่างที่ 3</strong> บรรจุของเหลวระเหยง่ายชนิดหนึ่ง X (มวลต่อโมล 60 g/mol) ลงในภาชนะปิดสุญญากาศขนาด 10 L ที่ 27°C เมื่อถึงสมดุลยังมีของเหลว X เหลืออยู่ที่ก้นภาชนะ และวัดความดันไอได้ 0.246 atm จงหามวลของไอ X ในภาชนะ (R = 0.082 L·atm/(mol·K))</p>
+<p><strong>วิธีทำ</strong></p>
+<ol>
+<li>ไอของ X ที่สมดุลประพฤติตัวเป็นแก๊ส ใช้ <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>V</mi><mo>=</mo><mi>n</mi><mi>R</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">PV = nRT</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mord mathnormal" style="margin-right:0.2222em;">V</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span></span></span></span> โดย <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>=</mo><mn>27</mn><mo>+</mo><mn>273</mn><mo>=</mo><mn>300</mn><mtext> K</mtext></mrow><annotation encoding="application/x-tex">T = 27 + 273 = 300\ \text{K}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">27</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">273</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">300</span><span class="mspace"> </span><span class="mord text"><span class="mord">K</span></span></span></span></span></li>
+<li>หาโมลของไอ X:</li>
+</ol>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>n</mi><mo>=</mo><mfrac><mrow><mi>P</mi><mi>V</mi></mrow><mrow><mi>R</mi><mi>T</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>0.246</mn><mtext> </mtext><menclose notation="updiagonalstrike"><mtext>atm</mtext></menclose><mo>×</mo><mn>10</mn><mtext> </mtext><menclose notation="updiagonalstrike"><mtext>L</mtext></menclose></mrow><mrow><mn>0.082</mn><mtext> </mtext><mfrac><mrow><menclose notation="updiagonalstrike"><mtext>L</mtext></menclose><mo>⋅</mo><menclose notation="updiagonalstrike"><mtext>atm</mtext></menclose></mrow><mrow><mtext>mol</mtext><mo>⋅</mo><menclose notation="updiagonalstrike"><mtext>K</mtext></menclose></mrow></mfrac><mo>×</mo><mn>300</mn><mtext> </mtext><menclose notation="updiagonalstrike"><mtext>K</mtext></menclose></mrow></mfrac><mo>=</mo><mfrac><mn>2.46</mn><mn>24.6</mn></mfrac><mo>=</mo><mn>0.100</mn><mtext> mol</mtext></mrow><annotation encoding="application/x-tex">n = \frac{PV}{RT} = \frac{0.246\ \cancel{\text{atm}} \times 10\ \cancel{\text{L}}}{0.082\ \frac{\cancel{\text{L}}\cdot\cancel{\text{atm}}}{\text{mol}\cdot\cancel{\text{K}}} \times 300\ \cancel{\text{K}}} = \frac{2.46}{24.6} = 0.100\ \text{mol}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0463em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0077em;">R</span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mord mathnormal" style="margin-right:0.2222em;">V</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.4677em;vertical-align:-1.1073em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.2377em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0.082</span><span class="mspace"> </span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8723em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">mol</span></span><span class="mbin mtight">⋅</span><span class="mord cancel-lap mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6833em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord mtight cancel-pad"><span class="mord text mtight"><span class="mord mtight">K</span></span></span></span><span class="svg-align" style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span class="mtight" style="height:0.6833em;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="0.6833em"><line x1="0" y1="100%" x2="100%" y2="0" stroke-width="0.046em"/></svg></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cancel-lap mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6833em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord mtight cancel-pad"><span class="mord text mtight"><span class="mord mtight">L</span></span></span></span><span class="svg-align" style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span class="mtight" style="height:0.6833em;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="0.6833em"><line x1="0" y1="100%" x2="100%" y2="0" stroke-width="0.046em"/></svg></span></span></span></span></span></span><span class="mbin mtight">⋅</span><span class="mord cancel-lap mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6151em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord mtight cancel-pad"><span class="mord text mtight"><span class="mord mtight">atm</span></span></span></span><span class="svg-align" style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span class="mtight" style="height:0.6151em;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="0.6151em"><line x1="0" y1="100%" x2="100%" y2="0" stroke-width="0.046em"/></svg></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">300</span><span class="mspace"> </span><span class="mord cancel-lap"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6833em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord cancel-pad"><span class="mord text"><span class="mord">K</span></span></span></span><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span style="height:0.6833em;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="0.6833em"><line x1="0" y1="100%" x2="100%" y2="0" stroke-width="0.046em"/></svg></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0.246</span><span class="mspace"> </span><span class="mord cancel-lap"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6151em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord cancel-pad"><span class="mord text"><span class="mord">atm</span></span></span></span><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span style="height:0.6151em;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="0.6151em"><line x1="0" y1="100%" x2="100%" y2="0" stroke-width="0.046em"/></svg></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">10</span><span class="mspace"> </span><span class="mord cancel-lap"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6833em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord cancel-pad"><span class="mord text"><span class="mord">L</span></span></span></span><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span style="height:0.6833em;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="0.6833em"><line x1="0" y1="100%" x2="100%" y2="0" stroke-width="0.046em"/></svg></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.1073em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0074em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">24.6</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2.46</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">0.100</span><span class="mspace"> </span><span class="mord text"><span class="mord">mol</span></span></span></span></span></span></p>
+<ol start="3">
+<li>แปลงเป็นมวล (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mn>60</mn></mrow><annotation encoding="application/x-tex">M = 60</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">60</span></span></span></span>):</li>
+</ol>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>m</mi><mo>=</mo><mn>0.100</mn><mtext> </mtext><menclose notation="updiagonalstrike"><mtext>mol</mtext></menclose><mo>×</mo><mn>60</mn><mtext> </mtext><mfrac><mtext>g</mtext><menclose notation="updiagonalstrike"><mtext>mol</mtext></menclose></mfrac><mo>=</mo><mn>6.0</mn><mtext> g</mtext></mrow><annotation encoding="application/x-tex">m = 0.100\ \cancel{\text{mol}} \times 60\ \frac{\text{g}}{\cancel{\text{mol}}} = 6.0\ \text{g}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord">0.100</span><span class="mspace"> </span><span class="mord cancel-lap"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6944em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord cancel-pad"><span class="mord text"><span class="mord">mol</span></span></span></span><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span style="height:0.6944em;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="0.6944em"><line x1="0" y1="100%" x2="100%" y2="0" stroke-width="0.046em"/></svg></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.7936em;vertical-align:-0.686em;"></span><span class="mord">60</span><span class="mspace"> </span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1076em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord cancel-lap"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6944em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord cancel-pad"><span class="mord text"><span class="mord">mol</span></span></span></span><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span style="height:0.6944em;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="0.6944em"><line x1="0" y1="100%" x2="100%" y2="0" stroke-width="0.046em"/></svg></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">g</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">6.0</span><span class="mspace"> </span><span class="mord text"><span class="mord">g</span></span></span></span></span></span></p>
+<ol start="4">
+<li><strong>ตอบ ไอของ X มีมวล 6.0 g</strong> — และถ้าขยายภาชนะเป็น 20 L ที่อุณหภูมิเดิม ความดันไอสมดุลจะ<strong>เท่าเดิม</strong> (ของเหลว X ระเหยเพิ่มจนความดันกลับมาที่ 0.246 atm) แค่มวลไอเพิ่มเป็นสองเท่า (12 g)</li>
+</ol>
+<p><strong>ตัวอย่างที่ 4</strong> เรียงลำดับความดันไอที่ 25°C ของ ไดเอทิลอีเทอร์ (C₂H₅OC₂H₅), เอทานอล (C₂H₅OH) และน้ำ จากมากไปน้อย</p>
+<p><strong>วิธีคิด</strong></p>
+<ol>
+<li>ระบุแรงยึดเหนี่ยวเด่นของแต่ละสาร: อีเทอร์ไม่มี H เกาะ O โดยตรง → ไม่มีพันธะไฮโดรเจนระหว่างโมเลกุลกันเอง (มีแค่ dipole-dipole + ลอนดอน) · เอทานอลมี −OH หนึ่งหมู่ → มีพันธะไฮโดรเจน · น้ำสร้างพันธะไฮโดรเจนได้เฉลี่ยมากที่สุดต่อโมเลกุล (มีทั้ง H สองตัวและ lone pair สองคู่)</li>
+<li>แรงยึดเหนี่ยว: น้ำ &gt; เอทานอล &gt; อีเทอร์</li>
+<li>ความดันไอ<strong>สวนทาง</strong>กับแรงยึดเหนี่ยว → <strong>อีเทอร์ &gt; เอทานอล &gt; น้ำ</strong></li>
+<li>เช็กความสมเหตุสมผลด้วยจุดเดือด: อีเทอร์ (~35°C) &lt; เอทานอล (78°C) &lt; น้ำ (100°C) — สารที่เดือดง่ายคือสารที่ความดันไอสูง สอดคล้องกัน</li>
+</ol>
+<h2>6. จุดเดือด: วันที่ความดันไอสู้ความดันภายนอกได้</h2>
+<p><strong>จุดเดือด (boiling point)</strong> คืออุณหภูมิที่</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>P</mi><mtext>vapor</mtext></msub><mo>=</mo><msub><mi>P</mi><mtext>external</mtext></msub></mrow><annotation encoding="application/x-tex">P_{\text{vapor}} = P_{\text{external}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">vapor</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">external</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p>เมื่อความดันไอเท่ากับความดันภายนอก ฟองไอเกิดได้<strong>ทั่วทั้งเนื้อของเหลว</strong> (ต่างจากการระเหยที่เกิดเฉพาะผิว) ถ้าความดันภายนอกคือ 1 atm (760 mmHg) เรียกว่า <strong>จุดเดือดปกติ (normal boiling point)</strong></p>
+<p>ผลที่ตามมาแบบที่ข้อสอบรัก:</p>
+<ul>
+<li><strong>บนภูเขาสูง</strong> ความดันบรรยากาศต่ำ → น้ำเดือดต่ำกว่า 100°C → ต้มไข่สุกช้า (อุณหภูมิน้ำเดือดต่ำ ไม่ใช่เพราะ &quot;เดือดยาก&quot;)</li>
+<li><strong>หม้ออัดความดัน</strong> ความดันในหม้อสูงกว่า 1 atm → น้ำเดือดที่สูงกว่า 100°C → อาหารสุกเร็ว</li>
+<li><strong>การกลั่นลดความดัน</strong> ใช้แยกสารที่สลายตัวก่อนถึงจุดเดือดปกติ เพราะลดความดันแล้วสารเดือดที่อุณหภูมิต่ำลง</li>
+</ul>
+<p>ระหว่างเดือด (หรือหลอมเหลว) <strong>อุณหภูมิคงที่</strong> แม้ให้ความร้อนต่อเนื่อง — พลังงานถูกใช้สลายแรงยึดเหนี่ยว (เพิ่มพลังงานศักย์) ไม่ได้เพิ่มพลังงานจลน์</p>
+<p><strong>ตัวอย่างที่ 5</strong> ตารางแสดงความดันไอของของเหลว A, B, C ที่อุณหภูมิต่างๆ</p>
+<table>
+<thead>
+<tr>
+<th>อุณหภูมิ (°C)</th>
+<th>A (mmHg)</th>
+<th>B (mmHg)</th>
+<th>C (mmHg)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>20</td>
+<td>440</td>
+<td>44</td>
+<td>18</td>
+</tr>
+<tr>
+<td>35</td>
+<td>760</td>
+<td>100</td>
+<td>42</td>
+</tr>
+<tr>
+<td>78</td>
+<td>สูงมาก</td>
+<td>760</td>
+<td>330</td>
+</tr>
+<tr>
+<td>100</td>
+<td>สูงมาก</td>
+<td>1710</td>
+<td>760</td>
+</tr>
+</tbody></table>
+<p>(ก) จุดเดือดปกติของแต่ละสารคือเท่าใด (ข) เรียงลำดับแรงยึดเหนี่ยวระหว่างโมเลกุล (ค) ถ้านำ C ไปต้มบนยอดเขาที่ความดันบรรยากาศ 330 mmHg จะเดือดที่กี่องศา</p>
+<p><strong>วิธีคิด</strong></p>
+<ol>
+<li>(ก) จุดเดือดปกติ = อุณหภูมิที่ความดันไอ = 760 mmHg → อ่านตาราง: A เดือดที่ <strong>35°C</strong>, B ที่ <strong>78°C</strong>, C ที่ <strong>100°C</strong></li>
+<li>(ข) ที่อุณหภูมิเดียวกัน (เช่นแถว 20°C) ความดันไอ A &gt; B &gt; C แปลว่าโมเลกุล A หนีง่ายสุด → แรงยึดเหนี่ยว <strong>C &gt; B &gt; A</strong> (สลับด้านกับความดันไอเสมอ)</li>
+<li>(ค) C เดือดเมื่อความดันไอของมันเท่ากับความดันภายนอก 330 mmHg → อ่านตาราง: ความดันไอของ C เท่ากับ 330 mmHg ที่ <strong>78°C</strong> — ต่ำกว่าจุดเดือดปกติถึง 22 องศา นี่คือภาพจริงของ &quot;น้ำเดือดเร็วแต่ไม่ร้อนพอ&quot; บนภูเขาสูง</li>
+</ol>
+<h2>7. การหลอมเหลว การระเหิด และพลังงานของการเปลี่ยนสถานะ</h2>
+<ul>
+<li><strong>การหลอมเหลว (melting)</strong>: ของแข็ง → ของเหลว ที่จุดหลอมเหลว อนุภาคสั่นแรงจนโครงร่างที่เป็นระเบียบพังลง สารบริสุทธิ์หลอมเหลวที่อุณหภูมิ<strong>คงที่และชัดเจน</strong> (ใช้ตรวจความบริสุทธิ์ได้ — สารไม่บริสุทธิ์จุดหลอมเหลวต่ำลงและช่วงกว้าง)</li>
+<li><strong>การระเหิด (sublimation)</strong>: ของแข็ง → แก๊ส โดยตรงไม่ผ่านของเหลว เกิดกับของแข็งโมเลกุลที่แรงยึดเหนี่ยวอ่อนและความดันไอสูง: <strong>ไอโอดีน (I₂), น้ำแข็งแห้ง (CO₂), แนฟทาลีน (ลูกเหม็น), การบูร</strong> — ทิศย้อนกลับ (แก๊ส → ของแข็ง) เรียกการระเหิดกลับ (deposition)</li>
+</ul>
+<p>พลังงานของการเปลี่ยนสถานะ (ที่อุณหภูมิคงที่):</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>q</mi><mo>=</mo><mi>n</mi><mtext> </mtext><mi mathvariant="normal">Δ</mi><msub><mi>H</mi><mtext>fus</mtext></msub><mspace width="2em"/><mi>q</mi><mo>=</mo><mi>n</mi><mtext> </mtext><mi mathvariant="normal">Δ</mi><msub><mi>H</mi><mtext>vap</mtext></msub></mrow><annotation encoding="application/x-tex">q = n\,\Delta H_{\text{fus}} \qquad q = n\,\Delta H_{\text{vap}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">fus</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:2em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">vap</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p>โดย <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>H</mi><mtext>vap</mtext></msub><mo>&gt;</mo><mi mathvariant="normal">Δ</mi><msub><mi>H</mi><mtext>fus</mtext></msub></mrow><annotation encoding="application/x-tex">\Delta H_{\text{vap}} &gt; \Delta H_{\text{fus}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">vap</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">fus</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> เสมอ เพราะการกลายเป็นไอต้องฉีกโมเลกุลออกจากกัน<strong>หมด</strong> แต่การหลอมเหลวแค่ทำให้โครงร่างคลายตัว (อนุภาคยังชิดกันอยู่)</p>
+<p><strong>ตัวอย่างที่ 6</strong> ต้องใช้ความร้อนกี่กิโลจูลเพื่อหลอมน้ำแข็ง 54 g ที่ 0°C ให้เป็นน้ำที่ 0°C และถ้าต้มน้ำ 27 g ที่ 100°C ให้กลายเป็นไอหมดต้องใช้อีกกี่กิโลจูล (H = 1, O = 16, กำหนด <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>H</mi><mtext>fus</mtext></msub><mo>=</mo><mn>6.0</mn></mrow><annotation encoding="application/x-tex">\Delta H_{\text{fus}} = 6.0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">fus</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6.0</span></span></span></span> kJ/mol, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>H</mi><mtext>vap</mtext></msub><mo>=</mo><mn>40</mn></mrow><annotation encoding="application/x-tex">\Delta H_{\text{vap}} = 40</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">vap</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">40</span></span></span></span> kJ/mol)</p>
+<p><strong>วิธีทำ</strong></p>
+<ol>
+<li>โมลของน้ำแข็ง:</li>
+</ol>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>n</mi><mo>=</mo><mfrac><mrow><mn>54</mn><mtext> </mtext><menclose notation="updiagonalstrike"><mtext>g</mtext></menclose></mrow><mrow><mn>18</mn><mtext> </mtext><menclose notation="updiagonalstrike"><mtext>g</mtext></menclose><mi mathvariant="normal">/</mi><mtext>mol</mtext></mrow></mfrac><mo>=</mo><mn>3</mn><mtext> mol</mtext></mrow><annotation encoding="application/x-tex">n = \frac{54\ \cancel{\text{g}}}{18\ \cancel{\text{g}}/\text{mol}} = 3\ \text{mol}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.2574em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">18</span><span class="mspace"> </span><span class="mord cancel-lap"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4306em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord cancel-pad"><span class="mord text"><span class="mord">g</span></span></span></span><span class="svg-align" style="top:-2.8056em;"><span class="pstrut" style="height:3em;"></span><span style="height:0.625em;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="0.625em"><line x1="0" y1="100%" x2="100%" y2="0" stroke-width="0.046em"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1944em;"><span></span></span></span></span></span><span class="mord">/</span><span class="mord text"><span class="mord">mol</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">54</span><span class="mspace"> </span><span class="mord cancel-lap"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.4306em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord cancel-pad"><span class="mord text"><span class="mord">g</span></span></span></span><span class="svg-align" style="top:-2.8056em;"><span class="pstrut" style="height:3em;"></span><span style="height:0.625em;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="0.625em"><line x1="0" y1="100%" x2="100%" y2="0" stroke-width="0.046em"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1944em;"><span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">3</span><span class="mspace"> </span><span class="mord text"><span class="mord">mol</span></span></span></span></span></span></p>
+<ol start="2">
+<li>ความร้อนหลอมเหลว:</li>
+</ol>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>q</mi><mo>=</mo><mn>3</mn><mtext> </mtext><menclose notation="updiagonalstrike"><mtext>mol</mtext></menclose><mo>×</mo><mn>6.0</mn><mtext> </mtext><mfrac><mtext>kJ</mtext><menclose notation="updiagonalstrike"><mtext>mol</mtext></menclose></mfrac><mo>=</mo><mn>18</mn><mtext> kJ</mtext></mrow><annotation encoding="application/x-tex">q = 3\ \cancel{\text{mol}} \times 6.0\ \frac{\text{kJ}}{\cancel{\text{mol}}} = 18\ \text{kJ}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord">3</span><span class="mspace"> </span><span class="mord cancel-lap"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6944em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord cancel-pad"><span class="mord text"><span class="mord">mol</span></span></span></span><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span style="height:0.6944em;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="0.6944em"><line x1="0" y1="100%" x2="100%" y2="0" stroke-width="0.046em"/></svg></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:2.0574em;vertical-align:-0.686em;"></span><span class="mord">6.0</span><span class="mspace"> </span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord cancel-lap"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6944em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord cancel-pad"><span class="mord text"><span class="mord">mol</span></span></span></span><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span style="height:0.6944em;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="0.6944em"><line x1="0" y1="100%" x2="100%" y2="0" stroke-width="0.046em"/></svg></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">kJ</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">18</span><span class="mspace"> </span><span class="mord text"><span class="mord">kJ</span></span></span></span></span></span></p>
+<ol start="3">
+<li>ส่วนการต้มน้ำ 27 g: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mstyle scriptlevel="0" displaystyle="true"><mfrac><mn>27</mn><mn>18</mn></mfrac></mstyle><mo>=</mo><mn>1.5</mn><mtext> mol</mtext></mrow><annotation encoding="application/x-tex">n = \dfrac{27}{18} = 1.5\ \text{mol}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0074em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">18</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">27</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">1.5</span><span class="mspace"> </span><span class="mord text"><span class="mord">mol</span></span></span></span></span></li>
+</ol>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>q</mi><mo>=</mo><mn>1.5</mn><mtext> </mtext><menclose notation="updiagonalstrike"><mtext>mol</mtext></menclose><mo>×</mo><mn>40</mn><mtext> </mtext><mfrac><mtext>kJ</mtext><menclose notation="updiagonalstrike"><mtext>mol</mtext></menclose></mfrac><mo>=</mo><mn>60</mn><mtext> kJ</mtext></mrow><annotation encoding="application/x-tex">q = 1.5\ \cancel{\text{mol}} \times 40\ \frac{\text{kJ}}{\cancel{\text{mol}}} = 60\ \text{kJ}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord">1.5</span><span class="mspace"> </span><span class="mord cancel-lap"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6944em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord cancel-pad"><span class="mord text"><span class="mord">mol</span></span></span></span><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span style="height:0.6944em;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="0.6944em"><line x1="0" y1="100%" x2="100%" y2="0" stroke-width="0.046em"/></svg></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:2.0574em;vertical-align:-0.686em;"></span><span class="mord">40</span><span class="mspace"> </span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord cancel-lap"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6944em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord cancel-pad"><span class="mord text"><span class="mord">mol</span></span></span></span><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span style="height:0.6944em;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="0.6944em"><line x1="0" y1="100%" x2="100%" y2="0" stroke-width="0.046em"/></svg></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">kJ</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">60</span><span class="mspace"> </span><span class="mord text"><span class="mord">kJ</span></span></span></span></span></span></p>
+<ol start="4">
+<li><strong>ตอบ หลอมใช้ 18 kJ, ต้มเป็นไอใช้ 60 kJ</strong> — สังเกตว่าน้ำครึ่งเดียวแต่ใช้พลังงานมากกว่าสามเท่า เพราะ <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>H</mi><mtext>vap</mtext></msub></mrow><annotation encoding="application/x-tex">\Delta H_{\text{vap}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">vap</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> โตกว่า <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>H</mi><mtext>fus</mtext></msub></mrow><annotation encoding="application/x-tex">\Delta H_{\text{fus}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">fus</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> มาก</li>
+</ol>
+<h2>8. ทายสถานะของสารที่ 25°C จากจุดหลอมเหลว/จุดเดือด</h2>
+<p>กติกาง่ายๆ ที่ข้อสอบชอบแปลงเป็นตาราง:</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>&lt;</mo><msub><mi>T</mi><mtext>mp</mtext></msub></mrow><annotation encoding="application/x-tex">T &lt; T_{\text{mp}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">mp</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> → <strong>ของแข็ง</strong></li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mtext>mp</mtext></msub><mo>&lt;</mo><mi>T</mi><mo>&lt;</mo><msub><mi>T</mi><mtext>bp</mtext></msub></mrow><annotation encoding="application/x-tex">T_{\text{mp}} &lt; T &lt; T_{\text{bp}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">mp</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">bp</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> → <strong>ของเหลว</strong></li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>&gt;</mo><msub><mi>T</mi><mtext>bp</mtext></msub></mrow><annotation encoding="application/x-tex">T &gt; T_{\text{bp}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">bp</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> → <strong>แก๊ส</strong></li>
+</ul>
+<p><strong>ตัวอย่างที่ 7</strong> กำหนดข้อมูลสาร A, B, C จงระบุสถานะของแต่ละสารที่ 25°C</p>
+<table>
+<thead>
+<tr>
+<th>สาร</th>
+<th>จุดหลอมเหลว (°C)</th>
+<th>จุดเดือด (°C)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A</td>
+<td>−101</td>
+<td>−34</td>
+</tr>
+<tr>
+<td>B</td>
+<td>−7</td>
+<td>59</td>
+</tr>
+<tr>
+<td>C</td>
+<td>114</td>
+<td>184</td>
+</tr>
+</tbody></table>
+<p><strong>วิธีคิด</strong></p>
+<ol>
+<li>A: 25°C สูงกว่าจุดเดือด (−34°C) → เลยจุดเดือดไปแล้ว → <strong>แก๊ส</strong></li>
+<li>B: 25°C อยู่ระหว่าง −7°C กับ 59°C → <strong>ของเหลว</strong></li>
+<li>C: 25°C ต่ำกว่าจุดหลอมเหลว (114°C) → ยังไม่ทันหลอม → <strong>ของแข็ง</strong></li>
+<li>(ค่าในตารางนี้ล้อกับ Cl₂, Br₂, I₂ — หมู่ VIIA ที่แรงลอนดอนโตตามมวลโมเลกุล ทำให้สถานะที่อุณหภูมิห้องไล่จากแก๊ส → ของเหลว → ของแข็งพอดี ข้อสอบชอบผูกสองบทนี้เข้าด้วยกัน)</li>
+</ol>
+<h2>9. ของแข็ง: ผลึก 4 ชนิด กับสมบัติที่ข้อสอบชอบถาม</h2>
+<p>ของแข็งแบ่งเป็น <strong>ผลึก (crystalline)</strong> — อนุภาคเรียงเป็นระเบียบซ้ำๆ มีจุดหลอมเหลวชัดเจน — กับ<strong>อสัณฐาน (amorphous)</strong> เช่น แก้ว ยาง พลาสติก ที่ไม่มีจุดหลอมเหลวชัด แต่ค่อยๆ อ่อนตัวเมื่อร้อน</p>
+<p>ของแข็งผลึกแบ่งตามอนุภาคและแรงยึดเหนี่ยวได้ 4 ชนิด — ตารางนี้คือหัวใจของหัวข้อ:</p>
+<table>
+<thead>
+<tr>
+<th>ชนิดผลึก</th>
+<th>อนุภาค</th>
+<th>แรงยึดเหนี่ยว</th>
+<th>จุดหลอมเหลว</th>
+<th>การนำไฟฟ้า</th>
+<th>ตัวอย่าง</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>ไอออนิก</strong></td>
+<td>ไอออนบวก/ลบ</td>
+<td>พันธะไอออนิก</td>
+<td>สูง</td>
+<td>ของแข็ง<strong>ไม่นำ</strong> · หลอมเหลว/ละลายน้ำ<strong>นำ</strong></td>
+<td>NaCl, CaF₂, MgO</td>
+</tr>
+<tr>
+<td><strong>โมเลกุล</strong></td>
+<td>โมเลกุล</td>
+<td>ลอนดอน / ขั้ว / H-bond</td>
+<td>ต่ำ (มักต่ำกว่า ~300°C)</td>
+<td>ไม่นำทุกสถานะ</td>
+<td>น้ำแข็ง, I₂, CO₂แข็ง, แนฟทาลีน</td>
+</tr>
+<tr>
+<td><strong>โครงผลึกร่างตาข่าย</strong></td>
+<td>อะตอม</td>
+<td>พันธะโคเวเลนต์ต่อเนื่องทั้งก้อน</td>
+<td>สูงมากที่สุด</td>
+<td>ไม่นำ (ยกเว้นแกรไฟต์)</td>
+<td>เพชร, SiO₂ (ควอตซ์), SiC</td>
+</tr>
+<tr>
+<td><strong>โลหะ</strong></td>
+<td>ไอออนบวก + ทะเลอิเล็กตรอน</td>
+<td>พันธะโลหะ</td>
+<td>ส่วนใหญ่สูง (ยกเว้น Hg, Na)</td>
+<td><strong>นำได้ทั้งของแข็งและหลอมเหลว</strong></td>
+<td>Fe, Cu, Al</td>
+</tr>
+</tbody></table>
+<p>ข้อยกเว้นที่ต้องท่อง: <strong>แกรไฟต์</strong>เป็นโครงผลึกร่างตาข่ายแต่<strong>นำไฟฟ้าได้</strong> (อิเล็กตรอนอิสระวิ่งในระนาบชั้น) และ<strong>นิ่ม/ลื่น</strong>เพราะชั้นยึดกันด้วยแรงลอนดอนจึงไถลหลุดง่าย — ขณะที่เพชรซึ่งเป็นคาร์บอนเหมือนกันกลับแข็งที่สุดและไม่นำไฟฟ้า</p>
+<p><strong>ตัวอย่างที่ 8</strong> ของแข็ง W, X, Y, Z มีสมบัติดังนี้ จงระบุชนิดผลึก</p>
+<table>
+<thead>
+<tr>
+<th>สาร</th>
+<th>จุดหลอมเหลว (°C)</th>
+<th>นำไฟฟ้า (ของแข็ง)</th>
+<th>นำไฟฟ้า (หลอมเหลว)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>W</td>
+<td>801</td>
+<td>ไม่นำ</td>
+<td>นำ</td>
+</tr>
+<tr>
+<td>X</td>
+<td>80</td>
+<td>ไม่นำ</td>
+<td>ไม่นำ</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>1610</td>
+<td>ไม่นำ</td>
+<td>ไม่นำ</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>1085</td>
+<td>นำ</td>
+<td>นำ</td>
+</tr>
+</tbody></table>
+<p><strong>วิธีคิด</strong></p>
+<ol>
+<li>เริ่มจากการนำไฟฟ้าก่อนเสมอ (แยกชนิดได้เด็ดขาดกว่าจุดหลอมเหลว): Z นำไฟฟ้าตั้งแต่เป็นของแข็ง → <strong>โลหะ</strong> (เทียบเคียง Cu)</li>
+<li>W ของแข็งไม่นำแต่หลอมเหลวแล้วนำ → ไอออนถูกปลดปล่อยให้เคลื่อนที่ได้ → <strong>ผลึกไอออนิก</strong> (เทียบเคียง NaCl)</li>
+<li>X จุดหลอมเหลวต่ำ ไม่นำทุกสถานะ → <strong>ผลึกโมเลกุล</strong> (เทียบเคียงแนฟทาลีน)</li>
+<li>Y จุดหลอมเหลวสูงมากแต่ไม่นำแม้หลอมเหลว → <strong>โครงผลึกร่างตาข่าย</strong> (เทียบเคียง SiO₂)</li>
+</ol>
+<h2>10. แผนภาพวัฏภาคเบื้องต้น: น้ำ vs CO₂</h2>
+<p><strong>แผนภาพวัฏภาค (phase diagram)</strong> คือแผนที่บอกว่าที่ความดัน (แกนตั้ง) และอุณหภูมิ (แกนนอน) ใด สารอยู่สถานะไหน:</p>
+<ul>
+<li><strong>พื้นที่ 3 บริเวณ</strong> = ของแข็ง (ซ้ายบน) ของเหลว (กลางบน) แก๊ส (ขวาล่าง)</li>
+<li><strong>เส้นแบ่ง</strong> = สองสถานะอยู่ร่วมกันอย่างสมดุล (เส้นหลอมเหลว เส้นกลายเป็นไอ เส้นระเหิด)</li>
+<li><strong>จุดสามสถานะ (triple point)</strong> = จุดเดียวที่ทั้งสามสถานะสมดุลพร้อมกัน — ของน้ำอยู่ที่ 0.01°C, 0.006 atm · ของ CO₂ อยู่ที่ −57°C, <strong>5.1 atm</strong></li>
+</ul>
+<p>สองประเด็นที่ข้อสอบหยิบไปถาม:</p>
+<p><strong>(1) เส้นหลอมเหลวของน้ำชันเอียงซ้าย (ความชันเป็นลบ)</strong> — ผิดจากสารแทบทุกชนิด เพราะน้ำแข็งมีโครงพันธะไฮโดรเจนโปร่งจึง<strong>หนาแน่นน้อยกว่าน้ำ</strong> (น้ำแข็งลอยน้ำ) เมื่อเพิ่มความดัน ระบบหนีไปทางเฟสที่กินที่น้อยกว่า คือของเหลว → <strong>เพิ่มความดันแล้วจุดหลอมเหลวของน้ำแข็งลดลง</strong> (น้ำแข็งละลายง่ายขึ้นใต้แรงกด) ส่วนสารทั่วไปรวมทั้ง CO₂ เส้นนี้เอียงขวา: อัดแล้วยิ่งแข็งง่าย</p>
+<p><strong>(2) จุดสามสถานะของ CO₂ อยู่เหนือ 1 atm</strong> — ที่ความดันบรรยากาศ เส้นแนวนอน 1 atm ลอดใต้จุดสามสถานะ ตัดเฉพาะเส้นระเหิด ดังนั้น <strong>CO₂ ไม่มีสถานะของเหลวเลยที่ 1 atm</strong>: น้ำแข็งแห้งจึงระเหิดตรงจากของแข็งเป็นแก๊สที่ −78°C ไม่เปียกเลอะ (จะได้ CO₂ เหลวต้องอัดความดันเกิน 5.1 atm เช่นในถังดับเพลิง)</p>
+<p><strong>ตัวอย่างที่ 9</strong> เหตุใดน้ำแข็งแห้งวางในห้องจึง &quot;หายไป&quot; โดยไม่ทิ้งรอยเปียก แต่น้ำแข็งธรรมดาละลายเป็นน้ำ และถ้าออกแรงกดน้ำแข็งธรรมดาที่ 0°C ค้างไว้จะเกิดอะไรขึ้น</p>
+<p><strong>วิธีคิด</strong></p>
+<ol>
+<li>ที่ 1 atm ตำแหน่งของ CO₂ ในแผนภาพวัฏภาคอยู่<strong>ต่ำกว่าจุดสามสถานะ</strong> (5.1 atm) → เมื่ออุ่นขึ้น เส้นทางของมันข้ามเส้นระเหิดโดยตรง → ของแข็งกลายเป็นแก๊สทันที ไม่ผ่านของเหลว</li>
+<li>น้ำมีจุดสามสถานะที่ 0.006 atm ซึ่งต่ำกว่า 1 atm มาก → ที่ความดันห้อง เส้นทางการอุ่นข้ามเส้นหลอมเหลวก่อน → ได้ของเหลว</li>
+<li>กดน้ำแข็งที่ 0°C = เพิ่มความดันขึ้นในแนวดิ่งของแผนภาพ → เพราะเส้นหลอมเหลวของน้ำเอียงซ้าย จุดที่ยืนอยู่จะทะลุเข้าเขต<strong>ของเหลว</strong> → น้ำแข็งใต้แรงกดหลอมเหลวทั้งที่อุณหภูมิไม่เปลี่ยน (พอคลายแรงก็แข็งกลับ — เรียกว่า regelation เห็นได้ในการทดลองคลาสสิก: ลวดถ่วงน้ำหนักค่อยๆ กดผ่านทะลุก้อนน้ำแข็ง โดยน้ำแข็งเหนือลวดแข็งตัวกลับ ก้อนจึงไม่ขาดออกจากกัน)</li>
+</ol>
+<h2>📌 สรุปสูตรและประเด็นต้องจำ</h2>
+<table>
+<thead>
+<tr>
+<th>เรื่อง</th>
+<th>สูตร / ประเด็น</th>
+<th>หมายเหตุ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>พลังงานจลน์เฉลี่ย</td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover accent="true"><mi>E</mi><mo>ˉ</mo></mover><mi>k</mi></msub><mo>∝</mo><mi>T</mi></mrow><annotation encoding="application/x-tex">\bar{E}_k \propto T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9701em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8201em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1667em;"><span class="mord">ˉ</span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0315em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∝</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span></span></span></span> (เคลวิน)</td>
+<td>อุณหภูมิเดียวกัน → เท่ากันทุกสาร</td>
+</tr>
+<tr>
+<td>กฎเหล็กแรงยึดเหนี่ยว</td>
+<td>แรงมาก → bp, mp, ความตึงผิว, ความหนืด <strong>สูง</strong> แต่ความดันไอ, อัตราระเหย <strong>ต่ำ</strong></td>
+<td>ความดันไอสวนทางเสมอ</td>
+</tr>
+<tr>
+<td>ลดอุณหภูมิ</td>
+<td>ความหนืด↑ ความตึงผิว↑ · อัตราระเหย↓ ความดันไอ↓</td>
+<td>แนวข้อสอบประจำ</td>
+</tr>
+<tr>
+<td>ผิวเว้า–ขึ้นสูงในหลอด</td>
+<td>แรงยึดติด &gt; แรงเชื่อมแน่น (น้ำ–แก้ว)</td>
+<td>ผิวนูน–กดต่ำ = ปรอท</td>
+</tr>
+<tr>
+<td>ความดันไอสมดุล</td>
+<td>ขึ้นกับชนิดสาร + อุณหภูมิ <strong>เท่านั้น</strong></td>
+<td>ไม่ขึ้นกับปริมาณ/ขนาดภาชนะ</td>
+</tr>
+<tr>
+<td>เงื่อนไขการเดือด</td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mtext>vapor</mtext></msub><mo>=</mo><msub><mi>P</mi><mtext>external</mtext></msub></mrow><annotation encoding="application/x-tex">P_{\text{vapor}} = P_{\text{external}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">vapor</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">external</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></td>
+<td>760 mmHg = จุดเดือดปกติ</td>
+</tr>
+<tr>
+<td>ความดันภายนอกลด</td>
+<td>จุดเดือดลด (บนดอย) · เพิ่ม → จุดเดือดเพิ่ม (หม้ออัดความดัน)</td>
+<td>อ่านกราฟ: ลากเส้นนอนที่ความดันนั้นตัดโค้ง</td>
+</tr>
+<tr>
+<td>พลังงานเปลี่ยนสถานะ</td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mi>n</mi><mtext> </mtext><mi mathvariant="normal">Δ</mi><msub><mi>H</mi><mtext>fus</mtext></msub></mrow><annotation encoding="application/x-tex">q = n\,\Delta H_{\text{fus}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">fus</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mi>n</mi><mtext> </mtext><mi mathvariant="normal">Δ</mi><msub><mi>H</mi><mtext>vap</mtext></msub></mrow><annotation encoding="application/x-tex">q = n\,\Delta H_{\text{vap}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">vap</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> · <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>H</mi><mtext>vap</mtext></msub><mo>&gt;</mo><mi mathvariant="normal">Δ</mi><msub><mi>H</mi><mtext>fus</mtext></msub></mrow><annotation encoding="application/x-tex">\Delta H_{\text{vap}} &gt; \Delta H_{\text{fus}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">vap</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">fus</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></td>
+<td>ระหว่างเปลี่ยนสถานะ อุณหภูมิคงที่</td>
+</tr>
+<tr>
+<td>สถานะที่ 25°C</td>
+<td>ต่ำกว่า mp = แข็ง · ระหว่าง mp–bp = เหลว · เกิน bp = แก๊ส</td>
+<td>เทียบทีละสารในตาราง</td>
+</tr>
+<tr>
+<td>ผลึก 4 ชนิด</td>
+<td>ไอออนิก (หลอมเหลวจึงนำ) · โมเลกุล (mp ต่ำ ไม่นำ) · ร่างตาข่าย (mp สูงสุด ไม่นำ ยกเว้นแกรไฟต์) · โลหะ (นำทุกสถานะ)</td>
+<td>ดูการนำไฟฟ้าก่อนเสมอ</td>
+</tr>
+<tr>
+<td>สารระเหิดคลาสสิก</td>
+<td>I₂, CO₂ แข็ง, แนฟทาลีน, การบูร</td>
+<td>ผลึกโมเลกุลแรงอ่อน</td>
+</tr>
+<tr>
+<td>แผนภาพวัฏภาค</td>
+<td>น้ำ: เส้นหลอมเหลวชันลบ (กดแล้วละลาย) · CO₂: triple point 5.1 atm → ระเหิดที่ 1 atm</td>
+<td>จุดสามสถานะ = 3 เฟสสมดุลพร้อมกัน</td>
+</tr>
+</tbody></table>
+<h2>⚠️ จุดที่เด็กพลาดบ่อย</h2>
+<ol>
+<li><strong>สลับทิศความดันไอ</strong> — จำว่า &quot;แรงมาก ทุกอย่างสูง&quot; แล้วเผลอตอบว่าความดันไอสูงด้วย ที่ถูกคือแรงยึดเหนี่ยวมาก → ความดันไอ<strong>ต่ำ</strong> (โมเลกุลหนียาก) ความดันไอกับจุดเดือดสวนทางกันเสมอ</li>
+<li><strong>คิดว่าความดันไอขึ้นกับปริมาณของเหลวหรือขนาดภาชนะ</strong> — ไม่ขึ้น! ตราบใดที่ยังมีของเหลวเหลือที่สมดุล ความดันไอขึ้นกับชนิดสารและอุณหภูมิเท่านั้น (ภาชนะใหญ่ขึ้น = ไอ<strong>มวลมากขึ้น</strong> แต่<strong>ความดันเท่าเดิม</strong>)</li>
+<li><strong>สับสนการระเหยกับการเดือด</strong> — การระเหยเกิดที่ผิวหน้า ทุกอุณหภูมิ ส่วนการเดือดเกิดทั้งเนื้อของเหลว เฉพาะเมื่อ <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mtext>vapor</mtext></msub><mo>=</mo><msub><mi>P</mi><mtext>external</mtext></msub></mrow><annotation encoding="application/x-tex">P_{\text{vapor}} = P_{\text{external}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">vapor</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">external</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> · และ &quot;น้ำเดือดบนดอยเร็วขึ้น&quot; ไม่ได้แปลว่าอาหารสุกเร็วขึ้น เพราะน้ำเดือดที่อุณหภูมิ<strong>ต่ำกว่า</strong> 100°C</li>
+<li><strong>เทียบแรงเชื่อมแน่นข้ามสารจากรูปคะปิลลารี</strong> — รูปหลอดบอกได้แค่ว่าในของเหลวนั้น แรงยึดติดหรือแรงเชื่อมแน่นใครชนะ สรุปข้ามสารไม่ได้ถ้าโจทย์ไม่ให้ข้อมูลเพิ่ม</li>
+<li><strong>ลืมว่าอุณหภูมิคงที่ระหว่างเปลี่ยนสถานะ</strong> — กราฟอุณหภูมิ–เวลาช่วงหลอมเหลว/เดือดต้องแบนราบ พลังงานที่ใส่ไปเพิ่มพลังงานศักย์ (สลายแรงยึดเหนี่ยว) ไม่ใช่พลังงานจลน์</li>
+<li><strong>เหมาว่าผลึกร่างตาข่ายไม่นำไฟฟ้าทุกตัว</strong> — แกรไฟต์คือข้อยกเว้นที่ข้อสอบชอบเอามาหลอก (นำไฟฟ้าได้ + นิ่มลื่น) และอย่าสลับกับผลึกไอออนิกซึ่ง &quot;ของแข็งไม่นำ แต่หลอมเหลวแล้วนำ&quot;</li>
+<li><strong>จำทิศความชันเส้นหลอมเหลวของน้ำผิด</strong> — น้ำคือตัวประหลาด: เพิ่มความดันแล้วจุดหลอมเหลว<strong>ลด</strong> (เพราะน้ำแข็งหนาแน่นน้อยกว่าน้ำ) สารทั่วไปรวมทั้ง CO₂ เพิ่มความดันแล้วจุดหลอมเหลวเพิ่ม</li>
+<li><strong>ลืมแปลงหน่วยอุณหภูมิเป็นเคลวิน</strong> เมื่อใช้ <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>V</mi><mo>=</mo><mi>n</mi><mi>R</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">PV = nRT</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mord mathnormal" style="margin-right:0.2222em;">V</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span></span></span></span> กับไอที่สมดุล — 27°C ต้องเป็น 300 K ก่อนคูณกับ R = 0.082 เสมอ</li>
+</ol>
+
+<h2>✏️ แบบฝึกหัดท้ายบท (19 ข้อ — เรียงตามหัวข้อ ง่าย→ยาก)</h2>
+<h3 class="sub">ความดันไอและจุดเดือด</h3><div class="ex">
+        <p class="qh"><strong>ข้อ 1.</strong> <span class="stars">★☆☆☆☆</span></p>
+        <div class="stem"><p>นำเอทานอลใส่ภาชนะปิดสองใบที่มีขนาดเท่ากัน ใบแรกใส่ 50 mL ใบที่สองใส่ 150 mL ตั้งทิ้งไว้ที่อุณหภูมิ 25°C เท่ากันจนระบบเข้าสู่สมดุล ข้อใดกล่าวถึงความดันไอของเอทานอลในภาชนะทั้งสองได้ถูกต้อง</p>
+</div>
+        <ol class="choices"><li><span class="cl">ก.</span> <p>ใบที่สองมีความดันไอมากกว่า เพราะมีของเหลวให้ระเหยมากกว่า</p>
+</li><li><span class="cl">ข.</span> <p>ทั้งสองใบมีความดันไอเท่ากัน เพราะความดันไอที่สมดุลขึ้นกับชนิดของสารและอุณหภูมิเท่านั้น</p>
+</li><li><span class="cl">ค.</span> <p>ใบแรกมีความดันไอมากกว่า เพราะมีที่ว่างเหนือของเหลวมากกว่า</p>
+</li><li><span class="cl">ง.</span> <p>เปรียบเทียบไม่ได้ จนกว่าจะทราบพื้นที่ผิวหน้าของของเหลวแต่ละใบ</p>
+</li></ol>
+      </div>
+<div class="ex">
+        <p class="qh"><strong>ข้อ 2.</strong> <span class="stars">★★☆☆☆</span></p>
+        <div class="stem"><p>ที่อุณหภูมิ 25°C ของเหลว P, Q และ R มีความดันไอเท่ากับ 500, 200 และ 60 mmHg ตามลำดับ ข้อใดเรียงลำดับจุดเดือดปกติของของเหลวทั้งสามจากสูงไปต่ำได้ถูกต้อง</p>
+</div>
+        <ol class="choices"><li><span class="cl">ก.</span> <p>P &gt; Q &gt; R</p>
+</li><li><span class="cl">ข.</span> <p>Q &gt; P &gt; R</p>
+</li><li><span class="cl">ค.</span> <p>P &gt; R &gt; Q</p>
+</li><li><span class="cl">ง.</span> <p>R &gt; Q &gt; P</p>
+</li></ol>
+      </div>
+<div class="ex">
+        <p class="qh"><strong>ข้อ 3.</strong> <span class="stars">★★★☆☆</span></p>
+        <div class="stem"><p>ที่ 25°C มีของเหลว 3 ชนิด ได้แก่ A = ไดเอทิลอีเทอร์ (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">C</mi><msub><mi mathvariant="normal">H</mi><mn>3</mn></msub><mi mathvariant="normal">C</mi><msub><mi mathvariant="normal">H</mi><mn>2</mn></msub><mi mathvariant="normal">O</mi><mi mathvariant="normal">C</mi><msub><mi mathvariant="normal">H</mi><mn>2</mn></msub><mi mathvariant="normal">C</mi><msub><mi mathvariant="normal">H</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">\mathrm{CH_3CH_2OCH_2CH_3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathrm">C</span><span class="mord"><span class="mord mathrm">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathrm">C</span><span class="mord"><span class="mord mathrm">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathrm">OC</span><span class="mord"><span class="mord mathrm">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathrm">C</span><span class="mord"><span class="mord mathrm">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span>), B = เอทานอล (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">C</mi><msub><mi mathvariant="normal">H</mi><mn>3</mn></msub><mi mathvariant="normal">C</mi><msub><mi mathvariant="normal">H</mi><mn>2</mn></msub><mi mathvariant="normal">O</mi><mi mathvariant="normal">H</mi></mrow><annotation encoding="application/x-tex">\mathrm{CH_3CH_2OH}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathrm">C</span><span class="mord"><span class="mord mathrm">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathrm">C</span><span class="mord"><span class="mord mathrm">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathrm">OH</span></span></span></span></span>) และ C = น้ำ (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">H</mi><mn>2</mn></msub><mi mathvariant="normal">O</mi></mrow><annotation encoding="application/x-tex">\mathrm{H_2O}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathrm">O</span></span></span></span></span>) ข้อใดเรียงลำดับความดันไอที่ 25°C จากมากไปน้อยได้ถูกต้อง</p>
+</div>
+        <ol class="choices"><li><span class="cl">ก.</span> <p>A &gt; B &gt; C</p>
+</li><li><span class="cl">ข.</span> <p>C &gt; B &gt; A</p>
+</li><li><span class="cl">ค.</span> <p>B &gt; A &gt; C</p>
+</li><li><span class="cl">ง.</span> <p>A &gt; C &gt; B</p>
+</li></ol>
+      </div>
+<div class="ex">
+        <p class="qh"><strong>ข้อ 4.</strong> <span class="stars">★★★☆☆</span></p>
+        <div class="stem"><p>บนยอดดอยแห่งหนึ่งวัดความดันบรรยากาศได้ 600 mmHg กำหนดให้จุดเดือดปกติของน้ำคือ 100°C (ที่ 760 mmHg) ข้อสรุปใดเกี่ยวกับการต้มน้ำบนยอดดอยนี้ถูกต้องที่สุด</p>
+</div>
+        <ol class="choices"><li><span class="cl">ก.</span> <p>น้ำเดือดที่ 100°C เท่าเดิม เพราะจุดเดือดเป็นสมบัติเฉพาะตัวของสารที่ไม่ขึ้นกับความดัน</p>
+</li><li><span class="cl">ข.</span> <p>น้ำเดือดที่อุณหภูมิสูงกว่า 100°C เพราะอากาศเบาบางทำให้ความร้อนระบายออกได้เร็ว</p>
+</li><li><span class="cl">ค.</span> <p>น้ำเดือดที่อุณหภูมิต่ำกว่า 100°C เพราะความดันไอของน้ำเพิ่มขึ้นจนเท่ากับความดันบรรยากาศได้ที่อุณหภูมิต่ำลง</p>
+</li><li><span class="cl">ง.</span> <p>น้ำเดือดยากขึ้นแต่อาหารสุกเร็วขึ้น เพราะน้ำที่เดือดมีอุณหภูมิสูงกว่าปกติ</p>
+</li></ol>
+      </div>
+<div class="ex">
+        <p class="qh"><strong>ข้อ 5.</strong> <span class="stars">★★★☆☆</span></p>
+        <div class="stem"><p>ตารางแสดงความดันไอของของเหลว X ที่อุณหภูมิต่าง ๆ ดังนี้ ที่ 20°C = 45 mmHg, 40°C = 150 mmHg, 60°C = 390 mmHg, 70°C = 600 mmHg และ 80°C = 900 mmHg ถ้านำของเหลว X ไปต้มบนภูเขาซึ่งความดันบรรยากาศเท่ากับ 600 mmHg ข้อสรุปใดถูกต้อง</p>
+</div>
+        <ol class="choices"><li><span class="cl">ก.</span> <p>X เดือดที่ 60°C และจุดเดือดปกติของ X อยู่ระหว่าง 60–70°C</p>
+</li><li><span class="cl">ข.</span> <p>X เดือดที่ 70°C และจุดเดือดปกติของ X อยู่ระหว่าง 70–80°C</p>
+</li><li><span class="cl">ค.</span> <p>X เดือดที่ 70°C และจุดเดือดปกติของ X คือ 70°C เพราะจุดเดือดไม่ขึ้นกับความดัน</p>
+</li><li><span class="cl">ง.</span> <p>X เดือดที่ 80°C เพราะความดันไอต้องสูงกว่าความดันบรรยากาศจึงจะเดือดได้</p>
+</li></ol>
+      </div>
+<div class="ex">
+        <p class="qh"><strong>ข้อ 6.</strong> <span class="stars">★★★★☆</span></p>
+        <div class="stem"><p>ตารางแสดงความดันไอ (mmHg) ของของเหลว A และ B ที่อุณหภูมิต่าง ๆ</p>
+<ul>
+<li>ที่ 40°C: A = 180, B = 55</li>
+<li>ที่ 60°C: A = 450, B = 150</li>
+<li>ที่ 80°C: A = 1000, B = 360
+พิจารณาข้อความต่อไปนี้
+(ก) จุดเดือดปกติของ A อยู่ระหว่าง 60°C กับ 80°C
+(ข) ที่ 60°C ถ้าลดความดันเหนือของเหลวลงเหลือ 450 mmHg ของเหลว A จะเดือด แต่ B จะยังไม่เดือด
+(ค) แรงยึดเหนี่ยวระหว่างโมเลกุลของ B อ่อนกว่าของ A
+(ง) จุดเดือดปกติของ B สูงกว่า 80°C
+ข้อใดถูกต้อง</li>
+</ul>
+</div>
+        <ol class="choices"><li><span class="cl">ก.</span> <p>(ก) (ข) และ (ง)</p>
+</li><li><span class="cl">ข.</span> <p>(ก) (ค) และ (ง)</p>
+</li><li><span class="cl">ค.</span> <p>(ก) และ (ข) เท่านั้น</p>
+</li><li><span class="cl">ง.</span> <p>(ข) (ค) และ (ง)</p>
+</li></ol>
+      </div>
+<div class="ex">
+        <p class="qh"><strong>ข้อ 7.</strong> <span class="stars">★★★★★</span></p>
+        <div class="stem"><p>ของเหลว A, B และ C มีกราฟความดันไอ–อุณหภูมิเป็นเส้นโค้งที่ไม่ตัดกัน โดยความดันไอถึง 760 mmHg ที่อุณหภูมิ 35°C, 78°C และ 100°C ตามลำดับ พิจารณาข้อความต่อไปนี้
+(ก) ที่ 25°C ความดันไอของ A &gt; B &gt; C
+(ข) แรงยึดเหนี่ยวระหว่างโมเลกุลของ C แข็งแรงที่สุดในสามชนิดนี้
+(ค) ถ้าลดความดันเหนือของเหลวเหลือ 400 mmHg ของเหลวทั้งสามจะเดือดที่อุณหภูมิสูงกว่าจุดเดือดปกติของตัวเอง
+(ง) ที่ 78°C ความดันไอของ B เท่ากับ 760 mmHg ส่วนความดันไอของ C ยังน้อยกว่า 760 mmHg
+ข้อใดถูกต้อง</p>
+</div>
+        <ol class="choices"><li><span class="cl">ก.</span> <p>(ก) (ข) และ (ค)</p>
+</li><li><span class="cl">ข.</span> <p>(ก) และ (ง) เท่านั้น</p>
+</li><li><span class="cl">ค.</span> <p>(ก) (ข) และ (ง)</p>
+</li><li><span class="cl">ง.</span> <p>(ข) (ค) และ (ง)</p>
+</li></ol>
+      </div>
+<h3 class="sub">แรงยึดเหนี่ยวระหว่างโมเลกุลกับสมบัติของเหลว</h3><div class="ex">
+        <p class="qh"><strong>ข้อ 8.</strong> <span class="stars">★☆☆☆☆</span></p>
+        <div class="stem"><p>แมลงจิงโจ้น้ำสามารถยืนและวิ่งบนผิวน้ำได้โดยไม่จมลงไป และเข็มเย็บผ้าเหล็กเล็ก ๆ ที่วางเบา ๆ ตามแนวนอนก็ลอยอยู่บนผิวน้ำได้ทั้งที่เหล็กหนาแน่นกว่าน้ำ ปรากฏการณ์ทั้งสองนี้เป็นผลของสมบัติใดของน้ำ</p>
+</div>
+        <ol class="choices"><li><span class="cl">ก.</span> <p>ความหนืดของน้ำที่ต้านการเคลื่อนที่ของวัตถุ</p>
+</li><li><span class="cl">ข.</span> <p>ความดันไอของน้ำที่ดันวัตถุขึ้นจากด้านล่าง</p>
+</li><li><span class="cl">ค.</span> <p>ความตึงผิวของน้ำ ซึ่งเกิดจากแรงยึดเหนี่ยวระหว่างโมเลกุลน้ำที่ผิวหน้า</p>
+</li><li><span class="cl">ง.</span> <p>แรงลอยตัวของน้ำตามหลักของอาร์คิมิดีส</p>
+</li></ol>
+      </div>
+<div class="ex">
+        <p class="qh"><strong>ข้อ 9.</strong> <span class="stars">★★☆☆☆</span></p>
+        <div class="stem"><p>เมื่อลดอุณหภูมิของกลีเซอรอลจาก 60°C เหลือ 20°C สมบัติในข้อใดของกลีเซอรอลที่มีค่า &quot;เพิ่มขึ้น&quot; ทั้งสองรายการ</p>
+</div>
+        <ol class="choices"><li><span class="cl">ก.</span> <p>ความหนืด และ ความตึงผิว</p>
+</li><li><span class="cl">ข.</span> <p>ความหนืด และ ความดันไอ</p>
+</li><li><span class="cl">ค.</span> <p>ความตึงผิว และ อัตราการระเหย</p>
+</li><li><span class="cl">ง.</span> <p>ความดันไอ และ อัตราการระเหย</p>
+</li></ol>
+      </div>
+<div class="ex">
+        <p class="qh"><strong>ข้อ 10.</strong> <span class="stars">★★★☆☆</span></p>
+        <div class="stem"><p>พิจารณาข้อความต่อไปนี้
+(ก) น้ำในหลอดคะปิลลารีแก้วมีผิวหน้าโค้งเว้า เพราะแรงยึดติดระหว่างโมเลกุลน้ำกับผิวแก้วมากกว่าแรงเชื่อมแน่นระหว่างโมเลกุลน้ำด้วยกัน
+(ข) ปรอทในหลอดคะปิลลารีแก้วมีผิวหน้าโค้งนูน และระดับปรอทในหลอดต่ำกว่าระดับปรอทภายนอกหลอด
+(ค) หยดน้ำบนใบบัวมีลักษณะเกือบเป็นทรงกลม เพราะแรงยึดติดระหว่างน้ำกับผิวใบบัวมากกว่าแรงเชื่อมแน่นระหว่างโมเลกุลน้ำ
+ข้อใดถูกต้อง</p>
+</div>
+        <ol class="choices"><li><span class="cl">ก.</span> <p>(ก) เท่านั้น</p>
+</li><li><span class="cl">ข.</span> <p>(ก) และ (ข)</p>
+</li><li><span class="cl">ค.</span> <p>(ข) และ (ค)</p>
+</li><li><span class="cl">ง.</span> <p>(ก) (ข) และ (ค)</p>
+</li></ol>
+      </div>
+<div class="ex">
+        <p class="qh"><strong>ข้อ 11.</strong> <span class="stars">★★★☆☆</span></p>
+        <div class="stem"><p>ของแข็ง 4 ชนิดมีสมบัติดังนี้
+A: จุดหลอมเหลวสูงมาก แข็งมาก ไม่นำไฟฟ้าทั้งขณะเป็นของแข็งและขณะหลอมเหลว
+B: จุดหลอมเหลวสูง เปราะ ไม่นำไฟฟ้าขณะเป็นของแข็ง แต่นำไฟฟ้าเมื่อหลอมเหลวหรือละลายน้ำ
+C: จุดหลอมเหลวต่ำ เนื้ออ่อน ไม่นำไฟฟ้าทั้งของแข็งและของเหลว
+D: นำไฟฟ้าได้ดีทั้งขณะเป็นของแข็งและของเหลว ตีแผ่เป็นแผ่นได้
+ข้อใดระบุชนิดผลึกของ A, B, C, D ได้ถูกต้อง</p>
+</div>
+        <ol class="choices"><li><span class="cl">ก.</span> <p>A = ไอออนิก, B = โครงผลึกร่างตาข่าย, C = โมเลกุล, D = โลหะ</p>
+</li><li><span class="cl">ข.</span> <p>A = โครงผลึกร่างตาข่าย, B = โมเลกุล, C = ไอออนิก, D = โลหะ</p>
+</li><li><span class="cl">ค.</span> <p>A = โครงผลึกร่างตาข่าย, B = ไอออนิก, C = โมเลกุล, D = โลหะ</p>
+</li><li><span class="cl">ง.</span> <p>A = โลหะ, B = ไอออนิก, C = โมเลกุล, D = โครงผลึกร่างตาข่าย</p>
+</li></ol>
+      </div>
+<div class="ex">
+        <p class="qh"><strong>ข้อ 12.</strong> <span class="stars">★★★★☆</span></p>
+        <div class="stem"><p>พิจารณาข้อความเกี่ยวกับของแข็งต่อไปนี้
+(ก) แกรไฟต์เป็นผลึกโครงผลึกร่างตาข่าย แต่นำไฟฟ้าได้เพราะแต่ละอะตอมคาร์บอนสร้างพันธะเพียง 3 พันธะ เหลืออิเล็กตรอนที่เคลื่อนที่ได้ระหว่างชั้น
+(ข) น้ำแข็งแห้ง (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">C</mi><msub><mi mathvariant="normal">O</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\mathrm{CO_2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathrm">C</span><span class="mord"><span class="mord mathrm">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> ของแข็ง) เป็นผลึกโมเลกุลที่ยึดเหนี่ยวกันด้วยแรงลอนดอน จึงระเหิดได้ง่ายที่ความดันบรรยากาศ
+(ค) ผลึก NaCl นำไฟฟ้าได้ดีในสถานะของแข็ง เพราะประกอบด้วยไอออนบวกและไอออนลบจำนวนมาก
+(ง) ควอตซ์ (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">S</mi><mi mathvariant="normal">i</mi><msub><mi mathvariant="normal">O</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\mathrm{SiO_2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathrm">Si</span><span class="mord"><span class="mord mathrm">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span>) เป็นผลึกโมเลกุล เพราะประกอบด้วยโมเลกุล <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">S</mi><mi mathvariant="normal">i</mi><msub><mi mathvariant="normal">O</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\mathrm{SiO_2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathrm">Si</span><span class="mord"><span class="mord mathrm">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> ขนาดเล็กจำนวนมาก
+ข้อใดถูกต้อง</p>
+</div>
+        <ol class="choices"><li><span class="cl">ก.</span> <p>(ก) และ (ค)</p>
+</li><li><span class="cl">ข.</span> <p>(ก) และ (ข)</p>
+</li><li><span class="cl">ค.</span> <p>(ข) และ (ง)</p>
+</li><li><span class="cl">ง.</span> <p>(ก) (ข) และ (ค)</p>
+</li></ol>
+      </div>
+<div class="ex">
+        <p class="qh"><strong>ข้อ 13.</strong> <span class="stars">★★★★★</span></p>
+        <div class="stem"><p>ที่ 25°C มีของเหลว 3 ชนิด: เอทานอล (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">C</mi><mn>2</mn></msub><msub><mi mathvariant="normal">H</mi><mn>5</mn></msub><mi mathvariant="normal">O</mi><mi mathvariant="normal">H</mi></mrow><annotation encoding="application/x-tex">\mathrm{C_2H_5OH}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathrm">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">5</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathrm">OH</span></span></span></span></span> มีหมู่ <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mi mathvariant="normal">O</mi><mi mathvariant="normal">H</mi></mrow><annotation encoding="application/x-tex">\mathrm{-OH}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord">−</span><span class="mord mathrm">OH</span></span></span></span></span> 1 หมู่), เอทิลีนไกลคอล (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">C</mi><mn>2</mn></msub><msub><mi mathvariant="normal">H</mi><mn>4</mn></msub><mo stretchy="false">(</mo><mi mathvariant="normal">O</mi><mi mathvariant="normal">H</mi><msub><mo stretchy="false">)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\mathrm{C_2H_4(OH)_2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathrm">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">4</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathrm">OH</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> มีหมู่ <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mi mathvariant="normal">O</mi><mi mathvariant="normal">H</mi></mrow><annotation encoding="application/x-tex">\mathrm{-OH}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord">−</span><span class="mord mathrm">OH</span></span></span></span></span> 2 หมู่) และกลีเซอรอล (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">C</mi><mn>3</mn></msub><msub><mi mathvariant="normal">H</mi><mn>5</mn></msub><mo stretchy="false">(</mo><mi mathvariant="normal">O</mi><mi mathvariant="normal">H</mi><msub><mo stretchy="false">)</mo><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">\mathrm{C_3H_5(OH)_3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathrm">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">5</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathrm">OH</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> มีหมู่ <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mi mathvariant="normal">O</mi><mi mathvariant="normal">H</mi></mrow><annotation encoding="application/x-tex">\mathrm{-OH}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord">−</span><span class="mord mathrm">OH</span></span></span></span></span> 3 หมู่) พิจารณาข้อความต่อไปนี้
+(ก) ที่อุณหภูมิเดียวกัน ความหนืดเรียงเป็น กลีเซอรอล &gt; เอทิลีนไกลคอล &gt; เอทานอล
+(ข) ที่ 25°C ความดันไอเรียงเป็น เอทานอล &gt; เอทิลีนไกลคอล &gt; กลีเซอรอล
+(ค) เมื่อหยดเอทานอลลงบนหลังมือจะรู้สึกเย็น เพราะการระเหยเป็นกระบวนการดูดพลังงานความร้อนจากผิวหนัง
+(ง) เมื่อเพิ่มอุณหภูมิให้ของเหลวทั้งสาม ความตึงผิวของแต่ละชนิดจะเพิ่มขึ้น
+ข้อใดถูกต้อง</p>
+</div>
+        <ol class="choices"><li><span class="cl">ก.</span> <p>(ก) และ (ข) เท่านั้น</p>
+</li><li><span class="cl">ข.</span> <p>(ก) (ข) และ (ค)</p>
+</li><li><span class="cl">ค.</span> <p>(ข) (ค) และ (ง)</p>
+</li><li><span class="cl">ง.</span> <p>(ก) (ค) และ (ง)</p>
+</li></ol>
+      </div>
+<h3 class="sub">การเปลี่ยนสถานะและสถานะของสารที่อุณหภูมิห้อง</h3><div class="ex">
+        <p class="qh"><strong>ข้อ 14.</strong> <span class="stars">★☆☆☆☆</span></p>
+        <div class="stem"><p>พิจารณาปรากฏการณ์ต่อไปนี้
+(ก) ลูกเหม็น (แนฟทาลีน) ในตู้เสื้อผ้ามีขนาดเล็กลงเรื่อย ๆ
+(ข) น้ำแข็งแห้งในกล่องไอศกรีมหายไปหมดโดยไม่มีของเหลวเหลืออยู่
+(ค) น้ำค้างเกาะบนใบหญ้าในตอนเช้ามืด
+(ง) เกล็ดไอโอดีนกลายเป็นไอสีม่วงเมื่ออุ่นเบา ๆ ในบีกเกอร์เปิด
+ข้อใดเป็นการระเหิดทั้งหมด</p>
+</div>
+        <ol class="choices"><li><span class="cl">ก.</span> <p>(ก) (ข) และ (ค)</p>
+</li><li><span class="cl">ข.</span> <p>(ข) (ค) และ (ง)</p>
+</li><li><span class="cl">ค.</span> <p>(ก) (ค) และ (ง)</p>
+</li><li><span class="cl">ง.</span> <p>(ก) (ข) และ (ง)</p>
+</li></ol>
+      </div>
+<div class="ex">
+        <p class="qh"><strong>ข้อ 15.</strong> <span class="stars">★★☆☆☆</span></p>
+        <div class="stem"><p>ให้ความร้อนแก่น้ำแข็งอุณหภูมิ −10°C ด้วยอัตราคงที่ที่ความดัน 1 atm แล้วเขียนกราฟอุณหภูมิ–เวลา พบว่ากราฟมีช่วงราบ (อุณหภูมิคงที่) ช่วงแรกที่ 0°C เหตุใดอุณหภูมิจึงไม่เพิ่มขึ้นทั้งที่ยังให้ความร้อนต่อเนื่อง</p>
+</div>
+        <ol class="choices"><li><span class="cl">ก.</span> <p>พลังงานความร้อนที่ให้ถูกใช้ไปในการทำลายแรงยึดเหนี่ยวระหว่างโมเลกุลเพื่อเปลี่ยนของแข็งเป็นของเหลว ไม่ได้ใช้เพิ่มพลังงานจลน์เฉลี่ยของโมเลกุล</p>
+</li><li><span class="cl">ข.</span> <p>น้ำแข็งเป็นฉนวนความร้อน พลังงานจึงผ่านเข้าไปไม่ได้จนกว่าจะหลอมหมด</p>
+</li><li><span class="cl">ค.</span> <p>พลังงานความร้อนถูกใช้ทำลายพันธะโคเวเลนต์ระหว่างอะตอม H กับ O ภายในโมเลกุลน้ำ</p>
+</li><li><span class="cl">ง.</span> <p>อุณหภูมิ 0°C เป็นค่าต่ำสุดที่เทอร์มอมิเตอร์ทั่วไปวัดได้ กราฟจึงดูราบ</p>
+</li></ol>
+      </div>
+<div class="ex">
+        <p class="qh"><strong>ข้อ 16.</strong> <span class="stars">★★★☆☆</span></p>
+        <div class="stem"><p>ที่อุณหภูมิ 25°C และความดัน 1 atm สาร X เป็นแก๊ส สาร Y เป็นของเหลว และสาร Z เป็นของแข็ง ข้อใดกำหนดจุดหลอมเหลว (mp) และจุดเดือด (bp) ที่ 1 atm ของสารทั้งสามได้สอดคล้องกับสถานะข้างต้น</p>
+</div>
+        <ol class="choices"><li><span class="cl">ก.</span> <p>X: mp −7°C, bp 59°C · Y: mp −95°C, bp 56°C · Z: mp 115°C, bp 445°C</p>
+</li><li><span class="cl">ข.</span> <p>X: mp −101°C, bp −34°C · Y: mp 44°C, bp 280°C · Z: mp 115°C, bp 445°C</p>
+</li><li><span class="cl">ค.</span> <p>X: mp −101°C, bp −34°C · Y: mp −95°C, bp 56°C · Z: mp −39°C, bp 357°C</p>
+</li><li><span class="cl">ง.</span> <p>X: mp −101°C, bp −34°C · Y: mp −95°C, bp 56°C · Z: mp 115°C, bp 445°C</p>
+</li></ol>
+      </div>
+<div class="ex">
+        <p class="qh"><strong>ข้อ 17.</strong> <span class="stars">★★★★☆</span></p>
+        <div class="stem"><p>แผนภาพวัฏภาคของ <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">C</mi><msub><mi mathvariant="normal">O</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\mathrm{CO_2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathrm">C</span><span class="mord"><span class="mord mathrm">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> มีจุดร่วมสาม (triple point) ที่ −56.6°C, 5.1 atm และเส้นแบ่งของแข็ง–ของเหลวมีความชันเป็นบวก ข้อใดถูกต้อง</p>
+</div>
+        <ol class="choices"><li><span class="cl">ก.</span> <p>ที่ความดัน 1 atm เมื่อให้ความร้อนแก่ <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">C</mi><msub><mi mathvariant="normal">O</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\mathrm{CO_2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathrm">C</span><span class="mord"><span class="mord mathrm">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> ของแข็ง จะหลอมเป็นของเหลวก่อนแล้วจึงกลายเป็นแก๊ส</p>
+</li><li><span class="cl">ข.</span> <p>ที่จุดร่วมสาม มีเฉพาะสถานะของแข็งกับแก๊สอยู่ร่วมกันในสมดุล</p>
+</li><li><span class="cl">ค.</span> <p>เส้นแบ่งของแข็ง–ของเหลวของ <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">C</mi><msub><mi mathvariant="normal">O</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\mathrm{CO_2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathrm">C</span><span class="mord"><span class="mord mathrm">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> ชันเป็นลบเหมือนของน้ำ ทำให้เพิ่มความดันแล้วของแข็งหลอมเหลว</p>
+</li><li><span class="cl">ง.</span> <p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">C</mi><msub><mi mathvariant="normal">O</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\mathrm{CO_2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathrm">C</span><span class="mord"><span class="mord mathrm">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> ของเหลวเกิดไม่ได้ที่ความดันต่ำกว่า 5.1 atm ดังนั้นที่ 1 atm น้ำแข็งแห้งจึงระเหิดโดยไม่หลอมเหลว</p>
+</li></ol>
+      </div>
+<div class="ex">
+        <p class="qh"><strong>ข้อ 18.</strong> <span class="stars">★★★★☆</span></p>
+        <div class="stem"><p>กำหนดให้ความร้อนแฝงของการหลอมเหลวของน้ำแข็ง <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>H</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">s</mi></mrow></msub><mo>=</mo><mn>6.0</mn></mrow><annotation encoding="application/x-tex">\Delta H_{\mathrm{fus}} = 6.0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">fus</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6.0</span></span></span></span> kJ/mol และความร้อนแฝงของการกลายเป็นไอของน้ำ <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>H</mi><mrow><mi mathvariant="normal">v</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi></mrow></msub><mo>=</mo><mn>41.0</mn></mrow><annotation encoding="application/x-tex">\Delta H_{\mathrm{vap}} = 41.0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">vap</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">41.0</span></span></span></span> kJ/mol (H = 1, O = 16) การระเหิดน้ำแข็ง 4.5 g (ที่ภาวะซึ่งการระเหิดเกิดได้ และถือว่าค่าความร้อนแฝงคงที่) ต้องใช้พลังงานกี่ kJ</p>
+</div>
+        <ol class="choices"><li><span class="cl">ก.</span> <p>11.75 kJ</p>
+</li><li><span class="cl">ข.</span> <p>10.25 kJ</p>
+</li><li><span class="cl">ค.</span> <p>8.75 kJ</p>
+</li><li><span class="cl">ง.</span> <p>1.50 kJ</p>
+</li></ol>
+      </div>
+<div class="ex">
+        <p class="qh"><strong>ข้อ 19.</strong> <span class="stars">★★★★★</span></p>
+        <div class="stem"><p>ต้องการเปลี่ยนน้ำแข็ง 9.0 g ที่ 0°C ให้กลายเป็นไอน้ำทั้งหมดที่ 100°C ภายใต้ความดัน 1 atm กำหนดให้ <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>H</mi><mrow><mi mathvariant="normal">f</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">s</mi></mrow></msub><mo>=</mo><mn>6.0</mn></mrow><annotation encoding="application/x-tex">\Delta H_{\mathrm{fus}} = 6.0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">fus</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6.0</span></span></span></span> kJ/mol, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>H</mi><mrow><mi mathvariant="normal">v</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">p</mi></mrow></msub><mo>=</mo><mn>40.7</mn></mrow><annotation encoding="application/x-tex">\Delta H_{\mathrm{vap}} = 40.7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">vap</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">40.7</span></span></span></span> kJ/mol, ความจุความร้อนจำเพาะของน้ำ = 4.2 J/(g·°C) และ H = 1, O = 16 ต้องใช้พลังงานทั้งหมดกี่ kJ</p>
+</div>
+        <ol class="choices"><li><span class="cl">ก.</span> <p>23.35 kJ</p>
+</li><li><span class="cl">ข.</span> <p>24.13 kJ</p>
+</li><li><span class="cl">ค.</span> <p>27.13 kJ</p>
+</li><li><span class="cl">ง.</span> <p>30.91 kJ</p>
+</li></ol>
+      </div>
+<div class="keybox">
+  <h2 style="margin-top:0">เฉลยย่อ บทที่ 8</h2>
+  <span class="k">1. ข</span> <span class="k">2. ง</span> <span class="k">3. ก</span> <span class="k">4. ค</span> <span class="k">5. ข</span> <span class="k">6. ก</span> <span class="k">7. ค</span> <span class="k">8. ค</span> <span class="k">9. ก</span> <span class="k">10. ข</span> <span class="k">11. ค</span> <span class="k">12. ข</span> <span class="k">13. ข</span> <span class="k">14. ง</span> <span class="k">15. ก</span> <span class="k">16. ง</span> <span class="k">17. ง</span> <span class="k">18. ก</span> <span class="k">19. ค</span>
+  <p style="color:#64748b;font-size:.8rem">เฉลยละเอียดทีละขั้นดูได้ในแอป (โหมดไต่บันได/เรียน+ฝึก)</p>
+</div>
+</body>
+</html>
