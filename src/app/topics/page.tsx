@@ -4,8 +4,13 @@ import { createClient } from "@/lib/supabase/server";
 import { hasSupabaseEnv } from "@/lib/env";
 import SignOutButton from "@/components/SignOutButton";
 import type { TopicStat } from "@/lib/types";
+import learnMap from "../../../content/learn-map.json";
 
 export const dynamic = "force-dynamic";
+
+function hasLearnPath(topicId: number): boolean {
+  return Array.isArray((learnMap as Record<string, unknown>)[String(topicId)]);
+}
 
 function pctColor(pct: number) {
   if (pct < 50) return "bg-rose-100 text-rose-700";
@@ -106,6 +111,15 @@ export default async function TopicsPage() {
                 </Link>
                 {hasQuestions ? (
                   <>
+                    {hasLearnPath(t.topic_id) && (
+                      <Link
+                        href={`/learn/${t.topic_id}`}
+                        title="สอนสลับฝึกทีละช่วง จากง่ายไปยาก"
+                        className="col-span-3 rounded-xl bg-emerald-600 py-2 text-center text-sm font-semibold text-white transition hover:bg-emerald-700"
+                      >
+                        🎓 เรียน+ฝึกไปทีละช่วง (ใหม่)
+                      </Link>
+                    )}
                     <Link
                       href={`/quiz/${t.topic_id}?mode=ladder`}
                       title="เรียงจากง่ายไปยาก"

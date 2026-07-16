@@ -1,0 +1,122 @@
+import { notFound, redirect } from "next/navigation";
+import { createClient } from "@/lib/supabase/server";
+import { hasSupabaseEnv } from "@/lib/env";
+import LearnRunner, { type LearnStep } from "@/components/LearnRunner";
+import type { QuizQuestion, Topic } from "@/lib/types";
+import learnMap from "../../../../content/learn-map.json";
+
+export const dynamic = "force-dynamic";
+
+type MapStep = {
+  title: string;
+  headings: string[];
+  subtopics: string[];
+  drill: number;
+};
+
+// แบ่ง markdown เป็นช่วงตามหัวข้อ ## (คืน map: หัวข้อ → เนื้อหารวมหัวข้อ)
+function splitSections(md: string): { heading: string; body: string }[] {
+  const lines = md.split("\n");
+  const sections: { heading: string; body: string }[] = [];
+  let current: { heading: string; body: string } | null = null;
+  for (const line of lines) {
+    if (line.startsWith("## ")) {
+      if (current) sections.push(current);
+      current = { heading: line.slice(3).trim(), body: line + "\n" };
+    } else if (current) {
+      current.body += line + "\n";
+    }
+  }
+  if (current) sections.push(current);
+  return sections;
+}
+
+// เลือกโจทย์กระจายง่าย→ยาก: เรียงตาม difficulty แล้วหยิบแบบเว้นช่วงเท่า ๆ กัน
+function pickSpread(qs: QuizQuestion[], n: number): QuizQuestion[] {
+  const sorted = [...qs].sort((a, b) => a.difficulty - b.difficulty);
+  if (sorted.length <= n) return sorted;
+  const picked: QuizQuestion[] = [];
+  const used = new Set<number>();
+  for (let i = 0; i < n; i++) {
+    const idx = Math.round((i * (sorted.length - 1)) / (n - 1));
+    const j = used.has(idx) ? idx + 1 : idx;
+    if (j < sorted.length && !used.has(j)) {
+      used.add(j);
+      picked.push(sorted[j]);
+    }
+  }
+  return picked;
+}
+
+export default async function LearnPage({
+  params,
+}: {
+  params: Promise<{ topicId: string }>;
+}) {
+  if (!hasSupabaseEnv) redirect("/");
+
+  const { topicId } = await params;
+  const id = Number(topicId);
+  if (!Number.isInteger(id) || id <= 0) notFound();
+
+  const mapSteps = (learnMap as unknown as Record<string, MapStep[]>)[
+    String(id)
+  ];
+  if (!Array.isArray(mapSteps)) notFound(); // หมวดนี้ยังไม่มีเส้นทางเรียน (key อื่นเช่น _comment ไม่นับ)
+
+  const supabase = await createClient();
+
+  const { data: topic } = await supabase
+    .from("topics")
+    .select("*")
+    .eq("id", id)
+    .single<Topic>();
+  if (!topic) notFound();
+
+  const [{ data: content }, { data: questions }, { data: subtopics }] =
+    await Promise.all([
+      supabase
+        .from("contents")
+        .select("lesson_md")
+        .eq("topic_id", id)
+        .maybeSingle<{ lesson_md: string }>(),
+      supabase
+        .from("quiz_questions")
+        .select("id, stem, choices, difficulty, subtopic_id")
+        .eq("topic_id", id),
+      supabase.from("subtopics").select("id, name").eq("topic_id", id),
+    ]);
+
+  const sections = splitSections(content?.lesson_md ?? "");
+  const subtopicIdByName = new Map(
+    (subtopics ?? []).map((s: { id: number; name: string }) => [s.name, s.id])
+  );
+  const allQuestions = (questions ?? []) as (QuizQuestion & {
+    subtopic_id: number | null;
+  })[];
+
+  const steps: LearnStep[] = mapSteps.map((step) => {
+    const body = step.headings
+      .map(
+        (prefix) =>
+          sections.find((s) => s.heading.startsWith(prefix))?.body ?? ""
+      )
+      .filter(Boolean)
+      .join("\n");
+    const wantedIds = new Set(
+      step.subtopics
+        .map((name) => subtopicIdByName.get(name))
+        .filter((v): v is number => typeof v === "number")
+    );
+    const pool = allQuestions.filter(
+      (q) => q.subtopic_id !== null && wantedIds.has(q.subtopic_id)
+    );
+    return {
+      title: step.title,
+      markdown: body,
+      questions: pickSpread(pool, step.drill),
+    };
+  });
+
+  return <LearnRunner topic={topic} steps={steps} />;
+}
