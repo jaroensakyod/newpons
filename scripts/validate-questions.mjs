@@ -34,6 +34,10 @@ const canonicalSubtopicsByTopic = new Map(
 );
 const LADDER_RUNGS = [1, 2, 3, 4, 5];
 
+// ป้ายสไตล์ (ไม่บังคับ) — บอกว่าโจทย์แต่งขึ้นเองโดยได้แรงบันดาลใจจากแนวข้อสอบไหน
+// ไม่ใช่การอ้างว่าเป็นข้อสอบจริงคำต่อคำ (ดู content/archetypes-external/ + docs/reference-distill-process.md)
+const VALID_STYLES = ["สอวน.", "A-level", "BMAT", "IChO"];
+
 const errors = [];
 const warnings = [];
 
@@ -138,6 +142,9 @@ for (const file of files) {
     }
     if (!Number.isInteger(q.difficulty) || q.difficulty < 1 || q.difficulty > 5) {
       errors.push(`${where}: difficulty ต้องเป็น int 1-5 (ได้ ${q.difficulty})`);
+    }
+    if (q.style !== undefined && !VALID_STYLES.includes(q.style)) {
+      errors.push(`${where}: style "${q.style}" ต้องเป็นหนึ่งใน [${VALID_STYLES.join(", ")}] หรือไม่ใส่เลย`);
     }
 
     if (typeof q.stem === "string") {

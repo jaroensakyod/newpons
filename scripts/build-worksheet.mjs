@@ -198,7 +198,7 @@ function renderExercise(q, num) {
     .join("");
   const color = DIFFICULTY_COLOR[q.difficulty] ?? DIFFICULTY_COLOR[3];
   return `<div class="ex">
-    <p class="qh"><span class="qnum">ข้อ ${num}</span><span class="stars" style="color:${color}">${"★".repeat(q.difficulty)}<span class="stars-off">${"★".repeat(Math.max(0, 5 - q.difficulty))}</span></span></p>
+    <p class="qh"><span class="qnum">ข้อ ${num}</span><span class="stars" style="color:${color}">${"★".repeat(q.difficulty)}<span class="stars-off">${"★".repeat(Math.max(0, 5 - q.difficulty))}</span></span>${q.style ? `<span class="style-tag">แนว ${q.style}</span>` : ""}</p>
     <div class="stem">${renderMd(q.stem)}</div>
     <ol class="choices${allShort ? " cols2" : ""}">${choices}</ol>
   </div>`;
@@ -352,6 +352,7 @@ ${exercises}`;
   .qnum { font-weight: 700; }
   .stars { font-size: .85rem; letter-spacing: 1px; }
   .stars-off { color: #e2e8f0; }
+  .style-tag { background: #fef3c7; color: #92400e; font-size: .68rem; font-weight: 700; padding: 1px 7px; border-radius: 999px; margin-left: auto; }
   ol.choices { list-style: none; padding-left: 1.2em; margin: 4px 0; }
   ol.choices.cols2 { display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; row-gap: 2px; }
   ol.choices li { margin: 3px 0; line-height: 1.55; }

@@ -95,6 +95,7 @@ const sections = CANONICAL_TOPICS.map((topic, ti) => {
           <span class="qnum">ข้อ ${i + 1}</span>
           <span class="stars">${"★".repeat(q.difficulty)}${"☆".repeat(Math.max(0, 5 - q.difficulty))}</span>
           <span class="sub">${escapeHtml(q.subtopic ?? "")}</span>
+          ${q.style ? `<span class="style-tag">แนว ${escapeHtml(q.style)}</span>` : ""}
           <span class="file">${escapeHtml(q._file)}</span>
         </summary>
         <div class="stem">${render(q.stem)}</div>
@@ -132,6 +133,7 @@ const html = `<!doctype html>
   summary { cursor: pointer; display: flex; gap: 10px; flex-wrap: wrap; align-items: baseline; }
   .qnum { font-weight: 700; } .stars { color: #f59e0b; font-size: .85rem; }
   .sub { color: #6366f1; font-size: .8rem; } .file { color: #94a3b8; font-size: .75rem; margin-left: auto; }
+  .style-tag { background: #fef3c7; color: #92400e; font-size: .72rem; font-weight: 700; padding: 1px 7px; border-radius: 999px; }
   .stem { margin-top: 10px; }
   ul.choices { list-style: none; padding: 0; }
   ul.choices li { border: 1px solid #e2e8f0; border-radius: 8px; padding: 6px 10px; margin: 6px 0; }
