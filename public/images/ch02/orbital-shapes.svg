@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 250" font-family="system-ui, sans-serif">
+  <!-- รูปร่างออร์บิทัล s, p (3 แกน), d (ตัวอย่างใบโคลเวอร์) -->
+  <style>
+    .name { font-size: 13px; font-weight: 700; fill: #1e293b; text-anchor: middle; }
+    .cap  { font-size: 10.5px; fill: #64748b; text-anchor: middle; }
+    .ax   { stroke: #cbd5e1; stroke-width: 1; }
+  </style>
+
+  <!-- s: ทรงกลม -->
+  <g transform="translate(90,95)">
+    <line x1="-45" y1="0" x2="45" y2="0" class="ax"/>
+    <line x1="0" y1="-45" x2="0" y2="45" class="ax"/>
+    <circle cx="0" cy="0" r="32" fill="#6366f1" opacity=".75"/>
+    <circle cx="0" cy="0" r="2.5" fill="#dc2626"/>
+  </g>
+  <text x="90" y="170" class="name">s</text>
+  <text x="90" y="186" class="cap">ทรงกลมรอบนิวเคลียส</text>
+  <text x="90" y="200" class="cap">ซับเชลล์ละ 1 ออร์บิทัล</text>
+
+  <!-- p: ดัมเบล 3 ทิศ (แสดง px แนวนอน, py แนวตั้ง, pz เฉียงเป็นสัญลักษณ์) -->
+  <g transform="translate(255,95)">
+    <line x1="-50" y1="0" x2="50" y2="0" class="ax"/>
+    <line x1="0" y1="-45" x2="0" y2="45" class="ax"/>
+    <ellipse cx="-22" cy="0" rx="20" ry="12" fill="#10b981" opacity=".8"/>
+    <ellipse cx="22" cy="0" rx="20" ry="12" fill="#10b981" opacity=".8"/>
+    <circle cx="0" cy="0" r="2.5" fill="#dc2626"/>
+  </g>
+  <text x="255" y="170" class="name">p (แสดงแกน x)</text>
+
+  <g transform="translate(400,95)">
+    <line x1="-45" y1="0" x2="45" y2="0" class="ax"/>
+    <line x1="0" y1="-50" x2="0" y2="50" class="ax"/>
+    <ellipse cx="0" cy="-22" rx="12" ry="20" fill="#10b981" opacity=".8"/>
+    <ellipse cx="0" cy="22" rx="12" ry="20" fill="#10b981" opacity=".8"/>
+    <circle cx="0" cy="0" r="2.5" fill="#dc2626"/>
+  </g>
+  <text x="400" y="170" class="name">p (แสดงแกน y)</text>
+  <text x="327" y="188" class="cap">ดัมเบลสองพู วางตาม 3 แกนตั้งฉาก (x, y, z) → ซับเชลล์ละ 3 ออร์บิทัล</text>
+
+  <!-- d: ใบโคลเวอร์ 4 พู -->
+  <g transform="translate(590,95)">
+    <line x1="-50" y1="0" x2="50" y2="0" class="ax"/>
+    <line x1="0" y1="-50" x2="0" y2="50" class="ax"/>
+    <ellipse cx="-24" cy="-24" rx="15" ry="10" fill="#f59e0b" opacity=".85" transform="rotate(-45 -24 -24)"/>
+    <ellipse cx="24" cy="-24" rx="15" ry="10" fill="#f59e0b" opacity=".85" transform="rotate(45 24 -24)"/>
+    <ellipse cx="-24" cy="24" rx="15" ry="10" fill="#f59e0b" opacity=".85" transform="rotate(45 -24 24)"/>
+    <ellipse cx="24" cy="24" rx="15" ry="10" fill="#f59e0b" opacity=".85" transform="rotate(-45 24 24)"/>
+    <circle cx="0" cy="0" r="2.5" fill="#dc2626"/>
+  </g>
+  <text x="590" y="170" class="name">d (ตัวอย่าง 1 ใน 5 แบบ)</text>
+  <text x="590" y="186" class="cap">ส่วนใหญ่เป็นใบโคลเวอร์ 4 พู</text>
+  <text x="590" y="200" class="cap">ซับเชลล์ละ 5 ออร์บิทัล</text>
+
+  <text x="380" y="232" class="cap" font-size="11.5">จุดแดงกลาง = นิวเคลียส · พื้นที่สี = บริเวณที่มีโอกาสพบอิเล็กตรอนสูง (ไม่ใช่เส้นทางวิ่ง)</text>
+</svg>
