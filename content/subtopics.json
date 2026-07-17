@@ -60,7 +60,8 @@
     { "subtopic": "การเตรียมและเจือจางสารละลาย", "real_exam_difficulty_range": [2, 4] },
     { "subtopic": "ความเข้มข้นหลังผสมสารละลายและการตกตะกอน", "real_exam_difficulty_range": [2, 4] },
     { "subtopic": "สมบัติคอลลิเกทีฟ (จุดเดือด-จุดเยือกแข็ง)", "real_exam_difficulty_range": [2, 4] },
-    { "subtopic": "สมการไอออนิกสุทธิและการไทเทรต", "real_exam_difficulty_range": [3, 3] }
+    { "subtopic": "สมการไอออนิกสุทธิและการไทเทรต", "real_exam_difficulty_range": [3, 3] },
+    { "subtopic": "กฎของเฮนรีและความดันออสโมติก", "real_exam_difficulty_range": [2, 4] }
   ],
   "ของแข็งและของเหลว": [
     { "subtopic": "ความดันไอและจุดเดือด", "real_exam_difficulty_range": [1, 2] },
