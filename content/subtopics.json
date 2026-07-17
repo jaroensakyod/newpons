@@ -27,7 +27,8 @@
     { "subtopic": "ออกไซด์กรด-เบสและปฏิกิริยากับน้ำ/คลอรีน", "real_exam_difficulty_range": [1, 3] },
     { "subtopic": "ธาตุแทรนซิชัน เลขออกซิเดชัน และสารเชิงซ้อน", "real_exam_difficulty_range": [2, 4] },
     { "subtopic": "สมบัติเฉพาะหมู่ธาตุ (แฮโลเจน แอลคาไล ไฮโดรเจน ออกซิเจน)", "real_exam_difficulty_range": [1, 3] },
-    { "subtopic": "กัมมันตภาพรังสีของธาตุหนักและตำแหน่งในตารางธาตุ", "real_exam_difficulty_range": [2, 3] }
+    { "subtopic": "กัมมันตภาพรังสีของธาตุหนักและตำแหน่งในตารางธาตุ", "real_exam_difficulty_range": [2, 3] },
+    { "subtopic": "ความสัมพันธ์เชิงแนวทแยงระหว่างธาตุ", "real_exam_difficulty_range": [2, 4] }
   ],
   "พันธะเคมี": [
     { "subtopic": "ชนิดพันธะและการเรียกชื่อสารประกอบ", "real_exam_difficulty_range": [2, 3] },
