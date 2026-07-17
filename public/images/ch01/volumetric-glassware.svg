@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" font-family="system-ui, sans-serif">
+  <!-- เปรียบเทียบอุปกรณ์วัดปริมาตร 4 ชนิด: บิวเรต ปิเปตต์ ขวดวัดปริมาตร กระบอกตวง -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; }
+    .sub { font-size: 11px; fill: #64748b; text-anchor: middle; }
+    .tick { stroke: #64748b; stroke-width: 1.2; }
+    .num { font-size: 9.5px; fill: #64748b; }
+  </style>
+
+  <!-- ═══ บิวเรต (สเกลกลับหัว เลข 0 อยู่บน) ═══ -->
+  <text x="100" y="34" class="sub">สเกลกลับหัว (เลข 0 อยู่บน)</text>
+  <rect x="88" y="45" width="24" height="230" fill="#f0f9ff" stroke="#94a3b8" stroke-width="2"/>
+  <rect x="90" y="112" width="20" height="161" fill="#bfdbfe"/>
+  <path d="M90,112 Q100,120 110,112" fill="none" stroke="#3b82f6" stroke-width="1.5"/>
+  <!-- ขีดสเกล: 0 บน → 50 ล่าง -->
+  <line x1="88" y1="55" x2="97" y2="55" class="tick"/><text x="84" y="58" class="num" text-anchor="end">0</text>
+  <line x1="88" y1="95" x2="97" y2="95" class="tick"/><text x="84" y="98" class="num" text-anchor="end">10</text>
+  <line x1="88" y1="135" x2="97" y2="135" class="tick"/><text x="84" y="138" class="num" text-anchor="end">20</text>
+  <line x1="88" y1="175" x2="97" y2="175" class="tick"/><text x="84" y="178" class="num" text-anchor="end">30</text>
+  <line x1="88" y1="215" x2="97" y2="215" class="tick"/><text x="84" y="218" class="num" text-anchor="end">40</text>
+  <line x1="88" y1="255" x2="97" y2="255" class="tick"/><text x="84" y="258" class="num" text-anchor="end">50</text>
+  <!-- ก๊อกปิด-เปิด (stopcock) ด้านล่าง -->
+  <rect x="96" y="275" width="8" height="18" fill="#f0f9ff" stroke="#94a3b8" stroke-width="2"/>
+  <rect x="82" y="291" width="36" height="9" rx="3" fill="#f59e0b"/>
+  <path d="M96,300 L104,300 L100,318 Z" fill="#f0f9ff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="145" y="299" class="sub" text-anchor="start">ก๊อก</text>
+  <text x="100" y="350" class="lbl">บิวเรต 50 mL</text>
+  <text x="100" y="368" class="sub">±0.02 mL ต่อการอ่าน</text>
+
+  <!-- ═══ ปิเปตต์ (กระเปาะกลางลำ มีขีดเดียว) ═══ -->
+  <rect x="279" y="45" width="12" height="90" fill="#f0f9ff" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="273" y1="70" x2="297" y2="70" stroke="#ef4444" stroke-width="2"/>
+  <text x="372" y="66" class="sub">ขีดบอกปริมาตรขีดเดียว</text>
+  <ellipse cx="285" cy="170" rx="20" ry="38" fill="#f0f9ff" stroke="#94a3b8" stroke-width="2"/>
+  <text x="342" y="174" class="sub">กระเปาะ</text>
+  <rect x="279" y="206" width="12" height="80" fill="#f0f9ff" stroke="#94a3b8" stroke-width="2"/>
+  <path d="M279,286 L291,286 L286.5,316 L283.5,316 Z" fill="#f0f9ff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="285" y="350" class="lbl">ปิเปตต์ 25 mL</text>
+  <text x="285" y="368" class="sub">±0.03 mL</text>
+
+  <!-- ═══ ขวดวัดปริมาตร (คอยาว ขีดเดียวที่คอ ก้นแบน) ═══ -->
+  <rect x="464" y="120" width="12" height="38" fill="#bfdbfe"/>
+  <rect x="462" y="45" width="16" height="112" fill="none" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="455" y1="120" x2="485" y2="120" stroke="#ef4444" stroke-width="2"/>
+  <text x="548" y="116" class="sub">ขีดเดียวที่คอขวด</text>
+  <path d="M462,157 C462,192 418,202 418,258 C418,296 438,312 452,312 L488,312 C502,312 522,296 522,258 C522,202 478,192 478,157 Z"
+        fill="#bfdbfe" stroke="#94a3b8" stroke-width="2"/>
+  <text x="470" y="350" class="lbl">ขวดวัดปริมาตร 100 mL</text>
+  <text x="470" y="368" class="sub">±0.08 mL (Class A)</text>
+
+  <!-- ═══ กระบอกตวง (สเกลหลายขีด) ═══ -->
+  <rect x="630" y="212" width="40" height="97" fill="#bfdbfe"/>
+  <path d="M630,212 Q650,220 670,212" fill="none" stroke="#3b82f6" stroke-width="1.5"/>
+  <rect x="628" y="100" width="44" height="210" fill="none" stroke="#94a3b8" stroke-width="2"/>
+  <path d="M628,100 L616,90" fill="none" stroke="#94a3b8" stroke-width="2"/>
+  <rect x="612" y="310" width="76" height="10" rx="3" fill="#94a3b8"/>
+  <!-- สเกลหลายขีด: เลขเพิ่มจากล่างขึ้นบน -->
+  <line x1="660" y1="130" x2="672" y2="130" class="tick"/><text x="678" y="133" class="num">50</text>
+  <line x1="664" y1="150" x2="672" y2="150" class="tick"/>
+  <line x1="660" y1="170" x2="672" y2="170" class="tick"/><text x="678" y="173" class="num">40</text>
+  <line x1="664" y1="190" x2="672" y2="190" class="tick"/>
+  <line x1="660" y1="210" x2="672" y2="210" class="tick"/><text x="678" y="213" class="num">30</text>
+  <line x1="664" y1="230" x2="672" y2="230" class="tick"/>
+  <line x1="660" y1="250" x2="672" y2="250" class="tick"/><text x="678" y="253" class="num">20</text>
+  <line x1="664" y1="270" x2="672" y2="270" class="tick"/>
+  <line x1="660" y1="290" x2="672" y2="290" class="tick"/><text x="678" y="293" class="num">10</text>
+  <text x="650" y="350" class="lbl">กระบอกตวง 50 mL</text>
+  <text x="650" y="368" class="sub">±0.5 mL (หยาบสุด)</text>
+
+  <text x="380" y="392" class="sub">ไทเทรต → บิวเรต · ถ่ายปริมาตรค่าเดียวแม่นยำ → ปิเปตต์ · เตรียมสารละลายมาตรฐาน → ขวดวัดปริมาตร · ตวงคร่าว ๆ → กระบอกตวง</text>
+</svg>

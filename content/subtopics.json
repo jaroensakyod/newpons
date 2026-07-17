@@ -3,6 +3,7 @@
   "ทักษะพื้นฐานปฏิบัติการเคมี": [
     { "subtopic": "ความปลอดภัยและสัญลักษณ์อันตราย", "real_exam_difficulty_range": [1, 2] },
     { "subtopic": "เลขนัยสำคัญและการอ่านเครื่องมือวัด", "real_exam_difficulty_range": [2, 3] },
+    { "subtopic": "อุปกรณ์วัดปริมาตรและการอ่านค่า", "real_exam_difficulty_range": [2, 4] },
     { "subtopic": "ความเที่ยงและความแม่นของข้อมูล", "real_exam_difficulty_range": [1, 2] },
     { "subtopic": "การแปลงหน่วยและคำนวณความหนาแน่น", "real_exam_difficulty_range": [2, 2] },
     { "subtopic": "วิธีการทางวิทยาศาสตร์และการเจือจางกรด", "real_exam_difficulty_range": [2, 3] }
