@@ -52,7 +52,8 @@
     { "subtopic": "กฎแก๊สรวมและ PV=nRT", "real_exam_difficulty_range": [1, 3] },
     { "subtopic": "ทฤษฎีจลน์ของแก๊สและการแพร่ (เกรแฮม)", "real_exam_difficulty_range": [1, 4] },
     { "subtopic": "ความดันย่อยและแก๊สผสม", "real_exam_difficulty_range": [2, 4] },
-    { "subtopic": "ปริมาณสัมพันธ์ของแก๊สในปฏิกิริยา", "real_exam_difficulty_range": [2, 4] }
+    { "subtopic": "ปริมาณสัมพันธ์ของแก๊สในปฏิกิริยา", "real_exam_difficulty_range": [2, 4] },
+    { "subtopic": "ความดันบรรยากาศ: บารอมิเตอร์และแมนอมิเตอร์", "real_exam_difficulty_range": [2, 4] }
   ],
   "สารละลาย": [
     { "subtopic": "หน่วยความเข้มข้นและการแปลงหน่วย", "real_exam_difficulty_range": [2, 3] },
