@@ -39,6 +39,13 @@ function styleCallouts(html) {
     if (label === "ตอบ") {
       return `<p class="cal cal-answer"><strong>${rawLabel}</strong>`;
     }
+    // ตัวอย่างโจทย์/วิธีทำ — ไม่มีกล่องสี แค่คุมจังหวะขึ้นหน้าใหม่ (กันฉีกจากคำตอบ)
+    if (/^ตัวอย่างโจทย์/.test(label)) {
+      return `<p class="cal cal-example"><strong>${rawLabel}</strong>`;
+    }
+    if (label === "วิธีทำ") {
+      return `<p class="cal cal-method"><strong>${rawLabel}</strong>`;
+    }
     const stepMatch = label.match(/^ขั้นที่\s*\d+/);
     if (stepMatch) {
       const num = label.match(/\d+/)[0];
@@ -55,6 +62,52 @@ function styleCallouts(html) {
     }
     return whole;
   });
+}
+
+// รวมช่วง "ตัวอย่างโจทย์ ... → วิธีทำ → ตอบ" เป็นก้อนเดียวกันไม่ให้พิมพ์ตัดหน้ากลางคัน
+// สแกนหา cal-example แต่ละจุด แล้วหาจุดจบที่ใกล้ที่สุด (กล่องตอบ / ตัวอย่างถัดไป / หัวข้อถัดไป)
+function wrapWorkedExamples(html) {
+  const START = '<p class="cal cal-example">';
+  const ANSWER_RE = /<p class="cal cal-answer">[\s\S]*?<\/p>/;
+  const NEXT_EXAMPLE_RE = /<p class="cal cal-example">/;
+  const NEXT_HEADING_RE = /<h[1-6][ >]/;
+
+  let out = "";
+  let cursor = 0;
+  while (true) {
+    const startIdx = html.indexOf(START, cursor);
+    if (startIdx === -1) {
+      out += html.slice(cursor);
+      break;
+    }
+    out += html.slice(cursor, startIdx);
+    const afterOpen = startIdx + START.length;
+    const rest = html.slice(afterOpen);
+
+    const answerMatch = rest.match(ANSWER_RE);
+    const nextExampleMatch = rest.match(NEXT_EXAMPLE_RE);
+    const nextHeadingMatch = rest.match(NEXT_HEADING_RE);
+    const candidates = [answerMatch, nextExampleMatch, nextHeadingMatch]
+      .filter(Boolean)
+      .sort((a, b) => a.index - b.index);
+
+    let endInRest;
+    if (candidates[0] === answerMatch) {
+      // เจอกล่องตอบก่อน — ห่อรวมถึงกล่องตอบพอดี
+      endInRest = answerMatch.index + answerMatch[0].length;
+    } else if (candidates.length > 0) {
+      // เจอตัวอย่างถัดไป/หัวข้อถัดไปก่อนโดยไม่มีกล่องตอบ — ห่อแค่ย่อหน้าเปิดเรื่อง กันเผลอรวมข้ามตัวอย่าง
+      endInRest = rest.indexOf("</p>") + 4;
+    } else {
+      // ไม่เจออะไรเลย (ตัวอย่างสุดท้ายของไฟล์) — ห่อจนจบเนื้อหา
+      endInRest = rest.length;
+    }
+
+    const block = START + rest.slice(0, endInRest);
+    out += `<div class="worked-example">${block}</div>`;
+    cursor = afterOpen + endInRest;
+  }
+  return out;
 }
 
 // placeholder ต้องไม่มีช่องว่าง — เซลล์ตารางของ marked จะ trim ช่องว่างรอบเซลล์ทิ้ง
@@ -88,6 +141,11 @@ function renderMd(md) {
   html = styleCallouts(html);
   // รูปในบทเรียนชี้ /images/... → ชี้ relative ไป public/ เพื่อเปิดจากไฟล์ตรงได้
   return html.replaceAll('src="/images/', 'src="../../public/images/');
+}
+
+// ใช้เฉพาะเนื้อหาบทเรียน (ไม่ใช่โจทย์/เฉลย) — ห่อ "ตัวอย่างโจทย์...→วิธีทำ→ตอบ" กันฉีกหน้า
+function renderLessonMd(md) {
+  return wrapWorkedExamples(renderMd(md));
 }
 
 // อ่านโจทย์ทุกไฟล์ จัดกลุ่มตามหมวด
@@ -186,7 +244,7 @@ for (const topic of TOPICS) {
           .join("\n");
         return `<section class="step">
           <h2 class="step-head"><span class="step-num">${si + 1}</span>${step.title}</h2>
-          ${body ? renderMd(body) : step.note ? `<p class="note">${step.note}</p>` : ""}
+          ${body ? renderLessonMd(body) : step.note ? `<p class="note">${step.note}</p>` : ""}
           ${take.length ? `<div class="drill"><p class="drill-head">✏️ ฝึกทันที ${take.length} ข้อ (ง่าย→ยาก)</p>${exHtml}</div>` : ""}
         </section>`;
       })
@@ -223,7 +281,7 @@ for (const topic of TOPICS) {
         return head + renderExercise(q, ordered.length);
       })
       .join("\n");
-    bodyHtml = `${lessonMd ? renderMd(lessonMd) : "<p>(ยังไม่มีบทเรียน)</p>"}
+    bodyHtml = `${lessonMd ? renderLessonMd(lessonMd) : "<p>(ยังไม่มีบทเรียน)</p>"}
 <h2>✏️ แบบฝึกหัดท้ายบท (${qs.length} ข้อ — เรียงตามหัวข้อ ง่าย→ยาก)</h2>
 ${exercises}`;
   }
@@ -264,7 +322,11 @@ ${exercises}`;
   h2 { font-size: 1.12rem; margin-top: 2rem; color: var(--brand-dark); }
   h3 { font-size: 1.02rem; }
   h3.sub { margin-top: 1.8rem; color: var(--brand-dark); border-left: 4px solid var(--brand); padding-left: 8px; }
-  table { border-collapse: collapse; width: 100%; font-size: 13.5px; break-inside: avoid; border-radius: 8px; overflow: hidden; }
+  /* ตารางยาวปล่อยให้ไหลข้ามหน้าได้ (ไม่บังคับอยู่หน้าเดียวทั้งก้อน กันหน้าว่างเปล่า) —
+     แต่หัวตารางย้ำซ้ำทุกหน้าที่ตัด และห้ามตัดกลางแถว */
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; break-inside: auto; }
+  thead { display: table-header-group; }
+  tr { break-inside: avoid; }
   th, td { border: 1px solid #d1e7e5; padding: 6px 9px; text-align: left; vertical-align: top; }
   th { background: var(--brand); color: #fff; font-weight: 600; }
   tr:nth-child(even) td { background: var(--brand-light); }
@@ -309,6 +371,11 @@ ${exercises}`;
   .step-badge { display: inline-flex; align-items: center; justify-content: center; width: 1.4em; height: 1.4em; border-radius: 50%; background: var(--brand); color: #fff; font-size: .72em; font-weight: 700; }
   .cal-answer { background: var(--brand-light); border: 2px solid var(--brand-tint); border-radius: 10px; padding: 8px 14px; }
   .cal-answer strong { color: var(--brand-dark); font-size: 1.05em; }
+  .cal-example { border-top: 2px dashed var(--brand-tint); padding: 12px 0 0; margin-top: 22px !important; }
+  .cal-example strong { color: var(--brand-dark); }
+  .cal-method { margin: 10px 0 4px !important; }
+  /* กันพิมพ์ตัดหน้ากลาง "ตัวอย่างโจทย์ → วิธีทำ → ตอบ" (จัดกลุ่มไว้ตอน build ด้วย wrapWorkedExamples) */
+  .worked-example { break-inside: avoid; }
 
   /* ── ท้ายเล่ม: เฉลยย่อ / เฉลยละเอียด ── */
   .keybox { margin-top: 3rem; border: 2px dashed #99f6e4; border-radius: 10px; padding: 14px 18px; }

@@ -21,7 +21,11 @@
   h2 { font-size: 1.12rem; margin-top: 2rem; color: var(--brand-dark); }
   h3 { font-size: 1.02rem; }
   h3.sub { margin-top: 1.8rem; color: var(--brand-dark); border-left: 4px solid var(--brand); padding-left: 8px; }
-  table { border-collapse: collapse; width: 100%; font-size: 13.5px; break-inside: avoid; border-radius: 8px; overflow: hidden; }
+  /* ตารางยาวปล่อยให้ไหลข้ามหน้าได้ (ไม่บังคับอยู่หน้าเดียวทั้งก้อน กันหน้าว่างเปล่า) —
+     แต่หัวตารางย้ำซ้ำทุกหน้าที่ตัด และห้ามตัดกลางแถว */
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; break-inside: auto; }
+  thead { display: table-header-group; }
+  tr { break-inside: avoid; }
   th, td { border: 1px solid #d1e7e5; padding: 6px 9px; text-align: left; vertical-align: top; }
   th { background: var(--brand); color: #fff; font-weight: 600; }
   tr:nth-child(even) td { background: var(--brand-light); }
@@ -66,6 +70,11 @@
   .step-badge { display: inline-flex; align-items: center; justify-content: center; width: 1.4em; height: 1.4em; border-radius: 50%; background: var(--brand); color: #fff; font-size: .72em; font-weight: 700; }
   .cal-answer { background: var(--brand-light); border: 2px solid var(--brand-tint); border-radius: 10px; padding: 8px 14px; }
   .cal-answer strong { color: var(--brand-dark); font-size: 1.05em; }
+  .cal-example { border-top: 2px dashed var(--brand-tint); padding: 12px 0 0; margin-top: 22px !important; }
+  .cal-example strong { color: var(--brand-dark); }
+  .cal-method { margin: 10px 0 4px !important; }
+  /* กันพิมพ์ตัดหน้ากลาง "ตัวอย่างโจทย์ → วิธีทำ → ตอบ" (จัดกลุ่มไว้ตอน build ด้วย wrapWorkedExamples) */
+  .worked-example { break-inside: avoid; }
 
   /* ── ท้ายเล่ม: เฉลยย่อ / เฉลยละเอียด ── */
   .keybox { margin-top: 3rem; border: 2px dashed #99f6e4; border-radius: 10px; padding: 14px 18px; }
