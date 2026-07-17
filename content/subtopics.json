@@ -66,6 +66,8 @@
   "ของแข็งและของเหลว": [
     { "subtopic": "ความดันไอและจุดเดือด", "real_exam_difficulty_range": [1, 2] },
     { "subtopic": "แรงยึดเหนี่ยวระหว่างโมเลกุลกับสมบัติของเหลว", "real_exam_difficulty_range": [2, 2] },
-    { "subtopic": "การเปลี่ยนสถานะและสถานะของสารที่อุณหภูมิห้อง", "real_exam_difficulty_range": [1, 2] }
+    { "subtopic": "การเปลี่ยนสถานะและสถานะของสารที่อุณหภูมิห้อง", "real_exam_difficulty_range": [1, 2] },
+    { "subtopic": "ความตึงผิว ความหนืด และแรงเชื่อมแน่น-ยึดติด", "real_exam_difficulty_range": [1, 4] },
+    { "subtopic": "ผลึกของแข็ง 4 ชนิดและแผนภาพวัฏภาค", "real_exam_difficulty_range": [1, 4] }
   ]
 }
