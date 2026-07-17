@@ -18,9 +18,14 @@
   * { box-sizing: border-box; }
   body { font-family: 'Sarabun', 'Noto Sans Thai', system-ui, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; color: #1e293b; line-height: 1.75; font-size: 15px; }
   h1 { font-size: 1.5rem; margin: 0; color: #fff; }
+  /* break-after: avoid กันหัวข้อถูกทิ้งเดี่ยวๆ ท้ายหน้าตอนพิมพ์ — บังคับให้หัวข้อ
+     ย้ายไปอยู่หน้าใหม่พร้อมเนื้อหาถัดไป แทนที่จะค้างอยู่บรรทัดสุดท้ายของหน้าเดิม */
+  h2, h3, h4 { break-after: avoid; break-inside: avoid; }
   h2 { font-size: 1.12rem; margin-top: 2rem; color: var(--brand-dark); }
   h3 { font-size: 1.02rem; }
   h3.sub { margin-top: 1.8rem; color: var(--brand-dark); border-left: 4px solid var(--brand); padding-left: 8px; }
+  /* ย่อหน้าแรกหลังหัวข้อ ให้ติดหัวข้อไปด้วยกันเสมอ (กันหัวข้อได้ไปหน้าใหม่ แต่เนื้อหาแรกตกหล่นอยู่หน้าเดิม) */
+  h2 + p, h3 + p, h4 + p { break-before: avoid; }
   /* ตารางยาวปล่อยให้ไหลข้ามหน้าได้ (ไม่บังคับอยู่หน้าเดียวทั้งก้อน กันหน้าว่างเปล่า) —
      แต่หัวตารางย้ำซ้ำทุกหน้าที่ตัด และห้ามตัดกลางแถว */
   table { border-collapse: collapse; width: 100%; font-size: 13.5px; break-inside: auto; }
@@ -35,7 +40,6 @@
   .cover { display: flex; align-items: center; gap: 18px; background: linear-gradient(135deg, var(--brand-dark), var(--brand)); border-radius: 16px; padding: 18px 24px; margin-bottom: 8px; }
   .cover .num { flex-shrink: 0; width: 60px; height: 60px; border-radius: 50%; background: rgba(255,255,255,.16); border: 2px solid rgba(255,255,255,.55); display: flex; align-items: center; justify-content: center; font-size: 1.7rem; font-weight: 800; color: #fff; }
   .cover .cov-sub { margin: 4px 0 0; font-size: .82rem; color: #ccfbf1; }
-  .draftnote { background: #fffbeb; border: 1px solid #fde68a; color: #92400e; border-radius: 8px; padding: 7px 14px; font-size: .8rem; margin: 10px 0 20px; }
 
   /* ── ช่วงสอน+ฝึก ── */
   .ex { margin: 10px 0 12px; break-inside: avoid; border-bottom: 1px dotted #d1e7e5; padding-bottom: 8px; }
@@ -80,7 +84,7 @@
   /* ── ท้ายเล่ม: เฉลยย่อ / เฉลยละเอียด ── */
   .keybox { margin-top: 3rem; border: 2px dashed #99f6e4; border-radius: 10px; padding: 14px 18px; }
   .keybox .k { display: inline-block; min-width: 3.6em; padding: 3px 6px; margin: 2px; background: var(--brand-light); border: 1px solid var(--brand-tint); border-radius: 6px; font-size: .85em; text-align: center; }
-  .katex-display { overflow-x: auto; }
+  .katex-display { overflow-x: auto; break-inside: avoid; }
   .pdfbtn { position: fixed; bottom: 20px; right: 20px; z-index: 50;
     background: var(--brand); color: #fff; border: none; border-radius: 999px;
     padding: 14px 22px; font-size: 16px; font-weight: 700; font-family: inherit;
@@ -108,7 +112,6 @@
     <p class="cov-sub">ชีทเรียน+แบบฝึกหัด · ติวเคมี สอวน. ค่าย 1</p>
   </div>
 </header>
-<p class="draftnote">✏️ แบบฝึกหัดเรียงตามหัวข้อจากง่ายไปยาก (ดาวสีบอกระดับความยาก) · เฉลยย่อ+เฉลยละเอียดอยู่ท้ายเล่ม · ฉบับร่าง — รอเจ้าของรีวิว</p>
 <h1>สารละลาย</h1>
 <blockquote>
 <p>หมวดนี้คือ &quot;สนามแปลงหน่วย&quot; ของ สอวน. ค่าย 1 (ออกสอบราว 12% ของข้อสอบ) — จากการวิเคราะห์ข้อสอบจริง 8 ปี ข้อสอบวนอยู่ 3 กลุ่มใหญ่: (1) <strong>แปลงหน่วยความเข้มข้นข้ามระบบ</strong> โมลาร์ ↔ โมแลล ↔ ร้อยละ ↔ ppm ↔ เศษส่วนโมล โดยมี<em>ความหนาแน่น</em>เป็นสะพานเชื่อม (2) <strong>เตรียม–เจือจาง–ผสมสารละลาย</strong> โดยเฉพาะโจทย์เกลือไฮเดรต และการหาความเข้มข้นไอออนรวมหลังผสมสองสารละลาย ซึ่งออกซ้ำแทบทุกปี (3) <strong>สมบัติคอลลิเกทีฟ</strong> ใช้ <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>=</mo><mi>K</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">\Delta T = Km</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0715em;">K</span><span class="mord mathnormal">m</span></span></span></span> ทั้ง &quot;ขาไป&quot; (หาจุดเดือด/จุดเยือกแข็ง) และ &quot;ขากลับ&quot; (หามวลโมเลกุลของสารไม่ทราบสูตร) บางข้อผูก <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">K_b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0715em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> กับ <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi>f</mi></msub></mrow><annotation encoding="application/x-tex">K_f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0715em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.1076em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span> หรือผูกสองตัวทำละลายไว้ในข้อเดียว ใครนิยามหน่วยแม่นและตั้งเศษส่วนตัดหน่วยเป็น หมวดนี้คือคะแนนก้อนใหญ่ที่เก็บได้จริง</p>
