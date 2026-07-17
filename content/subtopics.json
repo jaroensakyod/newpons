@@ -13,7 +13,13 @@
     { "subtopic": "การจัดเรียงอิเล็กตรอนและออร์บิทัล", "real_exam_difficulty_range": [2, 4] },
     { "subtopic": "สเปกตรัมและแบบจำลองโบร์", "real_exam_difficulty_range": [2, 5] },
     { "subtopic": "กัมมันตภาพรังสีและครึ่งชีวิต", "real_exam_difficulty_range": [2, 4] },
-    { "subtopic": "มวลอะตอมเฉลี่ยและร้อยละความอุดมสมบูรณ์ไอโซโทป", "real_exam_difficulty_range": [2, 4] }
+    { "subtopic": "มวลอะตอมเฉลี่ยและร้อยละความอุดมสมบูรณ์ไอโซโทป", "real_exam_difficulty_range": [2, 4] },
+    { "subtopic": "อนุกรมการสลายตัวกัมมันตรังสี", "real_exam_difficulty_range": [2, 5] },
+    { "subtopic": "ปรากฏการณ์โฟโตอิเล็กทริก", "real_exam_difficulty_range": [2, 4] },
+    { "subtopic": "สมบัติคลื่นของอนุภาค (เดอบรอยล์)", "real_exam_difficulty_range": [2, 4] },
+    { "subtopic": "หลักความไม่แน่นอนของไฮเซนเบิร์ก", "real_exam_difficulty_range": [2, 4] },
+    { "subtopic": "ความเสถียรของนิวเคลียส", "real_exam_difficulty_range": [2, 4] },
+    { "subtopic": "พลังงานยึดเหนี่ยวนิวเคลียสและมวลพร่อง", "real_exam_difficulty_range": [3, 5] }
   ],
   "ตารางธาตุและสมบัติของธาตุ": [
     { "subtopic": "แนวโน้มสมบัติธาตุ (ขนาด IE EN EA)", "real_exam_difficulty_range": [2, 4] },
