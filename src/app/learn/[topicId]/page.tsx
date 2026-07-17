@@ -32,21 +32,10 @@ function splitSections(md: string): { heading: string; body: string }[] {
   return sections;
 }
 
-// เลือกโจทย์กระจายง่าย→ยาก: เรียงตาม difficulty แล้วหยิบแบบเว้นช่วงเท่า ๆ กัน
-function pickSpread(qs: QuizQuestion[], n: number): QuizQuestion[] {
-  const sorted = [...qs].sort((a, b) => a.difficulty - b.difficulty);
-  if (sorted.length <= n) return sorted;
-  const picked: QuizQuestion[] = [];
-  const used = new Set<number>();
-  for (let i = 0; i < n; i++) {
-    const idx = Math.round((i * (sorted.length - 1)) / (n - 1));
-    const j = used.has(idx) ? idx + 1 : idx;
-    if (j < sorted.length && !used.has(j)) {
-      used.add(j);
-      picked.push(sorted[j]);
-    }
-  }
-  return picked;
+// เลือกโจทย์ N ข้อที่ง่ายสุด (เรียง difficulty) — ช่วงสอนแรกของ subtopic ได้ข้อง่าย
+// ข้อยากตกไปอยู่ช่วงกวาดท้าย (drill=99) ซึ่งสอนเนื้อหาครบแล้ว กันโจทย์มาก่อนบทเรียน
+function pickEasiest(qs: QuizQuestion[], n: number): QuizQuestion[] {
+  return [...qs].sort((a, b) => a.difficulty - b.difficulty).slice(0, n);
 }
 
 export default async function LearnPage({
@@ -117,7 +106,7 @@ export default async function LearnPage({
         wantedIds.has(q.subtopic_id) &&
         !usedIds.has(q.id)
     );
-    const picked = pickSpread(pool, step.drill);
+    const picked = pickEasiest(pool, step.drill);
     picked.forEach((q) => usedIds.add(q.id));
     return {
       title: step.title,
