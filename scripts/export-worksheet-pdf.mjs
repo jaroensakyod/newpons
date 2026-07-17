@@ -1,5 +1,6 @@
 // แปลงชีท docs/worksheets/chNN.html → PDF จริง docs/worksheets/pdf/chNN.pdf
 // (เฉลยย่ออยู่หน้าสุดท้ายแยกจากแบบฝึกหัดเสมอ — break-before: page ใน CSS)
+// มีหัว/ท้ายกระดาษวิ่ง (ชื่อบท + เลขหน้า) ทุกหน้าแบบเอกสารทางการ
 // ใช้: node scripts/build-worksheet.mjs && node scripts/export-worksheet-pdf.mjs
 
 import fs from "node:fs";
@@ -20,12 +21,19 @@ const page = await browser.newPage();
 for (const file of files) {
   const url = "file:///" + path.join(WS_DIR, file).replaceAll("\\", "/");
   await page.goto(url, { waitUntil: "networkidle0", timeout: 60000 });
+  await page.evaluate(() => document.fonts.ready); // รอฟอนต์ Sarabun โหลดก่อนพิมพ์
+  const chapterName = await page.evaluate(
+    () => document.querySelector("h1")?.textContent?.trim() ?? ""
+  );
   const out = path.join(PDF_DIR, file.replace(".html", ".pdf"));
   await page.pdf({
     path: out,
     format: "A4",
-    margin: { top: "14mm", bottom: "14mm", left: "12mm", right: "12mm" },
+    margin: { top: "20mm", bottom: "16mm", left: "12mm", right: "12mm" },
     printBackground: true,
+    displayHeaderFooter: true,
+    headerTemplate: `<div style="font-family:sans-serif;font-size:8px;width:100%;padding:0 12mm;color:#94a3b8;text-align:right;">ติวเคมี สอวน. ค่าย 1 · ${chapterName}</div>`,
+    footerTemplate: `<div style="font-family:sans-serif;font-size:8px;width:100%;padding:0 12mm;color:#94a3b8;display:flex;justify-content:center;"><span class="pageNumber"></span>&nbsp;/&nbsp;<span class="totalPages"></span></div>`,
   });
   console.log(`✓ ${path.relative(ROOT, out)}`);
 }
