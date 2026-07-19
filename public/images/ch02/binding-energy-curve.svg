@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 360" font-family="system-ui, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 400" font-family="system-ui, sans-serif">
   <!-- พลังงานยึดเหนี่ยวต่อนิวคลิออน vs เลขมวล — จุดสูงสุดที่ Fe-56 -->
   <style>
     .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
@@ -10,12 +10,18 @@
     <marker id="bec-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
       <path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/>
     </marker>
+    <marker id="bec-ah-b" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#2563eb"/>
+    </marker>
+    <marker id="bec-ah-o" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#ea580c"/>
+    </marker>
   </defs>
 
   <!-- แกน -->
   <line x1="70" y1="300" x2="690" y2="300" class="ax" marker-end="url(#bec-ah)"/>
   <line x1="70" y1="300" x2="70" y2="30" class="ax" marker-end="url(#bec-ah)"/>
-  <text x="380" y="335" class="lbl">เลขมวล (A) →</text>
+  <text x="380" y="318" class="lbl">เลขมวล (A) →</text>
   <text x="30" y="165" class="lbl" transform="rotate(-90 30 165)">พลังงานยึดเหนี่ยว/นิวคลิออน (MeV)</text>
 
   <!-- เส้นโค้ง: ขึ้นเร็วจาก He-4 ผ่าน Li-7, O-16 ถึงจุดสูงสุด Fe-56 แล้วลดลงช้าๆ -->
@@ -36,14 +42,14 @@
   <circle cx="690" cy="175" r="4" fill="#0d9488"/>
   <text x="690" y="163" class="sub" text-anchor="end">U-238</text>
 
-  <!-- ลูกศรฟิวชัน/ฟิชชัน -->
-  <path d="M120,240 L320,90" stroke="#2563eb" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#bec-ah)"/>
-  <text x="150" y="230" class="sub" fill="#2563eb" text-anchor="start">ฟิวชัน (ธาตุเบา→หนัก)</text>
-  <text x="150" y="245" class="sub" fill="#2563eb" text-anchor="start">ปล่อยพลังงาน (ไต่ขึ้นเนิน)</text>
+  <!-- ลูกศรฟิวชัน/ฟิชชัน — วางใต้แกน x ให้พ้นเส้นโค้งข้อมูล ไม่ตัดกัน -->
+  <line x1="90" y1="345" x2="330" y2="345" stroke="#2563eb" stroke-width="2.5" marker-end="url(#bec-ah-b)"/>
+  <text x="210" y="340" class="sub" fill="#2563eb" font-weight="700">ฟิวชัน (ธาตุเบา → หนักขึ้น) →</text>
+  <text x="210" y="365" class="sub" fill="#2563eb">ปล่อยพลังงาน (ไต่ขึ้นเนินไปหา Fe-56)</text>
 
-  <path d="M660,160 L400,85" stroke="#ea580c" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#bec-ah)"/>
-  <text x="500" y="255" class="sub" fill="#ea580c" text-anchor="start">ฟิชชัน (ธาตุหนัก→เบาลง)</text>
-  <text x="500" y="270" class="sub" fill="#ea580c" text-anchor="start">ปล่อยพลังงาน (ไต่ขึ้นเนิน)</text>
+  <line x1="670" y1="345" x2="420" y2="345" stroke="#ea580c" stroke-width="2.5" marker-end="url(#bec-ah-o)"/>
+  <text x="545" y="340" class="sub" fill="#ea580c" font-weight="700">← ฟิชชัน (ธาตุหนัก → เบาลง)</text>
+  <text x="545" y="365" class="sub" fill="#ea580c">ปล่อยพลังงาน (ไต่ขึ้นเนินไปหา Fe-56)</text>
 
-  <text x="380" y="352" class="sub">Fe-56 เสถียรที่สุด — ทั้งฟิวชันธาตุเบาและฟิชชันธาตุหนักต่างปล่อยพลังงานเพราะผลิตภัณฑ์ขยับเข้าใกล้จุดสูงสุดนี้</text>
+  <text x="380" y="390" class="sub">Fe-56 เสถียรที่สุด — ทั้งฟิวชันธาตุเบาและฟิชชันธาตุหนักต่างปล่อยพลังงานเพราะผลิตภัณฑ์ขยับเข้าใกล้จุดสูงสุดนี้</text>
 </svg>

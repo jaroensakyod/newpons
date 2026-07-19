@@ -58,22 +58,22 @@
 
   <!-- panel 4: ปรอทหก -->
   <text x="675" y="275" class="lbl">ปรอทหก (mercury spill)</text>
-  <g transform="translate(610,365)">
+  <g transform="translate(560,365)">
     <line x1="0" y1="-25" x2="0" y2="20" stroke="#94a3b8" stroke-width="3"/>
     <path d="M-14,20 Q0,32 14,20" fill="none" stroke="#94a3b8" stroke-width="3"/>
     <line x1="-16" y1="-2" x2="16" y2="26" stroke="#dc2626" stroke-width="3"/>
     <line x1="16" y1="-2" x2="-16" y2="26" stroke="#dc2626" stroke-width="3"/>
   </g>
-  <text x="610" y="415" class="no" text-anchor="middle" font-size="10">ห้ามใช้ไม้กวาด</text>
+  <text x="560" y="415" class="no" text-anchor="middle" font-size="10">ห้ามไม้กวาด</text>
   <g transform="translate(700,365)">
     <rect x="-14" y="-20" width="28" height="30" rx="4" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2.5"/>
     <rect x="-6" y="-28" width="12" height="10" fill="#94a3b8"/>
     <line x1="-16" y1="-25" x2="16" y2="15" stroke="#dc2626" stroke-width="3"/>
     <line x1="16" y1="-25" x2="-16" y2="15" stroke="#dc2626" stroke-width="3"/>
   </g>
-  <text x="700" y="415" class="no" text-anchor="middle" font-size="10">ห้ามใช้เครื่องดูดฝุ่น</text>
-  <rect x="770" y="345" width="50" height="38" rx="5" fill="#f0fdfa" stroke="#059669" stroke-width="2.5"/>
-  <text x="795" y="368" class="sub" fill="#059669" font-size="8" font-weight="700">Hg kit</text>
-  <text x="795" y="415" class="ok" text-anchor="middle">✓</text>
-  <text x="675" y="450" class="sub">ห้ามใช้ไม้กวาด/เครื่องดูดฝุ่น/มือเปล่า — ใช้ชุดเก็บปรอทเฉพาะและระบายอากาศ</text>
+  <text x="700" y="415" class="no" text-anchor="middle" font-size="10">ห้ามดูดฝุ่น</text>
+  <rect x="815" y="345" width="50" height="38" rx="5" fill="#f0fdfa" stroke="#059669" stroke-width="2.5"/>
+  <text x="840" y="368" class="sub" fill="#059669" font-size="8" font-weight="700">Hg kit</text>
+  <text x="840" y="415" class="ok" text-anchor="middle">✓</text>
+  <text x="675" y="450" class="sub" font-size="9.5">ห้ามไม้กวาด/เครื่องดูดฝุ่น/มือเปล่า — ใช้ชุดเก็บปรอทเฉพาะและระบายอากาศ</text>
 </svg>

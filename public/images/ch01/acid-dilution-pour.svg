@@ -15,12 +15,12 @@
   </defs>
 
   <!-- ═══ ซ้าย: ผิด — เทน้ำลงกรดเข้มข้น ═══ -->
-  <text x="175" y="30" class="tag" fill="#dc2626">✗ ผิด — เทน้ำลงกรดเข้มข้น</text>
+  <text x="175" y="18" class="tag" fill="#dc2626">✗ ผิด — เทน้ำลงกรดเข้มข้น</text>
 
   <!-- ขวดหยดน้ำด้านบน -->
   <rect x="150" y="45" width="16" height="34" fill="#f0f9ff" stroke="#94a3b8" stroke-width="1.5"/>
   <path d="M150,79 L166,79 L162,95 L154,95 Z" fill="#f0f9ff" stroke="#94a3b8" stroke-width="1.5"/>
-  <text x="158" y="42" class="sub">น้ำ</text>
+  <text x="195" y="60" class="sub" text-anchor="start">น้ำ</text>
 
   <!-- สายน้ำหยดลง -->
   <line x1="158" y1="98" x2="158" y2="140" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#adp-red)"/>
@@ -47,12 +47,12 @@
   <line x1="350" y1="15" x2="350" y2="345" stroke="#e2e8f0" stroke-width="1.5"/>
 
   <!-- ═══ ขวา: ถูก — เทกรดลงน้ำทีละน้อยพร้อมกวน ═══ -->
-  <text x="525" y="30" class="tag" fill="#059669">✓ ถูก — เทกรดลงน้ำทีละน้อย + กวนตลอด</text>
+  <text x="525" y="18" class="tag" fill="#059669">✓ ถูก — เทกรดลงน้ำทีละน้อย + กวนตลอด</text>
 
   <!-- ขวดหยดกรดด้านบน -->
   <rect x="500" y="45" width="16" height="34" fill="#fef2f2" stroke="#94a3b8" stroke-width="1.5"/>
   <path d="M500,79 L516,79 L512,95 L504,95 Z" fill="#fef2f2" stroke="#94a3b8" stroke-width="1.5"/>
-  <text x="508" y="42" class="sub">กรดเข้มข้น (ทีละน้อย)</text>
+  <text x="545" y="60" class="sub" text-anchor="start">กรดเข้มข้น (ทีละน้อย)</text>
 
   <!-- สายกรดหยดลง -->
   <line x1="508" y1="98" x2="508" y2="140" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#adp-green)"/>

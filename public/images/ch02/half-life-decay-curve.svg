@@ -15,7 +15,7 @@
   <!-- แกน -->
   <line x1="70" y1="300" x2="670" y2="300" class="ax" marker-end="url(#hl-ah)"/>
   <line x1="70" y1="300" x2="70" y2="30" class="ax" marker-end="url(#hl-ah)"/>
-  <text x="380" y="335" class="lbl">เวลา (หน่วย: จำนวนครึ่งชีวิต)</text>
+  <text x="380" y="346" class="lbl">เวลา (หน่วย: จำนวนครึ่งชีวิต)</text>
   <text x="30" y="165" class="lbl" transform="rotate(-90 30 165)">ปริมาณคงเหลือ (%)</text>
 
   <!-- เส้นโค้งลดครึ่งทุกขั้น: 100 -> 50 -> 25 -> 12.5 -> 6.25 -->
