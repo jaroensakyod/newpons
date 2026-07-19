@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 340" font-family="system-ui, sans-serif">
+  <!-- แผนภาพระดับพลังงาน: สลายพันธะดูด สร้างพันธะคาย ตัวอย่างเผาไหม้มีเทน CH4+2O2->CO2+2H2O, deltaH=-802 kJ/mol -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .val { font-size: 11px; font-weight: 700; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="bed-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="22" class="lbl" font-size="14">CH₄ + 2O₂ → CO₂ + 2H₂O — พลังงานจากพันธะ</text>
+
+  <line x1="60" y1="290" x2="640" y2="290" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="30" y="80" class="sub" transform="rotate(-90 30 80)">พลังงาน</text>
+
+  <!-- ระดับสารตั้งต้น -->
+  <line x1="90" y1="150" x2="220" y2="150" stroke="#1e293b" stroke-width="3"/>
+  <text x="155" y="140" class="sub" font-weight="700">CH₄ + 2O₂</text>
+
+  <!-- ระดับอะตอมอิสระ (สูงสุด หลังดูดพลังงานสลายพันธะ) -->
+  <line x1="280" y1="60" x2="420" y2="60" stroke="#dc2626" stroke-width="3"/>
+  <text x="350" y="50" class="sub" font-weight="700" fill="#dc2626">อะตอมอิสระทั้งหมด</text>
+
+  <line x1="155" y1="150" x2="155" y2="70" stroke="#dc2626" stroke-width="2" marker-end="url(#bed-ah)"/>
+  <text x="255" y="95" class="val" fill="#dc2626">สลายพันธะ (ดูด)</text>
+  <text x="255" y="111" class="val" fill="#dc2626">4×C–H + 2×O=O</text>
+  <text x="255" y="127" class="sub">4(413) + 2(498) = +2648 kJ</text>
+
+  <!-- ระดับผลิตภัณฑ์ (ต่ำสุด) -->
+  <line x1="480" y1="260" x2="610" y2="260" stroke="#0d9488" stroke-width="3"/>
+  <text x="545" y="250" class="sub" font-weight="700" fill="#0d9488">CO₂ + 2H₂O</text>
+
+  <line x1="350" y1="70" x2="350" y2="250" stroke="#0d9488" stroke-width="2" marker-end="url(#bed-ah)"/>
+  <text x="450" y="195" class="val" fill="#0d9488">สร้างพันธะ (คาย)</text>
+  <text x="450" y="211" class="val" fill="#0d9488">2×C=O + 4×O–H</text>
+  <text x="450" y="227" class="sub">2(799) + 4(463) = −3450 kJ</text>
+
+  <line x1="155" y1="150" x2="545" y2="150" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="545" y="285" class="val" fill="#1e293b">ΔH = 2648 − 3450 = −802 kJ/mol</text>
+
+  <rect x="60" y="300" width="580" height="30" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="350" y="320" class="sub" fill="#ea580c" font-weight="700">ค่าติดลบ = คายพลังงานสุทธิ สอดคล้องกับปฏิกิริยาเผาไหม้ที่คายความร้อนจริง</text>
+</svg>

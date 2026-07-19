@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 300" font-family="system-ui, sans-serif">
+  <!-- ไฮบริไดเซชันผูกตรงกับจำนวนกลุ่มอิเล็กตรอนรอบอะตอมกลาง: 2->sp, 3->sp2, 4->sp3 -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .hyb { font-size: 20px; font-weight: 700; text-anchor: middle; }
+  </style>
+
+  <text x="370" y="24" class="lbl" font-size="14">จำนวนกลุ่มอิเล็กตรอน → ไฮบริไดเซชันของอะตอมกลาง</text>
+
+  <rect x="30" y="55" width="210" height="210" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="135" y="85" class="hyb" fill="#2563eb">sp</text>
+  <text x="135" y="108" class="sub">2 กลุ่มอิเล็กตรอน</text>
+  <text x="135" y="140" class="sub" font-weight="700">CO₂</text>
+  <line x1="90" y1="160" x2="180" y2="160" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="135" y="180" class="sub">มุม 180° (เชิงเส้น)</text>
+  <text x="135" y="230" class="sub">ผสม 1 ออร์บิทัล s</text>
+  <text x="135" y="246" class="sub">+ 1 ออร์บิทัล p</text>
+
+  <rect x="265" y="55" width="210" height="210" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+  <text x="370" y="85" class="hyb" fill="#0d9488">sp²</text>
+  <text x="370" y="108" class="sub">3 กลุ่มอิเล็กตรอน</text>
+  <text x="370" y="140" class="sub" font-weight="700">BF₃</text>
+  <path d="M370,175 L330,150 M370,175 L410,150 M370,175 L370,195" stroke="#0d9488" stroke-width="2.5" fill="none"/>
+  <text x="370" y="215" class="sub">มุม 120° (สามเหลี่ยมแบนราบ)</text>
+  <text x="370" y="240" class="sub">ผสม 1 ออร์บิทัล s + 2 ออร์บิทัล p</text>
+
+  <rect x="500" y="55" width="210" height="210" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="605" y="85" class="hyb" fill="#ea580c">sp³</text>
+  <text x="605" y="108" class="sub">4 กลุ่มอิเล็กตรอน</text>
+  <text x="605" y="140" class="sub" font-weight="700">CH₄</text>
+  <path d="M605,175 L575,150 M605,175 L635,150 M605,175 L580,200 M605,175 L630,200" stroke="#ea580c" stroke-width="2.5" fill="none"/>
+  <text x="605" y="220" class="sub">มุม 109.5° (4 หน้า)</text>
+  <text x="605" y="240" class="sub">ผสม 1 ออร์บิทัล s + 3 ออร์บิทัล p</text>
+
+  <text x="370" y="285" class="sub">ทั้งไฮบริไดเซชันและรูปร่างขึ้นกับจำนวนกลุ่มอิเล็กตรอนอย่างเดียว — ไม่สนใจว่าเป็นพันธะหรือคู่โดดเดี่ยว</text>
+</svg>

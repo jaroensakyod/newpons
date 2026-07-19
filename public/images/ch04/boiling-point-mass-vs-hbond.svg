@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 340" font-family="system-ui, sans-serif">
+  <!-- จุดเดือด CH4 < H2S < C4H10 < H2O: มวลโมเลกุลไม่ใช่ตัวตัดสินเดียว ชนิดแรงยึดเหนี่ยวสำคัญกว่า -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 9.5px; fill: #64748b; text-anchor: middle; }
+    .val { font-size: 11px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .ax { stroke: #94a3b8; stroke-width: 1.5; }
+  </style>
+
+  <text x="370" y="20" class="lbl" font-size="13">จุดเดือด: มวลโมเลกุลมาก ≠ จุดเดือดสูงเสมอ (ชนิดแรงยึดเหนี่ยวสำคัญกว่า)</text>
+
+  <line x1="60" y1="270" x2="700" y2="270" class="ax"/>
+  <line x1="60" y1="270" x2="60" y2="45" class="ax"/>
+  <line x1="60" y1="205" x2="700" y2="205" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="50" y="209" class="sub" text-anchor="end">0°C</text>
+
+  <!-- CH4: M=16, bp=-161.5, London -->
+  <rect x="100" y="255" width="70" height="15" fill="#5eead4" stroke="#0d9488" stroke-width="2"/>
+  <text x="135" y="250" class="val">−161.5°C</text>
+  <text x="135" y="300" class="lbl" font-size="11">CH₄</text>
+  <text x="135" y="316" class="sub">M=16 (ลอนดอนเท่านั้น)</text>
+
+  <!-- H2S: M=34, bp=-60, dipole-dipole -->
+  <rect x="240" y="230" width="70" height="40" fill="#93c5fd" stroke="#2563eb" stroke-width="2"/>
+  <text x="275" y="225" class="val">−60°C</text>
+  <text x="275" y="300" class="lbl" font-size="11">H₂S</text>
+  <text x="275" y="316" class="sub">M=34 (ขั้ว-ขั้ว)</text>
+
+  <!-- C4H10: M=58, bp=-0.5, London (larger) -->
+  <rect x="380" y="203" width="70" height="67" fill="#5eead4" stroke="#0d9488" stroke-width="2"/>
+  <text x="415" y="198" class="val">−0.5°C</text>
+  <text x="415" y="300" class="lbl" font-size="11">C₄H₁₀</text>
+  <text x="415" y="316" class="sub">M=58 (ลอนดอนแรงกว่า</text>
+  <text x="415" y="330" class="sub">เพราะโมเลกุลใหญ่กว่ามาก)</text>
+
+  <!-- H2O: M=18, bp=100, H-bond -->
+  <rect x="520" y="65" width="70" height="205" fill="#fca5a5" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="555" y="58" class="val" fill="#dc2626" font-size="13">100°C</text>
+  <text x="555" y="300" class="lbl" font-size="11" fill="#dc2626">H₂O</text>
+  <text x="555" y="316" class="sub">M=18 (พันธะไฮโดรเจน)</text>
+
+  <rect x="620" y="65" width="100" height="205" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="670" y="90" class="sub" font-weight="700" fill="#ea580c">สังเกต</text>
+  <text x="670" y="115" class="sub">H₂O มวลน้อย</text>
+  <text x="670" y="130" class="sub">กว่า H₂S, C₄H₁₀</text>
+  <text x="670" y="145" class="sub">มาก แต่เดือด</text>
+  <text x="670" y="160" class="sub">สูงสุด เพราะ</text>
+  <text x="670" y="175" class="sub">พันธะไฮโดรเจน</text>
+  <text x="670" y="195" class="sub">แรงกว่าขั้ว-ขั้ว</text>
+  <text x="670" y="210" class="sub">และลอนดอนมาก</text>
+</svg>

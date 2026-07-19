@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" font-family="system-ui, sans-serif">
+  <!-- พันธะโคออร์ดิเนตโคเวเลนต์: NH3 (ให้คู่อิเล็กตรอน = ลิวอิสเบส) + H+ (รับคู่อิเล็กตรอน = ลิวอิสกรด) -> NH4+ -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .big { font-size: 22px; font-weight: 700; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="cbl-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="24" class="lbl" font-size="14">พันธะโคออร์ดิเนตโคเวเลนต์: NH₃ + H⁺ → NH₄⁺</text>
+
+  <rect x="60" y="60" width="160" height="80" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+  <text x="140" y="95" class="big" fill="#0d9488">NH₃</text>
+  <text x="140" y="118" class="sub">มีคู่อิเล็กตรอนโดดเดี่ยว</text>
+  <text x="140" y="132" class="sub" fill="#0d9488" font-weight="700">ลิวอิสเบส (ผู้ให้)</text>
+
+  <path d="M225,90 C 280,70 320,70 360,90" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#cbl-ah)"/>
+  <text x="292" y="65" class="sub" fill="#2563eb">ให้คู่อิเล็กตรอนทั้งคู่</text>
+
+  <rect x="370" y="60" width="120" height="80" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="430" y="95" class="big" fill="#dc2626">H⁺</text>
+  <text x="430" y="118" class="sub">ออร์บิทัลว่างเปล่า</text>
+  <text x="430" y="132" class="sub" fill="#dc2626" font-weight="700">ลิวอิสกรด (ผู้รับ)</text>
+
+  <line x1="350" y1="170" x2="350" y2="195" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#cbl-ah)"/>
+
+  <rect x="250" y="200" width="200" height="65" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="350" y="232" class="big" fill="#2563eb">NH₄⁺</text>
+  <text x="350" y="252" class="sub">พันธะ N→H ใหม่นี้เหมือนอีก 3 พันธะทุกประการ</text>
+
+  <text x="350" y="285" class="sub">ต่างจากพันธะโคเวเลนต์ธรรมดาแค่ "ที่มา" ของอิเล็กตรอนคู่ (มาจากอะตอมเดียว ไม่ใช่คนละอะตอม)</text>
+</svg>

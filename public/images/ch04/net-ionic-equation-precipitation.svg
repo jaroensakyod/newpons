@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 300" font-family="system-ui, sans-serif">
+  <!-- สมการไอออนสุทธิ: ตัดไอออนสังเกตการณ์ (spectator ion) ที่เหมือนกันทั้งสองข้างออก -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .eq { font-size: 13px; text-anchor: middle; }
+  </style>
+
+  <text x="370" y="22" class="lbl" font-size="14">สมการไอออนสุทธิ: BaCl₂(aq) + Na₂SO₄(aq) → BaSO₄(s) + 2NaCl(aq)</text>
+
+  <text x="370" y="55" class="sub" font-weight="700">สมการไอออนเต็ม (แตกทุกตัวที่ละลายน้ำเป็นไอออน)</text>
+  <text x="370" y="80" class="eq">Ba²⁺ + 2Cl⁻ + 2Na⁺ + SO₄²⁻ → BaSO₄(s) + 2Na⁺ + 2Cl⁻</text>
+
+  <rect x="230" y="65" width="60" height="26" rx="4" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 2"/>
+  <rect x="500" y="65" width="60" height="26" rx="4" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 2"/>
+  <rect x="300" y="65" width="55" height="26" rx="4" fill="none" stroke="#ea580c" stroke-width="2" stroke-dasharray="3 2"/>
+  <rect x="590" y="65" width="55" height="26" rx="4" fill="none" stroke="#ea580c" stroke-width="2" stroke-dasharray="3 2"/>
+
+  <text x="370" y="120" class="sub" fill="#dc2626" font-weight="700">Na⁺ และ Cl⁻ ปรากฏทั้งสองข้างเท่ากันพอดี (ไม่ได้เกิดปฏิกิริยาจริง) = ไอออนสังเกตการณ์ (spectator ion)</text>
+
+  <line x1="60" y1="140" x2="680" y2="140" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="370" y="135" class="sub">ตัดไอออนสังเกตการณ์ออกทั้งสองข้าง ↓</text>
+
+  <rect x="180" y="160" width="380" height="55" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+  <text x="370" y="195" class="lbl" fill="#0d9488" font-size="16">Ba²⁺(aq) + SO₄²⁻(aq) → BaSO₄(s)</text>
+
+  <rect x="60" y="235" width="620" height="55" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="370" y="257" class="sub" font-weight="700" fill="#ea580c">สมการไอออนสุทธิแสดงเฉพาะไอออนที่ "จับตัวเป็นตะกอน" จริงเท่านั้น</text>
+  <text x="370" y="277" class="sub">Na⁺ และ Cl⁻ ยังคงละลายอยู่ในสารละลายเหมือนเดิม ไม่ได้หายไปไหน แค่ไม่มีบทบาทในปฏิกิริยาตกตะกอนนี้</text>
+</svg>

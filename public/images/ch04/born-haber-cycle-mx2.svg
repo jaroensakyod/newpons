@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 340" font-family="system-ui, sans-serif">
+  <!-- วัฏจักรบอร์น-ฮาเบอร์ทั่วไปของสาร MX2 (ไอออนบวก 2+): ต่างจาก MX ตรงต้องมี IE2 เพิ่ม + ขั้นแอนไอออนต้องคูณ 2 -->
+  <style>
+    .lbl { font-size: 12px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 9.5px; fill: #64748b; text-anchor: middle; }
+    .val { font-size: 11px; font-weight: 700; text-anchor: start; }
+  </style>
+  <defs>
+    <marker id="bhm-ah" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <text x="390" y="20" class="lbl" font-size="14">วัฏจักรบอร์น-ฮาเบอร์ของสาร MX₂ (M เสีย 2 อิเล็กตรอน): M(s) + X₂ → MX₂(s)</text>
+
+  <rect x="30" y="285" width="150" height="34" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="105" y="307" class="sub" font-weight="700">M(s) + X₂</text>
+
+  <line x1="105" y1="285" x2="105" y2="240" stroke="#2563eb" stroke-width="2" marker-end="url(#bhm-ah)"/>
+  <text x="115" y="255" class="val" fill="#2563eb">1) ระเหิด M: ΔH_sub</text>
+  <rect x="30" y="210" width="150" height="30" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="105" y="230" class="sub" font-weight="700">M(g) + X₂</text>
+
+  <line x1="180" y1="225" x2="250" y2="160" stroke="#2563eb" stroke-width="2" marker-end="url(#bhm-ah)"/>
+  <text x="260" y="175" class="val" fill="#2563eb">2) IE₁: ดึง e⁻ ตัวที่ 1</text>
+  <rect x="230" y="125" width="160" height="30" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="310" y="145" class="sub" font-weight="700">M⁺(g) + e⁻ + X₂</text>
+
+  <line x1="390" y1="140" x2="460" y2="95" stroke="#dc2626" stroke-width="2.5" marker-end="url(#bhm-ah)"/>
+  <text x="470" y="100" class="val" fill="#dc2626" font-size="12">3) IE₂: ดึง e⁻ ตัวที่ 2 (ขั้นสำคัญที่ต่างจาก MX)</text>
+  <rect x="440" y="60" width="190" height="30" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="535" y="80" class="sub" font-weight="700">M²⁺(g) + 2e⁻ + X₂</text>
+
+  <line x1="600" y1="90" x2="660" y2="150" stroke="#ea580c" stroke-width="2" marker-end="url(#bhm-ah)"/>
+  <text x="440" y="130" class="val" fill="#ea580c">4) แตกตัว X₂ เต็มโมเลกุล</text>
+  <rect x="560" y="150" width="170" height="30" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="645" y="170" class="sub" font-weight="700">M²⁺(g) + 2e⁻ + 2X(g)</text>
+
+  <line x1="645" y1="180" x2="615" y2="220" stroke="#0d9488" stroke-width="2" marker-end="url(#bhm-ah)"/>
+  <text x="440" y="205" class="val" fill="#0d9488">5) EA×2 (รับ e⁻ 2 อะตอม)</text>
+  <rect x="530" y="220" width="170" height="30" rx="6" fill="#f0fdfa" stroke="#0d9488" stroke-width="2"/>
+  <text x="615" y="240" class="sub" font-weight="700">M²⁺(g) + 2X⁻(g)</text>
+
+  <line x1="580" y1="250" x2="470" y2="290" stroke="#dc2626" stroke-width="2.5" marker-end="url(#bhm-ah)"/>
+  <text x="440" y="272" class="val" fill="#dc2626">6) พลังงานแลตทิซ</text>
+
+  <rect x="330" y="295" width="150" height="34" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="405" y="317" class="sub" font-weight="700" fill="#dc2626">MX₂(s)</text>
+</svg>

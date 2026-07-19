@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 320" font-family="system-ui, sans-serif">
+  <!-- คู่โดดเดี่ยวยิ่งมาก มุมพันธะยิ่งแคบลง: CH4 (109.5°) > NH3 (107°) > H2O (104.5°) -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .ang { font-size: 14px; fill: #dc2626; text-anchor: middle; font-weight: 700; }
+    .atom { font-size: 13px; font-weight: 700; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="bal-ah" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="22" class="lbl" font-size="14">คู่โดดเดี่ยวผลักแน่นกว่าคู่พันธะ → มุมพันธะแคบลงเมื่อคู่โดดเดี่ยวเพิ่ม</text>
+
+  <!-- CH4: 0 LP, 109.5 -->
+  <text x="120" y="55" class="atom">CH₄ (0 คู่โดดเดี่ยว)</text>
+  <circle cx="120" cy="130" r="14" fill="#1e293b"/>
+  <line x1="120" y1="130" x2="80" y2="90" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="120" y1="130" x2="160" y2="90" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="120" y1="130" x2="80" y2="170" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="120" y1="130" x2="160" y2="170" stroke="#94a3b8" stroke-width="2"/>
+  <circle cx="80" cy="90" r="7" fill="#93c5fd"/><circle cx="160" cy="90" r="7" fill="#93c5fd"/>
+  <circle cx="80" cy="170" r="7" fill="#93c5fd"/><circle cx="160" cy="170" r="7" fill="#93c5fd"/>
+  <text x="120" y="210" class="ang">109.5°</text>
+  <text x="120" y="228" class="sub">4 พันธะ, 4 หน้า (tetrahedral)</text>
+
+  <line x1="255" y1="70" x2="255" y2="260" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- NH3: 1 LP, 107 -->
+  <text x="380" y="55" class="atom">NH₃ (1 คู่โดดเดี่ยว)</text>
+  <circle cx="380" cy="130" r="14" fill="#1e293b"/>
+  <path d="M380,116 Q400,90 380,80 Q360,90 380,116" fill="#fde68a" stroke="#ca8a04" stroke-width="1.5"/>
+  <line x1="380" y1="130" x2="345" y2="95" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="380" y1="130" x2="345" y2="170" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="380" y1="130" x2="415" y2="150" stroke="#94a3b8" stroke-width="2"/>
+  <circle cx="345" cy="95" r="7" fill="#93c5fd"/><circle cx="345" cy="170" r="7" fill="#93c5fd"/><circle cx="415" cy="150" r="7" fill="#93c5fd"/>
+  <text x="380" y="210" class="ang">107°</text>
+  <text x="380" y="228" class="sub">3 พันธะ + 1 คู่โดดเดี่ยว (สีเหลือง)</text>
+
+  <line x1="515" y1="70" x2="515" y2="260" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- H2O: 2 LP, 104.5 -->
+  <text x="640" y="55" class="atom">H₂O (2 คู่โดดเดี่ยว)</text>
+  <circle cx="640" cy="130" r="14" fill="#1e293b"/>
+  <path d="M640,116 Q660,95 645,75 Q625,80 626,105 Q628,115 640,116" fill="#fde68a" stroke="#ca8a04" stroke-width="1.5"/>
+  <path d="M640,116 Q660,140 655,160 Q635,165 622,145 Q622,128 640,116" fill="#fde68a" stroke="#ca8a04" stroke-width="1.5"/>
+  <line x1="640" y1="130" x2="610" y2="110" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="640" y1="130" x2="680" y2="115" stroke="#94a3b8" stroke-width="2"/>
+  <circle cx="610" cy="110" r="7" fill="#93c5fd"/><circle cx="680" cy="115" r="7" fill="#93c5fd"/>
+  <text x="640" y="210" class="ang">104.5°</text>
+  <text x="640" y="228" class="sub">2 พันธะ + 2 คู่โดดเดี่ยว (สีเหลือง)</text>
+
+  <rect x="60" y="250" width="640" height="55" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="380" y="272" class="sub" font-weight="700" fill="#ea580c">ทั้ง 3 โมเลกุลมี 4 กลุ่มอิเล็กตรอนเท่ากัน (tetrahedral electron geometry)</text>
+  <text x="380" y="290" class="sub">แต่คู่โดดเดี่ยวกินพื้นที่มากกว่าคู่พันธะ จึงบีบมุมระหว่างพันธะ H ให้แคบลงทีละนิด</text>
+</svg>

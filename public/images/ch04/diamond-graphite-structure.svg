@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" font-family="system-ui, sans-serif">
+  <!-- เพชรกับกราไฟต์: ธาตุคาร์บอนเหมือนกัน แต่โครงสร้างต่างกันจึงสมบัติต่างกันมาก -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 9.5px; fill: #64748b; text-anchor: middle; }
+  </style>
+
+  <text x="360" y="22" class="lbl" font-size="14">เพชร vs กราไฟต์ — ธาตุเดียวกัน (คาร์บอน) แต่โครงสร้างต่างกันสิ้นเชิง</text>
+
+  <!-- เพชร: 3มิติ 4พันธะ -->
+  <rect x="30" y="45" width="310" height="200" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="185" y="68" class="sub" font-weight="700" fill="#2563eb">เพชร (diamond)</text>
+  <g stroke="#2563eb" stroke-width="1.5">
+    <circle cx="185" cy="130" r="8" fill="#2563eb"/>
+    <circle cx="140" cy="100" r="7" fill="#93c5fd"/><circle cx="230" cy="100" r="7" fill="#93c5fd"/>
+    <circle cx="140" cy="160" r="7" fill="#93c5fd"/><circle cx="230" cy="160" r="7" fill="#93c5fd"/>
+    <line x1="185" y1="130" x2="140" y2="100"/><line x1="185" y1="130" x2="230" y2="100"/>
+    <line x1="185" y1="130" x2="140" y2="160"/><line x1="185" y1="130" x2="230" y2="160"/>
+  </g>
+  <text x="185" y="200" class="sub">C แต่ละอะตอมสร้างพันธะเดี่ยว 4 พันธะ</text>
+  <text x="185" y="216" class="sub">แบบ sp³ ต่อเนื่องกันเป็นร่างตาข่าย 3 มิติ</text>
+  <text x="185" y="232" class="sub" font-weight="700" fill="#2563eb">แข็งที่สุดในธรรมชาติ, ไม่นำไฟฟ้า</text>
+
+  <!-- กราไฟต์: ชั้น 2มิติ 3พันธะ -->
+  <rect x="370" y="45" width="320" height="200" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="2.5"/>
+  <text x="530" y="68" class="sub" font-weight="700" fill="#475569">กราไฟต์ (graphite)</text>
+  <g stroke="#475569" stroke-width="1.5" fill="#94a3b8">
+    <circle cx="460" cy="100" r="6"/><circle cx="500" cy="100" r="6"/><circle cx="540" cy="100" r="6"/><circle cx="580" cy="100" r="6"/>
+    <circle cx="480" cy="130" r="6"/><circle cx="520" cy="130" r="6"/><circle cx="560" cy="130" r="6"/><circle cx="600" cy="130" r="6"/>
+    <line x1="460" y1="100" x2="500" y2="100"/><line x1="500" y1="100" x2="540" y2="100"/><line x1="540" y1="100" x2="580" y2="100"/>
+    <line x1="480" y1="130" x2="520" y2="130"/><line x1="520" y1="130" x2="560" y2="130"/><line x1="560" y1="130" x2="600" y2="130"/>
+    <line x1="480" y1="130" x2="460" y2="100"/><line x1="520" y1="130" x2="500" y2="100"/><line x1="560" y1="130" x2="540" y2="100"/><line x1="600" y1="130" x2="580" y2="100"/>
+  </g>
+  <line x1="450" y1="155" x2="610" y2="155" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="530" y="172" class="sub" fill="#475569">(ชั้นถัดไปยึดกันหลวมๆ ด้วยแรงลอนดอน)</text>
+  <text x="530" y="196" class="sub">C แต่ละอะตอมสร้างพันธะเดี่ยว 3 พันธะ</text>
+  <text x="530" y="212" class="sub">แบบ sp² เป็นแผ่นหกเหลี่ยม 2 มิติ ซ้อนกันเป็นชั้น</text>
+  <text x="530" y="232" class="sub" font-weight="700" fill="#475569">ลื่น (ชั้นเลื่อนกันได้), นำไฟฟ้าในชั้น</text>
+
+  <rect x="60" y="260" width="600" height="45" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="360" y="278" class="sub" fill="#ea580c" font-weight="700">อิเล็กตรอนวาเลนซ์ตัวที่ 4 ของกราไฟต์ไม่ได้สร้างพันธะ แต่เคลื่อนที่อิสระในระนาบชั้น</text>
+  <text x="360" y="294" class="sub">จึงนำไฟฟ้าได้ในทิศทางขนานกับชั้น ต่างจากเพชรที่ใช้ครบทั้ง 4 อิเล็กตรอนสร้างพันธะหมด</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 320" font-family="system-ui, sans-serif">
+  <!-- แรงไอออน-ขั้ว: โมเลกุลน้ำหันขั้วลบเข้าหาไอออนบวก ยิ่งประจุไอออนมาก แรงยึดเหนี่ยวยิ่งแรง -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .ion { font-size: 18px; font-weight: 700; text-anchor: middle; }
+  </style>
+
+  <text x="370" y="22" class="lbl" font-size="14">แรงไอออน-ขั้ว: น้ำหันขั้วลบ (O) เข้าหาไอออนบวก ยิ่งประจุมาก ยิ่งดึงดูดแรง</text>
+
+  <!-- Na+ -->
+  <circle cx="180" cy="130" r="26" fill="#93c5fd" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="180" y="137" class="ion" fill="#2563eb">Na⁺</text>
+  <!-- น้ำล้อมรอบ 4 โมเลกุล หันขั้ว O (ลบ) เข้าหา -->
+  <g stroke="#64748b" stroke-width="1.5" fill="none">
+    <line x1="180" y1="94" x2="180" y2="70"/>
+    <line x1="216" y1="130" x2="240" y2="130"/>
+    <line x1="180" y1="166" x2="180" y2="190"/>
+    <line x1="144" y1="130" x2="120" y2="130"/>
+  </g>
+  <circle cx="180" cy="62" r="8" fill="#fca5a5"/><text x="180" y="50" class="sub">δ−</text>
+  <circle cx="248" cy="130" r="8" fill="#fca5a5"/><text x="270" y="134" class="sub">δ−</text>
+  <circle cx="180" cy="198" r="8" fill="#fca5a5"/><text x="180" y="216" class="sub">δ−</text>
+  <circle cx="112" cy="130" r="8" fill="#fca5a5"/><text x="90" y="134" class="sub">δ−</text>
+  <text x="180" y="260" class="sub" font-weight="700">Na⁺ (ประจุ +1)</text>
+  <text x="180" y="278" class="sub">แรงดึงดูดปานกลาง</text>
+
+  <line x1="370" y1="55" x2="370" y2="300" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Mg2+ -->
+  <circle cx="560" cy="130" r="26" fill="#fca5a5" stroke="#dc2626" stroke-width="3"/>
+  <text x="560" y="137" class="ion" fill="#dc2626">Mg²⁺</text>
+  <g stroke="#64748b" stroke-width="1.5" fill="none">
+    <line x1="560" y1="94" x2="560" y2="70"/>
+    <line x1="596" y1="130" x2="620" y2="130"/>
+    <line x1="560" y1="166" x2="560" y2="190"/>
+    <line x1="524" y1="130" x2="500" y2="130"/>
+  </g>
+  <circle cx="560" cy="62" r="8" fill="#fca5a5"/><text x="560" y="50" class="sub">δ−</text>
+  <circle cx="628" cy="130" r="8" fill="#fca5a5"/><text x="650" y="134" class="sub">δ−</text>
+  <circle cx="560" cy="198" r="8" fill="#fca5a5"/><text x="560" y="216" class="sub">δ−</text>
+  <circle cx="492" cy="130" r="8" fill="#fca5a5"/><text x="470" y="134" class="sub">δ−</text>
+  <text x="560" y="260" class="sub" font-weight="700" fill="#dc2626">Mg²⁺ (ประจุ +2)</text>
+  <text x="560" y="278" class="sub">แรงดึงดูดแรงกว่า Na⁺ มาก</text>
+
+  <rect x="60" y="290" width="620" height="24" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="370" y="307" class="sub" fill="#ea580c" font-weight="700">ประจุไอออนยิ่งมาก + รัศมีไอออนยิ่งเล็ก → แรงไอออน-ขั้ว (และพลังงานไฮเดรชัน) ยิ่งแรง</text>
+</svg>

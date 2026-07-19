@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 300" font-family="system-ui, sans-serif">
+  <!-- พันธะไฮโดรเจนต้องมี H เกาะโดยตรงกับ N/O/F เท่านั้น -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .f { font-size: 15px; font-weight: 700; text-anchor: middle; }
+  </style>
+
+  <text x="370" y="22" class="lbl" font-size="14">เงื่อนไขพันธะไฮโดรเจน: H ต้องเกาะ "โดยตรง" กับ N, O หรือ F เท่านั้น</text>
+
+  <rect x="40" y="50" width="320" height="110" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+  <text x="200" y="75" class="lbl" fill="#0d9488" font-size="12">✓ มีพันธะไฮโดรเจน</text>
+  <text x="130" y="105" class="f" fill="#0d9488">H—F</text>
+  <text x="130" y="122" class="sub">H เกาะ F โดยตรง</text>
+  <text x="270" y="105" class="f" fill="#0d9488">H—O—H</text>
+  <text x="270" y="122" class="sub">H เกาะ O โดยตรง (น้ำ)</text>
+  <text x="200" y="148" class="sub">NH₃: H เกาะ N โดยตรง — มีพันธะไฮโดรเจนด้วย</text>
+
+  <rect x="380" y="50" width="320" height="110" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="540" y="75" class="lbl" fill="#dc2626" font-size="12">✗ ไม่มีพันธะไฮโดรเจน (กับดัก)</text>
+  <text x="460" y="105" class="f" fill="#dc2626">H₃C—F</text>
+  <text x="460" y="122" class="sub">H เกาะ C ไม่ใช่ F โดยตรง</text>
+  <text x="620" y="105" class="f" fill="#dc2626">CH₄</text>
+  <text x="620" y="122" class="sub">H เกาะ C เท่านั้น</text>
+  <text x="540" y="148" class="sub">แม้โมเลกุลมี F/N/O อยู่ในสูตร แต่ถ้า H ไม่ได้เกาะกับอะตอมนั้นโดยตรง ก็ไม่นับ</text>
+
+  <rect x="90" y="185" width="560" height="95" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="370" y="208" class="lbl" fill="#ea580c" font-size="12">ทำไม N, O, F เท่านั้น?</text>
+  <text x="370" y="228" class="sub">ทั้ง 3 ธาตุมีขนาดเล็กและ EN สูงมาก ทำให้พันธะ H–N/O/F มีขั้วแรงเป็นพิเศษ</text>
+  <text x="370" y="246" class="sub">อะตอม H ที่เหลืออิเล็กตรอนน้อยมากจึงถูกดึงดูดกับคู่โดดเดี่ยวของ N/O/F</text>
+  <text x="370" y="264" class="sub">บนโมเลกุลข้างเคียงได้แรงเป็นพิเศษ (แรงกว่าแรงดึงดูดแบบขั้ว-ขั้วทั่วไปมาก)</text>
+</svg>

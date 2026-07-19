@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320" font-family="system-ui, sans-serif">
+  <!-- แบบจำลองทะเลอิเล็กตรอน: ไอออนบวกโลหะจมอยู่ในกลุ่มอิเล็กตรอนวาเลนซ์ที่เคลื่อนที่ได้อิสระ -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+  </style>
+
+  <text x="350" y="22" class="lbl" font-size="14">แบบจำลองทะเลอิเล็กตรอน (electron sea model)</text>
+
+  <rect x="50" y="45" width="600" height="160" rx="10" fill="#fefce8" stroke="#ca8a04" stroke-width="2"/>
+  <!-- ไอออนบวกโลหะเรียงเป็นแถว -->
+  <g fill="#93c5fd" stroke="#2563eb" stroke-width="1.5">
+    <circle cx="110" cy="90" r="18"/><circle cx="200" cy="90" r="18"/><circle cx="290" cy="90" r="18"/><circle cx="380" cy="90" r="18"/><circle cx="470" cy="90" r="18"/><circle cx="560" cy="90" r="18"/>
+    <circle cx="110" cy="160" r="18"/><circle cx="200" cy="160" r="18"/><circle cx="290" cy="160" r="18"/><circle cx="380" cy="160" r="18"/><circle cx="470" cy="160" r="18"/><circle cx="560" cy="160" r="18"/>
+  </g>
+  <text x="110" y="95" class="sub" fill="#2563eb" font-weight="700">M⁺</text>
+  <text x="200" y="95" class="sub" fill="#2563eb" font-weight="700">M⁺</text>
+  <text x="290" y="95" class="sub" fill="#2563eb" font-weight="700">M⁺</text>
+  <text x="380" y="95" class="sub" fill="#2563eb" font-weight="700">M⁺</text>
+  <text x="470" y="95" class="sub" fill="#2563eb" font-weight="700">M⁺</text>
+  <text x="560" y="95" class="sub" fill="#2563eb" font-weight="700">M⁺</text>
+  <text x="110" y="165" class="sub" fill="#2563eb" font-weight="700">M⁺</text>
+  <text x="200" y="165" class="sub" fill="#2563eb" font-weight="700">M⁺</text>
+  <text x="290" y="165" class="sub" fill="#2563eb" font-weight="700">M⁺</text>
+  <text x="380" y="165" class="sub" fill="#2563eb" font-weight="700">M⁺</text>
+  <text x="470" y="165" class="sub" fill="#2563eb" font-weight="700">M⁺</text>
+  <text x="560" y="165" class="sub" fill="#2563eb" font-weight="700">M⁺</text>
+  <!-- อิเล็กตรอนอิสระกระจายทั่ว -->
+  <g fill="#fde047">
+    <circle cx="150" cy="70" r="4"/><circle cx="250" cy="120" r="4"/><circle cx="340" cy="70" r="4"/><circle cx="430" cy="130" r="4"/><circle cx="520" cy="75" r="4"/>
+    <circle cx="155" cy="140" r="4"/><circle cx="245" cy="180" r="4"/><circle cx="335" cy="185" r="4"/><circle cx="425" cy="175" r="4"/><circle cx="515" cy="145" r="4"/>
+    <circle cx="90" cy="130" r="4"/><circle cx="610" cy="130" r="4"/>
+  </g>
+
+  <rect x="60" y="225" width="580" height="80" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="2"/>
+  <text x="350" y="247" class="sub" font-weight="700" fill="#0d9488">ไอออนบวกของโลหะ (M⁺) เรียงตัวเป็นโครงร่างกฎเกณฑ์ ล้อมรอบด้วย "ทะเล" ของอิเล็กตรอนวาเลนซ์</text>
+  <text x="350" y="267" class="sub">ที่ไม่ได้ยึดติดกับอะตอมใดอะตอมหนึ่ง แต่เคลื่อนที่ได้อิสระทั่วทั้งก้อนโลหะ</text>
+  <text x="350" y="287" class="sub">อธิบายสมบัติ: นำไฟฟ้า/ความร้อนดี (อิเล็กตรอนเคลื่อนที่ได้), ตีเป็นแผ่นได้ (ไอออนเลื่อนผ่านกันได้โดยไม่แตก)</text>
+</svg>

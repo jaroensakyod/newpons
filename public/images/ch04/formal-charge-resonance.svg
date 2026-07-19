@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 340" font-family="system-ui, sans-serif">
+  <!-- ประจุฟอร์มัล + เปรียบเทียบ 3 โครงสร้างเรโซแนนซ์ของ OCN- เลือกโครงสร้างที่เสถียรที่สุด -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .fc { font-size: 13px; font-weight: 700; text-anchor: middle; }
+  </style>
+
+  <text x="370" y="24" class="lbl" font-size="14">ประจุฟอร์มัล = วาเลนซ์อิเล็กตรอนอิสระ − (คู่โดดเดี่ยว + ครึ่งหนึ่งของอิเล็กตรอนพันธะ)</text>
+
+  <rect x="40" y="50" width="200" height="90" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="140" y="75" class="lbl" font-size="12">โครงสร้าง A: O=C=N⁻</text>
+  <text x="140" y="98" class="fc">O: 0  C: 0  N: −1</text>
+  <text x="140" y="120" class="sub">ประจุลบอยู่ที่ N (EN ต่ำกว่า O)</text>
+  <text x="140" y="134" class="sub">มีส่วนร่วมได้บ้าง แต่รองจาก B</text>
+
+  <rect x="270" y="50" width="200" height="90" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="370" y="75" class="lbl" fill="#dc2626" font-size="12">โครงสร้าง B: ⁻O−C≡N</text>
+  <text x="370" y="98" class="fc">O: −1  C: 0  N: 0</text>
+  <text x="370" y="120" class="sub">ประจุลบอยู่ที่ O ซึ่ง EN สูงสุด</text>
+  <text x="370" y="134" class="sub" fill="#dc2626" font-weight="700">เสถียรที่สุด — โครงสร้างหลัก</text>
+
+  <rect x="500" y="50" width="200" height="90" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="600" y="75" class="lbl" font-size="12">โครงสร้าง C: O≡C−N²⁻</text>
+  <text x="600" y="98" class="fc">O: +1  C: 0  N: −2</text>
+  <text x="600" y="120" class="sub">มีประจุมากผิดปกติ + ประจุ</text>
+  <text x="600" y="134" class="sub" fill="#94a3b8">บวกอยู่ที่ O (EN สูง) — ตัดทิ้ง</text>
+
+  <rect x="60" y="160" width="620" height="130" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+  <text x="370" y="185" class="lbl" fill="#0d9488" font-size="12">เกณฑ์เลือกโครงสร้างเรโซแนนซ์ที่เสถียรที่สุด</text>
+  <text x="370" y="208" class="sub">1) ผลรวมประจุฟอร์มัลสัมบูรณ์น้อยที่สุด (A และ B มีค่าน้อยกว่า C)</text>
+  <text x="370" y="228" class="sub">2) ถ้าต้องมีประจุลบ ให้ตกอยู่บนอะตอมที่มี EN สูงกว่า — A กับ B มีขนาดประจุเท่ากัน (−1)</text>
+  <text x="370" y="246" class="sub">แต่ B วางประจุไว้บน O (EN สูงกว่า N) จึงเสถียรกว่า A และมีส่วนร่วมมากที่สุด</text>
+  <text x="370" y="266" class="sub">3) หลีกเลี่ยงประจุบวกบนอะตอมที่มี EN สูง (C มี O เป็น +1 จึงตัดทิ้งก่อน)</text>
+  <text x="370" y="284" class="sub">โครงสร้างจริงเป็นภาพผสม (resonance hybrid) ที่ B มีสัดส่วนมากที่สุดตามเกณฑ์ประจุฟอร์มัล</text>
+</svg>

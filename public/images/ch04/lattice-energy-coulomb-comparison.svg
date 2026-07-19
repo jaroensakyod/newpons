@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" font-family="system-ui, sans-serif">
+  <!-- เปรียบเทียบพลังงานแลตทิซ MgO vs NaCl ด้วยกฎของคูลอมบ์: ประจุมีผลแรงกว่ารัศมีมาก -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .f { font-size: 14px; font-weight: 700; text-anchor: middle; }
+  </style>
+
+  <text x="360" y="22" class="lbl" font-size="14">พลังงานแลตทิซตามกฎของคูลอมบ์: E ∝ |q₊×q₋| / (r₊+r₋)</text>
+
+  <rect x="30" y="50" width="320" height="150" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="190" y="75" class="f" fill="#2563eb">NaCl</text>
+  <text x="190" y="100" class="sub">Na⁺ = 102 pm, Cl⁻ = 181 pm</text>
+  <text x="190" y="120" class="sub">ระยะห่าง r = 102+181 = 283 pm</text>
+  <text x="190" y="140" class="sub">ประจุ: q₊=1, q₋=1</text>
+  <text x="190" y="165" class="sub" font-weight="700">E ∝ (1×1)/283</text>
+  <text x="190" y="185" class="sub">จุดหลอมเหลวจริง ≈ 801°C</text>
+
+  <rect x="370" y="50" width="320" height="150" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="530" y="75" class="f" fill="#dc2626">MgO</text>
+  <text x="530" y="100" class="sub">Mg²⁺ = 72 pm, O²⁻ = 140 pm</text>
+  <text x="530" y="120" class="sub">ระยะห่าง r = 72+140 = 212 pm</text>
+  <text x="530" y="140" class="sub">ประจุ: q₊=2, q₋=2</text>
+  <text x="530" y="165" class="sub" font-weight="700">E ∝ (2×2)/212</text>
+  <text x="530" y="185" class="sub">จุดหลอมเหลวจริง ≈ 2852°C</text>
+
+  <rect x="120" y="220" width="480" height="80" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+  <text x="360" y="243" class="lbl" fill="#0d9488" font-size="12">E(MgO) / E(NaCl) = [(2×2)/212] ÷ [(1×1)/283] = (4×283)/212 ≈ 5.3 เท่า</text>
+  <text x="360" y="265" class="sub">ทั้งที่ระยะห่างไอออนใกล้เคียงกัน (212 vs 283 pm) แต่ MgO ยึดเหนี่ยวแน่นกว่าเกือบ 5.3 เท่า</text>
+  <text x="360" y="283" class="sub">เพราะประจุคูณกันโดยตรงในตัวเศษ — ประจุมีผลแรงกว่ารัศมีมาก สอดคล้องจุดหลอมเหลวจริงต่างกันมาก</text>
+</svg>

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" font-family="system-ui, sans-serif">
+  <!-- แผนภูมิอ้างอิงรูปร่างโมเลกุลตาม VSEPR: แถว = จำนวนคู่โดดเดี่ยว, คอลัมน์ = จำนวนกลุ่มอิเล็กตรอนรอบอะตอมกลาง -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 9.5px; fill: #64748b; text-anchor: middle; }
+    .hd { font-size: 15px; fill: #0d9488; text-anchor: middle; font-weight: 700; }
+    .hyb { font-size: 10.5px; fill: #64748b; text-anchor: middle; }
+    .name { font-size: 10.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .ex { font-size: 9.5px; fill: #2563eb; text-anchor: middle; }
+    .rl { font-size: 10px; fill: #ea580c; text-anchor: middle; font-weight: 700; }
+  </style>
+
+  <text x="450" y="20" class="lbl" font-size="13">แผนภูมิอ้างอิงรูปร่างโมเลกุลตาม VSEPR</text>
+
+  <!-- หัวคอลัมน์: จำนวนกลุ่มอิเล็กตรอน -->
+  <text x="140" y="46" class="hd">2</text>
+  <text x="300" y="46" class="hd">3</text>
+  <text x="460" y="46" class="hd">4</text>
+  <text x="620" y="46" class="hd">5</text>
+  <text x="780" y="46" class="hd">6</text>
+  <text x="140" y="60" class="hyb">sp</text>
+  <text x="300" y="60" class="hyb">sp²</text>
+  <text x="460" y="60" class="hyb">sp³</text>
+  <text x="620" y="60" class="hyb">sp³d</text>
+  <text x="780" y="60" class="hyb">sp³d²</text>
+
+  <line x1="10" y1="70" x2="870" y2="70" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="55" y1="70" x2="55" y2="370" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- ป้ายแถว: จำนวนคู่โดดเดี่ยว -->
+  <text x="32" y="106" class="rl">0 LP</text>
+  <text x="32" y="176" class="rl">1 LP</text>
+  <text x="32" y="246" class="rl">2 LP</text>
+  <text x="32" y="316" class="rl">3 LP</text>
+
+  <!-- คอลัมน์ 2 กลุ่ม -->
+  <text x="140" y="100" class="name">เชิงเส้น (linear)</text>
+  <text x="140" y="116" class="ex">CO₂, BeCl₂</text>
+
+  <!-- คอลัมน์ 3 กลุ่ม -->
+  <text x="300" y="100" class="name">สามเหลี่ยมแบนราบ</text>
+  <text x="300" y="116" class="ex">BF₃, SO₃</text>
+  <text x="300" y="170" class="name">งอ (bent, ~119°)</text>
+  <text x="300" y="186" class="ex">SO₂</text>
+
+  <!-- คอลัมน์ 4 กลุ่ม -->
+  <text x="460" y="100" class="name">4 หน้า (tetrahedral)</text>
+  <text x="460" y="116" class="ex">CH₄</text>
+  <text x="460" y="170" class="name">พีระมิดสามเหลี่ยม</text>
+  <text x="460" y="186" class="ex">NH₃</text>
+  <text x="460" y="240" class="name">งอ (bent, ~104.5°)</text>
+  <text x="460" y="256" class="ex">H₂O</text>
+
+  <!-- คอลัมน์ 5 กลุ่ม -->
+  <text x="620" y="100" class="name">คู่พีระมิดสามเหลี่ยม</text>
+  <text x="620" y="116" class="ex">PCl₅</text>
+  <text x="620" y="170" class="name">ล้อเลื่อน (seesaw)</text>
+  <text x="620" y="186" class="ex">SF₄</text>
+  <text x="620" y="240" class="name">รูปตัว T</text>
+  <text x="620" y="256" class="ex">ClF₃</text>
+  <text x="620" y="310" class="name">เชิงเส้น (linear)</text>
+  <text x="620" y="326" class="ex">XeF₂</text>
+
+  <!-- คอลัมน์ 6 กลุ่ม -->
+  <text x="780" y="100" class="name">8 หน้า (octahedral)</text>
+  <text x="780" y="116" class="ex">SF₆</text>
+  <text x="780" y="170" class="name">พีระมิดฐานสี่เหลี่ยม</text>
+  <text x="780" y="186" class="ex">BrF₅</text>
+  <text x="780" y="240" class="name">สี่เหลี่ยมแบนราบ</text>
+  <text x="780" y="256" class="ex">XeF₄</text>
+
+  <line x1="10" y1="345" x2="870" y2="345" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="440" y="365" class="sub">อ่านตาราง: นับจำนวนกลุ่มอิเล็กตรอนทั้งหมด (พันธะ+คู่โดดเดี่ยว) รอบอะตอมกลางก่อน → นับคู่โดดเดี่ยว → หารูปร่างที่ตำแหน่งตัดกัน</text>
+  <text x="440" y="382" class="sub">พันธะคู่/พันธะสามนับเป็น 1 กลุ่มอิเล็กตรอนเท่ากับพันธะเดี่ยว (ดูแค่ทิศทาง ไม่ดูจำนวนอิเล็กตรอน)</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 320" font-family="system-ui, sans-serif">
+  <!-- 3 กรณียกเว้นกฎออกเตต: ไม่ครบ (BeCl2/BF3), เกิน (PCl5/SF6), จำนวนคี่ (NO/NO2) -->
+  <style>
+    .lbl { font-size: 13px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .ex { font-size: 16px; font-weight: 700; text-anchor: middle; }
+  </style>
+
+  <text x="380" y="24" class="lbl" font-size="14">3 กรณียกเว้นกฎออกเตต</text>
+
+  <!-- คอลัมน์ 1: ไม่ครบออกเตต -->
+  <rect x="30" y="50" width="220" height="240" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="140" y="75" class="lbl" fill="#2563eb" font-size="12">อิเล็กตรอนไม่ครบ 8</text>
+  <text x="140" y="110" class="ex" fill="#2563eb">BeCl₂</text>
+  <text x="140" y="130" class="sub">Be มีแค่ 4 อิเล็กตรอนรอบตัว</text>
+  <text x="140" y="160" class="ex" fill="#2563eb">BF₃</text>
+  <text x="140" y="180" class="sub">B มีแค่ 6 อิเล็กตรอนรอบตัว</text>
+  <text x="140" y="220" class="sub">ธาตุคาบ 2 หมู่ IIA/IIIA</text>
+  <text x="140" y="238" class="sub">(Be, B) วาเลนซ์อิเล็กตรอน</text>
+  <text x="140" y="256" class="sub">น้อยกว่า 4 ตั้งแต่ต้น</text>
+  <text x="140" y="274" class="sub">ทำให้ครบ 8 ไม่ได้</text>
+
+  <!-- คอลัมน์ 2: เกินออกเตต -->
+  <rect x="270" y="50" width="220" height="240" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="380" y="75" class="lbl" fill="#ea580c" font-size="12">อิเล็กตรอนเกิน 8 (expanded)</text>
+  <text x="380" y="110" class="ex" fill="#ea580c">PCl₅</text>
+  <text x="380" y="130" class="sub">P มี 10 อิเล็กตรอนรอบตัว</text>
+  <text x="380" y="160" class="ex" fill="#ea580c">SF₆</text>
+  <text x="380" y="180" class="sub">S มี 12 อิเล็กตรอนรอบตัว</text>
+  <text x="380" y="220" class="sub">ธาตุคาบ 3 ลงไป (P, S, Xe</text>
+  <text x="380" y="238" class="sub">ฯลฯ) มีออร์บิทัล d ว่าง</text>
+  <text x="380" y="256" class="sub">รับอิเล็กตรอนเพิ่มได้</text>
+  <text x="380" y="274" class="sub">(ธาตุคาบ 2 ทำแบบนี้ไม่ได้)</text>
+
+  <!-- คอลัมน์ 3: จำนวนคี่ -->
+  <rect x="510" y="50" width="220" height="240" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="620" y="75" class="lbl" fill="#dc2626" font-size="12">อิเล็กตรอนจำนวนคี่ (radical)</text>
+  <text x="620" y="110" class="ex" fill="#dc2626">NO</text>
+  <text x="620" y="130" class="sub">รวมมี 11 อิเล็กตรอนวาเลนซ์</text>
+  <text x="620" y="160" class="ex" fill="#dc2626">NO₂</text>
+  <text x="620" y="180" class="sub">รวมมี 17 อิเล็กตรอนวาเลนซ์</text>
+  <text x="620" y="220" class="sub">จำนวนคี่แบ่งเป็นคู่ไม่ลงตัว</text>
+  <text x="620" y="238" class="sub">ต้องเหลืออิเล็กตรอนเดี่ยว</text>
+  <text x="620" y="256" class="sub">(unpaired) 1 ตัวเสมอ</text>
+  <text x="620" y="274" class="sub">ทำให้สารว่องไวต่อปฏิกิริยา</text>
+
+  <text x="380" y="310" class="sub">ทั้ง 3 กรณีนี้ไม่ได้ทำผิดกฎ — กฎออกเตตเป็นแนวโน้มทั่วไป ไม่ใช่กฎสัมบูรณ์ที่ใช้ได้ทุกกรณี</text>
+</svg>

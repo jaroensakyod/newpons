@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320" font-family="system-ui, sans-serif">
+  <!-- วิธีไขว้ประจุ (crisscross): เลขประจุของไอออนหนึ่งกลายเป็นตัวห้อยของอีกไอออนหนึ่ง -->
+  <style>
+    .lbl { font-size: 13px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10.5px; fill: #64748b; text-anchor: middle; }
+    .big { font-size: 32px; fill: #1e293b; font-weight: 700; text-anchor: middle; }
+    .chg { font-size: 16px; font-weight: 700; }
+  </style>
+  <defs>
+    <marker id="ifc-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="24" class="lbl" font-size="14">วิธีไขว้ประจุ: Mg²⁺ + N³⁻ → Mg₃N₂</text>
+
+  <rect x="80" y="50" width="140" height="90" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="150" y="90" class="big" fill="#2563eb">Mg</text>
+  <text x="150" y="128" class="chg" fill="#2563eb" text-anchor="middle">2+</text>
+
+  <rect x="480" y="50" width="140" height="90" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="550" y="90" class="big" fill="#dc2626">N</text>
+  <text x="550" y="128" class="chg" fill="#dc2626" text-anchor="middle">3−</text>
+
+  <!-- ไขว้: เลข 2 ของ Mg ไปเป็นตัวห้อยของ N, เลข 3 ของ N ไปเป็นตัวห้อยของ Mg -->
+  <path d="M195,110 C 320,180 380,180 505,110" fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#ifc-ah)"/>
+  <path d="M505,120 C 380,210 320,210 195,120" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#ifc-ah)"/>
+  <text x="350" y="160" class="sub" fill="#2563eb">เลข 2 (จาก Mg²⁺) → ตัวห้อยของ N</text>
+  <text x="350" y="228" class="sub" fill="#dc2626">เลข 3 (จาก N³⁻) → ตัวห้อยของ Mg</text>
+
+  <rect x="230" y="250" width="240" height="55" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+  <text x="350" y="284" class="big" fill="#0d9488" font-size="26">Mg₃N₂</text>
+
+  <text x="350" y="315" class="sub">ตรวจสอบ: ประจุบวกรวม 3×(2+) = +6, ประจุลบรวม 2×(3−) = −6 → เป็นกลางพอดี</text>
+</svg>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 320" font-family="system-ui, sans-serif">
+  <!-- จำแนกผลึก 4 ชนิดจากจุดหลอมเหลว+การนำไฟฟ้า: ไอออนิก/โมเลกุล/โคเวเลนต์ร่างตาข่าย/โลหะ -->
+  <style>
+    .lbl { font-size: 12px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 9.5px; fill: #64748b; text-anchor: middle; }
+    .hd { font-size: 12px; font-weight: 700; text-anchor: middle; }
+  </style>
+
+  <text x="390" y="20" class="lbl" font-size="14">จำแนกชนิดผลึกจากจุดหลอมเหลวและการนำไฟฟ้า</text>
+
+  <!-- หัวตาราง -->
+  <line x1="20" y1="42" x2="760" y2="42" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="90" y="38" class="hd">ชนิดผลึก</text>
+  <text x="290" y="38" class="hd">จุดหลอมเหลว</text>
+  <text x="450" y="38" class="hd">นำไฟฟ้า (ของแข็ง)</text>
+  <text x="610" y="38" class="hd">นำไฟฟ้า (หลอมเหลว)</text>
+  <text x="720" y="38" class="hd">ตัวอย่าง</text>
+
+  <line x1="20" y1="55" x2="760" y2="55" stroke="#e2e8f0" stroke-width="1"/>
+  <!-- ไอออนิก -->
+  <text x="90" y="78" class="sub" font-weight="700" fill="#2563eb">ไอออนิก</text>
+  <text x="290" y="78" class="sub">สูง (เปราะ)</text>
+  <text x="450" y="78" class="sub">ไม่นำ</text>
+  <text x="610" y="78" class="sub" font-weight="700">นำ</text>
+  <text x="720" y="78" class="sub">NaCl (mp 801°C)</text>
+
+  <line x1="20" y1="93" x2="760" y2="93" stroke="#f1f5f9" stroke-width="1"/>
+  <!-- โมเลกุล -->
+  <text x="90" y="116" class="sub" font-weight="700" fill="#0d9488">โมเลกุล</text>
+  <text x="290" y="116" class="sub">ต่ำ</text>
+  <text x="450" y="116" class="sub">ไม่นำ</text>
+  <text x="610" y="116" class="sub">ไม่นำ</text>
+  <text x="720" y="116" class="sub">S₈ (mp 114°C)</text>
+
+  <line x1="20" y1="131" x2="760" y2="131" stroke="#f1f5f9" stroke-width="1"/>
+  <!-- โคเวเลนต์ร่างตาข่าย -->
+  <text x="90" y="154" class="sub" font-weight="700" fill="#dc2626">โคเวเลนต์ร่างตาข่าย</text>
+  <text x="290" y="154" class="sub">สูงมาก (แข็งมาก)</text>
+  <text x="450" y="154" class="sub">ไม่นำ*</text>
+  <text x="610" y="154" class="sub">ไม่นำ*</text>
+  <text x="720" y="154" class="sub">เพชร (mp &gt;3000°C)</text>
+
+  <line x1="20" y1="169" x2="760" y2="169" stroke="#f1f5f9" stroke-width="1"/>
+  <!-- โลหะ -->
+  <text x="90" y="192" class="sub" font-weight="700" fill="#ea580c">โลหะ</text>
+  <text x="290" y="192" class="sub">ปานกลาง–สูง</text>
+  <text x="450" y="192" class="sub" font-weight="700">นำ</text>
+  <text x="610" y="192" class="sub" font-weight="700">นำ</text>
+  <text x="720" y="192" class="sub">Fe, Cu</text>
+
+  <rect x="60" y="215" width="660" height="90" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="390" y="237" class="lbl" fill="#ea580c" font-size="12">วิธีวินิจฉัย: mp สูงมาก + ไม่นำไฟฟ้าทุกสถานะ = โคเวเลนต์ร่างตาข่าย</text>
+  <text x="390" y="257" class="sub">mp สูง + ไม่นำของแข็งแต่นำเมื่อหลอมเหลว/ละลายน้ำ = ไอออนิก (ไอออนถูกตรึงในของแข็ง เคลื่อนที่ได้เมื่อหลอมเหลว)</text>
+  <text x="390" y="275" class="sub">mp ต่ำ + ไม่นำไฟฟ้าเลย = โมเลกุล (แรงลอนดอน/ขั้ว-ขั้ว/ไฮโดรเจนบอนด์อ่อนกว่าพันธะมาก)</text>
+  <text x="390" y="293" class="sub">*กราไฟต์เป็นข้อยกเว้นพิเศษ: โคเวเลนต์ร่างตาข่ายแต่นำไฟฟ้าได้ (มีอิเล็กตรอนเคลื่อนที่อิสระในชั้น)</text>
+</svg>

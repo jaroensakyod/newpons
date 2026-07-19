@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" font-family="system-ui, sans-serif">
+  <!-- สภาพขั้วโมเลกุลตัดสินจากผลรวมเวกเตอร์ขั้วพันธะ+รูปร่าง: สมมาตรอาจหักล้างกันหมดแม้แต่ละพันธะมีขั้ว -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .res { font-size: 12px; font-weight: 700; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="dvc-ah" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="22" class="lbl" font-size="14">สภาพขั้วโมเลกุล = ผลรวมเวกเตอร์ขั้วพันธะ ไม่ใช่แค่ดู ΔEN ของแต่ละพันธะ</text>
+
+  <!-- CO2: เชิงเส้น หักล้างกันหมด -->
+  <text x="140" y="55" class="sub" font-weight="700">CO₂ (เชิงเส้น, 180°)</text>
+  <circle cx="140" cy="110" r="10" fill="#1e293b"/>
+  <circle cx="80" cy="110" r="8" fill="#fca5a5"/><circle cx="200" cy="110" r="8" fill="#fca5a5"/>
+  <line x1="88" y1="110" x2="132" y2="110" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="148" y1="110" x2="192" y2="110" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="140" y1="95" x2="105" y2="95" stroke="#dc2626" stroke-width="2" marker-end="url(#dvc-ah)"/>
+  <line x1="140" y1="95" x2="175" y2="95" stroke="#dc2626" stroke-width="2" marker-end="url(#dvc-ah)"/>
+  <text x="140" y="145" class="res" fill="#0d9488">หักล้างกันพอดี → ไม่มีขั้ว</text>
+
+  <line x1="270" y1="45" x2="270" y2="300" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- SO2: งอ ไม่หักล้าง -->
+  <text x="400" y="55" class="sub" font-weight="700">SO₂ (งอ, ~119°)</text>
+  <circle cx="400" cy="120" r="10" fill="#1e293b"/>
+  <circle cx="345" cy="90" r="8" fill="#fca5a5"/><circle cx="455" cy="90" r="8" fill="#fca5a5"/>
+  <line x1="352" y1="95" x2="392" y2="115" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="408" y1="115" x2="448" y2="95" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="400" y1="120" x2="370" y2="98" stroke="#dc2626" stroke-width="2" marker-end="url(#dvc-ah)"/>
+  <line x1="400" y1="120" x2="430" y2="98" stroke="#dc2626" stroke-width="2" marker-end="url(#dvc-ah)"/>
+  <line x1="400" y1="120" x2="400" y2="80" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#dvc-ah)"/>
+  <text x="400" y="145" class="res" fill="#dc2626">หักล้างกันไม่หมด → มีขั้ว</text>
+
+  <line x1="530" y1="45" x2="530" y2="300" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- CCl4 vs CHCl3 -->
+  <text x="645" y="55" class="sub" font-weight="700">CCl₄ (4 หน้าสมมาตร)</text>
+  <circle cx="645" cy="110" r="10" fill="#1e293b"/>
+  <circle cx="610" cy="90" r="7" fill="#5eead4"/><circle cx="680" cy="90" r="7" fill="#5eead4"/>
+  <circle cx="610" cy="130" r="7" fill="#5eead4"/><circle cx="680" cy="130" r="7" fill="#5eead4"/>
+  <text x="645" y="145" class="res" fill="#0d9488" font-size="11">Cl 4 ตัวเหมือนกันหมด → ไม่มีขั้ว</text>
+
+  <text x="645" y="185" class="sub" font-weight="700">CHCl₃ (1 ตำแหน่งเป็น H)</text>
+  <circle cx="645" cy="240" r="10" fill="#1e293b"/>
+  <circle cx="610" cy="220" r="7" fill="#93c5fd"/><circle cx="680" cy="220" r="7" fill="#5eead4"/>
+  <circle cx="610" cy="260" r="7" fill="#5eead4"/><circle cx="680" cy="260" r="7" fill="#5eead4"/>
+  <text x="645" y="290" class="res" fill="#dc2626" font-size="11">H แทนที่ Cl 1 ตัว → ไม่สมมาตร → มีขั้ว</text>
+
+  <rect x="60" y="305" width="640" height="28" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="380" y="323" class="sub" fill="#ea580c" font-weight="700">กฎ: พันธะมีขั้วทุกเส้น + รูปร่างสมมาตรสมบูรณ์ (ทุกตำแหน่งเหมือนกัน) = โมเลกุลไม่มีขั้วได้</text>
+</svg>
