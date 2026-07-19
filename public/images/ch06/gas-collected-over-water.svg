@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320" font-family="system-ui, sans-serif">
+  <!-- เก็บแก๊สเหนือน้ำ: แก๊สเปียกปนไอน้ำ ต้องลบความดันไอน้ำออกก่อนคำนวณ ตัวอย่าง H2 500mL, 25C, 760mmHg, Pwater=24mmHg -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 11px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+
+  <text x="350" y="20" class="lbl" font-size="14">เก็บแก๊ส H₂ เหนือน้ำ (เก็บโดยแทนที่น้ำ) — แก๊สที่ได้จะเปียกปนไอน้ำเสมอ</text>
+
+  <path d="M270,60 L270,180 L280,220 L420,220 L430,180 L430,60" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <rect x="270" y="150" width="160" height="70" fill="#93c5fd" opacity="0.5"/>
+  <g fill="#fca5a5">
+    <circle cx="300" cy="90" r="6"/><circle cx="340" cy="110" r="6"/><circle cx="380" cy="80" r="6"/><circle cx="400" cy="130" r="6"/><circle cx="320" cy="130" r="6"/>
+  </g>
+  <text x="350" y="70" class="sub" fill="#dc2626" font-weight="700">แก๊สเปียก = H₂ + ไอน้ำ</text>
+  <text x="350" y="195" class="sub" fill="#2563eb">น้ำ</text>
+
+  <rect x="60" y="245" width="580" height="65" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="350" y="267" class="lbl" fill="#ea580c" font-size="12">P(แก๊สแห้ง) = P(บรรยากาศ) − P(ไอน้ำ ที่อุณหภูมินั้น)</text>
+  <text x="350" y="289" class="given">P(H₂ แห้ง) = 760 − 24 = 736 mmHg</text>
+  <text x="350" y="305" class="sub">แล้วจึงใช้ P(แก๊สแห้ง) นี้ใน PV=nRT หาจำนวนโมลของ H₂ (ห้ามใช้ 760 mmHg ตรงๆ)</text>
+</svg>

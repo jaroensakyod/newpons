@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420" font-family="system-ui, sans-serif">
+  <!-- ทางลัดปริมาตรต่อปริมาตร: ที่ T,P เดียวกัน อัตราส่วนปริมาตรแก๊ส = อัตราส่วนสัมประสิทธิ์ ไม่ต้องแปลงเป็นโมล + ทิศทางย้อนกลับหาสัมประสิทธิ์ที่ไม่ทราบ -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 11px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="gsv-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="20" class="lbl" font-size="14">ทางลัดปริมาตรต่อปริมาตร: N₂ + 3H₂ → 2NH₃ (T,P เดียวกันทุกแก๊ส)</text>
+
+  <rect x="40" y="50" width="150" height="65" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="115" y="78" class="sub" font-weight="700">N₂ (มากเกินพอ)</text>
+  <text x="115" y="98" class="sub">ไม่ใช่ตัวกำหนด</text>
+
+  <rect x="220" y="50" width="150" height="65" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="295" y="78" class="sub" fill="#2563eb" font-weight="700">H₂</text>
+  <text x="295" y="98" class="given">6 L</text>
+
+  <line x1="370" y1="82" x2="440" y2="82" stroke="#64748b" stroke-width="2.5" marker-end="url(#gsv-ah)"/>
+
+  <rect x="450" y="50" width="180" height="65" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+  <text x="540" y="78" class="sub" fill="#0d9488" font-weight="700">NH₃</text>
+  <text x="540" y="98" class="given">? L</text>
+
+  <rect x="80" y="140" width="540" height="140" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="350" y="163" class="lbl" fill="#ea580c" font-size="12">หลักการอาโวกาโดร: ที่ T,P เดียวกัน ปริมาตร ∝ โมล</text>
+  <text x="350" y="185" class="sub">จึงใช้อัตราส่วนปริมาตรแทนอัตราส่วนโมลได้โดยตรง โดยไม่ต้องแปลงผ่าน n=PV/RT เลย</text>
+  <text x="350" y="210" class="sub">อัตราส่วนสัมประสิทธิ์ H₂ : NH₃ = 3 : 2</text>
+  <text x="350" y="232" class="sub">V(NH₃) = V(H₂) × (2/3) = 6 × (2/3)</text>
+  <text x="350" y="256" class="given" font-size="13">V(NH₃) = 4 L</text>
+
+  <text x="350" y="300" class="sub">ใช้ได้เฉพาะแก๊ส+แก๊สที่ T,P เดียวกันเท่านั้น — ถ้ามีของแข็ง/ของเหลวร่วมด้วยต้องกลับไปคิดผ่านโมล</text>
+
+  <rect x="60" y="320" width="580" height="90" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="350" y="343" class="lbl" fill="#2563eb" font-size="12">ทิศทางย้อนกลับ: หาสัมประสิทธิ์ a:b:c ที่ไม่ทราบ จากความดัน/ปริมาตรที่วัดได้</text>
+  <text x="350" y="365" class="sub">ตัวอย่าง: ภาชนะปิด aA+bB→cC ที่ V,T คงที่ — ΔP(A)=0.6, ΔP(B)=0.6, P(C)=0.9 atm</text>
+  <text x="350" y="387" class="sub">อัตราส่วนความดันที่เปลี่ยน = อัตราส่วนโมล = อัตราส่วนสัมประสิทธิ์โดยตรง (หลักเดียวกัน กลับทิศเท่านั้น)</text>
+  <text x="350" y="405" class="given">0.6 : 0.6 : 0.9 = 2 : 2 : 3 (หารด้วยตัวร่วมน้อยสุด 0.3)</text>
+</svg>

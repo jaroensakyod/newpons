@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" font-family="system-ui, sans-serif">
+  <!-- แมนอมิเตอร์ปลายปิด: เหนือปรอทฝั่งปิดเป็นสุญญากาศ ผลต่างความสูงปรอท = ความดันแก๊สโดยตรง ไม่ต้องบวก/ลบ P บรรยากาศ -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 11px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+
+  <text x="350" y="20" class="lbl" font-size="14">แมนอมิเตอร์ปลายปิด — เหนือปรอทฝั่งปิดเป็นสุญญากาศ (ไม่ต้องใช้ P บรรยากาศ)</text>
+
+  <path d="M280,50 L280,220 L300,220 L300,90 L380,90 L380,220 L400,220 L400,50" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <rect x="280" y="150" width="20" height="70" fill="#93c5fd"/>
+  <rect x="300" y="130" width="20" height="90" fill="#93c5fd"/>
+  <rect x="380" y="130" width="20" height="90" fill="#93c5fd"/>
+
+  <text x="290" y="70" class="sub" fill="#dc2626" font-weight="700">สุญญากาศ</text>
+  <text x="290" y="145" class="sub" fill="#2563eb">แก๊ส</text>
+  <text x="390" y="60" class="sub">ปลายเปิด</text>
+  <text x="390" y="80" class="sub">รับแก๊สจากภาชนะ</text>
+
+  <line x1="420" y1="130" x2="450" y2="130" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <line x1="420" y1="220" x2="450" y2="220" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <text x="465" y="178" class="given" text-anchor="start">h = 570 mm</text>
+
+  <rect x="60" y="240" width="580" height="55" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="350" y="263" class="lbl" fill="#ea580c" font-size="12">P(แก๊ส) = h โดยตรง (ไม่บวก/ลบกับ P บรรยากาศเหมือนแบบปลายเปิด)</text>
+  <text x="350" y="285" class="given">P(แก๊ส) = 570 mmHg = 570/760 = 0.75 atm</text>
+</svg>

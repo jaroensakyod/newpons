@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 320" font-family="system-ui, sans-serif">
+  <!-- กฎของบอยล์: P1V1=P2V2 ที่ T คงที่ — เส้นโค้งไฮเพอร์โบลา P-V และเส้นตรง P vs 1/V ผ่านจุดกำเนิด -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 11px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+    .ax { stroke: #94a3b8; stroke-width: 1.5; }
+  </style>
+  <defs>
+    <marker id="blp-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="20" class="lbl" font-size="14">กฎของบอยล์: P₁V₁ = P₂V₂ (T คงที่) — แก๊ส 2.0 L ที่ 1.2 atm อัดจนความดัน 3.0 atm</text>
+
+  <!-- ซ้าย: P-V hyperbola -->
+  <line x1="60" y1="270" x2="330" y2="270" class="ax" marker-end="url(#blp-ah)"/>
+  <line x1="60" y1="270" x2="60" y2="50" class="ax" marker-end="url(#blp-ah)"/>
+  <text x="195" y="295" class="sub">ปริมาตร (V)</text>
+  <text x="30" y="160" class="sub" transform="rotate(-90 30 160)">ความดัน (P)</text>
+
+  <path d="M80,60 C 120,80 180,140 300,250" fill="none" stroke="#0d9488" stroke-width="2.5"/>
+  <circle cx="160" cy="110" r="5" fill="#2563eb"/>
+  <text x="160" y="98" class="given" font-size="10">(2.0, 1.2)</text>
+  <circle cx="255" cy="220" r="5" fill="#dc2626"/>
+  <text x="255" y="238" class="given" font-size="10">(0.8, 3.0)</text>
+  <text x="195" y="60" class="sub" fill="#0d9488">P ∝ 1/V (ไฮเพอร์โบลา)</text>
+
+  <!-- ขวา: P vs 1/V straight line -->
+  <line x1="420" y1="270" x2="690" y2="270" class="ax" marker-end="url(#blp-ah)"/>
+  <line x1="420" y1="270" x2="420" y2="50" class="ax" marker-end="url(#blp-ah)"/>
+  <text x="555" y="295" class="sub">1/ปริมาตร (1/V)</text>
+  <text x="390" y="160" class="sub" transform="rotate(-90 390 160)">ความดัน (P)</text>
+
+  <line x1="420" y1="270" x2="650" y2="90" stroke="#0d9488" stroke-width="2.5"/>
+  <circle cx="470" cy="230" r="5" fill="#2563eb"/>
+  <circle cx="610" cy="120" r="5" fill="#dc2626"/>
+  <text x="555" y="70" class="sub" fill="#0d9488">เส้นตรงผ่านจุดกำเนิด</text>
+
+  <rect x="60" y="285" width="620" height="30" rx="6" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
+  <text x="370" y="305" class="given" font-size="12">1.2 × 2.0 = 3.0 × V₂ → V₂ = 0.80 L</text>
+</svg>

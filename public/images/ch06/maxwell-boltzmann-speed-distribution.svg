@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 340" font-family="system-ui, sans-serif">
+  <!-- ทฤษฎีจลน์: (ซ้าย) ที่ T เดียวกัน แก๊สเบากว่าเร็วกว่า พลังงานจลน์เฉลี่ยเท่ากัน (ขวา) T สูงขึ้น เส้นโค้งแผ่กว้าง ยอดเตี้ยลง เลื่อนขวา -->
+  <style>
+    .lbl { font-size: 12px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 9.5px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 10.5px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+    .ax { stroke: #94a3b8; stroke-width: 1.5; }
+  </style>
+  <defs>
+    <marker id="mb-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="20" class="lbl" font-size="14">การกระจายอัตราเร็วโมเลกุลแบบแมกซ์เวลล์-โบลต์ซมันน์</text>
+
+  <!-- ซ้าย: มวลต่างกัน T เดียวกัน -->
+  <text x="180" y="42" class="lbl" fill="#2563eb" font-size="11">ที่อุณหภูมิเดียวกัน: มวลต่างกัน</text>
+  <line x1="50" y1="270" x2="330" y2="270" class="ax" marker-end="url(#mb-ah)"/>
+  <line x1="50" y1="270" x2="50" y2="60" class="ax" marker-end="url(#mb-ah)"/>
+  <text x="190" y="292" class="sub">อัตราเร็วโมเลกุล</text>
+
+  <path d="M50,265 Q120,70 190,145 T350,260" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="130" y="90" class="sub" fill="#2563eb" font-weight="700">He (M=4) เร็วกว่า</text>
+
+  <path d="M50,265 Q220,130 330,185 T480,260" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="270" y="160" class="sub" fill="#dc2626" font-weight="700">CH₄ (M=16) ช้ากว่า</text>
+
+  <!-- ขวา: T ต่างกัน แก๊สเดียวกัน -->
+  <text x="565" y="42" class="lbl" fill="#ea580c" font-size="11">แก๊สเดียวกัน: อุณหภูมิเพิ่มขึ้น</text>
+  <line x1="420" y1="270" x2="700" y2="270" class="ax" marker-end="url(#mb-ah)"/>
+  <line x1="420" y1="270" x2="420" y2="60" class="ax" marker-end="url(#mb-ah)"/>
+  <text x="560" y="292" class="sub">อัตราเร็วโมเลกุล</text>
+
+  <path d="M420,265 Q470,80 520,150 T650,260" fill="none" stroke="#0d9488" stroke-width="2.5"/>
+  <text x="470" y="95" class="sub" fill="#0d9488" font-weight="700">T ต่ำ (ยอดสูง แคบ)</text>
+
+  <path d="M420,265 Q560,150 640,190 T700,255" fill="none" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="640" y="170" class="sub" fill="#ea580c" font-weight="700">T สูง (ยอดเตี้ย</text>
+  <text x="655" y="185" class="sub" fill="#ea580c" font-weight="700">แผ่กว้าง เลื่อนขวา)</text>
+
+  <rect x="30" y="298" width="680" height="36" rx="6" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
+  <text x="370" y="313" class="given" font-size="11">พื้นที่ใต้กราฟเท่ากันเสมอ (จำนวนโมเลกุลคงที่) — เบากว่าเร็วกว่าที่ T เดียวกัน (He เร็วกว่า CH₄ 2 เท่า)</text>
+  <text x="370" y="328" class="sub">T สูงขึ้น → พลังงานจลน์เฉลี่ยสูงขึ้น → เส้นโค้งแผ่กว้าง ยอดเตี้ยลง อัตราเร็วที่พบมากที่สุดเลื่อนไปทางขวา</text>
+</svg>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 280" font-family="system-ui, sans-serif">
+  <!-- กฎรวมแก๊ส: P1V1/T1 = P2V2/T2 เมื่อ P,V,T เปลี่ยนพร้อมกันทั้งหมด ตัวอย่าง 1.5L,720mmHg,300K -> STP -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 11px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="cglf-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="20" class="lbl" font-size="14">กฎรวมแก๊ส: P₁V₁/T₁ = P₂V₂/T₂ (n คงที่)</text>
+
+  <rect x="40" y="50" width="230" height="90" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="155" y="75" class="sub" font-weight="700" fill="#2563eb">สถานะที่ 1</text>
+  <text x="155" y="97" class="given">V₁=1.5 L, P₁=720 mmHg</text>
+  <text x="155" y="117" class="given">T₁ = 27+273 = 300 K</text>
+
+  <line x1="270" y1="95" x2="400" y2="95" stroke="#64748b" stroke-width="2.5" marker-end="url(#cglf-ah)"/>
+  <text x="335" y="80" class="sub">P₁V₁/T₁ = P₂V₂/T₂</text>
+
+  <rect x="410" y="50" width="240" height="90" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+  <text x="530" y="75" class="sub" font-weight="700" fill="#0d9488">สถานะที่ 2 (STP)</text>
+  <text x="530" y="97" class="given">P₂=760 mmHg, T₂=273 K</text>
+  <text x="530" y="117" class="given">V₂ = ?</text>
+
+  <rect x="80" y="165" width="540" height="95" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="350" y="190" class="lbl" fill="#ea580c" font-size="12">แทนค่าและแก้หา V₂</text>
+  <text x="350" y="212" class="sub">V₂ = P₁V₁T₂ / (T₁P₂) = (720×1.5×273) / (300×760)</text>
+  <text x="350" y="234" class="given" font-size="13">V₂ ≈ 1.293 L</text>
+  <text x="350" y="252" class="sub">ข้อควรระวัง: ต้องแปลงองศาเซลเซียสเป็นเคลวินก่อนแทนค่าเสมอ (บวก 273)</text>
+</svg>

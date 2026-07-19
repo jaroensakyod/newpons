@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" font-family="system-ui, sans-serif">
+  <!-- บารอมิเตอร์วัด P บรรยากาศ + แมนอมิเตอร์ปลายเปิดวัด P แก๊ส 2 กรณี (P_gas>P_atm, P_gas<P_atm) -->
+  <style>
+    .lbl { font-size: 12px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 9.5px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 10.5px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+
+  <text x="380" y="20" class="lbl" font-size="14">บารอมิเตอร์ vs แมนอมิเตอร์ปลายเปิด (open-end manometer)</text>
+
+  <!-- บารอมิเตอร์ -->
+  <rect x="30" y="45" width="200" height="255" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="130" y="68" class="lbl" font-size="11">บารอมิเตอร์ (วัด P บรรยากาศ)</text>
+  <rect x="110" y="90" width="14" height="180" fill="#93c5fd" stroke="#2563eb" stroke-width="1.5"/>
+  <rect x="110" y="180" width="14" height="90" fill="#64748b"/>
+  <text x="70" y="130" class="sub">สุญญากาศ</text>
+  <text x="70" y="220" class="sub" fill="#2563eb">ปรอท</text>
+  <text x="130" y="285" class="sub">อ่างปรอทเปิดสู่บรรยากาศ</text>
+  <text x="130" y="300" class="given">ปรอทสูง 760 mm = 1 atm</text>
+
+  <!-- แมนอมิเตอร์ กรณี Pgas > Patm -->
+  <rect x="250" y="45" width="240" height="255" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="370" y="68" class="lbl" fill="#2563eb" font-size="11">กรณี P(แก๊ส) &gt; P(บรรยากาศ)</text>
+  <path d="M320,90 L320,230 L340,230 L340,150 L420,150 L420,230 L440,230 L440,90" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <rect x="320" y="190" width="20" height="40" fill="#93c5fd"/>
+  <rect x="420" y="150" width="20" height="80" fill="#93c5fd"/>
+  <text x="330" y="185" class="sub" fill="#2563eb">แก๊ส</text>
+  <text x="460" y="145" class="sub">เปิด</text>
+  <text x="370" y="255" class="sub">ฝั่งเปิดสูงกว่า → P(แก๊ส) = P(บรรยากาศ) + h</text>
+  <text x="370" y="272" class="sub">แก๊สดันปรอทฝั่งตัวเองลง ฝั่งเปิดจึงสูงขึ้น</text>
+
+  <!-- แมนอมิเตอร์ กรณี Pgas < Patm (ตัวอย่างจริง) -->
+  <rect x="510" y="45" width="240" height="255" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="630" y="68" class="lbl" fill="#dc2626" font-size="11">กรณี P(แก๊ส) &lt; P(บรรยากาศ)</text>
+  <path d="M580,150 L580,230 L600,230 L600,90 L680,90 L680,230 L700,230 L700,150" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <rect x="580" y="190" width="20" height="40" fill="#fca5a5"/>
+  <rect x="600" y="110" width="20" height="120" fill="#fca5a5"/>
+  <text x="590" y="185" class="sub" fill="#dc2626">แก๊ส</text>
+  <text x="720" y="145" class="sub">เปิด</text>
+  <text x="630" y="248" class="sub">ฝั่งแก๊สสูงกว่า → P(แก๊ส) = P(บรรยากาศ) − h</text>
+  <text x="630" y="266" class="given">P(บรรยากาศ)=755, h=20 → P(แก๊ส)=735 mmHg</text>
+</svg>

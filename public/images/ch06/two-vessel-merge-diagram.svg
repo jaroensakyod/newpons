@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 320" font-family="system-ui, sans-serif">
+  <!-- เปิดวาล์วเชื่อม 2 ภาชนะ: ใช้ P1V1+P2V2=P_รวมV_รวม (เทียบเท่ากฎบอยล์ผ่านผลรวม PV คงที่) แล้วค่อยคิดผลอุณหภูมิถ้ามีการให้ความร้อนต่อ -->
+  <style>
+    .lbl { font-size: 12px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 9.5px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 10.5px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="tvm-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="20" class="lbl" font-size="14">เปิดวาล์วเชื่อม 2 ภาชนะ: A (He, 2.0 L, 3.0 atm) + B (He, 3.0 L, 0.5 atm) ที่ 27°C</text>
+
+  <rect x="30" y="45" width="140" height="80" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="100" y="70" class="sub" fill="#2563eb" font-weight="700">ภาชนะ A</text>
+  <text x="100" y="90" class="given">2.0 L, 3.0 atm</text>
+
+  <rect x="190" y="45" width="10" height="80" fill="#94a3b8"/>
+  <text x="195" y="40" class="sub" font-size="8">วาล์ว</text>
+
+  <rect x="220" y="45" width="140" height="80" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="290" y="70" class="sub" fill="#dc2626" font-weight="700">ภาชนะ B</text>
+  <text x="290" y="90" class="given">3.0 L, 0.5 atm</text>
+
+  <line x1="400" y1="85" x2="460" y2="85" stroke="#64748b" stroke-width="2.5" marker-end="url(#tvm-ah)"/>
+  <text x="430" y="70" class="sub">เปิดวาล์ว</text>
+
+  <rect x="470" y="45" width="230" height="80" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+  <text x="585" y="70" class="sub" fill="#0d9488" font-weight="700">รวมเป็นระบบเดียว (27°C)</text>
+  <text x="585" y="92" class="given">V=5.0 L, P=(3.0×2.0+0.5×3.0)/5.0</text>
+  <text x="585" y="110" class="given">= 1.5 atm</text>
+
+  <rect x="80" y="150" width="580" height="90" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="370" y="173" class="lbl" fill="#ea580c" font-size="12">หลักการ: PV รวมคงที่เมื่อรวมภาชนะ (เหมือนกฎของบอยล์ที่ n,T คงที่)</text>
+  <text x="370" y="196" class="sub">P₁V₁ + P₂V₂ = P รวม × V รวม → ใช้ได้ทั้งกรณีแก๊สชนิดเดียวกัน (หาความดันรวม)</text>
+  <text x="370" y="216" class="sub">หรือแก๊สต่างชนิดกัน (ใช้หา PV ของแต่ละแก๊สเป็นสัดส่วนโมล → หาความดันย่อย/เศษส่วนโมลได้ด้วยกฎดอลตัน)</text>
+  <text x="370" y="234" class="sub" font-weight="700">ถ้าโจทย์ให้ความร้อนต่อที่ปริมาตรคงที่ ให้ใช้กฎเกย์-ลูสแซก (P∝T) คูณต่ออีกขั้น</text>
+
+  <rect x="150" y="255" width="440" height="45" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="370" y="273" class="sub" font-weight="700">ตัวอย่างนี้ถ้าให้ความร้อนต่อจาก 300K เป็น 400K:</text>
+  <text x="370" y="290" class="given">P สุดท้าย = 1.5 × (400/300) = 2.0 atm</text>
+</svg>

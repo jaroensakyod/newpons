@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320" font-family="system-ui, sans-serif">
+  <!-- แปลงหน่วยความดัน: atm เป็นหน่วยกลาง เทียบ mmHg, kPa, psi ตัวอย่าง 29.4 psi -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 12px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="puc-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="20" class="lbl" font-size="14">หน่วยความดัน 4 หน่วยที่ 1 atm มาตรฐาน — ยางรถยนต์ 29.4 psi</text>
+
+  <circle cx="350" cy="160" r="60" fill="#f0fdfa" stroke="#0d9488" stroke-width="3"/>
+  <text x="350" y="155" class="lbl" fill="#0d9488" font-size="15">1 atm</text>
+  <text x="350" y="172" class="given" font-size="12">2.0 atm</text>
+
+  <rect x="40" y="60" width="140" height="55" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="110" y="82" class="sub" fill="#2563eb" font-weight="700">psi (ให้มา)</text>
+  <text x="110" y="102" class="given">29.4 psi</text>
+  <line x1="180" y1="90" x2="290" y2="140" stroke="#2563eb" stroke-width="2" marker-end="url(#puc-ah)"/>
+  <text x="220" y="105" class="sub" fill="#2563eb">÷14.7</text>
+
+  <rect x="520" y="60" width="140" height="55" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="590" y="82" class="sub" fill="#dc2626" font-weight="700">mmHg</text>
+  <text x="590" y="102" class="given">1520 mmHg</text>
+  <line x1="520" y1="90" x2="410" y2="140" stroke="#dc2626" stroke-width="2" marker-end="url(#puc-ah)"/>
+  <text x="480" y="105" class="sub" fill="#dc2626">×760</text>
+
+  <rect x="40" y="235" width="140" height="55" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="110" y="257" class="sub" fill="#ea580c" font-weight="700">kPa</text>
+  <text x="110" y="277" class="given">202.65 kPa</text>
+  <line x1="180" y1="255" x2="290" y2="195" stroke="#ea580c" stroke-width="2" marker-end="url(#puc-ah)"/>
+  <text x="220" y="245" class="sub" fill="#ea580c">×101.325</text>
+
+  <rect x="520" y="235" width="140" height="55" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="2.5"/>
+  <text x="590" y="257" class="sub" font-weight="700">อ้างอิงมาตรฐาน</text>
+  <text x="590" y="277" class="sub">1 atm = 760 mmHg</text>
+  <line x1="520" y1="255" x2="410" y2="195" stroke="#94a3b8" stroke-width="2" marker-end="url(#puc-ah)"/>
+
+  <text x="350" y="310" class="sub">= 101.325 kPa = 14.7 psi</text>
+</svg>

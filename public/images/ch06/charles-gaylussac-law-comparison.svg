@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 340" font-family="system-ui, sans-serif">
+  <!-- กฎของชาร์ล (V-T, P คงที่) กับกฎเกย์-ลูสแซก (P-T, V คงที่) — เส้นตรงผ่านจุดกำเนิดเมื่อใช้หน่วยเคลวิน -->
+  <style>
+    .lbl { font-size: 12px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 11px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+    .ax { stroke: #94a3b8; stroke-width: 1.5; }
+  </style>
+  <defs>
+    <marker id="cgl-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="20" class="lbl" font-size="14">กฎของชาร์ล (V-T, P คงที่) vs กฎของเกย์-ลูสแซก (P-T, V คงที่)</text>
+
+  <!-- ซ้าย: Charles -->
+  <text x="195" y="42" class="lbl" fill="#2563eb" font-size="12">ชาร์ล: 250 mL ที่ 27°C → 87°C</text>
+  <line x1="60" y1="270" x2="330" y2="270" class="ax" marker-end="url(#cgl-ah)"/>
+  <line x1="60" y1="270" x2="60" y2="60" class="ax" marker-end="url(#cgl-ah)"/>
+  <text x="195" y="295" class="sub">T (เคลวิน)</text>
+  <text x="30" y="165" class="sub" transform="rotate(-90 30 165)">V</text>
+
+  <line x1="60" y1="270" x2="300" y2="80" stroke="#2563eb" stroke-width="2.5"/>
+  <circle cx="150" cy="210" r="5" fill="#2563eb"/>
+  <text x="150" y="198" class="given" font-size="9">300K, 250mL</text>
+  <circle cx="210" cy="164" r="5" fill="#dc2626"/>
+  <text x="245" y="150" class="given" font-size="9">360K, 300mL</text>
+  <text x="195" y="72" class="sub" fill="#2563eb">V/T = ค่าคงที่</text>
+
+  <!-- ขวา: Gay-Lussac -->
+  <text x="555" y="42" class="lbl" fill="#ea580c" font-size="12">เกย์-ลูสแซก: 2.0 atm ที่ 27°C → 57°C</text>
+  <line x1="420" y1="270" x2="690" y2="270" class="ax" marker-end="url(#cgl-ah)"/>
+  <line x1="420" y1="270" x2="420" y2="60" class="ax" marker-end="url(#cgl-ah)"/>
+  <text x="555" y="295" class="sub">T (เคลวิน)</text>
+  <text x="390" y="165" class="sub" transform="rotate(-90 390 165)">P</text>
+
+  <line x1="420" y1="270" x2="660" y2="100" stroke="#ea580c" stroke-width="2.5"/>
+  <circle cx="510" cy="205" r="5" fill="#2563eb"/>
+  <text x="510" y="193" class="given" font-size="9">300K, 2.0atm</text>
+  <circle cx="570" cy="163" r="5" fill="#dc2626"/>
+  <text x="605" y="150" class="given" font-size="9">330K, 2.2atm</text>
+  <text x="555" y="90" class="sub" fill="#ea580c">P/T = ค่าคงที่</text>
+
+  <rect x="60" y="305" width="620" height="30" rx="6" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
+  <text x="370" y="325" class="sub" font-weight="700">ทั้งคู่เป็นเส้นตรงผ่านจุดกำเนิดเมื่อ T เป็นเคลวิน — พิสูจน์ว่าที่ 0 K ปริมาตร/ความดันเป็นศูนย์ (จุดเริ่มสัมบูรณ์)</text>
+</svg>

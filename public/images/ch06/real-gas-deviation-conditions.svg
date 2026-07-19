@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 340" font-family="system-ui, sans-serif">
+  <!-- แก๊สจริงเบี่ยงเบนจากอุดมคติมากที่สุดที่ P สูง T ต่ำ: ปริมาตรโมเลกุลเริ่มมีนัยสำคัญ + แรงยึดเหนี่ยวเริ่มมีผล -->
+  <style>
+    .lbl { font-size: 12px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 11px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+
+  <text x="370" y="20" class="lbl" font-size="14">แก๊สจริงเบี่ยงเบนจากอุดมคติเมื่อใด: ข้อสมมติ 2 ข้อของทฤษฎีจลน์เริ่มใช้ไม่ได้</text>
+
+  <rect x="30" y="45" width="330" height="120" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="195" y="68" class="lbl" fill="#dc2626" font-size="12">ความดันสูง</text>
+  <g fill="#fca5a5"><circle cx="90" cy="100" r="10"/><circle cx="130" cy="115" r="10"/><circle cx="170" cy="95" r="10"/><circle cx="210" cy="120" r="10"/><circle cx="250" cy="100" r="10"/><circle cx="290" cy="115" r="10"/></g>
+  <text x="195" y="145" class="sub">โมเลกุลถูกอัดชิดกันมาก</text>
+  <text x="195" y="160" class="sub">ปริมาตรของตัวโมเลกุลเองเริ่มมีนัยสำคัญ (สมมติข้อ 1 พัง)</text>
+
+  <rect x="380" y="45" width="330" height="120" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="545" y="68" class="lbl" fill="#2563eb" font-size="12">อุณหภูมิต่ำ</text>
+  <g fill="#93c5fd"><circle cx="450" cy="105" r="8"/><circle cx="620" cy="110" r="8"/></g>
+  <path d="M458,105 Q535,90 612,110" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <text x="545" y="145" class="sub">โมเลกุลเคลื่อนที่ช้า พลังงานจลน์ต่ำ</text>
+  <text x="545" y="160" class="sub">แรงดึงดูดระหว่างโมเลกุลเริ่มมีผลชัดเจน (สมมติข้อ 2 พัง)</text>
+
+  <rect x="60" y="180" width="620" height="55" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="370" y="203" class="given" font-size="13">สรุป: P สูง + T ต่ำ พร้อมกัน → เบี่ยงเบนมากที่สุด</text>
+  <text x="370" y="222" class="sub">P ต่ำ + T สูง → ใกล้เคียงแก๊สอุดมคติมากที่สุด (โมเลกุลห่างกัน เคลื่อนที่เร็ว)</text>
+
+  <rect x="60" y="248" width="620" height="80" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+  <text x="370" y="270" class="lbl" fill="#0d9488" font-size="12">แรงยึดเหนี่ยวระหว่างโมเลกุล: He (ไม่มีขั้ว, ลอนดอนอ่อน) vs NH₃ (มีขั้ว, พันธะไฮโดรเจน)</text>
+  <text x="370" y="292" class="sub">He เบี่ยงเบนน้อยกว่า NH₃ ที่ภาวะเดียวกัน เพราะแรงยึดเหนี่ยวอ่อนกว่ามาก</text>
+  <text x="370" y="312" class="sub">แก๊สอุดมคติ (สมมติไม่มีแรงยึดเหนี่ยวเลย) จึงควบแน่นเป็นของเหลวไม่ได้ไม่ว่าจะลด T หรือเพิ่ม P เท่าใด</text>
+</svg>

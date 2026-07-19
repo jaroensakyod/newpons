@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" font-family="system-ui, sans-serif">
+  <!-- กฎการแพร่ของแกรห์ม: อัตราการแพร่ ∝ 1/sqrt(M) — เบากว่าแพร่/แทรกซึมไวกว่า ตัวอย่าง CH4(M=16) vs X, rate_X=rate_CH4/2 -> M_X=64 -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 11px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="gle-ah-b" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#2563eb"/>
+    </marker>
+    <marker id="gle-ah-r" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="20" class="lbl" font-size="14">กฎของแกรห์ม: อัตราการแพร่ ∝ 1/√M (เบากว่า แพร่เร็วกว่า)</text>
+
+  <rect x="60" y="45" width="280" height="90" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="200" y="70" class="sub" fill="#2563eb" font-weight="700">CH₄ (M = 16)</text>
+  <line x1="90" y1="105" x2="290" y2="105" stroke="#2563eb" stroke-width="3" marker-end="url(#gle-ah-b)"/>
+  <text x="200" y="122" class="sub" fill="#2563eb">แพร่ไวกว่า (เบากว่า)</text>
+
+  <rect x="380" y="45" width="280" height="90" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="520" y="70" class="sub" fill="#dc2626" font-weight="700">แก๊ส X (M = ?)</text>
+  <line x1="410" y1="105" x2="510" y2="105" stroke="#dc2626" stroke-width="3" marker-end="url(#gle-ah-r)"/>
+  <text x="520" y="122" class="sub" fill="#dc2626">แพร่ช้ากว่า (อัตรา = ครึ่งหนึ่งของ CH₄)</text>
+
+  <rect x="80" y="150" width="560" height="90" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="360" y="173" class="lbl" fill="#ea580c" font-size="12">rate(X)/rate(CH₄) = √(M(CH₄)/M(X))</text>
+  <text x="360" y="196" class="sub">1/2 = √(16/M(X)) → (1/2)² = 16/M(X) → M(X) = 16×4</text>
+  <text x="360" y="220" class="given" font-size="13">M(X) = 64 g/mol</text>
+
+  <rect x="80" y="255" width="560" height="55" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="2"/>
+  <text x="360" y="277" class="sub" font-weight="700" fill="#0d9488">กรณีแพร่จากปลายท่อสองข้างมาชนกัน จุดชนจะอยู่ใกล้ฝั่งแก๊สหนัก (แพร่ได้ระยะทางน้อยกว่า)</text>
+  <text x="360" y="295" class="sub">ระยะทางที่แพร่ได้ ∝ อัตราการแพร่ ∝ 1/√M เช่นเดียวกัน (เวลาเท่ากันทั้งสองฝั่ง)</text>
+</svg>

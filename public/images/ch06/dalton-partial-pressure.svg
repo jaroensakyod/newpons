@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" font-family="system-ui, sans-serif">
+  <!-- กฎความดันย่อยของดอลตัน: P_total = ผลรวมความดันย่อย = สัดส่วนโมล x ความดันรวม ตัวอย่าง N2 2mol+O2 3mol, Ptotal=10atm -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 11px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+
+  <text x="350" y="20" class="lbl" font-size="14">กฎความดันย่อยของดอลตัน: N₂ 2 mol + O₂ 3 mol ในถังเดียวกัน, P รวม = 10 atm</text>
+
+  <rect x="150" y="50" width="400" height="110" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="2.5"/>
+  <g fill="#93c5fd"><circle cx="220" cy="90" r="7"/><circle cx="260" cy="110" r="7"/><circle cx="300" cy="80" r="7"/><circle cx="340" cy="120" r="7"/></g>
+  <g fill="#fca5a5"><circle cx="380" cy="95" r="7"/><circle cx="420" cy="70" r="7"/><circle cx="460" cy="115" r="7"/><circle cx="480" cy="85" r="7"/><circle cx="500" cy="130" r="7"/></g>
+  <text x="270" y="140" class="sub" fill="#2563eb" font-weight="700">N₂ (2 mol)</text>
+  <text x="450" y="145" class="sub" fill="#dc2626" font-weight="700">O₂ (3 mol)</text>
+  <text x="350" y="65" class="sub">ถังเดียวกัน — โมลรวม = 5 mol</text>
+
+  <rect x="80" y="185" width="260" height="95" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="210" y="208" class="sub" fill="#2563eb" font-weight="700">P(N₂) = เศษส่วนโมล × P รวม</text>
+  <text x="210" y="230" class="sub">= (2/5) × 10 atm</text>
+  <text x="210" y="252" class="given" font-size="13">P(N₂) = 4 atm</text>
+
+  <rect x="360" y="185" width="260" height="95" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="490" y="208" class="sub" fill="#dc2626" font-weight="700">P(O₂) = เศษส่วนโมล × P รวม</text>
+  <text x="490" y="230" class="sub">= (3/5) × 10 atm</text>
+  <text x="490" y="252" class="given" font-size="13">P(O₂) = 6 atm</text>
+
+  <text x="350" y="295" class="sub">ตรวจสอบ: P(N₂) + P(O₂) = 4 + 6 = 10 atm = P รวม ✓</text>
+</svg>

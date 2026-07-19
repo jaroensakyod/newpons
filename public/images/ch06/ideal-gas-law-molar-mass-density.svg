@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" font-family="system-ui, sans-serif">
+  <!-- PV=nRT เป็นแกนกลาง แตกแขนงไปหามวลโมลาร์ (M=mRT/PV), ความหนาแน่น (d=PM/RT), และเปรียบเทียบ 2 สภาวะเมื่อ n,T เปลี่ยน -->
+  <style>
+    .lbl { font-size: 12px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 11px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="igl-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="20" class="lbl" font-size="14">PV = nRT — สูตรครอบจักรวาลของแก๊ส (R = 0.082 L·atm/mol·K)</text>
+
+  <rect x="270" y="45" width="180" height="55" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="3"/>
+  <text x="360" y="80" class="lbl" fill="#0d9488" font-size="18">PV = nRT</text>
+
+  <line x1="330" y1="100" x2="200" y2="145" stroke="#2563eb" stroke-width="2" marker-end="url(#igl-ah)"/>
+  <line x1="390" y1="100" x2="520" y2="145" stroke="#ea580c" stroke-width="2" marker-end="url(#igl-ah)"/>
+
+  <!-- มวลโมลาร์ -->
+  <rect x="40" y="150" width="270" height="140" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="175" y="175" class="lbl" fill="#2563eb" font-size="12">หามวลโมลาร์ (แทน n=m/M)</text>
+  <text x="175" y="197" class="sub">M = mRT / PV</text>
+  <text x="175" y="218" class="sub">ตัวอย่าง: แก๊ส 0.44 g, 246 mL,</text>
+  <text x="175" y="236" class="sub">300 K, 1 atm</text>
+  <text x="175" y="258" class="given">n = PV/RT = 0.01 mol</text>
+  <text x="175" y="276" class="given">M = 0.44/0.01 = 44 g/mol (CO₂)</text>
+
+  <!-- ความหนาแน่น -->
+  <rect x="410" y="150" width="270" height="140" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="545" y="175" class="lbl" fill="#ea580c" font-size="12">หาความหนาแน่น (d = m/V)</text>
+  <text x="545" y="197" class="sub">d = PM / RT</text>
+  <text x="545" y="218" class="sub">ตัวอย่าง: แก๊ส O₂ (M=32)</text>
+  <text x="545" y="236" class="sub">ที่ 2 atm, 300 K</text>
+  <text x="545" y="258" class="given">d = (2×32)/(0.082×300)</text>
+  <text x="545" y="276" class="given">d ≈ 2.60 g/L</text>
+
+  <!-- เปรียบเทียบ 2 สภาวะ เมื่อ n และ/หรือ T เปลี่ยน -->
+  <rect x="40" y="310" width="640" height="95" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="2.5"/>
+  <text x="360" y="333" class="lbl" font-size="12">เปรียบเทียบ 2 สภาวะ (เมื่อ n และ/หรือ T เปลี่ยนที่ V คงที่): P₂/P₁ = (n₂/n₁)×(T₂/T₁)</text>
+  <text x="360" y="355" class="sub">ตัวอย่าง: แก๊สรั่วออก 20% (n₂=0.80n₁) ขณะที่ T จาก 300K เป็น 360K (T₂/T₁=1.2)</text>
+  <text x="360" y="377" class="given">P₂ = 5.0 × 0.80 × 1.2 = 4.8 atm</text>
+  <text x="360" y="396" class="sub">ใช้หลักเดียวกันได้แม้ตัวแปรที่เปลี่ยนจะเป็นแค่ n อย่างเดียว หรือ T อย่างเดียว (พจน์ที่ไม่เปลี่ยนตัดออกเป็น 1)</text>
+</svg>
