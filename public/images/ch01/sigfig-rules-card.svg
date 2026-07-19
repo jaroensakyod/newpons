@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" font-family="system-ui, sans-serif">
+  <!-- การ์ดสรุปกฎเลขนัยสำคัญ 3 เรื่อง: นับตัว / บวก-ลบ / คูณ-หาร -->
+  <style>
+    .hd { font-size: 14px; fill: #fff; font-weight: 700; text-anchor: middle; }
+    .lbl { font-size: 12px; fill: #1e293b; text-anchor: middle; }
+    .sub { font-size: 10.5px; fill: #64748b; text-anchor: middle; }
+    .num { font-size: 20px; font-family: 'Courier New', monospace; text-anchor: middle; }
+    .grey { fill: #cbd5e1; }
+    .count { fill: #0d9488; font-weight: 700; }
+    .given { fill: #dc2626; font-weight: 700; }
+  </style>
+
+  <line x1="300" y1="20" x2="300" y2="400" stroke="#e2e8f0" stroke-width="1.5"/>
+  <line x1="600" y1="20" x2="600" y2="400" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- panel 1: นับเลขนัยสำคัญ -->
+  <rect x="20" y="20" width="260" height="34" rx="6" fill="#0d9488"/>
+  <text x="150" y="43" class="hd">1. นับเลขนัยสำคัญ</text>
+  <text x="150" y="130" class="num">
+    <tspan class="grey">0.00</tspan><tspan class="count">450</tspan>
+  </text>
+  <text x="150" y="160" class="count" font-size="13" text-anchor="middle" font-weight="700">= 3 ตัว</text>
+  <text x="150" y="195" class="sub">ศูนย์นำหน้า (สีเทา) ไม่นับ</text>
+  <text x="150" y="211" class="sub">ศูนย์ท้ายหลังจุดทศนิยม (สีเขียว) นับ</text>
+  <text x="150" y="240" class="lbl" font-weight="700">4.500 = 4 ตัว</text>
+  <text x="150" y="258" class="sub">(นับทุกตัวรวมศูนย์ท้าย เพราะมีจุดทศนิยม)</text>
+  <text x="150" y="290" class="lbl" font-weight="700">200 = 1 ตัว</text>
+  <text x="150" y="308" class="sub">(ศูนย์ท้ายไม่มีจุดทศนิยม ไม่นับ)</text>
+
+  <!-- panel 2: บวก-ลบ -->
+  <rect x="320" y="20" width="260" height="34" rx="6" fill="#2563eb"/>
+  <text x="450" y="43" class="hd">2. บวก − ลบ</text>
+  <text x="450" y="100" class="sub">ยึด "ตำแหน่งทศนิยม" น้อยที่สุด</text>
+  <text x="450" y="140" class="num" font-size="17">12.11 + <tspan class="given">18.0</tspan> + 1.013</text>
+  <text x="450" y="168" class="sub">18.0 ทศนิยม 1 ตำแหน่ง (น้อยสุด) ← ตัวกำหนด</text>
+  <rect x="390" y="190" width="120" height="34" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="450" y="213" class="num" font-size="17" fill="#2563eb">= 31.1</text>
+  <text x="450" y="250" class="sub">ผลบวกดิบ 31.123 → ปัดเหลือทศนิยม 1 ตำแหน่ง</text>
+  <text x="450" y="290" class="sub" font-weight="700" fill="#1e293b">ใช้กับบิวเรตด้วย: ค่าอ่าน 2 ค่าทศนิยมเท่ากัน</text>
+  <text x="450" y="308" class="sub">→ ผลต่างต้องมีทศนิยมเท่ากันนั้นเสมอ</text>
+
+  <!-- panel 3: คูณ-หาร -->
+  <rect x="620" y="20" width="260" height="34" rx="6" fill="#ea580c"/>
+  <text x="750" y="43" class="hd">3. คูณ ÷ หาร</text>
+  <text x="750" y="100" class="sub">ยึด "จำนวนเลขนัยสำคัญ" น้อยที่สุด</text>
+  <text x="750" y="140" class="num" font-size="16">25.35 g ÷ <tspan class="given">12.1</tspan> mL</text>
+  <text x="750" y="168" class="sub">12.1 มี 3 ตัว (น้อยสุด) ← ตัวกำหนด</text>
+  <rect x="690" y="190" width="120" height="34" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="750" y="213" class="num" font-size="17" fill="#ea580c">= 2.10</text>
+  <text x="750" y="250" class="sub">ผลหารดิบ 2.0950... → ปัดเหลือ 3 ตัว</text>
+  <text x="750" y="280" class="sub" font-weight="700" fill="#1e293b">เขียนศูนย์ท้ายเสมอถ้าต้องการ</text>
+  <text x="750" y="298" class="sub">(2.10 ≠ 2.1 ในแง่เลขนัยสำคัญ)</text>
+
+  <text x="450" y="400" class="sub">ข้อสอบมักผสมสองกฎต่อกัน: ลบก่อน (ดูทศนิยม) แล้วค่อยคูณ/หาร (ดูจำนวนเลขนัยสำคัญ) ในโจทย์เดียว</text>
+</svg>

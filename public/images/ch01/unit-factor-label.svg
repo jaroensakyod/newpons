@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" font-family="system-ui, sans-serif">
+  <!-- วิธีแฟกเตอร์เปลี่ยนหน่วย (factor-label method): คูณด้วยเศษส่วนที่ค่าเท่ากับ 1 แล้วตัดหน่วยเดิมทิ้ง -->
+  <style>
+    .lbl { font-size: 13px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 11px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 15px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+    .unit { font-size: 13px; fill: #0d9488; text-anchor: middle; font-family: 'Courier New', monospace; }
+  </style>
+
+  <text x="400" y="30" class="lbl" font-size="14">วิธีแฟกเตอร์เปลี่ยนหน่วย (factor-label method)</text>
+
+  <text x="120" y="100" class="given">500 mg</text>
+  <text x="120" y="118" class="sub">ค่าที่มี (หน่วยเดิม)</text>
+
+  <text x="230" y="90" class="unit" font-size="20">×</text>
+
+  <!-- เศษส่วนแฟกเตอร์ -->
+  <line x1="290" y1="80" x2="430" y2="80" stroke="#0d9488" stroke-width="2"/>
+  <text x="360" y="72" class="unit">1 g</text>
+  <text x="360" y="105" class="unit">1000 mg</text>
+  <text x="360" y="130" class="sub">แฟกเตอร์ = 1 (ค่าจริงเท่ากันทั้งเศษ-ส่วน)</text>
+
+  <text x="470" y="90" class="unit" font-size="20">=</text>
+
+  <text x="560" y="100" class="given">0.5 g</text>
+  <text x="560" y="118" class="sub">คำตอบ (หน่วยใหม่)</text>
+
+  <text x="400" y="175" class="sub">หน่วย "mg" อยู่บนกับล่างของสองฝั่ง → ตัดกัน เหลือแต่ "g"</text>
+
+  <rect x="120" y="200" width="560" height="70" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="400" y="225" class="lbl" font-size="12">หลักการเลือกแฟกเตอร์</text>
+  <text x="400" y="248" class="sub">วางหน่วยที่ต้องการ "ตัดทิ้ง" ไว้ตรงข้ามกับตำแหน่งเดิมเสมอ</text>
+  <text x="400" y="264" class="sub">(หน่วยเดิมอยู่บน → แฟกเตอร์ต้องมีหน่วยเดิมอยู่ล่าง จึงจะตัดกันได้)</text>
+</svg>

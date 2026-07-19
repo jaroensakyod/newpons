@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" font-family="system-ui, sans-serif">
+  <!-- อุปกรณ์ป้องกันส่วนบุคคล (PPE) สำหรับสารกัดกร่อน: แว่นตานิรภัย เสื้อกาวน์ ถุงมือกันสารเคมี -->
+  <style>
+    .lbl { font-size: 13px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10.5px; fill: #64748b; text-anchor: middle; }
+    .ok { font-size: 15px; fill: #059669; font-weight: 700; }
+    .no { font-size: 15px; fill: #dc2626; font-weight: 700; }
+  </style>
+
+  <!-- (1) แว่นตานิรภัย -->
+  <g transform="translate(120,110)">
+    <ellipse cx="-24" cy="0" rx="22" ry="18" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
+    <ellipse cx="24" cy="0" rx="22" ry="18" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
+    <line x1="-2" y1="0" x2="2" y2="0" stroke="#2563eb" stroke-width="3"/>
+    <line x1="-46" y1="-4" x2="-70" y2="-14" stroke="#2563eb" stroke-width="3"/>
+    <line x1="46" y1="-4" x2="70" y2="-14" stroke="#2563eb" stroke-width="3"/>
+  </g>
+  <text x="120" y="170" class="lbl">แว่นตานิรภัย</text>
+  <text x="120" y="186" class="sub">ป้องกันสารกระเด็นเข้าตา</text>
+  <text x="120" y="205" class="ok" text-anchor="middle">✓</text>
+
+  <!-- (2) เสื้อกาวน์ -->
+  <g transform="translate(300,105)">
+    <path d="M-28,-35 L-14,-40 L0,-32 L14,-40 L28,-35 L22,-10 L14,-14 L14,45 L-14,45 L-14,-14 L-22,-10 Z"
+          fill="#f0fdfa" stroke="#0d9488" stroke-width="3"/>
+    <line x1="0" y1="-32" x2="0" y2="45" stroke="#0d9488" stroke-width="1.5"/>
+  </g>
+  <text x="300" y="170" class="lbl">เสื้อกาวน์</text>
+  <text x="300" y="186" class="sub">ป้องกันลำตัวและผิวหนัง</text>
+  <text x="300" y="205" class="ok" text-anchor="middle">✓</text>
+
+  <!-- (3) ถุงมือกันสารเคมี -->
+  <g transform="translate(480,105)">
+    <path d="M-20,30 L-20,-10 Q-20,-30 -12,-30 Q-6,-30 -6,-18 L-6,-32 Q-6,-40 2,-40 Q8,-40 8,-32 L8,-30 Q8,-38 15,-38 Q21,-38 21,-30 L21,-8 Q28,-8 28,2 L28,30 Z"
+          fill="#fef2f2" stroke="#dc2626" stroke-width="3"/>
+  </g>
+  <text x="480" y="170" class="lbl">ถุงมือกันสารเคมี</text>
+  <text x="480" y="186" class="sub">ยางไนไตรล์ ไม่ใช่ผ้าฝ้าย</text>
+  <text x="480" y="205" class="ok" text-anchor="middle">✓</text>
+
+  <!-- (4) หน้ากากกรองฝุ่น (ไม่พอสำหรับสารละลายกระเด็น) -->
+  <g transform="translate(660,105)">
+    <path d="M-24,10 Q-24,-15 0,-15 Q24,-15 24,10 Q24,22 0,25 Q-24,22 -24,10 Z"
+          fill="#f1f5f9" stroke="#94a3b8" stroke-width="3"/>
+    <line x1="-30" y1="-15" x2="30" y2="30" stroke="#dc2626" stroke-width="3.5"/>
+    <line x1="30" y1="-15" x2="-30" y2="30" stroke="#dc2626" stroke-width="3.5"/>
+  </g>
+  <text x="660" y="170" class="lbl">หน้ากากกรองฝุ่น</text>
+  <text x="660" y="186" class="sub">กันแค่ฝุ่น ไม่กันสารกระเด็น</text>
+  <text x="660" y="205" class="no" text-anchor="middle">✗</text>
+
+  <text x="400" y="255" class="sub">สารกัดกร่อนรุนแรงต้องป้องกันทั้งตา ผิวหนัง และมือพร้อมกัน — อุปกรณ์กรองอากาศอย่างเดียวไม่เพียงพอ</text>
+</svg>

@@ -98,3 +98,73 @@
   border-top: 1px solid rgb(226 232 240);
   margin: 1.5rem 0;
 }
+
+/* ไดอะแกรมประกอบเฉลย (SVG) */
+.md-body img {
+  display: block;
+  max-width: 100%;
+  margin: 0.85rem auto;
+  border-radius: 0.75rem;
+  border: 1px solid rgb(226 232 240);
+  background: rgb(248 250 252);
+  padding: 0.5rem;
+}
+
+/* กล่องเน้น (หลักคิด/ขั้นที่/ตรวจสอบ/ระวัง/ตอบ) — คู่สีเดียวกับ scripts/build-worksheet.mjs
+   ให้เว็บกับ PDF หน้าตาสอดคล้องกัน (ดู styleCallouts() ในไฟล์นั้น) */
+.md-body .cal {
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  margin: 0.6rem 0 !important;
+}
+.md-body .cal-info {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+}
+.md-body .cal-info strong {
+  color: #2563eb;
+}
+.md-body .cal-check {
+  background: #ecfdf5;
+  border-left: 4px solid #059669;
+}
+.md-body .cal-check strong {
+  color: #059669;
+}
+.md-body .cal-warn {
+  background: #fff7ed;
+  border-left: 4px solid #ea580c;
+}
+.md-body .cal-warn strong {
+  color: #ea580c;
+}
+.md-body .cal-step {
+  border-left: 3px solid #0d9488;
+  padding-left: 0.6rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.md-body .step-badge {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 50%;
+  background: #0d9488;
+  color: #fff;
+  font-size: 0.75em;
+  font-weight: 700;
+}
+.md-body .cal-answer {
+  background: #f0fdfa;
+  border: 2px solid #99f6e4;
+  border-radius: 0.6rem;
+  padding: 0.5rem 0.85rem;
+}
+.md-body .cal-answer strong {
+  color: #115e59;
+  font-size: 1.05em;
+}

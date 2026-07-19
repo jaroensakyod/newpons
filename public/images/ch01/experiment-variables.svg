@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" font-family="system-ui, sans-serif">
+  <!-- ตัวแปรในการทดลอง: ตัวแปรต้น (สิ่งที่เปลี่ยน) / ตัวแปรตาม (สิ่งที่วัด) / ตัวแปรควบคุม (สิ่งที่คงที่) -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10.5px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 13px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+    .dep { font-size: 12px; fill: #0d9488; font-weight: 700; text-anchor: middle; }
+  </style>
+
+  <text x="450" y="26" class="lbl" font-size="14">ทดลอง 3 ชุด — เปลี่ยนอุณหภูมิน้ำ วัดเวลาที่เกลือละลายหมด</text>
+
+  <!-- 3 บีกเกอร์: มวลเกลือ + ปริมาตรน้ำเท่ากันทุกชุด (ตัวแปรควบคุม), อุณหภูมิต่างกัน (ตัวแปรต้น) -->
+  <g transform="translate(180,190)">
+    <path d="M-40,-60 L-40,60 Q-40,75 -25,75 L25,75 Q40,75 40,60 L40,-60" fill="#dbeafe" stroke="#94a3b8" stroke-width="2.5"/>
+    <circle cx="-10" cy="30" r="5" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+    <circle cx="8" cy="40" r="4" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+    <circle cx="0" cy="15" r="4.5" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="0" y="-70" class="given">20°C</text>
+  </g>
+  <text x="180" y="290" class="sub">น้ำ 100 mL + เกลือ 5 g</text>
+  <g transform="translate(180,320)">
+    <circle r="14" fill="none" stroke="#0d9488" stroke-width="2"/>
+    <line x1="0" y1="0" x2="0" y2="-9" stroke="#0d9488" stroke-width="2"/>
+    <line x1="0" y1="0" x2="6" y2="3" stroke="#0d9488" stroke-width="2"/>
+  </g>
+  <text x="180" y="352" class="dep">t = ?</text>
+
+  <g transform="translate(450,190)">
+    <path d="M-40,-60 L-40,60 Q-40,75 -25,75 L25,75 Q40,75 40,60 L40,-60" fill="#bfdbfe" stroke="#94a3b8" stroke-width="2.5"/>
+    <circle cx="-10" cy="30" r="5" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+    <circle cx="8" cy="40" r="4" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+    <circle cx="0" cy="15" r="4.5" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="0" y="-70" class="given">40°C</text>
+  </g>
+  <text x="450" y="290" class="sub">น้ำ 100 mL + เกลือ 5 g</text>
+  <g transform="translate(450,320)">
+    <circle r="14" fill="none" stroke="#0d9488" stroke-width="2"/>
+    <line x1="0" y1="0" x2="0" y2="-9" stroke="#0d9488" stroke-width="2"/>
+    <line x1="0" y1="0" x2="6" y2="3" stroke="#0d9488" stroke-width="2"/>
+  </g>
+  <text x="450" y="352" class="dep">t = ?</text>
+
+  <g transform="translate(720,190)">
+    <path d="M-40,-60 L-40,60 Q-40,75 -25,75 L25,75 Q40,75 40,60 L40,-60" fill="#93c5fd" stroke="#94a3b8" stroke-width="2.5"/>
+    <circle cx="-10" cy="30" r="5" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+    <circle cx="8" cy="40" r="4" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+    <circle cx="0" cy="15" r="4.5" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="0" y="-70" class="given">60°C</text>
+  </g>
+  <text x="720" y="290" class="sub">น้ำ 100 mL + เกลือ 5 g</text>
+  <g transform="translate(720,320)">
+    <circle r="14" fill="none" stroke="#0d9488" stroke-width="2"/>
+    <line x1="0" y1="0" x2="0" y2="-9" stroke="#0d9488" stroke-width="2"/>
+    <line x1="0" y1="0" x2="6" y2="3" stroke="#0d9488" stroke-width="2"/>
+  </g>
+  <text x="720" y="352" class="dep">t = ?</text>
+
+  <text x="180" y="120" class="sub" fill="#dc2626">ตัวแปรต้น (เปลี่ยน)</text>
+  <text x="720" y="120" class="sub" fill="#0d9488">ตัวแปรตาม (วัดผล) = เวลา</text>
+  <text x="450" y="378" class="sub">มวลเกลือและปริมาตรน้ำเท่ากันทุกชุด = ตัวแปรควบคุม (ทำให้คงที่เพื่อเปรียบเทียบยุติธรรม)</text>
+</svg>

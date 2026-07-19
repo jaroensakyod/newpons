@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 360" font-family="system-ui, sans-serif">
+  <!-- เทกรดลงน้ำ (ปลอดภัย) vs เทน้ำลงกรด (อันตราย) -->
+  <style>
+    .lbl { font-size: 13px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 11px; fill: #64748b; text-anchor: middle; }
+    .tag { font-size: 12.5px; text-anchor: middle; font-weight: 700; }
+  </style>
+  <defs>
+    <marker id="adp-red" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="adp-green" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#059669"/>
+    </marker>
+  </defs>
+
+  <!-- ═══ ซ้าย: ผิด — เทน้ำลงกรดเข้มข้น ═══ -->
+  <text x="175" y="30" class="tag" fill="#dc2626">✗ ผิด — เทน้ำลงกรดเข้มข้น</text>
+
+  <!-- ขวดหยดน้ำด้านบน -->
+  <rect x="150" y="45" width="16" height="34" fill="#f0f9ff" stroke="#94a3b8" stroke-width="1.5"/>
+  <path d="M150,79 L166,79 L162,95 L154,95 Z" fill="#f0f9ff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="158" y="42" class="sub">น้ำ</text>
+
+  <!-- สายน้ำหยดลง -->
+  <line x1="158" y1="98" x2="158" y2="140" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#adp-red)"/>
+
+  <!-- บีกเกอร์กรดเข้มข้น (ปริมาณน้อย เข้มข้น) -->
+  <path d="M110,150 L110,255 Q110,268 123,268 L193,268 Q206,268 206,255 L206,150"
+        fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+  <rect x="112" y="215" width="92" height="51" fill="#fde68a"/>
+  <text x="158" y="245" class="sub">กรดเข้มข้น</text>
+
+  <!-- กระเด็น/ความร้อนฉับพลันที่ผิวสัมผัส -->
+  <path d="M158,148 L145,120 M158,148 L172,118 M158,148 L130,138 M158,148 L188,140"
+        stroke="#dc2626" stroke-width="2" stroke-dasharray="3 3"/>
+  <circle cx="140" cy="115" r="3" fill="#dc2626"/>
+  <circle cx="176" cy="112" r="3" fill="#dc2626"/>
+  <circle cx="122" cy="132" r="3" fill="#dc2626"/>
+  <text x="158" y="180" class="sub" fill="#dc2626">น้ำน้อยลอยบนผิวกรด → ร้อนจัดเฉพาะจุด</text>
+  <text x="158" y="196" class="sub" fill="#dc2626">เดือดฉับพลัน กระเด็นกรดออกมา</text>
+
+  <text x="158" y="322" class="sub">อันตราย: ความร้อนเข้มข้นที่ผิวสัมผัสเดียว</text>
+  <text x="158" y="338" class="sub">ทำให้น้ำเดือดฉับพลันและกรดกระเด็น</text>
+
+  <!-- เส้นแบ่งกลาง -->
+  <line x1="350" y1="15" x2="350" y2="345" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- ═══ ขวา: ถูก — เทกรดลงน้ำทีละน้อยพร้อมกวน ═══ -->
+  <text x="525" y="30" class="tag" fill="#059669">✓ ถูก — เทกรดลงน้ำทีละน้อย + กวนตลอด</text>
+
+  <!-- ขวดหยดกรดด้านบน -->
+  <rect x="500" y="45" width="16" height="34" fill="#fef2f2" stroke="#94a3b8" stroke-width="1.5"/>
+  <path d="M500,79 L516,79 L512,95 L504,95 Z" fill="#fef2f2" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="508" y="42" class="sub">กรดเข้มข้น (ทีละน้อย)</text>
+
+  <!-- สายกรดหยดลง -->
+  <line x1="508" y1="98" x2="508" y2="140" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#adp-green)"/>
+
+  <!-- บีกเกอร์น้ำปริมาณมาก -->
+  <path d="M455,145 L455,255 Q455,268 468,268 L548,268 Q561,268 561,255 L561,145"
+        fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+  <rect x="457" y="165" width="102" height="101" fill="#bfdbfe"/>
+  <text x="508" y="210" class="sub">น้ำปริมาณมาก</text>
+
+  <!-- แท่งแก้วคน (กวนตลอดเวลา) -->
+  <line x1="530" y1="120" x2="500" y2="250" stroke="#78716c" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M492,240 q10,-8 20,0 q10,8 20,0" fill="none" stroke="#059669" stroke-width="2"/>
+
+  <!-- คลื่นความร้อนกระจายอ่อนๆ -->
+  <path d="M480,190 q6,-6 12,0 M500,200 q6,-6 12,0 M520,190 q6,-6 12,0" stroke="#059669" stroke-width="1.5" fill="none"/>
+  <text x="508" y="180" class="sub" fill="#059669">ความร้อนกระจายทั่วน้ำปริมาณมาก</text>
+
+  <text x="508" y="322" class="sub">ปลอดภัย: น้ำปริมาณมากช่วยดูดซับความร้อน</text>
+  <text x="508" y="338" class="sub">อุณหภูมิจึงเพิ่มขึ้นช้าและสม่ำเสมอ</text>
+</svg>

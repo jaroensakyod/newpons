@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 380" font-family="system-ui, sans-serif">
+  <!-- สามเหลี่ยมความหนาแน่น d = m/V และการแปลงหน่วย g/cm3 <-> kg/m3 -->
+  <style>
+    .big { font-size: 26px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; }
+    .sub { font-size: 11px; fill: #64748b; text-anchor: middle; }
+    .eq { font-size: 14px; fill: #0d9488; text-anchor: middle; font-weight: 700; }
+  </style>
+
+  <!-- สามเหลี่ยม -->
+  <path d="M230,50 L130,180 L330,180 Z" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+  <line x1="130" y1="180" x2="330" y2="180" stroke="#0d9488" stroke-width="2"/>
+  <line x1="230" y1="50" x2="230" y2="180" stroke="#0d9488" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="230" y="105" class="big">d</text>
+  <text x="180" y="160" class="big">m</text>
+  <text x="280" y="160" class="big">V</text>
+
+  <text x="230" y="215" class="eq">d = m ÷ V</text>
+  <text x="230" y="235" class="sub">ปิดตัวที่ต้องการหา แล้วอ่านสองตัวที่เหลือ</text>
+  <text x="230" y="253" class="sub">(ปิด m → เหลือ d × V, ปิด V → เหลือ m ÷ d)</text>
+
+  <!-- ตัวอย่าง 3 สูตร -->
+  <rect x="30" y="280" width="180" height="60" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="120" y="305" class="lbl" fill="#2563eb" font-weight="700">หา d</text>
+  <text x="120" y="325" class="lbl">d = m / V</text>
+
+  <rect x="260" y="280" width="180" height="60" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="350" y="305" class="lbl" fill="#ea580c" font-weight="700">หา m</text>
+  <text x="350" y="325" class="lbl">m = d × V</text>
+
+  <rect x="490" y="280" width="180" height="60" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="580" y="305" class="lbl" fill="#dc2626" font-weight="700">หา V</text>
+  <text x="580" y="325" class="lbl">V = m / d</text>
+
+  <text x="580" y="90" class="sub" text-anchor="start">แปลงหน่วย:</text>
+  <text x="580" y="108" class="sub" text-anchor="start">1 g/cm³ = 1000 kg/m³</text>
+  <text x="580" y="126" class="sub" text-anchor="start">(1 cm³ = 1 mL)</text>
+
+  <text x="350" y="365" class="sub">มวลมักมาจากการชั่ง (หรือลบมวลภาชนะ) ปริมาตรมักมาจากการวัดหรือแทนที่น้ำ</text>
+</svg>

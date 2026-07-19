@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 912 260" font-family="system-ui, sans-serif">
+  <!-- สัญลักษณ์ GHS หลัก 6 แบบ: เปลวไฟ, เปลวไฟเหนือวงกลม, กัดกร่อน, พิษเฉียบพลันรุนแรง, ระคายเคือง, แก๊สภายใต้ความดัน -->
+  <style>
+    .lbl { font-size: 12px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10.5px; fill: #64748b; text-anchor: middle; }
+  </style>
+
+  <!-- (1) เปลวไฟ — ไวไฟ -->
+  <g transform="translate(80,95)">
+    <rect x="-38" y="-38" width="76" height="76" rx="8" fill="#fff" stroke="#dc2626" stroke-width="5" transform="rotate(45)"/>
+    <path d="M0,-22 C9,-11 11,-1 5,8 C7,1 2,-3 0,-8 C-2,-3 -7,3 -3,11 C-11,4 -11,-9 0,-22 Z" fill="#111827"/>
+  </g>
+  <text x="80" y="165" class="lbl">เปลวไฟ</text>
+  <text x="80" y="181" class="sub">สารไวไฟ (Flammable)</text>
+
+  <!-- (2) เปลวไฟเหนือวงกลม — ออกซิไดส์ -->
+  <g transform="translate(232,95)">
+    <rect x="-38" y="-38" width="76" height="76" rx="8" fill="#fff" stroke="#dc2626" stroke-width="5" transform="rotate(45)"/>
+    <circle cx="0" cy="10" r="12" fill="none" stroke="#111827" stroke-width="2.5"/>
+    <path d="M0,-22 C7,-13 8,-6 4,0 C5,-4 2,-6 0,-9 C-2,-6 -5,-2 -2,2 C-8,-3 -8,-13 0,-22 Z" fill="#111827"/>
+  </g>
+  <text x="232" y="165" class="lbl">เปลวไฟเหนือวงกลม</text>
+  <text x="232" y="181" class="sub">สารออกซิไดส์ (Oxidizer)</text>
+
+  <!-- (3) กัดกร่อน -->
+  <g transform="translate(384,95)">
+    <rect x="-38" y="-38" width="76" height="76" rx="8" fill="#fff" stroke="#dc2626" stroke-width="5" transform="rotate(45)"/>
+    <!-- หลอดทดลอง 2 หลอดหยดลงพื้นผิว+มือ -->
+    <path d="M-16,-22 L-10,-22 L-11,-4 Q-13,0 -16,-4 Z" fill="#111827"/>
+    <circle cx="-13" cy="2" r="2" fill="#111827"/>
+    <line x1="-13" y1="8" x2="-13" y2="14" stroke="#111827" stroke-width="2"/>
+    <line x1="-20" y1="16" x2="-4" y2="16" stroke="#111827" stroke-width="2.5"/>
+    <path d="M4,-22 L10,-22 L9,-2 Q7,4 4,-2 Z" fill="#111827"/>
+    <circle cx="7" cy="6" r="2" fill="#111827"/>
+    <path d="M0,14 Q7,10 16,14 Q20,16 16,20 Q7,24 0,20 Z" fill="none" stroke="#111827" stroke-width="2"/>
+  </g>
+  <text x="384" y="165" class="lbl">กัดกร่อน</text>
+  <text x="384" y="181" class="sub">กัดผิวหนัง/โลหะ (Corrosive)</text>
+
+  <!-- (4) หัวกะโหลก — พิษเฉียบพลันรุนแรง -->
+  <g transform="translate(536,95)">
+    <rect x="-38" y="-38" width="76" height="76" rx="8" fill="#fff" stroke="#dc2626" stroke-width="5" transform="rotate(45)"/>
+    <circle cx="0" cy="-8" r="14" fill="none" stroke="#111827" stroke-width="2.5"/>
+    <circle cx="-5" cy="-10" r="2.5" fill="#111827"/>
+    <circle cx="5" cy="-10" r="2.5" fill="#111827"/>
+    <path d="M-4,-2 Q0,2 4,-2" fill="none" stroke="#111827" stroke-width="2"/>
+    <line x1="-14" y1="12" x2="14" y2="20" stroke="#111827" stroke-width="2.5"/>
+    <line x1="14" y1="12" x2="-14" y2="20" stroke="#111827" stroke-width="2.5"/>
+  </g>
+  <text x="536" y="165" class="lbl">หัวกะโหลกไขว้</text>
+  <text x="536" y="181" class="sub">พิษเฉียบพลันรุนแรง (Toxic)</text>
+
+  <!-- (5) เครื่องหมายตกใจ — ระคายเคือง/อันตรายเฉียบพลันต่ำ -->
+  <g transform="translate(688,95)">
+    <rect x="-38" y="-38" width="76" height="76" rx="8" fill="#fff" stroke="#dc2626" stroke-width="5" transform="rotate(45)"/>
+    <rect x="-3.5" y="-24" width="7" height="24" rx="3" fill="#111827"/>
+    <circle cx="0" cy="10" r="4.5" fill="#111827"/>
+  </g>
+  <text x="688" y="165" class="lbl">เครื่องหมายตกใจ</text>
+  <text x="688" y="181" class="sub">ระคายเคือง/อันตรายทั่วไป</text>
+
+  <!-- (6) ถังแก๊ส — แก๊สภายใต้ความดัน -->
+  <g transform="translate(840,95)">
+    <rect x="-38" y="-38" width="76" height="76" rx="8" fill="#fff" stroke="#dc2626" stroke-width="5" transform="rotate(45)"/>
+    <rect x="-7" y="-24" width="14" height="34" rx="2" fill="none" stroke="#111827" stroke-width="2.2"/>
+    <rect x="-4" y="-30" width="8" height="7" fill="#111827"/>
+    <line x1="-7" y1="-8" x2="7" y2="-8" stroke="#111827" stroke-width="1.6"/>
+  </g>
+  <text x="840" y="165" class="lbl">ถังแก๊ส</text>
+  <text x="840" y="181" class="sub">แก๊สภายใต้ความดัน</text>
+
+  <text x="456" y="222" class="sub">จุดสังเกตที่สับสนบ่อย: "เปลวไฟ" (ตัวสารเองติดไฟ) ต่างจาก "เปลวไฟเหนือวงกลม" (สารช่วยให้ไฟลุกลาม) ตรงวงกลมด้านล่าง</text>
+</svg>
