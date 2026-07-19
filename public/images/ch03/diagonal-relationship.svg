@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 380" font-family="system-ui, sans-serif">
+  <!-- ความสัมพันธ์เชิงแนวทแยง: Li-Mg, Be-Al, B-Si (เลื่อนลง 1 คาบ + ขวา 1 หมู่) -->
+  <style>
+    .el { font-size: 20px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .grp { font-size: 10.5px; fill: #64748b; text-anchor: middle; }
+    .sub { font-size: 11px; fill: #64748b; text-anchor: middle; }
+    .period { font-size: 11px; fill: #94a3b8; text-anchor: end; }
+  </style>
+  <defs>
+    <marker id="dr-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="26" class="el" font-size="14">ความสัมพันธ์เชิงแนวทแยง (diagonal relationship)</text>
+
+  <!-- หัวหมู่ -->
+  <text x="180" y="55" class="grp">หมู่ IA</text>
+  <text x="320" y="55" class="grp">หมู่ IIA</text>
+  <text x="460" y="55" class="grp">หมู่ IIIA</text>
+  <text x="600" y="55" class="grp">หมู่ IVA</text>
+
+  <!-- คาบ 2 -->
+  <text x="90" y="105" class="period">คาบ 2</text>
+  <rect x="150" y="75" width="60" height="60" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="180" y="112" class="el">Li</text>
+  <rect x="290" y="75" width="60" height="60" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="320" y="112" class="el">Be</text>
+  <rect x="430" y="75" width="60" height="60" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="460" y="112" class="el">B</text>
+  <rect x="570" y="75" width="60" height="60" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="600" y="112" class="el" fill="#94a3b8">C</text>
+
+  <!-- คาบ 3 -->
+  <text x="90" y="245" class="period">คาบ 3</text>
+  <rect x="150" y="215" width="60" height="60" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="180" y="252" class="el" fill="#94a3b8">Na</text>
+  <rect x="290" y="215" width="60" height="60" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="2"/>
+  <text x="320" y="252" class="el" fill="#0d9488">Mg</text>
+  <rect x="430" y="215" width="60" height="60" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="2"/>
+  <text x="460" y="252" class="el" fill="#0d9488">Al</text>
+  <rect x="570" y="215" width="60" height="60" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="2"/>
+  <text x="600" y="252" class="el" fill="#0d9488">Si</text>
+
+  <!-- ลูกศรแนวทแยง -->
+  <line x1="195" y1="130" x2="305" y2="220" stroke="#dc2626" stroke-width="2.5" marker-end="url(#dr-ah)"/>
+  <line x1="335" y1="130" x2="445" y2="220" stroke="#dc2626" stroke-width="2.5" marker-end="url(#dr-ah)"/>
+  <line x1="475" y1="130" x2="585" y2="220" stroke="#dc2626" stroke-width="2.5" marker-end="url(#dr-ah)"/>
+
+  <text x="350" y="305" class="sub">เลื่อนลง 1 คาบ (ขนาดควรใหญ่ขึ้น) + เลื่อนขวา 1 หมู่ (Z_eff สูงขึ้น ขนาดเล็กลง)</text>
+  <text x="350" y="322" class="sub">สองผลหักล้างกันเกือบพอดี → ขนาดอะตอม/สมบัติทางเคมีใกล้เคียงกันผิดปกติ</text>
+
+  <rect x="150" y="340" width="480" height="30" rx="6" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
+  <text x="390" y="360" class="sub" fill="#0d9488" font-weight="700">Li–Mg · Be–Al · B–Si — 3 คู่หลักที่ข้อสอบเน้น</text>
+</svg>

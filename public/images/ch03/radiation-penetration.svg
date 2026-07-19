@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 260" font-family="system-ui, sans-serif">
+  <!-- อำนาจทะลุทะลวงของรังสี: แอลฟา < บีตา < แกมมา -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10.5px; fill: #64748b; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="rp-ah-r" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#dc2626"/>
+    </marker>
+    <marker id="rp-ah-b" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#2563eb"/>
+    </marker>
+    <marker id="rp-ah-g" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#7c3aed"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="24" class="lbl" font-size="14">อำนาจทะลุทะลวง: α &lt; β &lt; γ</text>
+
+  <!-- แผ่นกระดาษ -->
+  <rect x="150" y="60" width="8" height="160" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="154" y="235" class="sub">กระดาษ</text>
+
+  <!-- แผ่นอะลูมิเนียม -->
+  <rect x="330" y="60" width="16" height="160" fill="#cbd5e1" stroke="#64748b" stroke-width="1.5"/>
+  <text x="338" y="235" class="sub">อะลูมิเนียม</text>
+
+  <!-- แผ่นตะกั่ว -->
+  <rect x="520" y="60" width="34" height="160" fill="#94a3b8" stroke="#475569" stroke-width="1.5"/>
+  <text x="537" y="235" class="sub">ตะกั่ว/คอนกรีตหนา</text>
+
+  <!-- แอลฟา: หยุดที่กระดาษ -->
+  <line x1="60" y1="100" x2="145" y2="100" stroke="#dc2626" stroke-width="3" marker-end="url(#rp-ah-r)"/>
+  <text x="100" y="90" class="sub" fill="#dc2626" font-weight="700">α (แอลฟา)</text>
+
+  <!-- บีตา: ทะลุกระดาษ หยุดที่อะลูมิเนียม -->
+  <line x1="60" y1="130" x2="325" y2="130" stroke="#2563eb" stroke-width="3" marker-end="url(#rp-ah-b)"/>
+  <text x="200" y="120" class="sub" fill="#2563eb" font-weight="700">β (บีตา)</text>
+
+  <!-- แกมมา: ทะลุทั้งหมด ลดทอนแต่ไม่หยุดสนิท -->
+  <line x1="60" y1="160" x2="670" y2="160" stroke="#7c3aed" stroke-width="3" marker-end="url(#rp-ah-g)"/>
+  <text x="400" y="150" class="sub" fill="#7c3aed" font-weight="700">γ (แกมมา) — ทะลุผ่านได้มากที่สุด</text>
+
+  <text x="350" y="255" class="sub">ลำดับทะลุทะลวงน้อย→มาก สวนทางกับอำนาจทำให้แตกตัวเป็นไอออน (α ไอออไนซ์มากที่สุด)</text>
+</svg>

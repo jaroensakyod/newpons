@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 300" font-family="system-ui, sans-serif">
+  <!-- ระบุตำแหน่งธาตุจาก config: นับระดับพลังงาน=คาบ, เวเลนซ์ e-=หมู่, ออร์บิทัลสุดท้าย=บล็อก -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10.5px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 13px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="eig-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <rect x="30" y="60" width="180" height="70" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="120" y="90" class="given" font-size="12">Z = 17</text>
+  <text x="120" y="110" class="sub">1s²2s²2p⁶3s²3p⁵</text>
+  <text x="120" y="45" class="sub">โจทย์ให้เลขอะตอม/config</text>
+
+  <line x1="210" y1="95" x2="260" y2="95" stroke="#94a3b8" stroke-width="2" marker-end="url(#eig-ah)"/>
+
+  <rect x="260" y="60" width="140" height="70" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="330" y="82" class="lbl" fill="#2563eb" font-size="12">คาบ</text>
+  <text x="330" y="102" class="sub">นับระดับพลังงานหลัก</text>
+  <text x="330" y="116" class="sub">สูงสุด (n=3) → คาบ 3</text>
+
+  <line x1="400" y1="95" x2="450" y2="95" stroke="#94a3b8" stroke-width="2" marker-end="url(#eig-ah)"/>
+
+  <rect x="450" y="60" width="140" height="70" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="2"/>
+  <text x="520" y="82" class="lbl" fill="#0d9488" font-size="12">หมู่</text>
+  <text x="520" y="102" class="sub">รวมเวเลนซ์ e⁻</text>
+  <text x="520" y="116" class="sub">3s²3p⁵ = 7 → หมู่ VIIA</text>
+
+  <line x1="590" y1="95" x2="640" y2="95" stroke="#94a3b8" stroke-width="2" marker-end="url(#eig-ah)"/>
+
+  <rect x="640" y="60" width="80" height="70" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="680" y="82" class="lbl" fill="#ea580c" font-size="12">บล็อก</text>
+  <text x="680" y="102" class="sub">e⁻ ตัวท้าย</text>
+  <text x="680" y="116" class="sub">อยู่ p → บล็อก p</text>
+
+  <rect x="150" y="170" width="440" height="45" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="2"/>
+  <text x="370" y="197" class="lbl" fill="#0d9488">ตอบ: คาบ 3, หมู่ VIIA, บล็อก p (คือ Cl)</text>
+
+  <text x="370" y="245" class="sub">กติกาบล็อก: e⁻ ตัวสุดท้ายอยู่ s/p → หมู่ A ทั่วไป, อยู่ d → หมู่ B (ธาตุแทรนซิชัน)</text>
+  <text x="370" y="263" class="sub">ระวัง: นับเวเลนซ์ e⁻ ต้องรวมทั้ง s และ p ของระดับพลังงานนอกสุด ไม่ใช่แค่ตัวสุดท้ายที่เติม</text>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" font-family="system-ui, sans-serif">
+  <!-- แนวโน้มสมบัติธาตุ: ขนาดอะตอม, IE, EN, EA ตามคาบและหมู่ -->
+  <style>
+    .lbl { font-size: 13px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 11px; fill: #64748b; text-anchor: middle; }
+    .inc { font-size: 12px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+    .dec { font-size: 12px; fill: #2563eb; font-weight: 700; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="pt-ah-r" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="pt-ah-b" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <!-- กรอบตารางธาตุจำลอง -->
+  <rect x="150" y="90" width="380" height="200" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <line x1="150" y1="140" x2="530" y2="140" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="150" y1="190" x2="530" y2="190" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="150" y1="240" x2="530" y2="240" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="245" y1="90" x2="245" y2="290" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="340" y1="90" x2="340" y2="290" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="435" y1="90" x2="435" y2="290" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="340" y="80" class="sub">← หมู่ (ซ้ายไปขวา) →</text>
+  <text x="120" y="190" class="sub" transform="rotate(-90 120 190)">← คาบ (บนลงล่าง) →</text>
+
+  <!-- ลูกศรข้ามคาบ (ขวา): IE EN EA เพิ่ม, ขนาดอะตอมลด -->
+  <line x1="160" y1="115" x2="510" y2="115" stroke="#dc2626" stroke-width="3" marker-end="url(#pt-ah-r)"/>
+  <text x="340" y="108" class="inc" text-anchor="middle">ข้ามคาบ (ซ้าย→ขวา)</text>
+
+  <!-- ลูกศรลงหมู่ (ล่าง): ขนาดอะตอมเพิ่ม, IE EN EA ลด -->
+  <line x1="565" y1="100" x2="565" y2="280" stroke="#2563eb" stroke-width="3" marker-end="url(#pt-ah-b)"/>
+  <text x="610" y="190" class="dec" transform="rotate(-90 610 190)">ลงหมู่ (บน→ล่าง)</text>
+
+  <!-- ตารางสรุปแนวโน้ม -->
+  <rect x="60" y="310" width="580" height="80" rx="8" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="150" y="330" class="lbl" font-size="12">สมบัติ</text>
+  <text x="340" y="330" class="inc" font-size="12">ข้ามคาบ (ซ้าย→ขวา)</text>
+  <text x="530" y="330" class="dec" font-size="12">ลงหมู่ (บน→ล่าง)</text>
+  <line x1="70" y1="338" x2="620" y2="338" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="150" y="356" class="sub">ขนาดอะตอม</text>
+  <text x="340" y="356" class="inc">ลดลง</text>
+  <text x="530" y="356" class="dec">เพิ่มขึ้น</text>
+  <text x="150" y="376" class="sub">IE, EN, EA (ส่วนใหญ่)</text>
+  <text x="340" y="376" class="inc">เพิ่มขึ้น</text>
+  <text x="530" y="376" class="dec">ลดลง</text>
+</svg>

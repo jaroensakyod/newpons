@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 320" font-family="system-ui, sans-serif">
+  <!-- เปรียบเทียบบีตาลบ (Z เพิ่ม 1) กับโพซิตรอน/บีตาบวก (Z ลด 1) เลขมวลไม่เปลี่ยนทั้งคู่ -->
+  <style>
+    .lbl { font-size: 13px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10.5px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 12px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="bdt-ah-b" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#2563eb"/>
+    </marker>
+    <marker id="bdt-ah-r" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="24" class="lbl" font-size="14">บีตาลบ (β⁻) vs โพซิตรอน/บีตาบวก (β⁺)</text>
+
+  <!-- บีตาลบ -->
+  <rect x="40" y="55" width="140" height="55" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="110" y="80" class="lbl">นิวเคลียสต้นทาง</text>
+  <text x="110" y="98" class="sub">Z</text>
+
+  <line x1="180" y1="82" x2="290" y2="82" stroke="#2563eb" stroke-width="2.5" marker-end="url(#bdt-ah-b)"/>
+  <text x="235" y="68" class="lbl" fill="#2563eb" font-size="12">β⁻ (⁰₋₁e)</text>
+
+  <rect x="290" y="55" width="140" height="55" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="360" y="80" class="lbl" fill="#2563eb">นิวเคลียสใหม่</text>
+  <text x="360" y="98" class="given" fill="#2563eb">Z + 1</text>
+
+  <text x="600" y="75" class="sub" text-anchor="start">นิวตรอน → โปรตอน + e⁻</text>
+  <text x="600" y="93" class="sub" text-anchor="start">(ปล่อยอิเล็กตรอนออกมา)</text>
+
+  <line x1="30" y1="130" x2="710" y2="130" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- โพซิตรอน -->
+  <rect x="40" y="150" width="140" height="55" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="110" y="175" class="lbl">นิวเคลียสต้นทาง</text>
+  <text x="110" y="193" class="sub">Z</text>
+
+  <line x1="180" y1="177" x2="290" y2="177" stroke="#dc2626" stroke-width="2.5" marker-end="url(#bdt-ah-r)"/>
+  <text x="235" y="163" class="lbl" fill="#dc2626" font-size="12">β⁺ (⁰₊₁e)</text>
+
+  <rect x="290" y="150" width="140" height="55" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="360" y="175" class="lbl" fill="#dc2626">นิวเคลียสใหม่</text>
+  <text x="360" y="193" class="given">Z − 1</text>
+
+  <text x="600" y="170" class="sub" text-anchor="start">โปรตอน → นิวตรอน + e⁺</text>
+  <text x="600" y="188" class="sub" text-anchor="start">(ปล่อยโพซิตรอนออกมา)</text>
+
+  <rect x="60" y="230" width="620" height="70" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="2"/>
+  <text x="370" y="253" class="lbl" fill="#0d9488" font-size="12">จุดร่วมสำคัญ: เลขมวล (A) ไม่เปลี่ยนทั้งสองแบบ</text>
+  <text x="370" y="273" class="sub">เพราะอนุภาคที่ปล่อยออกมา (e⁻ หรือ e⁺) มีมวลน้อยมากจนถือเป็น 0 ในหน่วยเลขมวล</text>
+  <text x="370" y="290" class="sub">ต่างกันแค่ทิศทางการเปลี่ยนของเลขอะตอม Z (β⁻ เพิ่ม 1 ↔ β⁺ ลด 1) — สลับทิศกันพอดี</text>
+</svg>

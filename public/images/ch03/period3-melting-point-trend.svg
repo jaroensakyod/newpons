@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 400" font-family="system-ui, sans-serif">
+  <!-- จุดหลอมเหลวธาตุคาบ 3: โลหะไต่ขึ้น Na<Mg<Al, Si พุ่งสูงผิดปกติ(โครงร่างตาข่ายโคเวเลนต์), แล้วอโลหะโมเลกุลลดฮวบ -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .val { font-size: 11px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .ax { stroke: #94a3b8; stroke-width: 1.5; }
+  </style>
+
+  <text x="390" y="24" class="lbl" font-size="14">จุดหลอมเหลวธาตุคาบ 3 (°C)</text>
+
+  <!-- แกน -->
+  <line x1="55" y1="340" x2="740" y2="340" class="ax"/>
+  <line x1="55" y1="60" x2="55" y2="340" class="ax"/>
+  <line x1="55" y1="306" x2="740" y2="306" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="45" y="310" class="sub" text-anchor="end">0°C</text>
+
+  <!-- แท่ง: Na Mg Al Si P4 S8 Cl2 Ar -->
+  <!-- Na 98 -->
+  <rect x="87" y="289" width="50" height="51" fill="#93c5fd" stroke="#2563eb" stroke-width="2"/>
+  <text x="112" y="281" class="val">98</text>
+  <text x="112" y="360" class="lbl">Na</text>
+
+  <!-- Mg 650 -->
+  <rect x="171" y="196" width="50" height="144" fill="#93c5fd" stroke="#2563eb" stroke-width="2"/>
+  <text x="196" y="188" class="val">650</text>
+  <text x="196" y="360" class="lbl">Mg</text>
+
+  <!-- Al 660 -->
+  <rect x="254" y="194" width="50" height="146" fill="#93c5fd" stroke="#2563eb" stroke-width="2"/>
+  <text x="279" y="186" class="val">660</text>
+  <text x="279" y="360" class="lbl">Al</text>
+
+  <!-- Si 1414 (สูงผิดปกติ) -->
+  <rect x="338" y="66" width="50" height="274" fill="#fca5a5" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="363" y="58" class="val" fill="#dc2626" font-size="13">1414</text>
+  <text x="363" y="360" class="lbl" fill="#dc2626">Si</text>
+
+  <!-- P4 44 -->
+  <rect x="422" y="299" width="50" height="41" fill="#5eead4" stroke="#0d9488" stroke-width="2"/>
+  <text x="447" y="291" class="val">44</text>
+  <text x="447" y="360" class="lbl">P₄</text>
+
+  <!-- S8 115 -->
+  <rect x="505" y="287" width="50" height="53" fill="#5eead4" stroke="#0d9488" stroke-width="2"/>
+  <text x="530" y="279" class="val">115</text>
+  <text x="530" y="360" class="lbl">S₈</text>
+
+  <!-- Cl2 -101 (ต่ำกว่า 0) -->
+  <rect x="589" y="306" width="50" height="17" fill="#5eead4" stroke="#0d9488" stroke-width="2"/>
+  <text x="614" y="330" class="val">−101</text>
+  <text x="614" y="360" class="lbl">Cl₂</text>
+
+  <!-- Ar -189 -->
+  <rect x="672" y="306" width="50" height="2" fill="#5eead4" stroke="#0d9488" stroke-width="2"/>
+  <text x="697" y="330" class="val">−189</text>
+  <text x="697" y="360" class="lbl">Ar</text>
+
+  <!-- คำอธิบายกลุ่มพันธะ -->
+  <rect x="60" y="372" width="18" height="12" fill="#93c5fd" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="84" y="382" class="sub" text-anchor="start">โลหะ (พันธะโลหะ) — ไต่ขึ้นเรื่อยๆ</text>
+
+  <rect x="330" y="372" width="18" height="12" fill="#fca5a5" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="354" y="382" class="sub" text-anchor="start" fill="#dc2626" font-weight="700">โครงร่างตาข่ายโคเวเลนต์ — สูงผิดปกติ</text>
+
+  <rect x="600" y="372" width="18" height="12" fill="#5eead4" stroke="#0d9488" stroke-width="1.5"/>
+  <text x="624" y="382" class="sub" text-anchor="start">โมเลกุลเดี่ยว (แรงลอนดอน) — ต่ำและลดลง</text>
+</svg>

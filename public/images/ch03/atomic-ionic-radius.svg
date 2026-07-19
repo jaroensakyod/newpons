@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320" font-family="system-ui, sans-serif">
+  <!-- ขนาดอะตอมเทียบกับไอออน: ไอออนบวกเล็กลง (เสียอิเล็กตรอน), ไอออนลบใหญ่ขึ้น (รับอิเล็กตรอน) -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10.5px; fill: #64748b; text-anchor: middle; }
+  </style>
+
+  <!-- อะตอมกลาง -->
+  <circle cx="170" cy="140" r="55" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="170" y="146" class="lbl">Na</text>
+  <text x="170" y="210" class="sub">อะตอมกลาง (11 e⁻)</text>
+
+  <!-- ไอออนบวก: เล็กลง -->
+  <circle cx="380" cy="160" r="30" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="380" y="166" class="lbl" fill="#dc2626">Na⁺</text>
+  <text x="380" y="205" class="sub">เสีย e⁻ → เล็กลงมาก</text>
+  <text x="380" y="220" class="sub">(10 e⁻ เหลือแต่ชั้นในไม่มีชั้นนอกสุด)</text>
+
+  <!-- ไอออนลบ: ใหญ่ขึ้น -->
+  <circle cx="580" cy="130" r="70" fill="#f0fdfa" stroke="#0d9488" stroke-width="2"/>
+  <text x="580" y="136" class="lbl" fill="#0d9488">Cl⁻</text>
+  <text x="580" y="215" class="sub">รับ e⁻ เพิ่ม → ใหญ่ขึ้น</text>
+  <text x="580" y="230" class="sub">(แรงผลักระหว่างอิเล็กตรอนมากขึ้น)</text>
+
+  <rect x="60" y="255" width="580" height="55" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="350" y="278" class="sub" font-weight="700">ไอออนบวก (cation) เล็กกว่าอะตอมกลางเสมอ — ไอออนลบ (anion) ใหญ่กว่าอะตอมกลางเสมอ</text>
+  <text x="350" y="296" class="sub">ไอโซอิเล็กทรอนิก (จำนวน e⁻ เท่ากัน): ยิ่งโปรตอนมาก ยิ่งดึงอิเล็กตรอนแน่น ยิ่งเล็ก</text>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 380" font-family="system-ui, sans-serif">
+  <!-- หมู่ IA: ไอออนบวกใหญ่ขึ้น -> รับออกไซด์ซับซ้อนขึ้น (ปกติ->เปอร์ออกไซด์->ซุปเปอร์ออกไซด์) + ตำแหน่งพิเศษของ H -->
+  <style>
+    .lbl { font-size: 13px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10.5px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 12px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="gih-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="24" class="lbl" font-size="14">หมู่ IA: เผาในออกซิเจน — ไอออนบวกใหญ่ขึ้น → ออกไซด์ซับซ้อนขึ้น</text>
+
+  <circle cx="120" cy="100" r="22" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="120" y="106" class="lbl" fill="#dc2626">Li⁺</text>
+  <text x="120" y="140" class="sub">เล็กสุด</text>
+  <text x="120" y="165" class="given">Li₂O</text>
+  <text x="120" y="180" class="sub">ออกไซด์ปกติ (O²⁻)</text>
+
+  <line x1="150" y1="100" x2="280" y2="100" stroke="#94a3b8" stroke-width="2" marker-end="url(#gih-ah)"/>
+
+  <circle cx="340" cy="100" r="30" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="340" y="106" class="lbl" fill="#ea580c">Na⁺</text>
+  <text x="340" y="145" class="sub">ใหญ่ขึ้น</text>
+  <text x="340" y="170" class="given">Na₂O₂</text>
+  <text x="340" y="185" class="sub">เปอร์ออกไซด์ (O₂²⁻)</text>
+
+  <line x1="378" y1="100" x2="500" y2="100" stroke="#94a3b8" stroke-width="2" marker-end="url(#gih-ah)"/>
+
+  <circle cx="580" cy="100" r="38" fill="#f0fdfa" stroke="#0d9488" stroke-width="2"/>
+  <text x="580" y="106" class="lbl" fill="#0d9488">K⁺</text>
+  <text x="580" y="155" class="sub">ใหญ่สุด</text>
+  <text x="580" y="180" class="given">KO₂</text>
+  <text x="580" y="195" class="sub">ซุปเปอร์ออกไซด์ (O₂⁻)</text>
+
+  <text x="370" y="230" class="sub">ไอออนบวกใหญ่ขึ้น → รองรับแอนไอออนออกซิเจนที่ใหญ่/ไม่เสถียรกว่าได้ (พลังงานแลตทิซสูงขึ้น)</text>
+
+  <line x1="40" y1="255" x2="700" y2="255" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <text x="370" y="278" class="lbl" font-size="13">ตำแหน่งพิเศษของไฮโดรเจน (H)</text>
+
+  <rect x="150" y="295" width="180" height="60" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="240" y="318" class="sub" font-weight="700" fill="#2563eb">คล้ายหมู่ IA</text>
+  <text x="240" y="335" class="sub">มี 1 เวเลนซ์ e⁻ เสีย e⁻ ได้ (H⁺)</text>
+  <text x="240" y="350" class="sub">แต่ไม่ใช่โลหะ</text>
+
+  <rect x="410" y="295" width="180" height="60" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="500" y="318" class="sub" font-weight="700" fill="#dc2626">คล้ายหมู่ VIIA</text>
+  <text x="500" y="335" class="sub">ขาด 1 e⁻ เต็มชั้น รับ e⁻ ได้ (H⁻)</text>
+  <text x="500" y="350" class="sub">เกิด H₂ แบบไดอะตอมิก</text>
+</svg>
