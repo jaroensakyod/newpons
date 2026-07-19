@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 360" font-family="system-ui, sans-serif">
+  <!-- พลังงานยึดเหนี่ยวต่อนิวคลิออน vs เลขมวล — จุดสูงสุดที่ Fe-56 -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10.5px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 11px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+    .ax { stroke: #94a3b8; stroke-width: 1.5; }
+  </style>
+  <defs>
+    <marker id="bec-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <!-- แกน -->
+  <line x1="70" y1="300" x2="690" y2="300" class="ax" marker-end="url(#bec-ah)"/>
+  <line x1="70" y1="300" x2="70" y2="30" class="ax" marker-end="url(#bec-ah)"/>
+  <text x="380" y="335" class="lbl">เลขมวล (A) →</text>
+  <text x="30" y="165" class="lbl" transform="rotate(-90 30 165)">พลังงานยึดเหนี่ยว/นิวคลิออน (MeV)</text>
+
+  <!-- เส้นโค้ง: ขึ้นเร็วจาก He-4 ผ่าน Li-7, O-16 ถึงจุดสูงสุด Fe-56 แล้วลดลงช้าๆ -->
+  <path d="M85,280 L110,110 Q160,200 200,175 Q280,110 340,72 Q420,90 690,175"
+        fill="none" stroke="#0d9488" stroke-width="2.5"/>
+
+  <!-- จุดข้อมูล -->
+  <circle cx="85" cy="280" r="4" fill="#0d9488"/>
+  <text x="85" y="296" class="sub">H-2</text>
+  <circle cx="110" cy="110" r="4" fill="#0d9488"/>
+  <text x="110" y="98" class="given">He-4 (7.08)</text>
+  <circle cx="200" cy="175" r="4" fill="#0d9488"/>
+  <text x="200" y="163" class="given">Li-7 (5.61)</text>
+  <circle cx="280" cy="110" r="4" fill="#0d9488"/>
+  <text x="280" y="98" class="given">O-16 (7.98)</text>
+  <circle cx="340" cy="72" r="5" fill="#dc2626"/>
+  <text x="340" y="58" class="given">Fe-56 (8.80 สูงสุด)</text>
+  <circle cx="690" cy="175" r="4" fill="#0d9488"/>
+  <text x="690" y="163" class="sub" text-anchor="end">U-238</text>
+
+  <!-- ลูกศรฟิวชัน/ฟิชชัน -->
+  <path d="M120,240 L320,90" stroke="#2563eb" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#bec-ah)"/>
+  <text x="150" y="230" class="sub" fill="#2563eb" text-anchor="start">ฟิวชัน (ธาตุเบา→หนัก)</text>
+  <text x="150" y="245" class="sub" fill="#2563eb" text-anchor="start">ปล่อยพลังงาน (ไต่ขึ้นเนิน)</text>
+
+  <path d="M660,160 L400,85" stroke="#ea580c" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#bec-ah)"/>
+  <text x="500" y="255" class="sub" fill="#ea580c" text-anchor="start">ฟิชชัน (ธาตุหนัก→เบาลง)</text>
+  <text x="500" y="270" class="sub" fill="#ea580c" text-anchor="start">ปล่อยพลังงาน (ไต่ขึ้นเนิน)</text>
+
+  <text x="380" y="352" class="sub">Fe-56 เสถียรที่สุด — ทั้งฟิวชันธาตุเบาและฟิชชันธาตุหนักต่างปล่อยพลังงานเพราะผลิตภัณฑ์ขยับเข้าใกล้จุดสูงสุดนี้</text>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 300" font-family="system-ui, sans-serif">
+  <!-- อนุกรมการสลายตัว: แอลฟาลด A ลง 4 (Z ลด 2), บีตาลบ A คงเดิม (Z เพิ่ม 1) -->
+  <style>
+    .lbl { font-size: 13px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10.5px; fill: #64748b; text-anchor: middle; }
+    .alpha { fill: #dc2626; font-weight: 700; }
+    .beta { fill: #2563eb; font-weight: 700; }
+  </style>
+  <defs>
+    <marker id="dsc-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- ต้นทาง -->
+  <rect x="20" y="110" width="110" height="60" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="75" y="135" class="lbl">²³²Th</text>
+  <text x="75" y="153" class="sub">Z=90</text>
+
+  <line x1="130" y1="140" x2="230" y2="140" stroke="#94a3b8" stroke-width="2" marker-end="url(#dsc-ah)"/>
+  <text x="180" y="125" class="alpha" font-size="12">α ×6</text>
+  <text x="180" y="160" class="sub">A: −24, Z: −12</text>
+
+  <rect x="230" y="110" width="110" height="60" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4 3"/>
+  <text x="285" y="135" class="lbl" fill="#64748b">ขั้นกลาง</text>
+  <text x="285" y="153" class="sub">หลายขั้น</text>
+
+  <line x1="340" y1="140" x2="440" y2="140" stroke="#94a3b8" stroke-width="2" marker-end="url(#dsc-ah)"/>
+  <text x="390" y="125" class="beta" font-size="12">β⁻ ×4</text>
+  <text x="390" y="160" class="sub">A: คงเดิม, Z: +4</text>
+
+  <rect x="440" y="110" width="110" height="60" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+  <text x="495" y="135" class="lbl">²⁰⁸Pb</text>
+  <text x="495" y="153" class="sub">Z=82 (เสถียร)</text>
+
+  <!-- สรุปสูตร -->
+  <rect x="580" y="80" width="180" height="120" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="670" y="102" class="lbl" fill="#2563eb" font-size="12">ตั้งสมการ</text>
+  <text x="670" y="124" class="sub">n_α = ΔA / 4</text>
+  <text x="670" y="144" class="sub">n_β = 2n_α − ΔZ</text>
+  <text x="670" y="168" class="sub" font-size="9.5">ΔA = A ต้นทาง − A ปลายทาง</text>
+  <text x="670" y="184" class="sub" font-size="9.5">ΔZ = Z ต้นทาง − Z ปลายทาง</text>
+
+  <text x="285" y="230" class="sub">แอลฟา (⁴₂He): A ลด 4 ต่อตัว, Z ลด 2 ต่อตัว — บีตาลบ (⁰₋₁e): A ไม่เปลี่ยน, Z เพิ่ม 1 ต่อตัว</text>
+  <text x="285" y="250" class="sub">รวมเลขมวลและเลขอะตอมก่อน-หลังต้องเท่ากันเสมอ (สมดุลนิวเคลียร์)</text>
+</svg>

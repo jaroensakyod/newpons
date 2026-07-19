@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" font-family="system-ui, sans-serif">
+  <!-- เส้นโค้งการสลายตัวกัมมันตรังสี: ปริมาณคงเหลือลดลงครึ่งหนึ่งทุกครึ่งชีวิต -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; }
+    .sub { font-size: 11px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 12px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+    .ax { stroke: #94a3b8; stroke-width: 1.5; }
+  </style>
+  <defs>
+    <marker id="hl-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <!-- แกน -->
+  <line x1="70" y1="300" x2="670" y2="300" class="ax" marker-end="url(#hl-ah)"/>
+  <line x1="70" y1="300" x2="70" y2="30" class="ax" marker-end="url(#hl-ah)"/>
+  <text x="380" y="335" class="lbl">เวลา (หน่วย: จำนวนครึ่งชีวิต)</text>
+  <text x="30" y="165" class="lbl" transform="rotate(-90 30 165)">ปริมาณคงเหลือ (%)</text>
+
+  <!-- เส้นโค้งลดครึ่งทุกขั้น: 100 -> 50 -> 25 -> 12.5 -> 6.25 -->
+  <path d="M70,30 Q145,30 145,165 Q145,300 220,300" fill="none" stroke="#0d9488" stroke-width="2.5"/>
+  <path d="M70,30 C110,30 110,165 145,165 C180,165 180,232.5 220,232.5 C260,232.5 260,266 295,266 C330,266 330,283 370,283"
+        fill="none" stroke="#0d9488" stroke-width="2.5"/>
+
+  <!-- จุดข้อมูลสำคัญ -->
+  <circle cx="70" cy="30" r="4" fill="#0d9488"/>
+  <circle cx="145" cy="165" r="4" fill="#0d9488"/>
+  <circle cx="220" cy="232.5" r="4" fill="#0d9488"/>
+  <circle cx="295" cy="266" r="4" fill="#0d9488"/>
+  <circle cx="370" cy="283" r="4" fill="#0d9488"/>
+
+  <!-- ป้ายกำกับจุด -->
+  <text x="70" y="20" class="given">100%</text>
+  <text x="145" y="20" class="given">50%</text>
+  <text x="220" y="220" class="given">25%</text>
+  <text x="295" y="254" class="given">12.5%</text>
+  <text x="370" y="271" class="given">6.25%</text>
+
+  <!-- เส้นประระดับ t -->
+  <line x1="70" y1="300" x2="70" y2="310" class="ax"/><text x="70" y="322" class="sub">0</text>
+  <line x1="145" y1="300" x2="145" y2="310" class="ax"/><text x="145" y="322" class="sub">1</text>
+  <line x1="220" y1="300" x2="220" y2="310" class="ax"/><text x="220" y="322" class="sub">2</text>
+  <line x1="295" y1="300" x2="295" y2="310" class="ax"/><text x="295" y="322" class="sub">3</text>
+  <line x1="370" y1="300" x2="370" y2="310" class="ax"/><text x="370" y="322" class="sub">4</text>
+
+  <!-- ตัวอย่าง: สลายไป 87.5% (เหลือ 12.5%) ใน 3 ครึ่งชีวิต -->
+  <line x1="295" y1="266" x2="500" y2="266" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="580" y="230" class="given" text-anchor="start">เหลือ 12.5% = 1/8</text>
+  <text x="580" y="248" class="given" text-anchor="start">= 3 ครึ่งชีวิต</text>
+  <text x="580" y="266" class="sub" text-anchor="start">(สลายไปแล้ว 87.5%)</text>
+
+  <text x="380" y="365" class="sub">สูตร: เหลือ = (1/2)^n เมื่อ n = จำนวนครึ่งชีวิตที่ผ่านไป — นับจากปริมาณที่ "เหลือ" ไม่ใช่ที่ "สลายไป"</text>
+</svg>

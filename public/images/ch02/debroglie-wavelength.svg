@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" font-family="system-ui, sans-serif">
+  <!-- ความยาวคลื่นเดอบรอยล์ λ=h/(mv): มวลมาก → คลื่นสั้น (ที่ v เท่ากัน) -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10.5px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 12px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+
+  <rect x="60" y="30" width="600" height="50" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+  <text x="360" y="60" class="lbl" fill="#0d9488" font-size="15">λ = h / (m·v)</text>
+
+  <!-- อิเล็กตรอน: มวลเบา -> คลื่นยาว -->
+  <text x="120" y="110" class="lbl">อิเล็กตรอน (เบา)</text>
+  <path d="M60,150 q15,-25 30,0 q15,25 30,0 q15,-25 30,0 q15,25 30,0 q15,-25 30,0 q15,25 30,0"
+        stroke="#2563eb" stroke-width="2.5" fill="none"/>
+  <text x="120" y="185" class="given">λ_e ยาว</text>
+
+  <!-- โปรตอน: มวลมาก -> คลื่นสั้น -->
+  <text x="500" y="110" class="lbl">โปรตอน (หนักกว่า ~1836 เท่า)</text>
+  <path d="M400,150 q4,-25 8,0 q4,25 8,0 q4,-25 8,0 q4,25 8,0 q4,-25 8,0 q4,25 8,0 q4,-25 8,0 q4,25 8,0
+           q4,-25 8,0 q4,25 8,0 q4,-25 8,0 q4,25 8,0 q4,-25 8,0 q4,25 8,0 q4,-25 8,0 q4,25 8,0"
+        stroke="#dc2626" stroke-width="2.5" fill="none"/>
+  <text x="500" y="185" class="given" fill="#dc2626">λ_p สั้นมาก</text>
+
+  <rect x="60" y="220" width="600" height="70" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="360" y="245" class="sub" font-size="12">ที่อัตราเร็วเท่ากัน (v เท่ากัน): λ แปรผกผันกับมวล</text>
+  <text x="360" y="265" class="sub">λ_e / λ_p = m_p / m_e ≈ 1836 เท่า</text>
+  <text x="360" y="282" class="sub" font-size="9.5">อิเล็กตรอนคลื่นยาวกว่ามาก → สังเกตการเลี้ยวเบนได้ง่ายกว่าโปรตอนมาก</text>
+</svg>

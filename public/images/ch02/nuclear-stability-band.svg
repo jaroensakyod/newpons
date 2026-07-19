@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" font-family="system-ui, sans-serif">
+  <!-- แถบเสถียรภาพนิวเคลียส (N vs Z) — Z>=83 ไม่มีไอโซโทปเสถียรเลย, เลขมหัศจรรย์ 2,8,20,50,82,126 -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10.5px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 11.5px; fill: #dc2626; font-weight: 700; }
+    .ax { stroke: #94a3b8; stroke-width: 1.5; }
+  </style>
+  <defs>
+    <marker id="nsb-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <!-- แกน -->
+  <line x1="70" y1="320" x2="620" y2="320" class="ax" marker-end="url(#nsb-ah)"/>
+  <line x1="70" y1="320" x2="70" y2="30" class="ax" marker-end="url(#nsb-ah)"/>
+  <text x="345" y="355" class="lbl">Z (จำนวนโปรตอน) →</text>
+  <text x="30" y="175" class="lbl" transform="rotate(-90 30 175)">N (จำนวนนิวตรอน) →</text>
+
+  <!-- เส้น N=Z อ้างอิง -->
+  <line x1="70" y1="320" x2="380" y2="10" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="390" y="15" class="sub">N = Z</text>
+
+  <!-- แถบเสถียรภาพ (โค้งเบนขึ้นเหนือ N=Z เมื่อ Z มากขึ้น) -->
+  <path d="M70,320 C200,180 350,90 480,70 C540,62 570,60 580,58"
+        fill="none" stroke="#0d9488" stroke-width="16" stroke-linecap="round" opacity="0.35"/>
+  <path d="M70,320 C200,180 350,90 480,70 C540,62 570,60 580,58"
+        fill="none" stroke="#0d9488" stroke-width="2"/>
+  <text x="300" y="150" class="lbl" fill="#0d9488">แถบเสถียรภาพ</text>
+
+  <!-- เขต Z>=83 ไม่มีไอโซโทปเสถียร -->
+  <rect x="500" y="30" width="120" height="290" fill="#fef2f2" opacity="0.6"/>
+  <line x1="500" y1="30" x2="500" y2="320" stroke="#dc2626" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="560" y="45" class="given" text-anchor="middle">Z ≥ 83</text>
+  <text x="560" y="60" class="given" text-anchor="middle">กัมมันตรังสีทั้งหมด</text>
+  <circle cx="565" cy="62" r="4" fill="#dc2626"/>
+  <text x="580" y="75" class="sub" text-anchor="start" font-size="9">Bi-209 (Z=83)</text>
+
+  <!-- เลขมหัศจรรย์ -->
+  <text x="345" y="300" class="sub">เลขมหัศจรรย์ (nuclear shell พิเศษเสถียร): 2, 8, 20, 50, 82, 126</text>
+  <text x="345" y="318" class="sub">O-16 (Z=8, N=8) เป็น "doubly magic" — เสถียรมากเป็นพิเศษ</text>
+
+  <text x="345" y="368" class="sub">แถบโค้งขึ้นเพราะนิวเคลียสหนักต้องมีนิวตรอนมากกว่าโปรตอนเพื่อคานแรงผลักไฟฟ้าสถิตระหว่างโปรตอน</text>
+</svg>

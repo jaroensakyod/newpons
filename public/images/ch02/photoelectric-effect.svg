@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 340" font-family="system-ui, sans-serif">
+  <!-- ปรากฏการณ์โฟโตอิเล็กทริก: E_photon = Φ (ฟังก์ชันงาน) + KE_max ของอิเล็กตรอนที่หลุด -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10.5px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 12px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="pe-ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="pe-ah-e" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <!-- แผ่นโลหะ -->
+  <rect x="280" y="40" width="30" height="260" fill="#94a3b8"/>
+  <text x="295" y="30" class="lbl">ผิวโลหะ</text>
+
+  <!-- โฟตอนวิ่งเข้า -->
+  <path d="M100,150 L275,150" stroke="#f59e0b" stroke-width="3" marker-end="url(#pe-ah)"/>
+  <path d="M100,150 q10,-8 20,0 q10,8 20,0 q10,-8 20,0" stroke="#f59e0b" stroke-width="1.5" fill="none"/>
+  <text x="150" y="130" class="given">โฟตอน hν</text>
+
+  <!-- อิเล็กตรอนหลุดออก -->
+  <circle cx="330" cy="150" r="6" fill="#2563eb"/>
+  <path d="M320,150 L420,150" stroke="#2563eb" stroke-width="3" marker-end="url(#pe-ah-e)"/>
+  <text x="400" y="130" class="given" fill="#2563eb">e⁻ หลุดออก (KEmax)</text>
+
+  <!-- สมการพลังงาน -->
+  <rect x="120" y="220" width="460" height="70" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+  <text x="350" y="248" class="lbl" fill="#0d9488" font-size="16">E_photon = Φ + KE_max</text>
+  <text x="350" y="270" class="sub">hν = ฟังก์ชันงาน (พลังงานขั้นต่ำหลุด) + พลังงานจลน์ที่เหลือ</text>
+
+  <!-- เกณฑ์ความถี่ -->
+  <rect x="120" y="40" width="460" height="60" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="350" y="62" class="lbl" fill="#ea580c" font-size="13">ความถี่ขีดเริ่ม (threshold): ν₀ = Φ/h</text>
+  <text x="350" y="82" class="sub">ถ้า ν &lt; ν₀ (พลังงานโฟตอนไม่พอ) → ไม่มีอิเล็กตรอนหลุดออกเลย ไม่ว่าแสงจะสว่างแค่ไหน</text>
+
+  <text x="350" y="315" class="sub">แสงยิ่งเข้ม = โฟตอนยิ่งมาก (จำนวนอิเล็กตรอนหลุดมากขึ้น) แต่ไม่ได้ทำให้ KEmax ต่อตัวเพิ่มขึ้น — ความถี่เท่านั้นที่กำหนด KEmax</text>
+</svg>
