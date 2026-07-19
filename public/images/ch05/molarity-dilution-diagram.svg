@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 320" font-family="system-ui, sans-serif">
+  <!-- การเจือจาง C1V1=C2V2 (ซ้าย) และการผสมสารละลายชนิดเดียวกัน 2 ความเข้มข้น (ขวา) -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 11px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="mdd-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="20" class="lbl" font-size="14">การเจือจาง C₁V₁ = C₂V₂ กับการผสมสารละลาย</text>
+
+  <!-- เจือจาง: ซ้าย -->
+  <path d="M100,60 L100,110 L80,150 L160,150 L140,110 L140,60 Z" fill="#93c5fd" stroke="#2563eb" stroke-width="2"/>
+  <text x="120" y="100" class="given">18 mol/L</text>
+  <text x="120" y="170" class="sub">V₁ = ? mL</text>
+
+  <line x1="200" y1="105" x2="260" y2="105" stroke="#94a3b8" stroke-width="2" marker-end="url(#mdd-ah)"/>
+  <text x="230" y="95" class="sub">เติมน้ำ</text>
+
+  <path d="M300,60 L300,90 L280,150 L360,150 L340,90 L340,60 Z" fill="#5eead4" stroke="#0d9488" stroke-width="2"/>
+  <text x="320" y="80" class="given" fill="#0d9488">3 mol/L</text>
+  <text x="320" y="170" class="sub">500 mL</text>
+
+  <rect x="60" y="195" width="300" height="60" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="2"/>
+  <text x="210" y="217" class="sub" font-weight="700">C₁V₁ = C₂V₂</text>
+  <text x="210" y="236" class="sub">18 × V₁ = 3 × 500</text>
+  <text x="210" y="251" class="sub" font-weight="700">V₁ = 83.3 mL</text>
+
+  <line x1="410" y1="160" x2="410" y2="270" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- ผสมสารละลายชนิดเดียวกัน: ขวา -->
+  <path d="M470,90 L470,120 L450,160 L520,160 L500,120 L500,90 Z" fill="#93c5fd" stroke="#2563eb" stroke-width="2"/>
+  <text x="485" y="112" class="given" font-size="10">0.1 mol/L</text>
+  <text x="485" y="180" class="sub">200 mL</text>
+
+  <text x="545" y="135" class="lbl" font-size="16">+</text>
+
+  <path d="M580,80 L580,110 L560,160 L640,160 L620,110 L620,80 Z" fill="#5eead4" stroke="#0d9488" stroke-width="2"/>
+  <text x="600" y="102" class="given" font-size="10">0.4 mol/L</text>
+  <text x="600" y="180" class="sub">300 mL</text>
+
+  <rect x="440" y="195" width="260" height="70" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="570" y="217" class="sub" font-weight="700">C_ผสม = (C₁V₁+C₂V₂)/(V₁+V₂)</text>
+  <text x="570" y="236" class="sub">= (0.1×200 + 0.4×300)/500</text>
+  <text x="570" y="253" class="sub" font-weight="700">= 0.28 mol/L</text>
+
+  <text x="380" y="295" class="sub">ข้อควรระวัง: สารเดียวกันก่อน-หลังเจือจางใช้ C₁V₁=C₂V₂ ตรงๆ ได้ แต่สารต่างชนิดที่ทำปฏิกิริยากันต้องผ่านอัตราส่วนโมลจากสมการเสมอ</text>
+</svg>

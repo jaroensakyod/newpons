@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 335" font-family="system-ui, sans-serif">
+  <!-- ปฏิกิริยาต่อเนื่อง 2 ขั้น มีสารร่วม (intermediate) เชื่อมสมการ + %yield ต้องคูณสะสมทีละขั้น -->
+  <style>
+    .lbl { font-size: 12px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 11px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="mrc-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="20" class="lbl" font-size="14">ปฏิกิริยาต่อเนื่อง: CH₄ → CO (สารร่วม) → CH₃OH</text>
+
+  <rect x="30" y="50" width="140" height="60" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="100" y="75" class="sub" font-weight="700">CH₄ 32 g</text>
+  <text x="100" y="93" class="given">= 2 mol</text>
+
+  <line x1="170" y1="80" x2="250" y2="80" stroke="#0d9488" stroke-width="2.5" marker-end="url(#mrc-ah)"/>
+  <text x="210" y="65" class="sub" fill="#0d9488">ขั้น 1</text>
+  <text x="210" y="105" class="sub">ผลได้ 90%</text>
+
+  <rect x="260" y="50" width="150" height="60" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+  <text x="335" y="72" class="sub" font-weight="700">CO (สารร่วม)</text>
+  <text x="335" y="90" class="given">ทฤษฎี 2 mol → จริง 1.8 mol</text>
+
+  <line x1="410" y1="80" x2="490" y2="80" stroke="#ea580c" stroke-width="2.5" marker-end="url(#mrc-ah)"/>
+  <text x="450" y="65" class="sub" fill="#ea580c">ขั้น 2</text>
+  <text x="450" y="105" class="sub">ผลได้ 80%</text>
+
+  <rect x="500" y="50" width="180" height="60" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="590" y="72" class="sub" font-weight="700">CH₃OH</text>
+  <text x="590" y="90" class="given">1.8×0.80 = 1.44 mol = 46.08 g</text>
+
+  <rect x="60" y="140" width="640" height="140" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="380" y="165" class="lbl" fill="#ea580c" font-size="12">กุญแจ: โมลของสารร่วม (CO) ที่เกิดจริงจากขั้น 1 = โมลที่เป็นสารตั้งต้นจริงของขั้น 2</text>
+  <text x="380" y="188" class="sub">ขั้น 1 ทฤษฎี: n(CO) = n(CH₄) = 2 mol (อัตราส่วน 1:1) → ได้จริง = 2×0.90 = 1.8 mol</text>
+  <text x="380" y="208" class="sub">ขั้น 2 ทฤษฎี (จากสารตั้งต้นจริง 1.8 mol): n(CH₃OH) = 1.8 mol → ได้จริง = 1.8×0.80 = 1.44 mol</text>
+  <text x="380" y="232" class="given" font-size="12">ผลได้ร้อยละรวม = 0.90×0.80 = 72% (คูณสะสมทีละขั้น ไม่ใช่บวกหรือใช้แค่ค่าสุดท้าย)</text>
+  <text x="380" y="255" class="sub">m(CH₃OH) = 1.44×32 = 46.08 g (M ของ CH₃OH = 12+4(1)+16 = 32)</text>
+  <text x="380" y="272" class="sub">ข้อผิดที่พบบ่อย: เอา %yield แต่ละขั้นมาบวกกัน หรือใช้แค่ %yield ขั้นสุดท้ายกับปริมาณทฤษฎีทั้งหมด</text>
+
+  <rect x="100" y="295" width="560" height="32" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
+  <text x="380" y="316" class="sub" font-weight="700" fill="#0d9488">ถ้าโจทย์บอกว่าทุกขั้นเกิดสมบูรณ์ (ไม่มี %yield) ให้ไล่โมลผ่านสารร่วมตรงๆ ได้เลย ไม่ต้องคูณอะไรเพิ่ม</text>
+</svg>

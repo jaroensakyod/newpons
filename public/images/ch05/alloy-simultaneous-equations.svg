@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320" font-family="system-ui, sans-serif">
+  <!-- โลหะผสม 2 ชนิดทำปฏิกิริยากับกรดพร้อมกัน: ตั้งระบบสมการ 2 ตัวแปร (มวลรวม + โมลแก๊สรวม) แล้วแก้หาสัดส่วน -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 11px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+
+  <text x="350" y="20" class="lbl" font-size="14">โลหะผสม Al+Zn 9.2 g + HCl มากเกินพอ → H₂ รวม 5.6 L ที่ STP</text>
+
+  <rect x="60" y="45" width="580" height="55" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="350" y="68" class="sub" font-weight="700">2Al + 6HCl → 2AlCl₃ + 3H₂ (Al : H₂ = 2 : 3)</text>
+  <text x="350" y="88" class="sub">Zn + 2HCl → ZnCl₂ + H₂ (Zn : H₂ = 1 : 1)</text>
+
+  <rect x="60" y="115" width="280" height="90" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="200" y="138" class="sub" fill="#2563eb" font-weight="700">สมการที่ 1: มวลรวม</text>
+  <text x="200" y="160" class="given" font-size="12">27x + 65y = 9.2</text>
+  <text x="200" y="180" class="sub">(x = mol Al, y = mol Zn)</text>
+  <text x="200" y="197" class="sub">มวลอะตอม Al=27, Zn=65</text>
+
+  <rect x="360" y="115" width="280" height="90" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+  <text x="500" y="138" class="sub" fill="#0d9488" font-weight="700">สมการที่ 2: โมลแก๊สรวม</text>
+  <text x="500" y="160" class="given" font-size="12">1.5x + y = 0.25</text>
+  <text x="500" y="180" class="sub">(n(H₂) รวม = 5.6/22.4 = 0.25 mol)</text>
+  <text x="500" y="197" class="sub">Al ให้ H₂ 1.5 เท่าของโมลตัวเอง</text>
+
+  <rect x="130" y="220" width="440" height="85" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="350" y="243" class="lbl" fill="#ea580c" font-size="12">แก้ระบบสมการ 2 ตัวแปร 2 สมการ</text>
+  <text x="350" y="265" class="sub">แทน y = 0.25−1.5x ลงในสมการมวล → x = 0.1 mol, y = 0.1 mol</text>
+  <text x="350" y="285" class="sub">มวล Al = 0.1×27 = 2.7 g</text>
+  <text x="350" y="302" class="given" font-size="13">%Al โดยมวล = (2.7/9.2)×100 = 29.3%</text>
+</svg>

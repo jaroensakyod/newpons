@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 340" font-family="system-ui, sans-serif">
+  <!-- ขั้นตอนหาสูตรเอมพิริคัลและสูตรโมเลกุลจากร้อยละโดยมวล ตัวอย่าง C40.0% H6.7% O53.3% M=180 -> C6H12O6 -->
+  <style>
+    .lbl { font-size: 12px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .step { font-size: 13px; fill: #ffffff; font-weight: 700; text-anchor: middle; }
+    .given { fill: #dc2626; font-weight: 700; }
+  </style>
+
+  <text x="370" y="20" class="lbl" font-size="14">สูตรเอมพิริคัล → สูตรโมเลกุล (ตัวอย่าง: C 40.0%, H 6.7%, O 53.3%, M = 180)</text>
+
+  <circle cx="60" cy="60" r="16" fill="#0d9488"/>
+  <text x="60" y="65" class="step">1</text>
+  <text x="230" y="55" class="lbl" text-anchor="start" font-size="11">สมมติมวลรวม 100 g → ร้อยละกลายเป็นกรัมโดยตรง</text>
+  <text x="230" y="72" class="sub" text-anchor="start">C = 40.0 g, H = 6.7 g, O = 53.3 g</text>
+
+  <line x1="30" y1="90" x2="710" y2="90" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <circle cx="60" cy="120" r="16" fill="#0d9488"/>
+  <text x="60" y="125" class="step">2</text>
+  <text x="230" y="115" class="lbl" text-anchor="start" font-size="11">หาโมลแต่ละธาตุ (÷มวลอะตอม)</text>
+  <text x="230" y="132" class="sub" text-anchor="start">C: 40.0/12 = 3.33 mol, H: 6.7/1 = 6.7 mol, O: 53.3/16 = 3.33 mol</text>
+
+  <line x1="30" y1="150" x2="710" y2="150" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <circle cx="60" cy="180" r="16" fill="#0d9488"/>
+  <text x="60" y="185" class="step">3</text>
+  <text x="230" y="175" class="lbl" text-anchor="start" font-size="11">หารทุกค่าด้วยค่าน้อยที่สุด (3.33) เพื่อได้อัตราส่วนต่ำสุด</text>
+  <text x="230" y="192" class="sub" text-anchor="start">C : H : O = 1 : 2 : 1</text>
+
+  <line x1="30" y1="210" x2="710" y2="210" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <circle cx="60" cy="240" r="16" fill="#0d9488"/>
+  <text x="60" y="245" class="step">4</text>
+  <text x="230" y="235" class="lbl" text-anchor="start" font-size="11">เขียนสูตรเอมพิริคัล — คำนวณมวลสูตร</text>
+  <text x="230" y="252" class="sub" text-anchor="start">CH₂O มวล = 12+2(1)+16 = 30</text>
+
+  <line x1="30" y1="270" x2="710" y2="270" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <circle cx="60" cy="300" r="16" fill="#dc2626"/>
+  <text x="60" y="305" class="step">5</text>
+  <text x="230" y="295" class="lbl" text-anchor="start" font-size="11" fill="#dc2626">หา n = มวลโมเลกุล ÷ มวลสูตร แล้วคูณทุกตัวห้อยด้วย n</text>
+  <text x="230" y="312" class="sub" text-anchor="start" fill="#dc2626">n = 180/30 = 6 → สูตรโมเลกุล = C₆H₁₂O₆</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" font-family="system-ui, sans-serif">
+  <!-- 3 วิธีหาความเข้มข้น: จากมวลตัวถูกละลายตรงๆ, ppm, และจาก %w/w+ความหนาแน่น -->
+  <style>
+    .lbl { font-size: 12px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 9.5px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 10.5px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+
+  <text x="380" y="20" class="lbl" font-size="14">3 วิธีหาความเข้มข้นของสารละลาย</text>
+
+  <!-- panel 1: mass -> molarity -->
+  <rect x="30" y="45" width="220" height="150" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="140" y="68" class="lbl" fill="#2563eb" font-size="12">จากมวลตัวถูกละลาย</text>
+  <text x="140" y="90" class="sub">NaOH 8 g ในสารละลาย 500 mL</text>
+  <text x="140" y="110" class="sub">n = มวล÷M = 8/40 = 0.2 mol</text>
+  <text x="140" y="130" class="sub">C = n÷V = 0.2/0.5</text>
+  <text x="140" y="152" class="given">C = 0.4 mol/L</text>
+  <text x="140" y="175" class="sub">(ต้องแปลง mL เป็น L ก่อนหารเสมอ)</text>
+
+  <!-- panel 2: ppm -->
+  <rect x="270" y="45" width="220" height="150" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+  <text x="380" y="68" class="lbl" fill="#0d9488" font-size="12">ppm (ส่วนในล้านส่วน)</text>
+  <text x="380" y="90" class="sub">F⁻ 2.5 mg ในน้ำ 500 g (0.5 kg)</text>
+  <text x="380" y="112" class="sub">ppm = มก.ตัวถูกละลาย ÷ กก.สารละลาย</text>
+  <text x="380" y="134" class="sub">= 2.5/0.5</text>
+  <text x="380" y="156" class="given">ppm = 5</text>
+  <text x="380" y="178" class="sub">(ห้ามสมมติว่าสารละลาย 500 g = 1 kg พอดี)</text>
+
+  <!-- panel 3: %w/w + density -->
+  <rect x="510" y="45" width="220" height="150" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="620" y="68" class="lbl" fill="#ea580c" font-size="12">%w/w + ความหนาแน่น</text>
+  <text x="620" y="90" class="sub">H₂SO₄ 49%w/w, ρ=1.2 g/mL</text>
+  <text x="620" y="110" class="sub">สมมติสารละลาย 1 L = 1000 mL</text>
+  <text x="620" y="128" class="sub">มวลสารละลาย = 1000×1.2 = 1200 g</text>
+  <text x="620" y="146" class="sub">มวลกรด = 1200×0.49 = 588 g</text>
+  <text x="620" y="166" class="sub">n = 588/98 = 6 mol</text>
+  <text x="620" y="186" class="given">C = 6.0 mol/L</text>
+
+  <rect x="60" y="215" width="640" height="90" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="380" y="238" class="lbl" font-size="12">หลักการร่วม: หาโมล (หรือมวล) ของตัวถูกละลายให้ได้ก่อนเสมอ แล้วจึงหารด้วยปริมาตรสารละลายเป็นลิตร</text>
+  <text x="380" y="260" class="sub">ทั้ง 3 วิธีต่างกันแค่ "ข้อมูลที่ให้มา" (มวลตรงๆ / ปริมาณน้อยมากแบบ ppm / ร้อยละที่ต้องอาศัยความหนาแน่นแปลงเป็นมวล)</text>
+  <text x="380" y="280" class="sub">แต่ปลายทางเหมือนกันหมด: n(ตัวถูกละลาย) ÷ V(สารละลายเป็นลิตร) = ความเข้มข้น</text>
+  <text x="380" y="298" class="sub">ข้อควรระวัง: ต่างจากการเจือจาง (C₁V₁=C₂V₂) ซึ่งใช้เมื่อสารเดียวกันเปลี่ยนแค่ปริมาตร ไม่ใช่คำนวณจากมวลใหม่</text>
+</svg>

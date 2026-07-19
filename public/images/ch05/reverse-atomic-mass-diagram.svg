@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" font-family="system-ui, sans-serif">
+  <!-- หามวลอะตอมย้อนกลับ: เริ่มจากผลิตภัณฑ์ที่ทราบสูตรครบก่อน แล้วย้อนอัตราส่วนโมลกลับไปหาสารตั้งต้นที่ไม่ทราบมวล -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 11px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="ram-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="20" class="lbl" font-size="14">หามวลอะตอมย้อนกลับ: M + H₂SO₄ → MSO₄ + H₂ (M หนัก 2.4 g, H₂ 2.24 L ที่ STP)</text>
+
+  <rect x="40" y="50" width="150" height="60" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="115" y="75" class="sub" font-weight="700">M (ไม่ทราบมวลอะตอม)</text>
+  <text x="115" y="95" class="given">2.4 g</text>
+
+  <rect x="500" y="50" width="150" height="60" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+  <text x="575" y="75" class="sub" font-weight="700">H₂ (ทราบสูตรครบ)</text>
+  <text x="575" y="95" class="given" fill="#0d9488">2.24 L ที่ STP</text>
+
+  <line x1="500" y1="90" x2="270" y2="90" stroke="#0d9488" stroke-width="2.5" marker-end="url(#ram-ah)"/>
+  <text x="380" y="80" class="sub" fill="#0d9488" font-weight="700">เริ่มจากฝั่งนี้ก่อนเสมอ!</text>
+
+  <rect x="220" y="130" width="260" height="60" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="350" y="153" class="sub" font-weight="700" fill="#2563eb">n(H₂) = 2.24/22.4 = 0.1 mol</text>
+  <text x="350" y="173" class="sub" fill="#2563eb">อัตราส่วน M : H₂ = 1 : 1 → n(M) = 0.1 mol</text>
+
+  <line x1="115" y1="130" x2="200" y2="160" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3 2"/>
+
+  <rect x="150" y="205" width="400" height="80" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="350" y="228" class="lbl" fill="#ea580c" font-size="12">มวลอะตอม = มวล ÷ โมล</text>
+  <text x="350" y="250" class="given" font-size="13">มวลอะตอมของ M = 2.4/0.1 = 24 (คือ Mg)</text>
+  <text x="350" y="270" class="sub">สอดคล้องกับสูตร MSO₄ ที่ M มีเวเลนซ์ 2 (Mg²⁺)</text>
+</svg>

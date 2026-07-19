@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" font-family="system-ui, sans-serif">
+  <!-- ดุลสมการตามลำดับ C -> H -> O ตัวอย่างเผาไหม้โพรเพน C3H8+O2->CO2+H2O -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10.5px; fill: #64748b; text-anchor: middle; }
+    .step { font-size: 13px; fill: #ffffff; font-weight: 700; text-anchor: middle; }
+    .given { fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+
+  <text x="350" y="20" class="lbl" font-size="14">ลำดับดุลสมการ: ดุล C ก่อน → ดุล H → ดุล O ทีหลังสุด</text>
+
+  <circle cx="60" cy="55" r="15" fill="#94a3b8"/>
+  <text x="60" y="60" class="step">0</text>
+  <text x="220" y="60" class="lbl" text-anchor="start" font-size="11">สมการยังไม่ดุล: C₃H₈ + O₂ → CO₂ + H₂O</text>
+
+  <line x1="30" y1="80" x2="670" y2="80" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <circle cx="60" cy="110" r="15" fill="#2563eb"/>
+  <text x="60" y="115" class="step">1</text>
+  <text x="220" y="105" class="lbl" fill="#2563eb" text-anchor="start" font-size="11">ดุล C: มี C 3 อะตอมฝั่งซ้าย → ใส่ 3 หน้า CO₂</text>
+  <text x="220" y="122" class="sub" text-anchor="start">C₃H₈ + O₂ → 3CO₂ + H₂O</text>
+
+  <line x1="30" y1="135" x2="670" y2="135" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <circle cx="60" cy="165" r="15" fill="#0d9488"/>
+  <text x="60" y="170" class="step">2</text>
+  <text x="220" y="160" class="lbl" fill="#0d9488" text-anchor="start" font-size="11">ดุล H: มี H 8 อะตอมฝั่งซ้าย → ใส่ 4 หน้า H₂O</text>
+  <text x="220" y="177" class="sub" text-anchor="start">C₃H₈ + O₂ → 3CO₂ + 4H₂O</text>
+
+  <line x1="30" y1="190" x2="670" y2="190" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <circle cx="60" cy="220" r="15" fill="#dc2626"/>
+  <text x="60" y="225" class="step">3</text>
+  <text x="220" y="215" class="lbl" fill="#dc2626" text-anchor="start" font-size="11">ดุล O สุดท้าย: ฝั่งขวามี O = 3(2)+4(1) = 10 อะตอม</text>
+  <text x="220" y="232" class="sub" text-anchor="start">ต้องใส่ 5 หน้า O₂ (5×2=10) → C₃H₈ + 5O₂ → 3CO₂ + 4H₂O</text>
+
+  <rect x="40" y="255" width="620" height="35" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="2"/>
+  <text x="350" y="278" class="given" font-size="11">ผลรวมสัมประสิทธิ์ = 1+5+3+4 = 13 (สัมประสิทธิ์คืออัตราส่วนโมลของปฏิกิริยาโดยตรง)</text>
+</svg>

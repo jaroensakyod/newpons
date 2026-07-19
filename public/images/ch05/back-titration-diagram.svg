@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" font-family="system-ui, sans-serif">
+  <!-- ไทเทรตย้อนกลับ: เติมกรดมากเกินพอทำปฏิกิริยากับหินปูน แล้วไทเทรตกรดที่เหลือด้วยเบสเพื่อหาปริมาณที่ทำปฏิกิริยาจริง -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 11px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="bt-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="20" class="lbl" font-size="14">ไทเทรตย้อนกลับ (back titration): หาความบริสุทธิ์ CaCO₃ ในหินปูน 1.00 g</text>
+
+  <rect x="40" y="45" width="180" height="70" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="130" y="70" class="sub" font-weight="700">หินปูน 1.00 g + HCl มากเกินพอ</text>
+  <text x="130" y="90" class="given">HCl ทั้งหมด = 0.5×0.050 = 0.025 mol</text>
+
+  <line x1="220" y1="80" x2="290" y2="80" stroke="#94a3b8" stroke-width="2" marker-end="url(#bt-ah)"/>
+
+  <rect x="300" y="45" width="200" height="70" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="400" y="68" class="sub" fill="#2563eb" font-weight="700">HCl ที่เหลือ (ไม่ได้ทำปฏิกิริยา)</text>
+  <text x="400" y="90" class="sub" fill="#2563eb">วัดโดยไทเทรตด้วย NaOH 0.2 mol/L 45 mL</text>
+
+  <line x1="400" y1="115" x2="400" y2="145" stroke="#2563eb" stroke-width="2" marker-end="url(#bt-ah)"/>
+
+  <rect x="270" y="150" width="260" height="50" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+  <text x="400" y="173" class="sub" fill="#0d9488" font-weight="700">n(NaOH) = 0.2×0.045 = 0.009 mol</text>
+  <text x="400" y="190" class="sub" fill="#0d9488">= n(HCl ที่เหลือ) เพราะอัตราส่วน 1:1</text>
+
+  <rect x="90" y="215" width="540" height="95" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="360" y="238" class="lbl" fill="#ea580c" font-size="12">หัวใจสำคัญ: HCl ที่ทำปฏิกิริยากับ CaCO₃ = HCl ทั้งหมด − HCl ที่เหลือ</text>
+  <text x="360" y="260" class="sub">HCl ที่ทำปฏิกิริยา = 0.025 − 0.009 = 0.016 mol</text>
+  <text x="360" y="280" class="sub">CaCO₃ : HCl = 1 : 2 → n(CaCO₃) = 0.016/2 = 0.008 mol → มวล = 0.80 g</text>
+  <text x="360" y="300" class="given" font-size="13">% CaCO₃ โดยมวล = (0.80/1.00)×100 = 80%</text>
+</svg>

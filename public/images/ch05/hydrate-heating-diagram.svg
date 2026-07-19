@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 345" font-family="system-ui, sans-serif">
+  <!-- ให้ความร้อนเกลือไฮเดรตจนน้ำผลึกระเหยหมด: หา n จากมวลก่อน-หลังเผา ตัวอย่าง CaCl2.nH2O 21.9g -> 11.1g, n=6 -->
+  <style>
+    .lbl { font-size: 12.5px; fill: #1e293b; text-anchor: middle; font-weight: 700; }
+    .sub { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    .given { font-size: 11px; fill: #dc2626; font-weight: 700; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="hhd-ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#ea580c"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="20" class="lbl" font-size="14">เผาไฮเดรตจนน้ำผลึกระเหยหมด: CaCl₂·nH₂O → CaCl₂ + nH₂O↑</text>
+
+  <rect x="60" y="60" width="180" height="70" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="150" y="90" class="sub" font-weight="700">CaCl₂·nH₂O (ไฮเดรต)</text>
+  <text x="150" y="112" class="given">21.9 g</text>
+
+  <line x1="240" y1="95" x2="330" y2="95" stroke="#ea580c" stroke-width="2.5" marker-end="url(#hhd-ah)"/>
+  <text x="285" y="80" class="sub" fill="#ea580c" font-weight="700">ความร้อน</text>
+
+  <rect x="340" y="60" width="150" height="70" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="2.5"/>
+  <text x="415" y="90" class="sub" font-weight="700">CaCl₂ (แอนไฮดรัส)</text>
+  <text x="415" y="112" class="given">11.1 g</text>
+
+  <text x="530" y="90" class="lbl">+</text>
+
+  <rect x="560" y="60" width="110" height="70" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="615" y="90" class="sub" font-weight="700">n H₂O↑</text>
+  <text x="615" y="112" class="given">10.8 g</text>
+
+  <rect x="80" y="160" width="540" height="110" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="350" y="183" class="lbl" fill="#ea580c" font-size="12">หลักการ: มวลน้ำที่หายไป = มวลไฮเดรต − มวลแอนไฮดรัส</text>
+  <text x="350" y="204" class="sub">มวลน้ำ = 21.9 − 11.1 = 10.8 g → n(H₂O) = 10.8/18 = 0.6 mol</text>
+  <text x="350" y="224" class="sub">n(CaCl₂) = 11.1/111 = 0.1 mol (M ของ CaCl₂ = 40+2×35.5 = 111)</text>
+  <text x="350" y="246" class="sub" font-weight="700">n = n(H₂O)/n(CaCl₂) = 0.6/0.1 = 6 → สูตรคือ CaCl₂·6H₂O</text>
+  <text x="350" y="262" class="sub">ข้อควรระวัง: ต้องลบมวลน้ำออกก่อนเสมอ แล้วหาโมลเกลือจากมวลแอนไฮดรัสที่เหลือ (11.1 g) ไม่ใช่มวลไฮเดรตทั้งก้อน</text>
+
+  <rect x="80" y="280" width="540" height="55" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="2"/>
+  <text x="350" y="300" class="sub" font-weight="700" fill="#0d9488">ถ้าโจทย์ถามร้อยละน้ำผลึกแทน (ไม่ต้องเผาจริง): % น้ำ = (มวลน้ำ ÷ มวลไฮเดรตทั้งก้อน) × 100</text>
+  <text x="350" y="320" class="sub">= (10.8/21.9)×100 = 49.3% (ใช้มวลไฮเดรตทั้งก้อนเป็นตัวหาร ไม่ใช่มวลแอนไฮดรัส)</text>
+</svg>
