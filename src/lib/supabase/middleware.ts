@@ -33,13 +33,19 @@ export async function updateSession(request: NextRequest) {
 
   const path = request.nextUrl.pathname;
 
-  if (!user && path !== "/" && path !== "/login") {
+  const isPublic =
+    path === "/" ||
+    path === "/login" ||
+    path === "/general-chemistry" ||
+    path.startsWith("/general-chemistry/");
+
+  if (!user && !isPublic) {
     const redirectUrl = request.nextUrl.clone();
     redirectUrl.pathname = "/login";
     return NextResponse.redirect(redirectUrl);
   }
 
-  if (user && (path === "/" || path === "/login")) {
+  if (user && path === "/login") {
     const redirectUrl = request.nextUrl.clone();
     redirectUrl.pathname = "/topics";
     return NextResponse.redirect(redirectUrl);

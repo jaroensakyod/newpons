@@ -8,9 +8,9 @@ const notoSansThai = Noto_Sans_Thai({
 });
 
 export const metadata: Metadata = {
-  title: "ติวเคมี สอวน. ค่าย 1",
+  title: "ห้องเรียนเคมี | สอวน. และเคมีทั่วไป ม.ปลาย",
   description:
-    "ฝึกทำข้อสอบเคมี สอวน. ค่าย 1 พร้อมเฉลยละเอียด และดูว่าตัวเองอ่อนหมวดไหน",
+    "ฝึกเคมี สอวน. ค่าย 1 และดาวน์โหลดชีทเคมี ม.4-ม.6 ตามแนวทาง สสวท.",
 };
 
 export default function RootLayout({

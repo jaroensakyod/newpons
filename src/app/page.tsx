@@ -1,59 +1,75 @@
-import { redirect } from "next/navigation";
+import Link from "next/link";
 import { hasSupabaseEnv } from "@/lib/env";
 
 export default function Home() {
-  // ล็อกอินแล้ว middleware จะพาไป /topics เอง — เหลือแค่คนยังไม่ล็อกอิน
-  if (hasSupabaseEnv) redirect("/login");
-
   return (
-    <main className="mx-auto flex min-h-screen max-w-xl flex-col justify-center px-4 py-10">
-      <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6 shadow-sm">
-        <h1 className="text-xl font-bold text-amber-900">
-          ⚗️ ติวเคมี สอวน. ค่าย 1 — ยังไม่ได้เชื่อม Supabase
-        </h1>
-        <p className="mt-2 text-amber-800">
-          แอปพร้อมแล้ว เหลือแค่ตั้งค่าฐานข้อมูลตามขั้นตอนนี้:
-        </p>
-        <ol className="mt-4 list-decimal space-y-3 pl-5 text-sm text-amber-900">
-          <li>
-            สร้างโปรเจกต์ฟรีที่{" "}
-            <span className="font-mono font-semibold">supabase.com</span>
-          </li>
-          <li>
-            เปิด <strong>SQL Editor</strong> แล้วรันไฟล์{" "}
-            <code className="rounded bg-amber-100 px-1.5 py-0.5 font-mono">
-              supabase/schema.sql
-            </code>{" "}
-            ทั้งไฟล์
-          </li>
-          <li>
-            คัดลอก{" "}
-            <code className="rounded bg-amber-100 px-1.5 py-0.5 font-mono">
-              .env.example
-            </code>{" "}
-            เป็น{" "}
-            <code className="rounded bg-amber-100 px-1.5 py-0.5 font-mono">
-              .env.local
-            </code>{" "}
-            แล้วเติม URL + anon key จาก Project Settings → API
-          </li>
-          <li>
-            นำเข้าข้อสอบ:{" "}
-            <code className="rounded bg-amber-100 px-1.5 py-0.5 font-mono">
-              npm run import:questions
-            </code>
-          </li>
-          <li>
-            รีสตาร์ท dev server (
-            <code className="rounded bg-amber-100 px-1.5 py-0.5 font-mono">
-              npm run dev
-            </code>
-            ) แล้วรีเฟรชหน้านี้
-          </li>
-        </ol>
-        <p className="mt-4 text-xs text-amber-700">
-          รายละเอียดเต็มอยู่ใน README.md
-        </p>
+    <main className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-100 px-4 py-10 sm:py-16">
+      <div className="mx-auto max-w-5xl">
+        <header className="text-center">
+          <p className="text-5xl">⚗️</p>
+          <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            ห้องเรียนเคมี
+          </h1>
+          <p className="mx-auto mt-3 max-w-2xl text-slate-600">
+            เลือกเส้นทางให้ตรงกับเป้าหมาย: ฝึกสอบแข่งขัน สอวน. หรือดาวน์โหลดชีทเคมี ม.ปลายสำหรับเรียนและสอนตามแนวทาง สสวท.
+          </p>
+        </header>
+
+        <section className="mt-10 grid gap-6 md:grid-cols-2" aria-label="เลือกเส้นทางเรียนเคมี">
+          <article className="flex flex-col rounded-3xl border border-indigo-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <div className="flex items-center justify-between">
+              <span className="rounded-2xl bg-indigo-100 p-3 text-3xl">🏅</span>
+              <span className="rounded-full bg-indigo-50 px-3 py-1 text-xs font-bold text-indigo-700">
+                สอบแข่งขัน
+              </span>
+            </div>
+            <h2 className="mt-5 text-2xl font-bold text-indigo-950">ติวเคมี สอวน. ค่าย 1</h2>
+            <p className="mt-2 text-sm leading-6 text-slate-600">
+              บทเรียนสอนสลับฝึก คลังโจทย์ไต่ระดับ เฉลยละเอียด และสรุปจุดอ่อนรายบุคคล
+            </p>
+            <ul className="mt-5 space-y-2 text-sm text-slate-600">
+              <li>✓ โจทย์ต้นฉบับ 8 หมวด</li>
+              <li>✓ โหมดเรียน ฝึก และข้อสอบ</li>
+              <li>✓ ต้องเข้าสู่ระบบเพื่อบันทึกสถิติ</li>
+            </ul>
+            <Link
+              href={hasSupabaseEnv ? "/topics" : "/"}
+              className={`mt-7 rounded-2xl px-5 py-3 text-center font-bold text-white ${hasSupabaseEnv ? "bg-indigo-600 hover:bg-indigo-700" : "cursor-not-allowed bg-slate-400"}`}
+            >
+              {hasSupabaseEnv ? "เข้าสู่ส่วน สอวน. →" : "ยังไม่ได้เชื่อมระบบข้อสอบ"}
+            </Link>
+          </article>
+
+          <article className="flex flex-col rounded-3xl border border-teal-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <div className="flex items-center justify-between">
+              <span className="rounded-2xl bg-teal-100 p-3 text-3xl">📚</span>
+              <span className="rounded-full bg-teal-50 px-3 py-1 text-xs font-bold text-teal-700">
+                ม.4 - ม.6
+              </span>
+            </div>
+            <h2 className="mt-5 text-2xl font-bold text-teal-950">เคมีทั่วไปตามแนวทาง สสวท.</h2>
+            <p className="mt-2 text-sm leading-6 text-slate-600">
+              ชีทพร้อมสอน ครบเนื้อหา ตัวอย่าง แบบฝึก และเฉลย แยกเป็น 14 บทตามลำดับหลักสูตร
+            </p>
+            <ul className="mt-5 space-y-2 text-sm text-slate-600">
+              <li>✓ ดาวน์โหลด PDF ได้โดยไม่ต้องเข้าสู่ระบบ</li>
+              <li>✓ ทำและตรวจคุณภาพทีละบท</li>
+              <li>✓ บทที่ 1 พร้อมให้ตรวจแล้ว</li>
+            </ul>
+            <Link
+              href="/general-chemistry"
+              className="mt-7 rounded-2xl bg-teal-600 px-5 py-3 text-center font-bold text-white transition hover:bg-teal-700"
+            >
+              ดูชีทเคมีทั่วไป →
+            </Link>
+          </article>
+        </section>
+
+        {!hasSupabaseEnv && (
+          <p className="mx-auto mt-6 max-w-2xl rounded-2xl bg-amber-50 px-4 py-3 text-center text-sm text-amber-800">
+            ส่วนเคมีทั่วไปใช้งานได้ตามปกติ ส่วน สอวน. จะเปิดเมื่อเชื่อม Supabase แล้ว
+          </p>
+        )}
       </div>
     </main>
   );

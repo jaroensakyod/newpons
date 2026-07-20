@@ -13,9 +13,12 @@ import { marked } from "marked";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const Q_DIR = path.join(ROOT, "content", "questions");
 const L_DIR = path.join(ROOT, "content", "lessons");
-const OUT_DIR = path.join(ROOT, "docs", "worksheets");
+const GENERAL = process.argv.includes("--general");
+const OUT_DIR = GENERAL
+  ? path.join(ROOT, "docs", "general-chemistry")
+  : path.join(ROOT, "docs", "worksheets");
 
-const TOPICS = [
+const CAMP_TOPICS = [
   { n: 1, name: "ทักษะพื้นฐานปฏิบัติการเคมี", lesson: "01-lab-basics.md" },
   { n: 2, name: "โครงสร้างอะตอม", lesson: "02-atomic-structure.md" },
   { n: 3, name: "ตารางธาตุและสมบัติของธาตุ", lesson: "03-periodic-table.md" },
@@ -25,6 +28,16 @@ const TOPICS = [
   { n: 7, name: "สารละลาย", lesson: "07-solutions.md" },
   { n: 8, name: "ของแข็งและของเหลว", lesson: "08-solids-liquids.md" },
 ];
+const TOPICS = GENERAL
+  ? [
+      {
+        n: 1,
+        name: "ความปลอดภัยและทักษะในปฏิบัติการเคมี",
+        contentName: "ทักษะพื้นฐานปฏิบัติการเคมี",
+        lesson: "01-lab-basics.md",
+      },
+    ]
+  : CAMP_TOPICS;
 const CHOICE_LABELS = ["ก", "ข", "ค", "ง"];
 const DIFFICULTY_COLOR = ["", "#16a34a", "#65a30d", "#ca8a04", "#ea580c", "#dc2626"];
 
@@ -149,7 +162,7 @@ function renderLessonMd(md) {
 }
 
 // อ่านโจทย์ทุกไฟล์ จัดกลุ่มตามหมวด
-const byTopic = new Map(TOPICS.map((t) => [t.name, []]));
+const byTopic = new Map(TOPICS.map((t) => [t.contentName ?? t.name, []]));
 for (const file of fs.readdirSync(Q_DIR).filter((f) => f.endsWith(".json"))) {
   for (const q of JSON.parse(fs.readFileSync(path.join(Q_DIR, file), "utf8"))) {
     byTopic.get(q.topic)?.push(q);
@@ -187,6 +200,35 @@ function renderMdInline(text) {
   return html.replace(MATH_TOKEN_RE, (_, i) => maths[Number(i)]);
 }
 
+function generalizeText(value) {
+  if (!GENERAL || typeof value !== "string") return value;
+  return value
+    .replaceAll(
+      "เพราะความเข้มข้นของสารเป็นตัวกำหนดอันตราย ไม่ใช่ปริมาณที่ใช้",
+      "ความเสี่ยงขึ้นกับชนิดและความเข้มข้นของสาร ปริมาณ เส้นทาง และระยะเวลารับสัมผัส จึงต้องประเมินตาม SDS และใช้อุปกรณ์ป้องกันที่กำหนด"
+    )
+    .replaceAll("ข้อสอบระดับค่าย", "แบบฝึกหัดประยุกต์")
+    .replaceAll("ข้อสอบ สอวน.", "แบบฝึกหัด")
+    .replaceAll("ข้อสอบ", "แบบฝึกหัด")
+    .replaceAll("สอวน.", "ระดับมัธยมปลาย")
+    .replaceAll("ค่าย 1", "ระดับมัธยมปลาย");
+}
+
+function generalizeQuestion(q) {
+  if (!GENERAL) return q;
+  const clarifyVolumeAnswer = (value) =>
+    value
+      .replaceAll("3500\\ \\text{mL} = 3500\\ \\text{cm}^3", "3.5 \\times 10^3\\ \\text{mL} = 3.5 \\times 10^3\\ \\text{cm}^3")
+      .replaceAll("3500 cm^3", "$3.5 \\times 10^3\\ \\text{cm}^3$");
+  return {
+    ...q,
+    stem: clarifyVolumeAnswer(generalizeText(q.stem)),
+    choices: q.choices.map((choice) => clarifyVolumeAnswer(generalizeText(choice))),
+    explanation: clarifyVolumeAnswer(generalizeText(q.explanation)),
+    style: undefined,
+  };
+}
+
 function renderExercise(q, num) {
   // ตัวเลือกสั้นทุกตัว → จัด 2 คอลัมน์ ประหยัดพื้นที่แบบหนังสือ
   const allShort = q.choices.every((c) => c.length <= 30 && !c.includes("\n"));
@@ -206,14 +248,80 @@ function renderExercise(q, num) {
 
 for (const topic of TOPICS) {
   const lessonPath = path.join(L_DIR, topic.lesson);
-  const lessonMd = fs.existsSync(lessonPath)
+  let lessonMd = fs.existsSync(lessonPath)
     ? fs.readFileSync(lessonPath, "utf8")
     : "";
-  const stOrder = (subtopicOrder[topic.name] ?? []).map((s) => s.subtopic);
-  const pool = [...(byTopic.get(topic.name) ?? [])];
-  const mapSteps = Array.isArray(learnMap[String(topic.n)])
+  if (GENERAL) {
+    const massSupplement = fs.readFileSync(
+      path.join(ROOT, "content", "general-chemistry", "01-mass-measurement.md"),
+      "utf8"
+    );
+    const safetySupplement = fs.readFileSync(
+      path.join(ROOT, "content", "general-chemistry", "01-safety-supplement.md"),
+      "utf8"
+    );
+    lessonMd = lessonMd
+      .replace(/^# .*$/m, `# ${topic.name}`)
+      .replace(/^>[^\n]*(?:\n>[^\n]*)*\n\n---/m, "> ชีทสำหรับใช้สอนและทบทวนเคมีระดับมัธยมศึกษาตอนปลาย ครอบคลุมผลการเรียนรู้บทที่ 1 ตามแนวทาง สสวท. เน้นความปลอดภัย การวัด การรายงานข้อมูล และการออกแบบการทดลองอย่างเป็นระบบ\n\n---")
+      .replaceAll("ข้อสอบ สอวน. เคมี", "การเรียนเคมีระดับมัธยมปลาย")
+      .replaceAll("สำหรับค่าย 1", "สำหรับระดับมัธยมปลาย")
+      .replaceAll("ข้อสอบภาคปฏิบัติ", "งานปฏิบัติการ")
+      .replaceAll("ข้อสอบ", "แบบฝึกหัด")
+      .replace(
+        "- **ทฤษฎี (theory)** อธิบาย **\"ทำไม\"** ปรากฏการณ์นั้นจึงเกิดขึ้น คืออธิบายกลไกเบื้องหลัง และมักพัฒนาต่อยอดขึ้นจากกฎเมื่อมีหลักฐานสนับสนุนสะสมมากพอ",
+        "- **ทฤษฎี (theory)** อธิบาย **\"ทำไม\"** ปรากฏการณ์นั้นจึงเกิดขึ้น โดยเสนอแบบจำลองหรือกลไกที่สอดคล้องกับหลักฐาน กฎและทฤษฎีอาจสนับสนุนกัน แต่ไม่ได้พัฒนาหรือเลื่อนขั้นจากกัน"
+      )
+      .replace(
+        "## 5. อุปกรณ์วัดปริมาตร: เลือกให้เป็น อ่านให้ถูก",
+        `## 5. อุปกรณ์วัดปริมาตร: เลือกให้เป็น อ่านให้ถูก\n\n${massSupplement}`
+      )
+      .replace("### 5.2 อ่านระดับของเหลวให้ถูก", "### 5.3 อ่านระดับของเหลวให้ถูก")
+      .replace("### 5.1 เลือกอุปกรณ์ตามงาน", "### 5.2 เลือกอุปกรณ์ตามงาน")
+      .replace(
+        "## 7. ความปลอดภัยพื้นฐานในห้องปฏิบัติการ",
+        `## 7. ความปลอดภัยพื้นฐานในห้องปฏิบัติการ\n\n${safetySupplement}`
+      )
+      .replaceAll("ความละเอียดโดยทั่วไป", "ค่าความคลาดเคลื่อนตามตัวอย่าง (ให้ตรวจฉลากจริง)")
+      .replaceAll("±0.02 mL ต่อการอ่าน 1 ครั้ง", "สเกลย่อย 0.1 mL; ประมาณค่าได้ถึง 0.01 mL")
+      .replace(
+        "### 6.2 การสะสมของความคลาดเคลื่อน (ฉบับพอเพียงสำหรับระดับมัธยมปลาย)",
+        "### 6.2 การประมาณขอบเขตสูงสุดของความคลาดเคลื่อน"
+      )
+      .replace(
+        "นี่คือเหตุผลที่ความคลาดเคลื่อนของบิวเรตต้องคิด **สองเท่า** ของการอ่านครั้งเดียวเสมอ เพราะทุกการไทเทรตอ่าน 2 ครั้ง (ก่อน–หลัง)",
+        "สำหรับวิธีประมาณแบบ **worst-case ในหัวข้อนี้** ความคลาดเคลื่อนของบิวเรตจึงคิดเป็น **สองเท่า** ของการอ่านครั้งเดียว เพราะปริมาตรที่ใช้ได้จากผลต่างของการอ่าน 2 ครั้ง (ก่อน–หลัง) หากเป็นความไม่แน่นอนสุ่มอิสระ งานวิเคราะห์ขั้นสูงอาจรวมแบบรากกำลังสองของผลบวกกำลังสอง (RSS) ซึ่งให้ค่า $\\sqrt{2}$ เท่าของความไม่แน่นอนต่อการอ่านหนึ่งครั้ง"
+      )
+      .replaceAll(
+        "บิวเรตอ่าน 2 ครั้ง → ความคลาดเคลื่อนสองเท่า",
+        "worst-case: บิวเรตอ่าน 2 ครั้ง → บวกขอบเขตความคลาดเคลื่อน (เป็น 2 เท่าเมื่อแต่ละครั้งเท่ากัน)"
+      )
+      .replace(
+        "\"ปริมาณน้อย\" ไม่ใช่เหตุผลที่ข้ามอุปกรณ์ป้องกันได้ เพราะความเข้มข้นของสารเป็นตัวกำหนดอันตราย ไม่ใช่ปริมาณที่ใช้",
+        "\"ปริมาณน้อย\" ไม่ใช่เหตุผลที่ข้ามอุปกรณ์ป้องกันได้ ความเสี่ยงขึ้นกับชนิดและความเข้มข้นของสาร ปริมาณ เส้นทาง และระยะเวลารับสัมผัส จึงต้องประเมินตาม SDS และใช้อุปกรณ์ป้องกันที่กำหนด"
+      )
+      .replace(
+        "- ปริมาณบวก/ลบกัน → ความคลาดเคลื่อนสัมบูรณ์ บวกกัน\n- ปริมาณคูณ/หารกัน → ความคลาดเคลื่อนสัมพัทธ์ (%) บวกกัน",
+        "สำหรับการประมาณแบบระมัดระวังหรือ **worst-case** ในระดับนี้:\n\n- ปริมาณบวก/ลบกัน → บวกขอบเขตความคลาดเคลื่อนสัมบูรณ์\n- ปริมาณคูณ/หารกัน → บวกขอบเขตความคลาดเคลื่อนสัมพัทธ์ (%)\n\nวิธีนี้ให้ขอบเขตสูงสุด ไม่ใช่กฎรวมความไม่แน่นอนเพียงแบบเดียว งานวิเคราะห์ที่ถือความไม่แน่นอนสุ่มเป็นอิสระอาจใช้การรวมแบบรากกำลังสองของผลบวกกำลังสอง"
+      );
+  }
+  const contentName = topic.contentName ?? topic.name;
+  const stOrder = (subtopicOrder[contentName] ?? []).map((s) => s.subtopic);
+  const generalAmbiguous = ["500 mg", "35.0 g/L"];
+  const pool = [...(byTopic.get(contentName) ?? [])].filter(
+    (q) =>
+      !GENERAL ||
+      (q.difficulty <= 3 && !generalAmbiguous.some((text) => q.stem.includes(text)))
+  ).map(generalizeQuestion);
+  const baseSteps = Array.isArray(learnMap[String(topic.n)])
     ? learnMap[String(topic.n)]
     : null;
+  const mapSteps = GENERAL && baseSteps
+    ? baseSteps.map((step) => ({
+        ...step,
+        title: step.title === "อุปกรณ์วัดปริมาตร" ? "อุปกรณ์วัดปริมาตรและมวล" : step.title,
+        drill: step.drill > 0 ? Math.min(step.drill, 4) : 0,
+      }))
+    : baseSteps;
 
   let bodyHtml = "";
   const ordered = []; // ลำดับข้อสุดท้าย (ไว้ทำเฉลยท้ายบท)
@@ -250,7 +358,7 @@ for (const topic of TOPICS) {
       })
       .join("\n");
     // โจทย์ตกค้างที่ไม่ตรง step ใด (กันหล่น)
-    const leftover = pool.filter((q) => !used.has(q));
+    const leftover = GENERAL ? [] : pool.filter((q) => !used.has(q));
     if (leftover.length) {
       const exHtml = leftover
         .sort((a, b) => a.difficulty - b.difficulty)
@@ -293,7 +401,7 @@ ${exercises}`;
   const solutions = ordered
     .map(
       (q, i) => `<div class="sol">
-      <p class="sol-head">ข้อ ${i + 1} — ตอบ ${CHOICE_LABELS[q.correct_index]}. ${renderMd(q.choices[q.correct_index])}</p>
+      <div class="sol-head">ข้อ ${i + 1} — ตอบ ${CHOICE_LABELS[q.correct_index]}. ${renderMd(q.choices[q.correct_index])}</div>
       ${renderMd(q.explanation)}
     </div>`
     )
@@ -304,7 +412,7 @@ ${exercises}`;
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ชีทบทที่ ${topic.n} ${topic.name} — ติวเคมี สอวน. ค่าย 1</title>
+<title>ชีทบทที่ ${topic.n} ${topic.name} — ${GENERAL ? "เคมีทั่วไปตามแนวทาง สสวท." : "ติวเคมี สอวน. ค่าย 1"}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
@@ -410,7 +518,7 @@ ${exercises}`;
   <div class="num">${topic.n}</div>
   <div>
     <h1>${topic.name}</h1>
-    <p class="cov-sub">ชีทเรียน+แบบฝึกหัด · ติวเคมี สอวน. ค่าย 1${mapSteps ? " · สอนสลับฝึกทีละช่วง" : ""}</p>
+    <p class="cov-sub">ชีทเรียน+แบบฝึกหัด · ${GENERAL ? "อิงขอบเขตหลักสูตร สสวท. · เอกสารจัดทำใหม่ ไม่ใช่เอกสารทางการของ สสวท." : "ติวเคมี สอวน. ค่าย 1"}${mapSteps ? " · สอนสลับฝึกทีละช่วง" : ""}</p>
   </div>
 </header>
 ${bodyHtml}
@@ -425,7 +533,7 @@ ${bodyHtml}
 </body>
 </html>`;
 
-  const out = path.join(OUT_DIR, `ch${String(topic.n).padStart(2, "0")}.html`);
+  const out = path.join(OUT_DIR, `${GENERAL ? "general-" : ""}ch${String(topic.n).padStart(2, "0")}.html`);
   fs.writeFileSync(out, html);
   console.log(
     `✓ ${path.relative(ROOT, out)} — ${mapSteps ? "สอนสลับฝึก " + mapSteps.length + " ช่วง" : "บทเรียน+ท้ายบท"} · ${ordered.length} ข้อ`

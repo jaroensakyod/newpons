@@ -44,6 +44,10 @@ export default async function TopicsPage() {
         <SignOutButton />
       </header>
 
+      <Link href="/" className="mt-4 inline-block text-sm font-semibold text-indigo-700 hover:text-indigo-900">
+        ← กลับหน้าเลือกเส้นทาง
+      </Link>
+
       <Link
         href="/summary"
         className="mt-6 flex items-center justify-between rounded-2xl border border-indigo-200 bg-indigo-50 px-5 py-4 transition hover:border-indigo-300 hover:bg-indigo-100"
