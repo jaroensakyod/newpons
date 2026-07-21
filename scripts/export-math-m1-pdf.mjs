@@ -1,0 +1,16 @@
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import puppeteer from "puppeteer";
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const chapters={"01":{slug:"01-decimals-fractions",title:"ทศนิยมและเศษส่วน"},"02":{slug:"02-integers",title:"จำนวนเต็ม"},"03":{slug:"03-geometric-constructions",title:"การสร้างทางเรขาคณิต"}};
+const chapter=chapters[process.argv[2]??"01"]??chapters["01"];
+const filename=`m1-ch${chapter.slug}`;
+const source = path.join(ROOT, "docs", "math-m1", `${filename}.html`);
+const out = path.join(ROOT, "output", "pdf", `${filename}.pdf`);
+const pub = path.join(ROOT, "public", "math-m1", `${filename}.pdf`);
+fs.mkdirSync(path.dirname(out), { recursive:true }); fs.mkdirSync(path.dirname(pub), { recursive:true });
+const browser = await puppeteer.launch(); const page = await browser.newPage();
+await page.goto("file:///" + source.replaceAll("\\", "/"), {waitUntil:"networkidle0"});
+await page.pdf({path:out,format:"A4",printBackground:true,displayHeaderFooter:true,margin:{top:"18mm",bottom:"16mm",left:"12mm",right:"12mm"},headerTemplate:`<div style="font-size:8px;width:100%;padding:0 12mm;text-align:right;color:#64748b">คณิตศาสตร์ ม.1 · ${chapter.title}</div>`,footerTemplate:'<div style="font-size:8px;width:100%;text-align:center;color:#94a3b8"><span class="pageNumber"></span> / <span class="totalPages"></span></div>'});
+await browser.close(); fs.copyFileSync(out,pub); console.log(`✓ ${path.relative(ROOT,out)}`);

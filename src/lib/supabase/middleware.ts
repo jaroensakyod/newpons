@@ -37,7 +37,9 @@ export async function updateSession(request: NextRequest) {
     path === "/" ||
     path === "/login" ||
     path === "/general-chemistry" ||
-    path.startsWith("/general-chemistry/");
+    path.startsWith("/general-chemistry/") ||
+    path === "/math-m1" ||
+    path.startsWith("/math-m1/");
 
   if (!user && !isPublic) {
     const redirectUrl = request.nextUrl.clone();
